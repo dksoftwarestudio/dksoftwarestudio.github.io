@@ -15,44 +15,45 @@
         }
 
         .container {
-            padding: 60px 20px;
+            padding: 80px 20px;
             max-width: 900px;
             margin: auto;
         }
 
-        /* ЛОГО БОЛЬШЕ */
-        img.logo {
-            width: 320px;   /* было 220px */
+        img {
+            width: 260px;
             margin-bottom: 30px;
         }
 
-        .tagline {
-            font-size: 28px;
-            margin-bottom: 60px;
-            font-weight: 500;
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 80px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 28px;
+            padding: 12px 30px;
             background-color: #1A53AD;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            margin-top: 30px;
+            border-radius: 6px;
             font-size: 16px;
+            transition: 0.3s;
+            margin-top: 20px;
         }
 
         .btn:hover {
-            background-color: #163f85;
-        }
-
-        section {
-            margin-top: 80px;
-        }
-
-        h2 {
-            margin-bottom: 20px;
+            background-color: #163e82;
         }
 
         footer {
@@ -67,40 +68,40 @@
 
 <div class="container">
 
-    <img src="logo.png" alt="DK Logo" class="logo">
+    <img src="logo.png" alt="DK Software Studio Logo">
 
-    <p class="tagline">Просто. Чисто. Функционально.</p>
+    <h1>Просто. Чисто. Функционально.</h1>
 
-    <section id="about">
-        <h2>О студии</h2>
-        <p>
-            DK Software Studio — независимая студия разработки,
-            создающая простые, аккуратные и продуманные решения
-            для мобильных устройств.
-        </p>
-        <p>
-            Мы делаем продукты без лишнего шума —
-            только то, что действительно работает.
-        </p>
+    <a href="projects.html" class="btn">Наши проекты</a>
 
-        <!-- КНОПКА ПЕРЕНЕСЕНА СЮДА -->
-        <a href="projects.html" class="btn">Наши проекты</a>
-    </section>
+    <h2>О студии</h2>
 
-    <section>
-        <h2>Контакты</h2>
-        <p>По вопросам сотрудничества и предложений:</p>
-        <p><strong>contact@dksoftwarestudio.com</strong></p>
-        <a href="mailto:contact@dksoftwarestudio.com" class="btn">
-            Написать письмо
-        </a>
-    </section>
+    <p>
+        DK Software Studio — независимая студия разработки,
+        создающая простые, аккуратные и продуманные решения
+        для мобильных устройств.
+    </p>
 
-    <footer>
-        © 2026 DK Software Studio
-    </footer>
+    <p>
+        Мы делаем продукты без лишнего шума —
+        только то, что действительно работает.
+    </p>
+
+    <h2>Контакты</h2>
+
+    <p>По вопросам сотрудничества и предложений:</p>
+
+    <p><strong>contact@dksoftwarestudio.com</strong></p>
+
+    <a href="mailto:contact@dksoftwarestudio.com" class="btn">
+        Написать письмо
+    </a>
 
 </div>
+
+<footer>
+    © 2026 DK Software Studio
+</footer>
 
 </body>
 </html>
