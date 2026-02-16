@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>DK Software Studio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             margin: 0;
@@ -14,28 +15,29 @@
         }
 
         .container {
-            padding: 80px 20px;
+            padding: 100px 20px 60px;
         }
 
-        h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            font-weight: normal;
-            color: #1A53AD;
+        .logo {
+            width: 360px;
+            max-width: 80%;
             margin-bottom: 40px;
+        }
+
+        .tagline {
+            font-size: 20px;
+            margin-bottom: 50px;
+            color: #444;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 14px 36px;
             background-color: #1A53AD;
             color: white;
             text-decoration: none;
-            border-radius: 6px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 17px;
             transition: 0.3s;
         }
 
@@ -44,7 +46,7 @@
         }
 
         footer {
-            margin-top: 100px;
+            margin-top: 120px;
             font-size: 14px;
             color: #888;
         }
@@ -53,10 +55,11 @@
 <body>
 
 <div class="container">
-    <img src="logo.png" alt="DK Software Studio Logo" style="width:220px;">
-    <p>Simple. Clean. Functional.</p>
+    <img src="logo.png" alt="DK Software Studio Logo" class="logo">
 
-    <br><br>
+    <div class="tagline">
+        Simple. Clean. Functional.
+    </div>
 
     <a href="#" class="btn">Our Projects</a>
 </div>
