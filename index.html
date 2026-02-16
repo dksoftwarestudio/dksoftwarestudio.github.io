@@ -15,50 +15,45 @@
         }
 
         .container {
-            padding: 80px 20px;
+            padding: 60px 20px;
             max-width: 900px;
             margin: auto;
         }
 
-        img {
-    width: 420px;
-    max-width: 90%;
-    margin-bottom: 40px;
-}
+        img.logo {
+            width: 220px;
+            margin-bottom: 20px;
+        }
 
         h1 {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
-        h2 {
-            margin-top: 80px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            line-height: 1.6;
-            max-width: 700px;
-            margin: 0 auto 20px auto;
+        p.tagline {
+            font-size: 18px;
+            margin-bottom: 30px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 12px 25px;
             background-color: #1A53AD;
             color: white;
             text-decoration: none;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: 0.3s;
-            margin-top: 20px;
+            border-radius: 8px;
+            margin: 10px;
         }
 
         .btn:hover {
-            background-color: #163e82;
+            background-color: #163f85;
+        }
+
+        section {
+            margin-top: 80px;
         }
 
         footer {
-            margin-top: 100px;
+            margin-top: 80px;
             font-size: 14px;
             color: #888;
         }
@@ -69,40 +64,31 @@
 
 <div class="container">
 
-    <img src="logo.png" alt="DK Software Studio Logo">
+    <img src="logo.png" alt="DK Logo" class="logo">
 
-    <h1>Просто. Чисто. Функционально.</h1>
+    <p class="tagline">Просто. Чисто. Функционально.</p>
 
     <a href="projects.html" class="btn">Наши проекты</a>
+    <a href="#about" class="btn">О студии</a>
 
-    <h2>О студии</h2>
+    <section id="about">
+        <h2>О студии</h2>
+        <p>
+            DK Software Studio — независимая студия разработки,
+            создающая простые, аккуратные и продуманные решения
+            для мобильных устройств.
+        </p>
+        <p>
+            Мы делаем продукты без лишнего шума —
+            только то, что действительно работает.
+        </p>
+    </section>
 
-    <p>
-        DK Software Studio — независимая студия разработки,
-        создающая простые, аккуратные и продуманные решения
-        для мобильных устройств.
-    </p>
-
-    <p>
-        Мы делаем продукты без лишнего шума —
-        только то, что действительно работает.
-    </p>
-
-    <h2>Контакты</h2>
-
-    <p>По вопросам сотрудничества и предложений:</p>
-
-    <p><strong>contact@dksoftwarestudio.com</strong></p>
-
-    <a href="mailto:contact@dksoftwarestudio.com" class="btn">
-        Написать письмо
-    </a>
+    <footer>
+        © 2026 DK Software Studio
+    </footer>
 
 </div>
-
-<footer>
-    © 2026 DK Software Studio
-</footer>
 
 </body>
 </html>
