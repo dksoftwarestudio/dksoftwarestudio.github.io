@@ -1,112 +1,94 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>DK Software Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <title>DK Software Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f9;
-      color: #2c3e50;
-      text-align: center;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #2c3e50;
+            text-align: center;
+        }
 
-    .container {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+        .container {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
 
-    .logo {
-      width: 420px;
-      max-width: 90%;
-      margin-bottom: 20px;
-    }
+        img.logo {
+            width: 220px;
+            margin-bottom: 20px;
+        }
 
-    .tagline {
-      font-size: 20px;
-      margin-bottom: 40px;
-      color: #444;
-    }
+        h1 {
+            margin-bottom: 10px;
+        }
 
-    .about {
-      max-width: 750px;
-      margin: 60px auto;
-      line-height: 1.6;
-      font-size: 17px;
-      color: #555;
-    }
+        p.tagline {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
 
-    h2 {
-      margin-top: 80px;
-      font-size: 28px;
-    }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #1A53AD;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px;
+        }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      background-color: #1A53AD;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 16px;
-      transition: 0.2s;
-      box-shadow: 0 6px 18px rgba(26, 83, 173, 0.18);
-    }
+        .btn:hover {
+            background-color: #163f85;
+        }
 
-    .btn:hover {
-      background-color: #163e82;
-      transform: translateY(-1px);
-    }
+        section {
+            margin-top: 80px;
+        }
 
-    footer {
-      margin-top: 100px;
-      font-size: 14px;
-      color: #888;
-    }
-  </style>
+        footer {
+            margin-top: 80px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <img src="logo.png" alt="DK Software Studio Logo" class="logo">
+<div class="container">
 
-    <div class="tagline">
-      Просто. Чисто. Функционально.
-    </div>
+    <img src="logo.png" alt="DK Logo" class="logo">
+
+    <p class="tagline">Просто. Чисто. Функционально.</p>
 
     <a href="projects.html" class="btn">Наши проекты</a>
+    <a href="#about" class="btn">О студии</a>
 
-    <div class="about">
-      <h2 id="about">О студии</h2>
-      DK Software Studio — независимая студия разработки,
-      создающая простые, аккуратные и продуманные решения
-      для мобильных устройств.
-      <br><br>
-      Мы делаем продукты без лишнего шума —
-      только то, что действительно работает.
-    </div>
-    <div class="about">
-  <h2>Контакты</h2>
-  <p>
-    По вопросам сотрудничества и предложений:
-    <br><br>
-    <strong>contact@dksoftwarestudio.com</strong>
-  </p>
-  <br>
-  <a href="mailto:contact@dksoftwarestudio.com" class="btn">
-    Написать письмо
-  </a>
-</div>
+    <section id="about">
+        <h2>О студии</h2>
+        <p>
+            DK Software Studio — независимая студия разработки,
+            создающая простые, аккуратные и продуманные решения
+            для мобильных устройств.
+        </p>
+        <p>
+            Мы делаем продукты без лишнего шума —
+            только то, что действительно работает.
+        </p>
+    </section>
 
     <footer>
-      © 2026 DK Software Studio
+        © 2026 DK Software Studio
     </footer>
-  </div>
+
+</div>
 
 </body>
 </html>
