@@ -15,16 +15,15 @@
         }
 
         .container {
-            padding: 60px 20px;
+            padding: 100px 20px 60px 20px;
         }
 
-        img {
-            width: 500px; /* большой логотип */
+        .logo {
+            width: 600px;
             max-width: 90%;
-            height: auto;
         }
 
-        p {
+        .tagline {
             margin-top: 40px;
             font-size: 18px;
             color: #555;
@@ -33,7 +32,7 @@
         .btn {
             display: inline-block;
             margin-top: 30px;
-            padding: 14px 36px;
+            padding: 14px 35px;
             background-color: #1A53AD;
             color: white;
             text-decoration: none;
@@ -46,23 +45,76 @@
             background-color: #163e82;
         }
 
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .about-text {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .project-card {
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .project-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
         footer {
-            margin-top: 120px;
+            margin-top: 80px;
+            padding: 30px 20px;
             font-size: 14px;
             color: #888;
         }
     </style>
 </head>
-
 <body>
 
 <div class="container">
-    <img src="logo1.png" alt="DK Software Studio Logo">
+    <img src="logo.png" alt="DK Software Studio Logo" class="logo">
 
-    <p>Просто. Чисто. Функционально.</p>
+    <div class="tagline">
+        Просто. Чисто. Функционально.
+    </div>
 
-    <a href="#" class="btn">Наши проекты</a>
+    <a href="#projects" class="btn">Наши проекты</a>
 </div>
+
+<section id="about">
+    <div class="section-title">О студии</div>
+    <div class="about-text">
+        DK Software Studio — это независимая студия разработки,
+        создающая простые, аккуратные и функциональные мобильные решения.
+        Мы делаем продукты без лишнего шума — только то, что действительно работает.
+    </div>
+</section>
+
+<section id="projects">
+    <div class="section-title">Проекты</div>
+
+    <div class="project-card">
+        <div class="project-title">JW Daily Alarm</div>
+        <div class="about-text">
+            Минималистичное приложение-напоминание с ежедневной ссылкой.
+            Простое решение для регулярного чтения.
+        </div>
+    </div>
+</section>
 
 <footer>
     © 2026 DK Software Studio
