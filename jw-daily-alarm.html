@@ -15,53 +15,63 @@
     }
 
     .container {
-      padding: 70px 20px;
+      padding: 60px 20px 80px;
       max-width: 900px;
       margin: 0 auto;
     }
 
+    .card {
+      background: white;
+      padding: 50px 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .app-icon {
+      width: 110px;
+      margin-bottom: 20px;
+    }
+
     h1 {
-      font-size: 42px;
+      font-size: 40px;
       margin: 0 0 15px 0;
       color: #1A53AD;
     }
 
     .subtitle {
       font-size: 18px;
-      color: #444;
-      margin: 0 auto 28px auto;
-      max-width: 780px;
+      color: #555;
+      margin: 0 auto 30px auto;
+      max-width: 700px;
       line-height: 1.6;
     }
 
     .features {
       list-style: none;
       padding: 0;
-      margin: 0 auto 30px auto;
-      max-width: 520px;
+      margin: 0 auto 35px auto;
+      max-width: 500px;
       text-align: left;
-      line-height: 1.7;
+      line-height: 1.8;
       font-size: 16px;
     }
 
     .features li {
       margin: 10px 0;
-      padding-left: 26px;
+      padding-left: 28px;
       position: relative;
     }
 
     .features li::before {
       content: "•";
       position: absolute;
-      left: 8px;
-      top: 0;
+      left: 10px;
       color: #1A53AD;
       font-size: 22px;
-      line-height: 1;
     }
 
     .btn-row {
-      margin-top: 30px;
+      margin-top: 20px;
       display: inline-flex;
       gap: 14px;
       flex-wrap: wrap;
@@ -69,64 +79,77 @@
     }
 
     .btn {
-      display: inline-block;
-      padding: 12px 28px;
+      padding: 13px 28px;
       background-color: #1A53AD;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 16px;
-      transition: 0.2s;
-      box-shadow: 0 6px 18px rgba(26, 83, 173, 0.18);
+      transition: 0.2s ease;
+      box-shadow: 0 10px 25px rgba(26, 83, 173, 0.2);
     }
 
     .btn:hover {
       background-color: #163e82;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
     }
 
     .btn.secondary {
-      background-color: #e9eef6;
+      background-color: #eef2f8;
       color: #1A53AD;
       box-shadow: none;
     }
 
     .btn.secondary:hover {
-      background-color: #dfe7f3;
+      background-color: #e3eaf6;
     }
 
     footer {
-      margin-top: 80px;
+      margin-top: 60px;
       font-size: 14px;
       color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 40px 25px;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>JW Daily Alarm</h1>
+    <div class="card">
 
-    <p class="subtitle">
-      Простое и аккуратное приложение-напоминание с ежедневной ссылкой.
-      Помогает регулярно возвращаться к чтению без лишних действий и отвлекающих элементов.
-    </p>
+      <!-- Можно позже заменить на иконку приложения -->
+      <!-- <img src="jw-icon.png" alt="JW Daily Alarm Icon" class="app-icon"> -->
 
-    <ul class="features">
-      <li>Ежедневное напоминание в выбранное время</li>
-      <li>Мгновенное открытие ссылки одним нажатием</li>
-      <li>Чистый и понятный интерфейс</li>
-      <li>Поддержка нескольких языков</li>
-    </ul>
+      <h1>JW Daily Alarm</h1>
 
-    <div class="btn-row">
-      <a class="btn" href="#" target="_blank" rel="noopener">Google Play</a>
-      <a class="btn secondary" href="projects.html">← Назад к проектам</a>
+      <p class="subtitle">
+        Простое и аккуратное приложение-напоминание с ежедневной ссылкой.
+        Помогает регулярно возвращаться к чтению без лишних действий и отвлечений.
+      </p>
+
+      <ul class="features">
+        <li>Ежедневное напоминание в выбранное время</li>
+        <li>Мгновенное открытие ссылки одним нажатием</li>
+        <li>Чистый минималистичный интерфейс</li>
+        <li>Поддержка нескольких языков</li>
+      </ul>
+
+      <div class="btn-row">
+        <a class="btn" href="#" target="_blank" rel="noopener">Google Play</a>
+        <a class="btn secondary" href="projects.html">← Назад к проектам</a>
+      </div>
+
     </div>
 
     <footer>
       © 2026 DK Software Studio
     </footer>
+
   </div>
 </body>
 </html>
