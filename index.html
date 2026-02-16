@@ -1,124 +1,329 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>DK Software Studio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>DK Software Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #2c3e50;
-            text-align: center;
-        }
+  <style>
+    :root{
+      --bg:#f4f6f9;
+      --text:#2c3e50;
+      --muted:#555;
+      --muted2:#888;
+      --primary:#1A53AD;
+      --primaryHover:#163e82;
+      --card:#ffffff;
+      --shadow:0 8px 28px rgba(0,0,0,0.07);
+      --radius:14px;
+    }
 
-        .container {
-            padding: 100px 20px 60px 20px;
-        }
+    html { scroll-behavior: smooth; }
 
-        .logo {
-            width: 600px;
-            max-width: 90%;
-        }
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      text-align:center;
+    }
 
-        .tagline {
-            margin-top: 40px;
-            font-size: 18px;
-            color: #555;
-        }
+    /* Top nav */
+    .nav{
+      position: sticky;
+      top:0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(244,246,249,0.75);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .nav-inner{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 14px 16px;
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      gap: 12px;
+    }
+    .brand{
+      font-weight:700;
+      letter-spacing:0.4px;
+      color: var(--text);
+      text-decoration:none;
+    }
+    .nav-links{
+      display:flex;
+      gap:14px;
+      flex-wrap: wrap;
+      justify-content:center;
+    }
+    .nav-links a{
+      color: var(--muted);
+      text-decoration:none;
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:10px;
+      transition: .2s;
+    }
+    .nav-links a:hover{
+      background: rgba(26,83,173,0.08);
+      color: var(--primary);
+    }
 
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 14px 35px;
-            background-color: #1A53AD;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: 0.3s;
-        }
+    /* Hero */
+    .container{
+      padding: 70px 20px 50px 20px;
+    }
 
-        .btn:hover {
-            background-color: #163e82;
-        }
+    .logo{
+      width: 600px;
+      max-width: 92%;
+      height: auto;
+      display:block;
+      margin: 0 auto;
+    }
 
-        section {
-            padding: 80px 20px;
-        }
+    .tagline{
+      margin-top: 26px;
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
 
-        .section-title {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
+    .btn{
+      display:inline-block;
+      margin-top: 26px;
+      padding: 14px 36px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration:none;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: .25s;
+      box-shadow: 0 8px 18px rgba(26,83,173,0.18);
+    }
+    .btn:hover{ background: var(--primaryHover); }
 
-        .about-text {
-            max-width: 700px;
-            margin: 0 auto;
-            color: #555;
-            line-height: 1.6;
-        }
+    .btn.secondary{
+      background: #e9eef6;
+      color: var(--primary);
+      box-shadow: none;
+    }
+    .btn.secondary:hover{
+      background: #dfe8f6;
+    }
 
-        .project-card {
-            max-width: 600px;
-            margin: 40px auto 0 auto;
-            padding: 30px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
+    /* Sections */
+    section{
+      padding: 70px 20px;
+    }
+    .section-title{
+      font-size: 28px;
+      margin: 0 0 18px 0;
+    }
+    .about-text{
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 16px;
+    }
 
-        .project-title {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
+    /* Projects */
+    .project-card{
+      max-width: 720px;
+      margin: 34px auto 0 auto;
+      padding: 28px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: left;
+    }
+    .project-top{
+      display:flex;
+      justify-content: space-between;
+      align-items:flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .project-title{
+      font-size: 20px;
+      margin: 0;
+    }
+    .badge{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(26,83,173,0.10);
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .project-desc{
+      margin-top: 10px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .project-actions{
+      margin-top: 18px;
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-sm{
+      display:inline-block;
+      padding: 11px 16px;
+      border-radius: 10px;
+      text-decoration:none;
+      font-size: 14px;
+      transition: .25s;
+    }
+    .btn-sm.primary{
+      background: var(--primary);
+      color:#fff;
+    }
+    .btn-sm.primary:hover{
+      background: var(--primaryHover);
+    }
+    .btn-sm.ghost{
+      background: #eef2f7;
+      color: var(--text);
+    }
+    .btn-sm.ghost:hover{
+      background: #e6edf6;
+    }
+    .note{
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted2);
+    }
 
-        footer {
-            margin-top: 80px;
-            padding: 30px 20px;
-            font-size: 14px;
-            color: #888;
-        }
-    </style>
+    /* Contacts */
+    .contacts{
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      text-align:left;
+    }
+    .contact-row{
+      display:flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      flex-wrap: wrap;
+    }
+    .contact-row:last-child{ border-bottom:none; }
+    .contact-label{ color: var(--muted2); }
+    .contact-value a{
+      color: var(--primary);
+      text-decoration:none;
+    }
+    .contact-value a:hover{ text-decoration: underline; }
+
+    footer{
+      padding: 28px 18px;
+      font-size: 14px;
+      color: var(--muted2);
+    }
+
+    @media (max-width:520px){
+      .section-title{ font-size: 24px; }
+      .tagline{ font-size: 16px; }
+    }
+  </style>
 </head>
-<body>
 
-<div class="container">
-    <img src="logo.png" alt="DK Software Studio Logo" class="logo">
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">DK Software Studio</a>
+      <div class="nav-links">
+        <a href="#about">О студии</a>
+        <a href="#projects">Проекты</a>
+        <a href="#contact">Контакты</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="top" class="container">
+    <img src="logo.png" alt="DK Software Studio Logo" class="logo" />
 
     <div class="tagline">
-        Просто. Чисто. Функционально.
+      Просто. Чисто. Функционально.
     </div>
 
     <a href="#projects" class="btn">Наши проекты</a>
-</div>
+  </div>
 
-<section id="about">
+  <section id="about">
     <div class="section-title">О студии</div>
     <div class="about-text">
-        DK Software Studio — это независимая студия разработки,
-        создающая простые, аккуратные и функциональные мобильные решения.
-        Мы делаем продукты без лишнего шума — только то, что действительно работает.
+      DK Software Studio — независимая студия разработки, создающая простые,
+      аккуратные и практичные решения для мобильных устройств.
+      Мы делаем продукты без лишнего шума — только то, что действительно работает.
     </div>
-</section>
+  </section>
 
-<section id="projects">
+  <section id="projects">
     <div class="section-title">Проекты</div>
 
     <div class="project-card">
-        <div class="project-title">JW Daily Alarm</div>
-        <div class="about-text">
-            Минималистичное приложение-напоминание с ежедневной ссылкой.
-            Простое решение для регулярного чтения.
-        </div>
+      <div class="project-top">
+        <h3 class="project-title">JW Daily Alarm</h3>
+        <div class="badge">Android • v1.x</div>
+      </div>
+
+      <div class="project-desc">
+        Минималистичное приложение-напоминание с ежедневной ссылкой.
+        Простое решение для регулярного чтения: один будильник, удобные действия,
+        чистый интерфейс.
+      </div>
+
+      <div class="project-actions">
+        <!-- ВСТАВЬ СЮДА ССЫЛКУ НА РЕПО, если хочешь -->
+        <a class="btn-sm primary" href="https://github.com/dksoftwarestudio" target="_blank" rel="noopener">
+          GitHub
+        </a>
+
+        <!-- ВСТАВИШЬ ССЫЛКУ НА PLAY STORE ПОСЛЕ ПУБЛИКАЦИИ -->
+        <a class="btn-sm ghost" href="#" onclick="return false;">
+          Google Play (скоро)
+        </a>
+      </div>
+
+      <div class="note">
+        * После публикации в Google Play заменим кнопку “скоро” на реальную ссылку.
+      </div>
     </div>
-</section>
+  </section>
 
-<footer>
+  <section id="contact">
+    <div class="section-title">Контакты</div>
+
+    <div class="contacts">
+      <div class="contact-row">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:dksoftwarestudio@proton.me">dksoftwarestudio@proton.me</a></div>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value"><a href="https://github.com/dksoftwarestudio" target="_blank" rel="noopener">github.com/dksoftwarestudio</a></div>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-label">Сайт</div>
+        <div class="contact-value">dksoftwarestudio.com</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
     © 2026 DK Software Studio
-</footer>
-
+  </footer>
 </body>
 </html>
