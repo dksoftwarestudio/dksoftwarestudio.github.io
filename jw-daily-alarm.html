@@ -1,86 +1,131 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>JW Daily Alarm — DK Software Studio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #2c3e50;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <title>JW Daily Alarm — DK Software Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        .container {
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      color: #2c3e50;
+      text-align: center;
+    }
 
-        h1 {
-            margin-bottom: 20px;
-        }
+    .container {
+      padding: 70px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-        .description {
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
+    h1 {
+      font-size: 42px;
+      margin: 0 0 10px 0;
+    }
 
-        .features {
-            text-align: left;
-            margin-bottom: 40px;
-        }
+    .subtitle {
+      font-size: 18px;
+      color: #444;
+      margin: 0 auto 28px auto;
+      max-width: 780px;
+      line-height: 1.5;
+    }
 
-        .features li {
-            margin-bottom: 10px;
-        }
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 30px auto;
+      max-width: 520px;
+      text-align: left;
+      line-height: 1.7;
+      font-size: 16px;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #1A53AD;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: 0.3s;
-        }
+    .features li {
+      margin: 8px 0;
+      padding-left: 26px;
+      position: relative;
+    }
 
-        .btn:hover {
-            background-color: #163e82;
-        }
+    .features li::before {
+      content: "•";
+      position: absolute;
+      left: 8px;
+      top: 0;
+      color: #1A53AD;
+      font-size: 22px;
+      line-height: 1;
+    }
 
-        footer {
-            margin-top: 80px;
-            font-size: 14px;
-            color: #888;
-        }
-    </style>
+    .btn-row {
+      margin-top: 25px;
+      display: inline-flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 26px;
+      background-color: #1A53AD;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: 0.2s;
+      box-shadow: 0 6px 18px rgba(26, 83, 173, 0.18);
+    }
+
+    .btn:hover {
+      background-color: #163e82;
+      transform: translateY(-1px);
+    }
+
+    .btn.secondary {
+      background-color: #e9eef6;
+      color: #1A53AD;
+      box-shadow: none;
+    }
+
+    .btn.secondary:hover {
+      background-color: #dfe7f3;
+    }
+
+    footer {
+      margin-top: 70px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
 </head>
-<body>
 
-<div class="container">
+<body>
+  <div class="container">
     <h1>JW Daily Alarm</h1>
 
-    <p class="description">
-        Минималистичное приложение-напоминание с ежедневной ссылкой.
-        Простое, аккуратное и функциональное решение для регулярного чтения.
+    <p class="subtitle">
+      Минималистичное приложение-напоминание с ежедневной ссылкой.
+      Простое, аккуратное и функциональное решение для регулярного чтения.
     </p>
 
     <ul class="features">
-        <li>• Ежедневное напоминание в заданное время</li>
-        <li>• Быстрое открытие ссылки</li>
-        <li>• Минималистичный интерфейс</li>
-        <li>• Поддержка нескольких языков</li>
+      <li>Ежедневное напоминание в заданное время</li>
+      <li>Быстрое открытие ссылки</li>
+      <li>Минималистичный интерфейс</li>
+      <li>Поддержка нескольких языков</li>
     </ul>
 
-    <a href="projects.html" class="btn">← Назад к проектам</a>
-</div>
+    <div class="btn-row">
+      <!-- ВРЕМЕННО: ссылка-заглушка. Потом заменим на реальную страницу Google Play -->
+      <a class="btn" href="#" target="_blank" rel="noopener">Google Play</a>
 
-<footer>
-    © 2026 DK Software Studio
-</footer>
+      <a class="btn secondary" href="projects.html">← Назад к проектам</a>
+    </div>
 
+    <footer>© 2026 DK Software Studio</footer>
+  </div>
 </body>
 </html>
