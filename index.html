@@ -6,62 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: #f4f6f9;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
             color: #2c3e50;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
         }
 
         .container {
-            text-align: center;
-            max-width: 600px;
-            padding: 20px;
+            padding: 60px 20px;
         }
 
-        .logo {
-            width: 600px; /* В 3 раза больше */
+        img {
+            width: 500px; /* большой логотип */
             max-width: 90%;
             height: auto;
-            margin-bottom: 40px;
         }
 
-        .tagline {
-            font-size: 20px;
-            margin-bottom: 40px;
+        p {
+            margin-top: 40px;
+            font-size: 18px;
             color: #555;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 40px;
+            margin-top: 30px;
+            padding: 14px 36px;
             background-color: #1A53AD;
-            color: #ffffff;
+            color: white;
             text-decoration: none;
             border-radius: 8px;
             font-size: 16px;
-            font-weight: 500;
-            transition: 0.3s ease;
+            transition: 0.3s;
         }
 
         .btn:hover {
             background-color: #163e82;
-            transform: translateY(-2px);
         }
 
         footer {
-            position: absolute;
-            bottom: 20px;
+            margin-top: 120px;
             font-size: 14px;
             color: #888;
         }
@@ -71,11 +57,9 @@
 <body>
 
 <div class="container">
-    <img src="logo.png" alt="DK Software Studio Logo" class="logo">
+    <img src="logo.png" alt="DK Software Studio Logo">
 
-    <div class="tagline">
-        Просто. Аккуратно. Функционально.
-    </div>
+    <p>Просто. Чисто. Функционально.</p>
 
     <a href="#" class="btn">Наши проекты</a>
 </div>
