@@ -91,18 +91,18 @@
     }
 
     .logo-big{
-      width: 170px; /* можно потом легко увеличить/уменьшить */
+      width: 170px;
       height:auto;
       display:block;
       margin: 0 auto 16px;
     }
 
     .tagline{
-  margin: 8px 0 22px;         /* ближе к лого, и аккуратный отступ вниз */
-  font-size: clamp(18px, 2.2vw, 22px); /* плавный размер: мобилка → монитор */
-  font-weight: 800;
-  color: var(--blue);
-}
+      margin: 8px 0 22px;
+      font-size: clamp(18px, 2.2vw, 22px);
+      font-weight: 800;
+      color: var(--blue);
+    }
 
     .product-title{
       margin: 6px 0 10px;
@@ -183,6 +183,16 @@
       transform: translateY(-2px);
     }
 
+    /* кнопка-заглушка */
+    .btn.disabled{
+      opacity: 0.7;
+      cursor: default;
+      pointer-events: none;
+    }
+    .btn.disabled:hover{
+      transform:none;
+    }
+
     .mini-about{
       margin-top: 24px;
       font-size: 14px;
@@ -223,12 +233,10 @@
     <div class="hero">
       <div class="card">
 
-        <!-- Большой логотип по центру -->
         <img class="logo-big" src="logo.png" alt="DK Software Studio">
 
         <div class="tagline">Просто. Чисто. Функционально.</div>
 
-        <!-- Фокус на продукте -->
         <div class="product-title">JW Daily Alarm</div>
 
         <div class="product-subtitle">
@@ -244,8 +252,7 @@
         </ul>
 
         <div class="btn-row">
-          <!-- Когда будет ссылка на Google Play — вставим сюда вместо # -->
-          <a class="btn primary" href="#" target="_blank" rel="noopener">Google Play</a>
+          <a class="btn primary disabled" href="#" aria-disabled="true">Скоро в Google Play</a>
           <a class="btn secondary" href="projects.html">Все проекты</a>
           <a class="btn secondary" href="about.html">О студии</a>
         </div>
