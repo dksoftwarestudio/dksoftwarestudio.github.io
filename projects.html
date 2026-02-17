@@ -25,6 +25,7 @@
       color: var(--text);
     }
 
+    /* top nav (единый для всех страниц) */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -32,8 +33,8 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
+      gap: 12px;
     }
-
     .brand{
       display:flex;
       align-items:center;
@@ -41,124 +42,173 @@
       text-decoration:none;
       color:inherit;
     }
-
     .brand img{
-      width:60px;
+      width: 60px;
       height:auto;
+      display:block;
     }
-
     .brand .name{
       font-weight:700;
+      letter-spacing:0.2px;
+      white-space: nowrap;
     }
-
     .nav{
       display:flex;
       gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
     }
-
     .nav a{
       color: var(--blue);
       text-decoration:none;
       font-weight:600;
       font-size:14px;
     }
+    .nav a:hover{ text-decoration:underline; }
 
-    .nav a:hover{
-      text-decoration:underline;
-    }
-
+    /* layout */
     .wrap{
       max-width: 980px;
       margin: 0 auto;
-      padding: 40px 20px 70px;
+      padding: 24px 20px 70px;
     }
-
+    .hero{
+      margin-top: 16px;
+      display:flex;
+      justify-content:center;
+    }
     .card{
+      width:100%;
+      max-width: 860px;
       background: var(--card);
       border-radius: 18px;
       box-shadow: 0 22px 55px rgba(0,0,0,0.07);
       border: 1px solid var(--border);
-      padding: 40px;
+      padding: 44px 42px;
       text-align:center;
     }
 
-    h1{
-      margin-top:0;
-      font-size:42px;
+    .title{
+      margin: 0 0 8px;
+      font-size: 38px;
+      line-height: 1.1;
     }
-
     .subtitle{
+      margin: 0 auto 22px;
+      max-width: 720px;
+      font-size: 16px;
+      line-height: 1.7;
       color: var(--muted);
-      margin-bottom:40px;
     }
 
     .project{
+      margin: 0 auto;
+      max-width: 760px;
+      background: #f7f9fc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
       display:flex;
       align-items:center;
-      gap:20px;
+      gap: 18px;
       text-align:left;
-      padding:20px;
-      border-radius:16px;
-      background:#f9fbff;
-      border:1px solid var(--border);
     }
 
-    .project-icon{
-      width:72px;
+    .project img{
+      width: 88px;
       height:auto;
-      border-radius:18px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      border-radius: 18px;
+      background:#fff;
+      padding: 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+      flex: 0 0 auto;
     }
 
-    .project-info h2{
-      margin:0 0 8px;
+    .p-title{
+      font-size: 22px;
+      font-weight: 800;
+      margin: 0 0 6px;
     }
-
-    .project-info p{
-      margin:0 0 16px;
+    .p-desc{
+      margin: 0 0 14px;
       color: var(--muted);
-      line-height:1.6;
+      line-height: 1.6;
     }
 
+    .btn-row{
+      display:flex;
+      gap: 12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
     .btn{
       display:inline-block;
-      padding: 10px 20px;
-      border-radius:10px;
+      padding: 12px 22px;
+      border-radius: 10px;
       text-decoration:none;
-      font-weight:700;
-      font-size:14px;
-      transition:0.2s ease;
+      font-size: 15px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      user-select:none;
     }
-
     .btn.primary{
       background: var(--blue);
-      color:white;
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(26,83,173,0.22);
     }
-
     .btn.primary:hover{
       background: var(--blueDark);
       transform: translateY(-2px);
     }
-
-    footer{
-      margin-top:40px;
-      text-align:center;
-      color:#9aa6b2;
-      font-size:13px;
+    .btn.secondary{
+      background: #eef2f8;
+      color: var(--blue);
+    }
+    .btn.secondary:hover{
+      background: #e3eaf6;
+      transform: translateY(-2px);
     }
 
-    @media (max-width:640px){
+    footer{
+      margin-top: 26px;
+      text-align:center;
+      color:#9aa6b2;
+      font-size: 13px;
+    }
+
+    @media (max-width: 560px){
+      .topbar{
+        justify-content:center;
+        flex-wrap:wrap;
+        text-align:center;
+      }
+      .brand{
+        width:100%;
+        justify-content:center;
+      }
+      .nav{
+        width:100%;
+        justify-content:center;
+        gap:14px;
+      }
+      .brand .name{ white-space: normal; }
+
+      .card{ padding: 34px 22px; }
+      .title{ font-size: 30px; }
+
       .project{
         flex-direction:column;
         text-align:center;
       }
+      .btn-row{
+        justify-content:center;
+      }
     }
-
   </style>
 </head>
 
 <body>
-
   <div class="topbar">
     <a class="brand" href="index.html">
       <img src="logo.png" alt="DK Software Studio">
@@ -166,40 +216,42 @@
     </a>
 
     <div class="nav">
-      <a href="about.html">О студии</a>
       <a href="index.html">Главная</a>
+      <a href="about.html">О студии</a>
+      <a href="projects.html">Проекты</a>
     </div>
   </div>
 
   <div class="wrap">
-    <div class="card">
+    <div class="hero">
+      <div class="card">
 
-      <h1>Проекты</h1>
-      <div class="subtitle">
-        Список наших приложений и экспериментов. Сейчас фокус — на первом релизе.
-      </div>
+        <div class="title">Проекты</div>
+        <div class="subtitle">
+          Список наших приложений и экспериментов. Сейчас фокус — на первом релизе.
+        </div>
 
-      <div class="project">
+        <div class="project">
+          <img src="jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
 
-        <!-- ВАЖНО: эта иконка должна лежать рядом с html-файлом -->
-        <img class="project-icon" src="jw-daily-alarm-icon.png" alt="JW Daily Alarm">
+          <div>
+            <div class="p-title">JW Daily Alarm</div>
+            <div class="p-desc">
+              Минималистичное приложение-напоминание с ежедневной ссылкой.
+              Открывайте нужную страницу одним нажатием — без лишних действий и отвлечений.
+            </div>
 
-        <div class="project-info">
-          <h2>JW Daily Alarm</h2>
-          <p>
-            Минималистичное приложение-напоминание с ежедневной ссылкой.
-            Открывайте нужную страницу одним нажатием — без лишних действий и отвлечений.
-          </p>
-
-          <a class="btn primary" href="jw-daily-alarm.html">Подробнее</a>
+            <div class="btn-row">
+              <a class="btn primary" href="jw-daily-alarm.html">Подробнее</a>
+              <a class="btn secondary" href="index.html">← На главную</a>
+            </div>
+          </div>
         </div>
 
       </div>
-
     </div>
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
-
 </body>
 </html>
