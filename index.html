@@ -1,211 +1,281 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DK Software Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
+    :root{
+      --blue:#1A53AD;
+      --bg:#F5F5F5;
+      --card:#FFFFFF;
+      --text:#555555;
+      --muted:#6B6B6B;
+      --line:rgba(0,0,0,.06);
+      --radius:22px;
+      --shadow:0 12px 40px rgba(0,0,0,.08);
+      --max:980px;
+    }
+
+    *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family: Arial, sans-serif;
-      background:#f5f5f5;
-      color:#333;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
     }
 
+    /* ===== Header (одинаковый для всех страниц) ===== */
     .topbar{
-      max-width:980px;
-      margin:0 auto;
-      padding:20px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+      width:100%;
+      padding:18px 18px 0;
     }
-
+    .topbar-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
-      font-weight:700;
-      font-size:18px;
+      min-width:220px;
     }
-    .brand img{ height:28px; }
-
-    .nav a{
-      margin-left:20px;
-      text-decoration:none;
-      color:#1A53AD;
-      font-weight:600;
-    }
-
-    .container{
-      max-width:860px;
-      margin:40px auto;
-      padding:50px 30px;
-      background:#fff;
-      border-radius:18px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.05);
-      text-align:center;
-    }
-
-    .logo-big{
-      width:220px;
-      margin:0 auto 30px;
+    .brand img{
+      width:34px;
+      height:34px;
+      border-radius:8px;
       display:block;
     }
-
-    .subtitle{
-      font-size:22px;
-      color:#1A53AD;
-      font-weight:800;
-      margin:0 0 12px;
+    .brand-title{
+      font-weight:700;
+      color:#2d2d2d;
+      font-size:18px;
+      letter-spacing:.2px;
+      white-space:nowrap;
     }
-
-    h1{
-      margin:0 0 14px;
-      font-size:36px;
-    }
-
-    .desc{
-      line-height:1.6;
-      font-size:16px;
-      max-width:600px;
-      margin:0 auto 30px;
-      color:#555;
-    }
-
-    /* --- icon + bullets layout --- */
-    .feature-row{
-      max-width:700px;
-      margin:0 auto 30px;
+    nav{
       display:flex;
       align-items:center;
-      justify-content:center;
-      gap:26px;
-      text-align:left;
+      justify-content:flex-end;
+      gap:18px;
+      flex-wrap:wrap;           /* чтобы на телефоне не ломалось */
+    }
+    nav a{
+      text-decoration:none;
+      color:var(--blue);
+      font-weight:700;
+      font-size:16px;
+      padding:8px 10px;
+      border-radius:10px;
+      white-space:nowrap;
+    }
+    nav a:hover{ background:rgba(26,83,173,.08); }
+
+    /* ===== Main wrapper ===== */
+    .wrap{
+      max-width:var(--max);
+      margin:14px auto 40px;
+      padding:0 18px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:34px 28px;
     }
 
-    .app-icon{
-      width:170px;
+    .center{ text-align:center; }
+
+    .dk-logo{
+      width:220px;              /* ты говорил: 220 лучше */
+      max-width:70vw;
       height:auto;
-      border-radius:22px; /* мягкие углы как у иконки приложения */
       display:block;
+      margin:0 auto 12px;
+    }
+
+    .tagline{
+      margin:0;
+      font-size:26px;
+      font-weight:800;
+      color:var(--blue);
+      letter-spacing:.2px;
+    }
+    h1{
+      margin:10px 0 8px;
+      font-size:44px;
+      font-weight:800;
+      color:#222;
+      letter-spacing:.3px;
+    }
+    .lead{
+      margin:0 auto 18px;
+      max-width:740px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.7;
+      font-weight:500;
     }
 
     .features{
-      margin:0;
-      padding-left:18px;
-      line-height:1.9;
-      font-size:16px;
+      margin-top:18px;
+      display:flex;
+      gap:26px;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .app-icon{
+      width:180px;
+      height:180px;
+      border-radius:22px;
+      background:#fff;
+      box-shadow:0 10px 26px rgba(0,0,0,.10);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px;
+      flex:0 0 auto;
+    }
+    .app-icon img{
+      max-width:100%;
+      height:auto;
+      display:block;
     }
 
+    ul{
+      margin:0;
+      padding-left:20px;
+      text-align:left;
+      min-width:320px;
+      max-width:520px;
+      font-size:17px;
+      line-height:1.9;
+      font-weight:600;
+      color:#3f3f3f;
+    }
+    li{ margin:6px 0; }
+
     .buttons{
-      margin-top:30px;
+      margin-top:24px;
       display:flex;
-      gap:12px;
+      gap:14px;
       justify-content:center;
       flex-wrap:wrap;
     }
-
-    .primary-btn{
-      background:#1A53AD;
-      color:#fff;
-      border:none;
-      padding:12px 26px;
-      border-radius:26px;
-      font-size:15px;
-      font-weight:700;
+    .btn{
+      border:0;
       cursor:pointer;
+      text-decoration:none;
+      font-weight:800;
+      border-radius:16px;
+      padding:14px 22px;
+      font-size:16px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:190px;
+      transition:transform .08s ease, box-shadow .2s ease;
+    }
+    .btn:active{ transform:translateY(1px); }
+    .btn-primary{
+      background:var(--blue);
+      color:#fff;
+      box-shadow:0 10px 24px rgba(26,83,173,.25);
+    }
+    .btn-secondary{
+      background:#E9EEF8;
+      color:var(--blue);
     }
 
-    .secondary-btn{
-      background:#e0e0e0;
-      color:#333;
-      border:none;
-      padding:12px 26px;
-      border-radius:26px;
-      font-size:15px;
-      font-weight:700;
-      cursor:pointer;
+    .fine{
+      margin:18px auto 0;
+      max-width:760px;
+      color:#777;
+      font-size:14px;
+      line-height:1.6;
+      font-weight:500;
+      text-align:center;
     }
 
     footer{
       text-align:center;
-      padding:30px;
-      font-size:14px;
-      color:#777;
+      color:#8a8a8a;
+      font-size:13px;
+      margin-top:18px;
     }
 
-    @media (max-width:768px){
-      .topbar{
-        flex-direction:column;
-        gap:10px;
-      }
-      .nav a{ margin-left:12px; }
-
-      .logo-big{ width:160px; }
-
-      .feature-row{
-        flex-direction:column;
-        text-align:center;
-      }
-
-      .features{
-        text-align:left;
-        display:inline-block;
-      }
-
-      .app-icon{ width:150px; }
+    @media (max-width:520px){
+      h1{ font-size:34px; }
+      .tagline{ font-size:22px; }
+      ul{ min-width:0; width:100%; }
+      .btn{ min-width:0; width:100%; }
+      .brand-title{ font-size:16px; }
+      nav a{ font-size:15px; }
     }
   </style>
 </head>
 
 <body>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="logo.png" alt="DK" />
+        <div class="brand-title">DK Software Studio</div>
+      </div>
 
-  <div class="topbar">
-    <div class="brand">
-      <img src="dk-icon.png" alt="DK Logo">
-      DK Software Studio
+      <!-- На главной "Главная" НЕ нужна -->
+      <nav>
+        <a href="about.html">О студии</a>
+        <a href="projects.html">Проекты</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- На главной "Главная" не нужна -->
-    <div class="nav">
-      <a href="about.html">О студии</a>
-      <a href="projects.html">Проекты</a>
-    </div>
-  </div>
+  <!-- Main -->
+  <main class="wrap">
+    <section class="card">
+      <div class="center">
+        <img class="dk-logo" src="logo.png" alt="DK Software Studio" />
 
-  <div class="container">
+        <p class="tagline">Просто. Чисто. Функционально.</p>
+        <h1>JW Daily Alarm</h1>
 
-    <img src="dk-icon.png" alt="DK Logo" class="logo-big">
+        <p class="lead">
+          Минималистичное приложение-напоминание с ежедневной ссылкой.
+          Открывайте нужную страницу одним нажатием — без лишних действий и отвлечений.
+        </p>
 
-    <div class="subtitle">Просто. Чисто. Функционально.</div>
-    <h1>JW Daily Alarm</h1>
+        <div class="features">
+          <div class="app-icon">
+            <img src="jw-daily-alarm-icon.png" alt="JW Daily Alarm icon" />
+          </div>
 
-    <div class="desc">
-      Минималистичное приложение-напоминание с ежедневной ссылкой.
-      Открывайте нужную страницу одним нажатием — без лишних действий и отвлечений.
-    </div>
+          <ul>
+            <li>Ежедневное напоминание в выбранное время</li>
+            <li>Мгновенное открытие ссылки</li>
+            <li>Чистый минималистичный интерфейс</li>
+            <li>Поддержка нескольких языков</li>
+          </ul>
+        </div>
 
-    <!-- ✅ ИКОНКА ПРИЛОЖЕНИЯ СЛЕВА + СПИСОК СПРАВА -->
-    <div class="feature-row">
-      <img class="app-icon" src="jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
-      <ul class="features">
-        <li>Ежедневное напоминание в выбранное время</li>
-        <li>Мгновенное открытие ссылки</li>
-        <li>Чистый минималистичный интерфейс</li>
-        <li>Поддержка нескольких языков</li>
-      </ul>
-    </div>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#" onclick="return false;">Скоро в Google Play</a>
+          <a class="btn btn-secondary" href="projects.html">Все проекты</a>
+        </div>
 
-    <div class="buttons">
-      <button class="primary-btn">Скоро в Google Play</button>
-      <button class="secondary-btn" onclick="location.href='projects.html'">Все проекты</button>
-    </div>
+        <p class="fine">
+          Небольшая независимая студия разработки. Делаем продукты без лишнего шума — только то, что действительно работает.
+        </p>
+      </div>
+    </section>
 
-  </div>
-
-  <footer>© 2026 DK Software Studio</footer>
-
+    <footer>© 2026 DK Software Studio</footer>
+  </main>
 </body>
 </html>
