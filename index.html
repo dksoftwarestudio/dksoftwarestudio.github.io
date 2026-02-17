@@ -25,60 +25,48 @@
       color: var(--text);
     }
 
+    /* top nav (единый для всех страниц) */
     .topbar{
-      max-width: 820px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 18px 20px 0;
       display:flex;
       align-items:center;
       justify-content:space-between;
+      gap: 12px;
     }
-
     .brand{
-  display:flex;
-  align-items:center;
-  gap:12px; /* было 12 — увеличили расстояние */
-  text-decoration:none;
-  color:inherit;
-}
-   header {
-    max-width: 1100px;
-    margin: 30px auto 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+    }
     .brand img{
       width: 60px;
       height:auto;
       display:block;
     }
-
     .brand .name{
       font-weight:700;
       letter-spacing:0.2px;
+      white-space: nowrap;
     }
-
     .nav{
       display:flex;
       gap:16px;
       align-items:center;
       flex-wrap:wrap;
     }
-
     .nav a{
       color: var(--blue);
       text-decoration:none;
       font-weight:600;
       font-size:14px;
     }
+    .nav a:hover{ text-decoration:underline; }
 
-    .nav a:hover{
-      text-decoration:underline;
-    }
-
+    /* layout */
     .wrap{
       max-width: 980px;
       margin: 0 auto;
@@ -102,24 +90,25 @@
       text-align:center;
     }
 
-    .logo-big{
+    .logo-center{
       width: 220px;
       height:auto;
       display:block;
-      margin: 0 auto 16px;
+      margin: 0 auto 10px;
     }
 
     .tagline{
-      margin: 8px 0 22px;
+      margin: 8px 0 18px;
       font-size: clamp(18px, 2.2vw, 22px);
       font-weight: 800;
       color: var(--blue);
     }
 
     .product-title{
-      margin: 6px 0 10px;
+      margin: 0 0 10px;
       font-size: 38px;
       line-height: 1.1;
+      color: var(--text);
     }
 
     .product-subtitle{
@@ -130,54 +119,55 @@
       color: var(--muted);
     }
 
-    /* ===== НОВЫЙ БЛОК С ИКОНКОЙ ===== */
-
-    .features-block{
+    /* icon + bullets row */
+    .feature-row{
+      margin: 18px auto 18px;
+      max-width: 720px;
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:40px;
-      margin: 20px 0 26px;
-      flex-wrap:wrap;
+      gap: 26px;
     }
-
-    .app-icon img{
-      width:150px;
+    .app-icon{
+      width: 220px;
       height:auto;
-      border-radius:28px;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+      display:block;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+      background:#fff;
+      padding: 14px;
+      border: 1px solid var(--border);
     }
 
     .features{
       list-style:none;
       padding:0;
-      margin:0;
-      max-width: 420px;
+      margin: 0;
       text-align:left;
-      line-height:1.9;
-      font-size:16px;
-      color:#3a4b5c;
+      line-height:1.85;
+      font-size: 16px;
+      color: #3a4b5c;
+      min-width: 320px;
     }
-
     .features li{
       position:relative;
-      padding-left:28px;
+      padding-left: 28px;
       margin: 8px 0;
     }
-
     .features li::before{
       content:"•";
       position:absolute;
-      left:10px;
-      top:-1px;
+      left: 10px;
+      top: -1px;
       color: var(--blue);
-      font-size:22px;
+      font-size: 22px;
+      line-height: 1;
     }
 
     .btn-row{
-      margin-top: 10px;
+      margin-top: 18px;
       display:flex;
-      gap:12px;
+      gap: 12px;
       justify-content:center;
       flex-wrap:wrap;
     }
@@ -190,31 +180,31 @@
       font-size: 16px;
       font-weight: 700;
       transition: 0.2s ease;
+      user-select:none;
     }
 
     .btn.primary{
       background: var(--blue);
-      color:#fff;
+      color: #fff;
       box-shadow: 0 10px 25px rgba(26,83,173,0.22);
     }
-
     .btn.primary:hover{
       background: var(--blueDark);
       transform: translateY(-2px);
     }
 
     .btn.secondary{
-      background:#eef2f8;
+      background: #eef2f8;
       color: var(--blue);
+      font-weight: 700;
     }
-
     .btn.secondary:hover{
-      background:#e3eaf6;
+      background: #e3eaf6;
       transform: translateY(-2px);
     }
 
     .mini-about{
-      margin-top: 24px;
+      margin-top: 22px;
       font-size: 14px;
       color: #7a8796;
       line-height: 1.6;
@@ -227,20 +217,45 @@
       font-size: 13px;
     }
 
-    @media (max-width: 640px){
-      .card{ padding:34px 22px; }
-      .product-title{ font-size:30px; }
-      .logo-big{ width:150px; }
-      .features-block{
+    /* mobile */
+    @media (max-width: 560px){
+      .topbar{
+        justify-content:center;
+        flex-wrap:wrap;
+        text-align:center;
+      }
+      .brand{
+        width:100%;
+        justify-content:center;
+      }
+      .nav{
+        width:100%;
+        justify-content:center;
+        gap:14px;
+      }
+      .brand .name{ white-space: normal; }
+
+      .card{ padding: 34px 22px; }
+      .product-title{ font-size: 30px; }
+      .logo-center{ width: 170px; }
+
+      .feature-row{
         flex-direction:column;
-        gap:20px;
+        gap: 16px;
+      }
+      .app-icon{
+        width: 200px;
+      }
+      .features{
+        min-width: auto;
+        width: 100%;
+        max-width: 520px;
       }
     }
   </style>
 </head>
 
 <body>
-
   <div class="topbar">
     <a class="brand" href="index.html">
       <img src="logo.png" alt="DK Software Studio">
@@ -248,6 +263,7 @@
     </a>
 
     <div class="nav">
+      <a href="index.html">Главная</a>
       <a href="about.html">О студии</a>
       <a href="projects.html">Проекты</a>
     </div>
@@ -257,7 +273,7 @@
     <div class="hero">
       <div class="card">
 
-        <img class="logo-big" src="logo.png" alt="DK Software Studio">
+        <img class="logo-center" src="logo.png" alt="DK Software Studio">
 
         <div class="tagline">Просто. Чисто. Функционально.</div>
 
@@ -268,12 +284,9 @@
           Открывайте нужную страницу одним нажатием — без лишних действий и отвлечений.
         </div>
 
-        <!-- БЛОК С ИКОНКОЙ И СПИСКОМ -->
-        <div class="features-block">
-
-          <div class="app-icon">
-            <img src="jw-daily-alarm-icon.png" alt="JW Daily Alarm">
-          </div>
+        <div class="feature-row">
+          <!-- Иконка приложения -->
+          <img class="app-icon" src="jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
 
           <ul class="features">
             <li>Ежедневное напоминание в выбранное время</li>
@@ -281,11 +294,10 @@
             <li>Чистый минималистичный интерфейс</li>
             <li>Поддержка нескольких языков</li>
           </ul>
-
         </div>
 
         <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank">Скоро в Google Play</a>
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Скоро в Google Play</a>
           <a class="btn secondary" href="projects.html">Все проекты</a>
           <a class="btn secondary" href="about.html">О студии</a>
         </div>
@@ -299,6 +311,5 @@
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
-
 </body>
 </html>
