@@ -1,239 +1,154 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>О студии — DK Software Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    :root{
-      --blue:#1A53AD;
-      --blueDark:#163e82;
-      --bg:#f4f6f9;
-      --text:#2c3e50;
-      --muted:#666;
-      --card:#ffffff;
-      --border:rgba(0,0,0,0.06);
-    }
-
-    *{ box-sizing:border-box; }
-
-    body{
-      margin:0;
+    body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background-color: #f5f5f5;
+      color: #333;
     }
 
-    /* top nav (единый для всех страниц) */
-    .topbar{
+    .topbar {
       max-width: 980px;
       margin: 0 auto;
-      padding: 18px 20px 0;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+      padding: 20px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
       gap: 12px;
+      font-weight: bold;
+      font-size: 18px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:inherit;
-    }
-    .brand img{
-      width: 60px;
-      height:auto;
-      display:block;
-    }
-    .brand .name{
-      font-weight:700;
-      letter-spacing:0.2px;
-      white-space: nowrap;
-    }
-    .nav{
-      display:flex;
-      gap:16px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .nav a{
-      color: var(--blue);
-      text-decoration:none;
-      font-weight:600;
-      font-size:14px;
-    }
-    .nav a:hover{ text-decoration:underline; }
 
-    /* layout */
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 24px 20px 70px;
+    .brand img {
+      height: 28px;
     }
-    .hero{
-      margin-top: 16px;
-      display:flex;
-      justify-content:center;
+
+    .nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #1A53AD;
+      font-weight: 500;
     }
-    .card{
-      width:100%;
+
+    .container {
       max-width: 860px;
-      background: var(--card);
+      margin: 40px auto;
+      padding: 40px 30px;
+      background: white;
       border-radius: 18px;
-      box-shadow: 0 22px 55px rgba(0,0,0,0.07);
-      border: 1px solid var(--border);
-      padding: 44px 42px;
-      text-align:center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-align: center;
     }
 
-    .logo-center{
+    .container img {
       width: 350px;
-      height:auto;
-      display:block;
-      margin: 0 auto 18px;
+      margin-bottom: 30px;
     }
 
-    .title{
-      margin: 0 0 10px;
-      font-size: 38px;
-      line-height: 1.1;
+    h1 {
+      margin-top: 0;
+      font-size: 32px;
     }
 
-    .subtitle{
-      margin: 0 auto 20px;
-      max-width: 720px;
+    p {
+      line-height: 1.6;
       font-size: 16px;
-      line-height: 1.7;
-      color: var(--muted);
     }
 
-    .features{
-      list-style:none;
-      padding:0;
-      margin: 0 auto 22px;
-      max-width: 560px;
-      text-align:left;
-      line-height:1.85;
-      font-size: 16px;
-      color: #3a4b5c;
-    }
-    .features li{
-      position:relative;
-      padding-left: 28px;
-      margin: 8px 0;
-    }
-    .features li::before{
-      content:"•";
-      position:absolute;
-      left: 10px;
-      top: -1px;
-      color: var(--blue);
-      font-size: 22px;
-      line-height: 1;
+    ul {
+      text-align: left;
+      margin-top: 25px;
+      line-height: 1.8;
     }
 
-    .btn-row{
-      margin-top: 10px;
-      display:flex;
-      gap: 12px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-block;
-      padding: 13px 28px;
-      border-radius: 10px;
-      text-decoration:none;
-      font-size: 16px;
-      font-weight: 700;
-      transition: 0.2s ease;
-      user-select:none;
-    }
-    .btn.primary{
-      background: var(--blue);
-      color: #fff;
-      box-shadow: 0 10px 25px rgba(26,83,173,0.22);
-    }
-    .btn.primary:hover{
-      background: var(--blueDark);
-      transform: translateY(-2px);
+    button {
+      margin-top: 30px;
+      padding: 12px 26px;
+      border: none;
+      border-radius: 26px;
+      background: #1A53AD;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
     }
 
-    footer{
-      margin-top: 26px;
-      text-align:center;
-      color:#9aa6b2;
-      font-size: 13px;
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #777;
     }
 
-    @media (max-width: 560px){
-      .topbar{
-        justify-content:center;
-        flex-wrap:wrap;
-        text-align:center;
+    @media (max-width: 768px) {
+      .topbar {
+        flex-direction: column;
+        gap: 10px;
       }
-      .brand{
-        width:100%;
-        justify-content:center;
-      }
-      .nav{
-        width:100%;
-        justify-content:center;
-        gap:14px;
-      }
-      .brand .name{ white-space: normal; }
 
-      .card{ padding: 34px 22px; }
-      .title{ font-size: 30px; }
-      .logo-center{ width: 220px; }
+      .nav a {
+        margin-left: 12px;
+      }
+
+      .container img {
+        width: 240px;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <div class="topbar">
-    <a class="brand" href="index.html">
-      <img src="dk-icon.png" alt="DK icon" style="width:350px; margin-bottom:20px;">
-      <div class="name">DK Software Studio</div>
-    </a>
+    <div class="brand">
+      <img src="dk-icon.png" alt="DK Logo">
+      DK Software Studio
+    </div>
 
     <div class="nav">
       <a href="index.html">Главная</a>
-      <a href="about.html">О студии</a>
       <a href="projects.html">Проекты</a>
     </div>
   </div>
 
-  <div class="wrap">
-    <div class="hero">
-      <div class="card">
+  <div class="container">
 
-        <img class="logo-center" src="dk-app-icon.png" alt="DK icon">
+    <!-- ИКОНКА ВНУТРИ КАРТОЧКИ -->
+    <img src="dk-icon.png" alt="DK icon">
 
-        <div class="title">О студии</div>
+    <h1>О студии</h1>
 
-        <div class="subtitle">
-          DK Software Studio — небольшая независимая студия разработки.
-          Мы создаём простые, аккуратные и продуманные цифровые продукты.
-        </div>
+    <p>
+      DK Software Studio — небольшая независимая студия разработки.
+      Мы создаём простые, аккуратные и продуманные цифровые продукты.
+    </p>
 
-        <ul class="features">
-          <li>Минимализм — только нужные функции</li>
-          <li>Чистый интерфейс без лишнего шума</li>
-          <li>Надёжность и предсказуемость работы</li>
-          <li>Фокус на практичности — чтобы работало каждый день</li>
-        </ul>
+    <ul>
+      <li>Минимализм — только нужные функции</li>
+      <li>Чистый интерфейс без лишнего шума</li>
+      <li>Надёжность и предсказуемость работы</li>
+      <li>Фокус на практичности — чтобы работало каждый день</li>
+    </ul>
 
-        <div class="btn-row">
-          <a class="btn primary" href="index.html">← На главную</a>
-        </div>
+    <button onclick="location.href='index.html'">
+      ← На главную
+    </button>
 
-      </div>
-    </div>
-
-    <footer>© 2026 DK Software Studio</footer>
   </div>
+
+  <footer>
+    © 2026 DK Software Studio
+  </footer>
+
 </body>
 </html>
