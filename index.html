@@ -1,99 +1,124 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>DK Software Studio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DK Software Studio</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #2c3e50;
-            text-align: center;
-        }
-
-        .container {
-    padding: 30px 20px 60px;
-    max-width: 900px;
-    margin: auto;
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #2c3e50;
+  text-align: center;
 }
 
-        img.logo {
-            width: 400px; /* ЛОГОТИП БОЛЬШЕ */
-            margin-bottom: 25px;
-        }
+header {
+  padding: 20px 0;
+}
 
-        .tagline {
-  font-size: 26px;
+nav {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1A53AD;
+  font-weight: 600;
+}
+
+.container {
+  padding: 60px 20px 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 180px;
+  margin-bottom: 25px;
+}
+
+.slogan {
+  font-size: 24px;
   font-weight: 600;
   color: #1A53AD;
-  margin: 18px 0 55px 0;
+  margin-bottom: 60px;
 }
 
-        h2 {
-  font-size: 26px;
-  margin-top: 35px;
+.project-card {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
 }
 
-        p {
-            max-width: 700px;
-            margin: 0 auto 20px auto;
-            line-height: 1.6;
-        }
+.project-card h2 {
+  margin-top: 0;
+  font-size: 30px;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background-color: #1A53AD;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-top: 25px;
-            transition: 0.2s;
-        }
+.project-card p {
+  max-width: 600px;
+  margin: 20px auto;
+  line-height: 1.6;
+}
 
-        .btn:hover {
-            background-color: #163e82;
-        }
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 28px;
+  background-color: #1A53AD;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: 0.2s ease;
+}
 
-        footer {
-            margin-top: 80px;
-            font-size: 14px;
-            color: #888;
-        }
-    </style>
+.btn:hover {
+  background-color: #163e82;
+  transform: translateY(-2px);
+}
+
+footer {
+  margin-top: 80px;
+  font-size: 14px;
+  color: #888;
+}
+</style>
 </head>
 
 <body>
 
+<nav>
+  <a href="jw-daily-alarm.html">Проект</a>
+  <a href="about.html">О студии</a>
+</nav>
+
 <div class="container">
 
-    <img src="logo.png" alt="DK Logo" class="logo">
+  <img src="logo.png" class="logo" alt="DK Software Studio">
 
-    <div class="tagline">
-        Просто. Чисто. Функционально.
-    </div>
+  <div class="slogan">
+    Просто. Чисто. Функционально.
+  </div>
 
-    <h2>О студии</h2>
-
+  <div class="project-card">
+    <h2>JW Daily Alarm</h2>
     <p>
-        DK Software Studio — независимая студия разработки,
-        создающая простые, аккуратные и продуманные решения
-        для мобильных устройств.
+      Минималистичное приложение-напоминание с ежедневной ссылкой.
+      Чистый интерфейс, точное напоминание и быстрый доступ к чтению.
     </p>
+    <a class="btn" href="jw-daily-alarm.html">Подробнее о проекте</a>
+  </div>
 
-    <p>
-        Мы делаем продукты без лишнего шума —
-        только то, что действительно работает.
-    </p>
-
-    <a href="projects.html" class="btn">Наши проекты</a>
-
-    <footer>
-        © 2026 DK Software Studio
-    </footer>
+  <footer>
+    © 2026 DK Software Studio
+  </footer>
 
 </div>
 
