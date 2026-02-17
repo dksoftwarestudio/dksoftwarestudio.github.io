@@ -25,16 +25,16 @@
       color: var(--text);
     }
 
-    /* top nav */
+    /* top nav (единый для всех страниц) */
     .topbar{
-      max-width: 860px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 18px 20px 0;
       display:flex;
       align-items:center;
       justify-content:space-between;
+      gap: 12px;
     }
-
     .brand{
       display:flex;
       align-items:center;
@@ -42,34 +42,29 @@
       text-decoration:none;
       color:inherit;
     }
-
     .brand img{
-      width:60px;
+      width: 60px;
       height:auto;
       display:block;
     }
-
     .brand .name{
       font-weight:700;
       letter-spacing:0.2px;
+      white-space: nowrap;
     }
-
     .nav{
       display:flex;
       gap:16px;
       align-items:center;
+      flex-wrap:wrap;
     }
-
     .nav a{
       color: var(--blue);
       text-decoration:none;
       font-weight:600;
       font-size:14px;
     }
-
-    .nav a:hover{
-      text-decoration:underline;
-    }
+    .nav a:hover{ text-decoration:underline; }
 
     /* layout */
     .wrap{
@@ -77,13 +72,11 @@
       margin: 0 auto;
       padding: 24px 20px 70px;
     }
-
     .hero{
       margin-top: 16px;
       display:flex;
       justify-content:center;
     }
-
     .card{
       width:100%;
       max-width: 860px;
@@ -91,55 +84,58 @@
       border-radius: 18px;
       box-shadow: 0 22px 55px rgba(0,0,0,0.07);
       border: 1px solid var(--border);
-      padding: 48px 42px;
+      padding: 44px 42px;
       text-align:center;
     }
 
-    h1{
-      margin: 0 0 16px;
-      font-size: 40px;
+    .title{
+      margin: 0 0 10px;
+      font-size: 38px;
+      line-height: 1.1;
+      color: var(--text);
     }
-
-    .product-subtitle{
-      margin: 0 auto 28px;
-      max-width: 680px;
+    .subtitle{
+      margin: 0 auto 18px;
+      max-width: 720px;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.7;
       color: var(--muted);
     }
 
-    .product-layout{
+    .feature-row{
+      margin: 18px auto 18px;
+      max-width: 720px;
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:40px;
-      margin: 30px 0;
-      flex-wrap:wrap;
+      gap: 26px;
     }
-
-    .app-icon-block img{
-      width:170px;
-      border-radius:22px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    .app-icon{
+      width: 240px;
+      height:auto;
+      display:block;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+      background:#fff;
+      padding: 14px;
+      border: 1px solid var(--border);
     }
 
     .features{
       list-style:none;
       padding:0;
-      margin:0;
+      margin: 0;
       text-align:left;
       line-height:1.85;
       font-size: 16px;
       color: #3a4b5c;
-      max-width:420px;
+      min-width: 320px;
     }
-
     .features li{
       position:relative;
       padding-left: 28px;
       margin: 8px 0;
     }
-
     .features li::before{
       content:"•";
       position:absolute;
@@ -151,13 +147,12 @@
     }
 
     .btn-row{
-      margin-top: 20px;
+      margin-top: 18px;
       display:flex;
       gap: 12px;
       justify-content:center;
       flex-wrap:wrap;
     }
-
     .btn{
       display:inline-block;
       padding: 13px 28px;
@@ -166,53 +161,70 @@
       font-size: 16px;
       font-weight: 700;
       transition: 0.2s ease;
+      user-select:none;
     }
-
     .btn.primary{
       background: var(--blue);
       color: #fff;
       box-shadow: 0 10px 25px rgba(26,83,173,0.22);
     }
-
     .btn.primary:hover{
       background: var(--blueDark);
       transform: translateY(-2px);
     }
-
     .btn.secondary{
       background: #eef2f8;
       color: var(--blue);
     }
-
     .btn.secondary:hover{
       background: #e3eaf6;
       transform: translateY(-2px);
     }
 
     footer{
-      margin-top: 30px;
+      margin-top: 26px;
       text-align:center;
       color:#9aa6b2;
       font-size: 13px;
     }
 
-    @media (max-width: 640px){
-      .card{ padding: 36px 22px; }
-      h1{ font-size: 30px; }
-      .product-layout{
-        flex-direction:column;
-        gap:24px;
+    @media (max-width: 560px){
+      .topbar{
+        justify-content:center;
+        flex-wrap:wrap;
+        text-align:center;
       }
-      .app-icon-block img{
-        width:150px;
+      .brand{
+        width:100%;
+        justify-content:center;
+      }
+      .nav{
+        width:100%;
+        justify-content:center;
+        gap:14px;
+      }
+      .brand .name{ white-space: normal; }
+
+      .card{ padding: 34px 22px; }
+      .title{ font-size: 30px; }
+
+      .feature-row{
+        flex-direction:column;
+        gap: 16px;
+      }
+      .app-icon{
+        width: 220px;
+      }
+      .features{
+        min-width: auto;
+        width: 100%;
+        max-width: 520px;
       }
     }
-
   </style>
 </head>
 
 <body>
-
   <div class="topbar">
     <a class="brand" href="index.html">
       <img src="logo.png" alt="DK Software Studio">
@@ -220,6 +232,7 @@
     </a>
 
     <div class="nav">
+      <a href="index.html">Главная</a>
       <a href="about.html">О студии</a>
       <a href="projects.html">Проекты</a>
     </div>
@@ -229,18 +242,15 @@
     <div class="hero">
       <div class="card">
 
-        <h1>JW Daily Alarm</h1>
+        <div class="title">JW Daily Alarm</div>
 
-        <div class="product-subtitle">
+        <div class="subtitle">
           Минималистичное приложение-напоминание с ежедневной ссылкой.
           Один раз настроил — и дальше оно просто делает свою работу.
         </div>
 
-        <div class="product-layout">
-
-          <div class="app-icon-block">
-            <img src="jw-daily-alarm-icon.png" alt="JW Daily Alarm">
-          </div>
+        <div class="feature-row">
+          <img class="app-icon" src="jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
 
           <ul class="features">
             <li>Ежедневное уведомление в выбранное время</li>
@@ -248,11 +258,10 @@
             <li>Поддержка нескольких языков</li>
             <li>Чистый интерфейс без перегруза</li>
           </ul>
-
         </div>
 
         <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank">Скоро в Google Play</a>
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Скоро в Google Play</a>
           <a class="btn secondary" href="projects.html">← К проектам</a>
         </div>
 
@@ -261,6 +270,5 @@
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
-
 </body>
 </html>
