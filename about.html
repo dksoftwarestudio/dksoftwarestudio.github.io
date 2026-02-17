@@ -25,16 +25,16 @@
       color: var(--text);
     }
 
-    /* top nav */
+    /* top nav (единый для всех страниц) */
     .topbar{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 18px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 20px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+    }
     .brand{
       display:flex;
       align-items:center;
@@ -42,180 +42,67 @@
       text-decoration:none;
       color:inherit;
     }
-
     .brand img{
-      width:60px;
+      width: 60px;
       height:auto;
       display:block;
     }
-
     .brand .name{
       font-weight:700;
       letter-spacing:0.2px;
+      white-space: nowrap;
     }
-
     .nav{
       display:flex;
       gap:16px;
       align-items:center;
+      flex-wrap:wrap;
     }
-
     .nav a{
       color: var(--blue);
       text-decoration:none;
       font-weight:600;
       font-size:14px;
     }
-
-    .nav a:hover{
-      text-decoration:underline;
-    }
+    .nav a:hover{ text-decoration:underline; }
 
     /* layout */
     .wrap{
-      max-width:980px;
-      margin:0 auto;
-      padding:24px 20px 70px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 20px 70px;
     }
-
     .hero{
-      margin-top:16px;
+      margin-top: 16px;
       display:flex;
       justify-content:center;
     }
-
     .card{
       width:100%;
-      max-width:860px;
-      background:var(--card);
-      border-radius:18px;
-      box-shadow:0 22px 55px rgba(0,0,0,0.07);
-      border:1px solid var(--border);
-      padding:44px 42px;
+      max-width: 860px;
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: 0 22px 55px rgba(0,0,0,0.07);
+      border: 1px solid var(--border);
+      padding: 44px 42px;
       text-align:center;
     }
 
-    /* Логотип студии на странице */
-    .about-icon{
-  width:350px;      /* увеличили */
-  height:auto;
-  display:block;
-  margin:0 auto 26px; /* чуть больше воздуха снизу */
-}
+    .logo-center{
+      width: 350px;
+      height:auto;
+      display:block;
+      margin: 0 auto 18px;
+    }
 
-    h1{
-      margin:0 0 16px;
-      font-size:34px;
+    .title{
+      margin: 0 0 10px;
+      font-size: 38px;
+      line-height: 1.1;
     }
 
     .subtitle{
-      max-width:640px;
-      margin:0 auto 26px;
-      font-size:16px;
-      line-height:1.6;
-      color:var(--muted);
-    }
-
-    .features{
-      list-style:none;
-      padding:0;
-      margin:0 auto 30px;
-      max-width:600px;
-      text-align:left;
-      line-height:1.8;
-      font-size:16px;
-      color:#3a4b5c;
-    }
-
-    .features li{
-      position:relative;
-      padding-left:26px;
-      margin:10px 0;
-    }
-
-    .features li::before{
-      content:"•";
-      position:absolute;
-      left:8px;
-      top:-1px;
-      color:var(--blue);
-      font-size:20px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:12px 26px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:700;
-      background:var(--blue);
-      color:#fff;
-      transition:0.2s ease;
-    }
-
-    .btn:hover{
-      background:var(--blueDark);
-      transform:translateY(-2px);
-    }
-
-    footer{
-      margin-top:26px;
-      text-align:center;
-      color:#9aa6b2;
-      font-size:13px;
-    }
-
-    @media (max-width:640px){
-      .card{ padding:32px 22px; }
-      h1{ font-size:28px; }
-      .about-icon{ width:130px; }
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <div class="topbar">
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="DK Software Studio">
-      <div class="name">DK Software Studio</div>
-    </a>
-
-    <div class="nav">
-      <a href="index.html">Главная</a>
-      <a href="projects.html">Проекты</a>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div class="hero">
-      <div class="card">
-
-        <!-- Иконка студии -->
-        <img class="about-icon" src="dk-icon.png" alt="DK Software Studio">
-
-        <h1>О студии</h1>
-
-        <div class="subtitle">
-          DK Software Studio — небольшая независимая студия разработки.
-          Мы создаём простые, аккуратные и продуманные цифровые продукты.
-        </div>
-
-        <ul class="features">
-          <li>Минимализм — только нужные функции</li>
-          <li>Чистый интерфейс без лишнего шума</li>
-          <li>Надёжность и предсказуемость работы</li>
-          <li>Фокус на практичности — чтобы работало каждый день</li>
-        </ul>
-
-        <a class="btn" href="index.html">← На главную</a>
-
-      </div>
-    </div>
-
-    <footer>© 2026 DK Software Studio</footer>
-  </div>
-
-</body>
-</html>
+      margin: 0 auto 20px;
+      max-width: 720px;
+      font-size: 16px;
+      line-height: 1.7;
