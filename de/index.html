@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DK Software Studio</title>
+
+  <style>
+    .cookie-banner{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);width:90%;max-width:640px;background:#ffffff;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,0.15);border:1px solid rgba(0,0,0,0.06);padding:20px;display:none;z-index:9999;}
+    .cookie-content{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+    .cookie-content span{font-size:14px;color:#555;}
+    .cookie-buttons{display:flex;gap:10px;}
+
+    :root{--blue:#1A53AD;--blueDark:#163e82;--bg:#f4f6f9;--text:#2c3e50;--muted:#666;--card:#ffffff;--border:rgba(0,0,0,0.06);}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:Arial, sans-serif;background:var(--bg);color:var(--text);}
+
+    .topbar{max-width:980px;margin:0 auto;padding:18px 20px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;}
+    .brand img{width:40px;height:auto;display:block;}
+    .brand .name{font-weight:600;font-size:16px;letter-spacing:0.2px;white-space:nowrap;color:var(--text);}
+
+    .nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+    .nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px;}
+    .nav a:hover{color:var(--blue);text-decoration:none;}
+
+    .lang{display:flex;align-items:center;gap:10px;margin-left:10px;font-size:13px;white-space:nowrap;}
+    .lang a{color:var(--muted);text-decoration:none;font-weight:700;padding:6px 10px;border-radius:10px;}
+    .lang a:hover{color:var(--blue);}
+    .lang .active{color:var(--text);background:#eef2f8;border:1px solid var(--border);}
+
+    .wrap{max-width:980px;margin:0 auto;padding:28px 20px 70px;}
+    .hero{margin-top:18px;display:flex;justify-content:center;}
+    .card{width:100%;max-width:860px;background:var(--card);border-radius:18px;box-shadow:0 22px 55px rgba(0,0,0,0.07);border:1px solid var(--border);padding:48px 42px;text-align:center;}
+
+    .dk-logo{width:300px;margin:0 auto 28px;display:block;}
+    .tagline{font-size:18px;font-weight:600;color:var(--blue);margin-bottom:18px;}
+    .title{font-size:38px;font-weight:500;margin:0 0 14px;}
+    .subtitle{margin:0 auto 26px;max-width:720px;font-size:16px;line-height:1.7;color:var(--muted);}
+
+    .feature-row{margin:22px auto;max-width:720px;display:flex;align-items:center;justify-content:center;gap:30px;}
+    .app-icon{width:130px;border-radius:22px;box-shadow:0 14px 35px rgba(0,0,0,0.10);background:#fff;padding:12px;border:1px solid var(--border);}
+
+    .features{list-style:none;padding:0;margin:0;text-align:left;font-size:16px;line-height:1.9;color:#3a4b5c;min-width:280px;}
+    .features li{position:relative;padding-left:26px;margin:8px 0;}
+    .features li::before{content:"•";position:absolute;left:8px;color:var(--blue);font-size:20px;}
+
+    .btn-row{margin-top:26px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .btn{padding:12px 26px;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600;transition:0.2s ease;border:0;cursor:pointer;}
+    .btn.primary{background:var(--blue);color:#fff;box-shadow:0 10px 25px rgba(26,83,173,0.22);}
+    .btn.primary:hover{background:var(--blueDark);transform:translateY(-2px);}
+    .btn.secondary{background:#eef2f8;color:var(--text);}
+    .btn.secondary:hover{background:#e3eaf6;}
+
+    footer{margin-top:30px;text-align:center;color:#9aa6b2;font-size:13px;}
+
+    @media (max-width:560px){
+      .topbar{flex-direction:column;gap:12px;text-align:center;}
+      .nav{justify-content:center;}
+      .card{padding:34px 22px;}
+      .title{font-size:30px;}
+      .feature-row{flex-direction:column;gap:18px;}
+      .cookie-banner{bottom:14px;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <a class="brand" href="../index.html">
+      <img src="../dk-icon.png" alt="DK">
+      <div class="name">DK Software Studio</div>
+    </a>
+
+    <div class="nav">
+      <a href="about.html">Über</a>
+      <a href="projects.html">Projekte</a>
+      <a href="contact.html">Kontakt</a>
+
+      <div class="lang" aria-label="Sprachauswahl">
+        <a href="../index.html">RU</a>
+        <a href="../en/index.html">EN</a>
+        <span class="active">DE</span>
+        <a href="../uk/index.html">UK</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <div class="card">
+
+        <img class="dk-logo" src="../logo.png" alt="DK Software Studio">
+
+        <div class="tagline">Einfach. Klar. Funktional.</div>
+
+        <div class="title">JW Daily Alarm</div>
+
+        <div class="subtitle">
+          Eine minimalistische Erinnerungs-App mit einem täglichen Link.
+          Öffne die richtige Seite mit einem Tippen — ohne unnötige Schritte und Ablenkungen.
+        </div>
+
+        <div class="feature-row">
+          <img class="app-icon" src="../jw-daily-alarm-icon.png" alt="JW Daily Alarm Icon">
+
+          <ul class="features">
+            <li>Tägliche Erinnerung zur gewünschten Zeit</li>
+            <li>Link sofort öffnen</li>
+            <li>Saubere, minimalistische Oberfläche</li>
+            <li>Mehrsprachige Unterstützung</li>
+          </ul>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Demnächst bei Google Play</a>
+          <a class="btn secondary" href="projects.html">Alle Projekte</a>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>© 2026 DK Software Studio</footer>
+  </div>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <span>Wir verwenden anonyme Analysen, um die Website zu verbessern.</span>
+      <div class="cookie-buttons">
+        <button onclick="acceptCookies()" class="btn primary">Akzeptieren</button>
+        <button onclick="declineCookies()" class="btn secondary">Ablehnen</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function loadAnalytics() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', 'G-T3DB7K2NSS');
+    }
+
+    function acceptCookies() {
+      localStorage.setItem("analytics_consent", "accepted");
+      loadAnalytics();
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    function declineCookies() {
+      localStorage.setItem("analytics_consent", "declined");
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    window.onload = function() {
+      var consent = localStorage.getItem("analytics_consent");
+      if (consent === "accepted") loadAnalytics();
+      else if (!consent) document.getElementById("cookie-banner").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
