@@ -6,6 +6,39 @@
   <title>DK Software Studio</title>
 
   <style>
+    .cookie-banner{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  max-width:640px;
+  background:#ffffff;
+  border-radius:16px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+  border:1px solid rgba(0,0,0,0.06);
+  padding:20px;
+  display:none;
+  z-index:9999;
+}
+
+.cookie-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.cookie-content span{
+  font-size:14px;
+  color:#555;
+}
+
+.cookie-buttons{
+  display:flex;
+  gap:10px;
+}
     :root{
       --blue:#1A53AD;
       --blueDark:#163e82;
