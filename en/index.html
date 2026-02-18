@@ -76,39 +76,35 @@
 
     /* ===== LANG SWITCH (исправлено: как RU) ===== */
     .lang{
-      display:flex;
-      gap:10px;
-      font-size:13px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
+  display:flex;
+  gap:10px;
+  font-size:13px;
+  justify-content:center;
+  align-items:center;
+}
 
-    .lang a{
-      color: var(--muted);
-      text-decoration:none;
-      font-weight:700;
-      padding:6px 10px;
-      border-radius:10px;
-      border:1px solid transparent;
-      background: transparent;
-      transition: 0.15s ease;
-      line-height: 1;
-    }
+.lang a{
+  color: var(--muted);
+  text-decoration:none;
+  font-weight:700;
+  padding:6px 10px;
+  border-radius:10px;
+  border:1px solid transparent;
+  background: transparent;
+  transition: 0.15s ease;
+}
 
-    /* вот чего не хватало: hover-эффект как в RU */
-    .lang a:hover{
-      color: var(--blue);
-      background:#fff;
-      border:1px solid var(--border);
-    }
+.lang a:hover{
+  color: var(--blue);
+  background:#ffffff;
+  border:1px solid var(--border);
+}
 
-    /* активная “плашка” как в RU: белая рамка */
-    .lang a.active{
-      color: var(--text);
-      background:#fff;
-      border:1px solid var(--border);
-    }
-
+.lang a.active{
+  color: var(--blue);
+  background:#ffffff;
+  border:1px solid var(--border);
+}
     /* ===== LAYOUT ===== */
     .wrap{
       max-width: 980px;
