@@ -25,59 +25,62 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR ===== */
-   .topbar{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 18px 20px 0;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-    }
+   /* ===== TOPBAR (финальная версия как EN) ===== */
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:inherit;
-      min-width: 220px;
-    }
+.topbar{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 20px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-    .brand img{
-      width: 40px;
-      height:auto;
-      display:block;
-    }
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:inherit;
+}
 
-    .brand .name{
-      font-weight:600;
-      font-size:16px;
-      letter-spacing:0.2px;
-      white-space: nowrap;
-    }
+.brand img{
+  width:40px;
+  height:auto;
+  display:block;
+}
 
-    .nav{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
+.brand .name{
+  font-weight:600;
+  font-size:16px;
+  letter-spacing:0.2px;
+  white-space: nowrap;
+  color: var(--text);
+}
 
-    .nav a{
-      color: var(--text);
-      text-decoration:none;
-      font-weight:600;
-      font-size:14px;
-      transition: color 0.2s ease;
-      white-space: nowrap;
-    }
+.right{
+  display:flex;
+  align-items:center;
+  gap:32px;
+}
 
-    .nav a:hover{
-      color: var(--blue);
-    }
+.nav{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.nav a{
+  color: var(--text);
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover{
+  color: var(--blue);
+}
 
     .lang{
       display:flex;
