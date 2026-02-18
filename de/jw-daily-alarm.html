@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JW Daily Alarm — DK Software Studio</title>
+
+  <style>
+    .cookie-banner{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:90%;
+      max-width:640px;
+      background:#ffffff;
+      border-radius:16px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,0,0,0.06);
+      padding:20px;
+      display:none;
+      z-index:9999;
+    }
+
+    .cookie-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .cookie-content span{
+      font-size:14px;
+      color:#555;
+    }
+
+    .cookie-buttons{
+      display:flex;
+      gap:10px;
+    }
+
+    :root{
+      --blue:#1A53AD;
+      --blueDark:#163e82;
+      --bg:#f4f6f9;
+      --text:#2c3e50;
+      --muted:#666;
+      --card:#ffffff;
+      --border:rgba(0,0,0,0.06);
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* top nav (единый для всех страниц) */
+    .topbar{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 20px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+    }
+    .brand img{
+      width: 40px;
+      height:auto;
+      display:block;
+    }
+    .brand .name{
+      font-weight:600;
+      letter-spacing:0.2px;
+      white-space: nowrap;
+      color: var(--text);
+    }
+    .nav{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .nav a{
+      color: var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      transition: color 0.2s ease;
+    }
+    .nav a:hover{
+      color: var(--blue);
+      text-decoration:none;
+    }
+
+    /* layout */
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 20px 70px;
+    }
+    .hero{
+      margin-top: 16px;
+      display:flex;
+      justify-content:center;
+    }
+    .card{
+      width:100%;
+      max-width: 860px;
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: 0 22px 55px rgba(0,0,0,0.07);
+      border: 1px solid var(--border);
+      padding: 44px 42px;
+      text-align:center;
+    }
+
+    .title{
+      margin: 0 0 10px;
+      font-size: 38px;
+      line-height: 1.1;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .subtitle{
+      margin: 0 auto 18px;
+      max-width: 720px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .feature-row{
+      margin: 18px auto 18px;
+      max-width: 720px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 26px;
+    }
+    .app-icon{
+      width: 130px;
+      height:auto;
+      display:block;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+      background:#fff;
+      padding: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .features{
+      list-style:none;
+      padding:0;
+      margin: 0;
+      text-align:left;
+      line-height:1.85;
+      font-size: 16px;
+      color: #3a4b5c;
+      min-width: 320px;
+    }
+    .features li{
+      position:relative;
+      padding-left: 28px;
+      margin: 8px 0;
+    }
+    .features li::before{
+      content:"•";
+      position:absolute;
+      left: 10px;
+      top: -1px;
+      color: var(--blue);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .btn-row{
+      margin-top: 18px;
+      display:flex;
+      gap: 12px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-block;
+      padding: 13px 28px;
+      border-radius: 10px;
+      text-decoration:none;
+      font-size: 16px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      user-select:none;
+      border:0;
+      cursor:pointer;
+    }
+    .btn.primary{
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(26,83,173,0.22);
+    }
+    .btn.primary:hover{
+      background: var(--blueDark);
+      transform: translateY(-2px);
+    }
+    .btn.secondary{
+      background: #eef2f8;
+      color: var(--blue);
+    }
+    .btn.secondary:hover{
+      background: #e3eaf6;
+      transform: translateY(-2px);
+    }
+
+    footer{
+      margin-top: 26px;
+      text-align:center;
+      color:#9aa6b2;
+      font-size: 13px;
+    }
+
+    @media (max-width: 560px){
+      .topbar{
+        justify-content:center;
+        flex-wrap:wrap;
+        text-align:center;
+      }
+      .brand{
+        width:100%;
+        justify-content:center;
+      }
+      .nav{
+        width:100%;
+        justify-content:center;
+        gap:14px;
+      }
+      .brand .name{ white-space: normal; }
+
+      .card{ padding: 34px 22px; }
+      .title{ font-size: 30px; }
+
+      .feature-row{
+        flex-direction:column;
+        gap: 16px;
+      }
+      .app-icon{
+        width: 220px;
+      }
+      .features{
+        min-width: auto;
+        width: 100%;
+        max-width: 520px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a class="brand" href="../index.html">
+      <img src="../dk-icon.png" alt="DK">
+      <div class="name">DK Software Studio</div>
+    </a>
+
+    <div class="nav">
+      <a href="index.html">Start</a>
+      <a href="about.html">Über uns</a>
+      <a href="projects.html">Projekte</a>
+      <a href="contact.html">Kontakt</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <div class="card">
+
+        <div class="title">JW Daily Alarm</div>
+
+        <div class="subtitle">
+          Eine minimalistische Erinnerungs-App mit einem täglichen Link.
+          Einmal einstellen — und danach erledigt sie einfach ihren Job.
+        </div>
+
+        <div class="feature-row">
+          <img class="app-icon" src="../jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
+
+          <ul class="features">
+            <li>Tägliche Benachrichtigung zur gewählten Zeit</li>
+            <li>Schaltflächen „Lesen“ und „Später“</li>
+            <li>Unterstützung mehrerer Sprachen</li>
+            <li>Saubere Oberfläche ohne Überladung</li>
+          </ul>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Demnächst bei Google Play</a>
+          <a class="btn secondary" href="projects.html">← Zurück zu Projekten</a>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>© 2026 DK Software Studio</footer>
+  </div>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <span>Wir verwenden anonyme Analysen, um die Website zu verbessern.</span>
+      <div class="cookie-buttons">
+        <button type="button" onclick="acceptCookies()" class="btn primary">Akzeptieren</button>
+        <button type="button" onclick="declineCookies()" class="btn secondary">Ablehnen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../analytics.js"></script>
+</body>
+</html>
