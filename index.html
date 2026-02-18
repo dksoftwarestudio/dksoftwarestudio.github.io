@@ -26,7 +26,6 @@
     }
 
     /* ===== TOPBAR ===== */
-
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -35,7 +34,6 @@
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      flex-wrap:wrap;
     }
 
     .brand{
@@ -47,7 +45,7 @@
     }
 
     .brand img{
-      width: 40px;
+      width:40px;
       height:auto;
       display:block;
     }
@@ -57,6 +55,15 @@
       font-size:16px;
       letter-spacing:0.2px;
       white-space: nowrap;
+      color: var(--text);
+    }
+
+    .right{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
     .nav{
@@ -78,34 +85,40 @@
       color: var(--blue);
     }
 
-    /* ===== LANGUAGE SWITCH ===== */
-
     .lang{
       display:flex;
-      gap:8px;
+      gap:10px;
       align-items:center;
-      flex-wrap:wrap;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:0.2px;
+      opacity:0.9;
+      user-select:none;
+      white-space:nowrap;
     }
 
     .lang a{
-      font-size:12px;
-      font-weight:700;
+      color: var(--text);
       text-decoration:none;
-      color: var(--muted);
       padding:6px 8px;
       border-radius:8px;
-      border:1px solid var(--border);
-      background:#fff;
-      transition:0.2s ease;
+      border:1px solid transparent;
+      transition: 0.2s ease;
     }
 
     .lang a:hover{
       color: var(--blue);
-      border-color: rgba(26,83,173,0.25);
+      border-color: rgba(26,83,173,0.18);
+      background:#fff;
+    }
+
+    .lang .active{
+      color: var(--blue);
+      border-color: rgba(26,83,173,0.22);
+      background:#fff;
     }
 
     /* ===== LAYOUT ===== */
-
     .wrap{
       max-width: 980px;
       margin: 0 auto;
@@ -156,6 +169,94 @@
       color: var(--muted);
     }
 
+    .feature-row{
+      margin: 22px auto 10px;
+      max-width: 720px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 30px;
+    }
+
+    .app-icon{
+      width: 130px;
+      border-radius: 22px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.10);
+      background:#fff;
+      padding: 12px;
+      border: 1px solid var(--border);
+      flex: 0 0 auto;
+    }
+
+    .features{
+      list-style:none;
+      padding:0;
+      margin:0;
+      text-align:left;
+      font-size:16px;
+      line-height:1.9;
+      color:#3a4b5c;
+      min-width:280px;
+    }
+
+    .features li{
+      position:relative;
+      padding-left:26px;
+      margin:8px 0;
+    }
+
+    .features li::before{
+      content:"•";
+      position:absolute;
+      left:8px;
+      color: var(--blue);
+      font-size:20px;
+      line-height:1;
+      top:2px;
+    }
+
+    .btn-row{
+      margin-top:26px;
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-block;
+      padding: 12px 26px;
+      border-radius: 10px;
+      text-decoration:none;
+      font-size:15px;
+      font-weight:700;
+      transition: 0.2s ease;
+      user-select:none;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn.primary{
+      background: var(--blue);
+      color:#fff;
+      box-shadow: 0 10px 25px rgba(26,83,173,0.22);
+    }
+
+    .btn.primary:hover{
+      background: var(--blueDark);
+      transform: translateY(-2px);
+    }
+
+    .btn.secondary{
+      background:#eef2f8;
+      color: var(--text);
+    }
+
+    .btn.secondary:hover{
+      background:#e3eaf6;
+      transform: translateY(-2px);
+    }
+
     footer{
       margin-top:30px;
       text-align:center;
@@ -163,21 +264,56 @@
       font-size:13px;
     }
 
+    /* ===== COOKIE BANNER ===== */
+    .cookie-banner{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:90%;
+      max-width:640px;
+      background:#ffffff;
+      border-radius:16px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,0,0,0.06);
+      padding:20px;
+      display:none;
+      z-index:9999;
+    }
+
+    .cookie-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .cookie-content span{
+      font-size:14px;
+      color:#555;
+      line-height:1.45;
+    }
+
+    .cookie-buttons{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
     /* ===== MOBILE ===== */
-
     @media (max-width: 560px){
-
       .topbar{
         flex-direction:column;
         gap:12px;
         text-align:center;
       }
 
-      .nav{
+      .right{
         justify-content:center;
       }
 
-      .lang{
+      .nav{
         justify-content:center;
       }
 
@@ -189,8 +325,13 @@
         font-size:30px;
       }
 
-      .dk-logo{
-        width:220px;
+      .feature-row{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .app-icon{
+        width:130px;
       }
     }
   </style>
@@ -204,16 +345,19 @@
       <div class="name">DK Software Studio</div>
     </a>
 
-    <div class="nav">
-      <a href="about.html">О студии</a>
-      <a href="projects.html">Проекты</a>
-      <a href="contact.html">Контакт</a>
-    </div>
+    <div class="right">
+      <div class="nav">
+        <a href="about.html">О студии</a>
+        <a href="projects.html">Проекты</a>
+        <a href="contact.html">Контакт</a>
+      </div>
 
-    <div class="lang">
-      <a href="/en/index.html">EN</a>
-      <a href="/de/index.html">DE</a>
-      <a href="/uk/index.html">UK</a>
+      <div class="lang">
+        <a class="active" href="index.html" title="Русский">RU</a>
+        <a href="en/index.html" title="English">EN</a>
+        <a href="de/index.html" title="Deutsch">DE</a>
+        <a href="uk/index.html" title="Українська">UK</a>
+      </div>
     </div>
   </div>
 
@@ -232,11 +376,77 @@
           Открывайте нужную страницу одним нажатием — без лишних действий и отвлечений.
         </div>
 
+        <div class="feature-row">
+          <img class="app-icon" src="jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
+
+          <ul class="features">
+            <li>Ежедневное напоминание в выбранное время</li>
+            <li>Мгновенное открытие ссылки</li>
+            <li>Чистый минималистичный интерфейс</li>
+            <li>Поддержка нескольких языков</li>
+          </ul>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Скоро в Google Play</a>
+          <a class="btn secondary" href="projects.html">Все проекты</a>
+        </div>
+
       </div>
     </div>
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
+
+  <!-- Cookie banner -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <span>Мы используем анонимную аналитику для улучшения сайта.</span>
+      <div class="cookie-buttons">
+        <button onclick="acceptCookies()" class="btn primary">Принять</button>
+        <button onclick="declineCookies()" class="btn secondary">Отклонить</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function loadAnalytics() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', 'G-T3DB7K2NSS', { anonymize_ip: true });
+    }
+
+    function acceptCookies() {
+      localStorage.setItem("analytics_consent", "accepted");
+      loadAnalytics();
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    function declineCookies() {
+      localStorage.setItem("analytics_consent", "declined");
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    window.onload = function() {
+      var consent = localStorage.getItem("analytics_consent");
+      if (consent === "accepted") {
+        loadAnalytics();
+      } else if (!consent) {
+        document.getElementById("cookie-banner").style.display = "block";
+      }
+    }
+  </script>
 
 </body>
 </html>
