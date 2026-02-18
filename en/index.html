@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,16 +25,16 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR (как RU) ===== */
+    /* ===== TOPBAR ===== */
     .topbar{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 18px 20px 0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 20px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
 
     .brand{
       display:flex;
@@ -43,68 +42,74 @@
       gap:12px;
       text-decoration:none;
       color:inherit;
+      min-width: 220px;
     }
 
     .brand img{
-      width:40px;
+      width: 40px;
       height:auto;
+      display:block;
     }
 
     .brand .name{
       font-weight:600;
       font-size:16px;
       letter-spacing:0.2px;
+      white-space: nowrap;
     }
 
     .nav{
       display:flex;
-      gap:20px;
-      font-weight:600;
-      font-size:14px;
+      gap:18px;
+      align-items:center;
       flex-wrap:wrap;
       justify-content:center;
     }
 
     .nav a{
-      text-decoration:none;
       color: var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      transition: color 0.2s ease;
+      white-space: nowrap;
     }
 
     .nav a:hover{
       color: var(--blue);
     }
 
-    /* ===== LANG SWITCH (исправлено: как RU) ===== */
     .lang{
-  display:flex;
-  gap:10px;
-  font-size:13px;
-  justify-content:center;
-  align-items:center;
-}
+      display:flex;
+      gap:10px;
+      font-size:13px;
+      align-items:center;
+      justify-content:flex-end;
+      min-width: 160px;
+    }
 
-.lang a{
-  color: var(--muted);
-  text-decoration:none;
-  font-weight:700;
-  padding:6px 10px;
-  border-radius:10px;
-  border:1px solid transparent;
-  background: transparent;
-  transition: 0.15s ease;
-}
+    .lang a{
+      color: var(--muted);
+      text-decoration:none;
+      font-weight:700;
+      padding:6px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+      transition: 0.15s ease;
+    }
 
-.lang a:hover{
-  color: var(--blue);
-  background:#ffffff;
-  border:1px solid var(--border);
-}
+    .lang a:hover{
+      color: var(--blue);
+      background:#eef2f8;
+      border:1px solid var(--border);
+    }
 
-.lang a.active{
-  color: var(--blue);
-  background:#ffffff;
-  border:1px solid var(--border);
-}
+    .lang a.active{
+      color: var(--text);
+      background:#eef2f8;
+      border:1px solid var(--border);
+    }
+
     /* ===== LAYOUT ===== */
     .wrap{
       max-width: 980px;
@@ -113,9 +118,9 @@
     }
 
     .hero{
+      margin-top: 18px;
       display:flex;
       justify-content:center;
-      margin-top:18px;
     }
 
     .card{
@@ -130,8 +135,8 @@
     }
 
     .dk-logo{
-      width:300px;
-      margin:0 auto 28px;
+      width: 300px;
+      margin: 0 auto 28px;
       display:block;
     }
 
@@ -139,52 +144,65 @@
       font-size:18px;
       font-weight:600;
       color: var(--blue);
-      margin-bottom:18px;
+      margin-bottom: 18px;
     }
 
     .title{
       font-size:38px;
       font-weight:500;
-      margin:0 0 14px;
+      margin: 0 0 14px;
     }
 
     .subtitle{
-      margin:0 auto 26px;
-      max-width:720px;
+      margin: 0 auto 26px;
+      max-width: 720px;
       font-size:16px;
       line-height:1.7;
       color: var(--muted);
     }
 
     .feature-row{
-      margin:22px auto;
-      max-width:720px;
+      margin: 22px auto;
+      max-width: 720px;
       display:flex;
-      flex-direction:column;
       align-items:center;
-      gap:20px;
+      justify-content:center;
+      gap: 30px;
     }
 
     .app-icon{
-      width:130px;
-      border-radius:22px;
+      width: 130px;
+      border-radius: 22px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.10);
       background:#fff;
-      padding:12px;
-      border:1px solid var(--border);
-      box-shadow:0 14px 35px rgba(0,0,0,0.10);
+      padding: 12px;
+      border: 1px solid var(--border);
+      flex: 0 0 auto;
     }
 
     .features{
       list-style:none;
       padding:0;
       margin:0;
+      text-align:left;
       font-size:16px;
       line-height:1.9;
       color:#3a4b5c;
+      min-width:280px;
     }
 
     .features li{
-      margin:6px 0;
+      position:relative;
+      padding-left:26px;
+      margin:8px 0;
+    }
+
+    .features li::before{
+      content:"•";
+      position:absolute;
+      left:8px;
+      color: var(--blue);
+      font-size:20px;
     }
 
     .btn-row{
@@ -196,24 +214,24 @@
     }
 
     .btn{
-      padding:12px 26px;
-      border-radius:10px;
+      padding: 12px 26px;
+      border-radius: 10px;
       text-decoration:none;
       font-size:15px;
       font-weight:600;
-      transition:0.2s ease;
+      transition: 0.2s ease;
       display:inline-block;
     }
 
     .btn.primary{
       background: var(--blue);
       color:#fff;
-      box-shadow:0 10px 25px rgba(26,83,173,0.22);
+      box-shadow: 0 10px 25px rgba(26,83,173,0.22);
     }
 
     .btn.primary:hover{
       background: var(--blueDark);
-      transform:translateY(-2px);
+      transform: translateY(-2px);
     }
 
     .btn.secondary{
@@ -230,6 +248,85 @@
       text-align:center;
       color:#9aa6b2;
       font-size:13px;
+    }
+
+    /* ===== COOKIE BANNER ===== */
+    .cookie-banner{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:90%;
+      max-width:640px;
+      background:#ffffff;
+      border-radius:16px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,0,0,0.06);
+      padding:20px;
+      display:none;
+      z-index:9999;
+    }
+
+    .cookie-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .cookie-content span{
+      font-size:14px;
+      color:#555;
+    }
+
+    .cookie-buttons{
+      display:flex;
+      gap:10px;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 560px){
+      .topbar{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+      }
+
+      .brand{ min-width: auto; }
+      .brand .name{ white-space: normal; }
+
+      .nav{
+        justify-content:center;
+      }
+
+      .lang{
+        justify-content:center;
+        min-width:auto;
+      }
+
+      .card{
+        padding: 34px 22px;
+      }
+
+      .title{
+        font-size:30px;
+      }
+
+      .feature-row{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .app-icon{
+        width:130px;
+      }
+
+      .features{
+        min-width:auto;
+        width:100%;
+        max-width:520px;
+      }
     }
   </style>
 </head>
@@ -292,6 +389,52 @@
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <span>We use anonymous analytics to improve the website.</span>
+      <div class="cookie-buttons">
+        <button onclick="acceptCookies()" class="btn primary">Accept</button>
+        <button onclick="declineCookies()" class="btn secondary">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function loadAnalytics() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', 'G-T3DB7K2NSS');
+    }
+
+    function acceptCookies() {
+      localStorage.setItem("analytics_consent", "accepted");
+      loadAnalytics();
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    function declineCookies() {
+      localStorage.setItem("analytics_consent", "declined");
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    window.onload = function() {
+      var consent = localStorage.getItem("analytics_consent");
+      if (consent === "accepted") {
+        loadAnalytics();
+      } else if (!consent) {
+        document.getElementById("cookie-banner").style.display = "block";
+      }
+    }
+  </script>
 
 </body>
 </html>
