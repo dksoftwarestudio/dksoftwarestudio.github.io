@@ -25,15 +25,16 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR (Variant A) ===== */
+    /* ===== TOPBAR (как RU) ===== */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
       padding: 18px 20px 0;
       display:flex;
+      flex-direction:column;
       align-items:center;
-      justify-content:space-between;
       gap:12px;
+      text-align:center;
     }
 
     .brand{
@@ -42,31 +43,26 @@
       gap:12px;
       text-decoration:none;
       color:inherit;
-      flex:0 0 auto;
-      min-width: 210px; /* keeps left block stable */
     }
 
     .brand img{
       width:40px;
       height:auto;
-      display:block;
     }
 
     .brand .name{
       font-weight:600;
       font-size:16px;
       letter-spacing:0.2px;
-      white-space: nowrap;
     }
 
     .nav{
-      flex:1 1 auto;
       display:flex;
-      justify-content:center;
       gap:20px;
       font-weight:600;
       font-size:14px;
-      white-space: nowrap;
+      flex-wrap:wrap;
+      justify-content:center;
     }
 
     .nav a{
@@ -78,35 +74,40 @@
       color: var(--blue);
     }
 
+    /* ===== LANG SWITCH (исправлено: как RU) ===== */
     .lang{
-      flex:0 0 auto;
       display:flex;
-      justify-content:flex-end;
       gap:10px;
       font-size:13px;
-      min-width: 210px; /* balances the left block */
+      flex-wrap:wrap;
+      justify-content:center;
     }
 
-    .lang a, .lang span{
+    .lang a{
       color: var(--muted);
       text-decoration:none;
       font-weight:700;
       padding:6px 10px;
       border-radius:10px;
+      border:1px solid transparent;
+      background: transparent;
+      transition: 0.15s ease;
       line-height: 1;
-      display:inline-block;
     }
 
+    /* вот чего не хватало: hover-эффект как в RU */
     .lang a:hover{
       color: var(--blue);
+      background:#fff;
+      border:1px solid var(--border);
     }
 
-    .lang .active{
-  color: var(--text);
-  background:#ffffff;
-  border:1px solid var(--border);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
+    /* активная “плашка” как в RU: белая рамка */
+    .lang a.active{
+      color: var(--text);
+      background:#fff;
+      border:1px solid var(--border);
+    }
 
     /* ===== LAYOUT ===== */
     .wrap{
@@ -163,9 +164,9 @@
       margin:22px auto;
       max-width:720px;
       display:flex;
+      flex-direction:column;
       align-items:center;
-      justify-content:center;
-      gap:30px;
+      gap:20px;
     }
 
     .app-icon{
@@ -175,33 +176,19 @@
       padding:12px;
       border:1px solid var(--border);
       box-shadow:0 14px 35px rgba(0,0,0,0.10);
-      flex: 0 0 auto;
     }
 
     .features{
       list-style:none;
       padding:0;
       margin:0;
-      text-align:left;
       font-size:16px;
       line-height:1.9;
       color:#3a4b5c;
-      min-width:280px;
     }
 
     .features li{
-      position:relative;
-      padding-left:26px;
-      margin:8px 0;
-    }
-
-    .features li::before{
-      content:"•";
-      position:absolute;
-      left:8px;
-      color: var(--blue);
-      font-size:20px;
-      line-height:1;
+      margin:6px 0;
     }
 
     .btn-row{
@@ -213,15 +200,13 @@
     }
 
     .btn{
-      display:inline-block;
       padding:12px 26px;
       border-radius:10px;
       text-decoration:none;
       font-size:15px;
       font-weight:600;
       transition:0.2s ease;
-      border:0;
-      cursor:pointer;
+      display:inline-block;
     }
 
     .btn.primary{
@@ -242,7 +227,6 @@
 
     .btn.secondary:hover{
       background:#e3eaf6;
-      transform:translateY(-2px);
     }
 
     footer{
@@ -250,89 +234,6 @@
       text-align:center;
       color:#9aa6b2;
       font-size:13px;
-    }
-
-    /* ===== COOKIE BANNER ===== */
-    .cookie-banner{
-      position:fixed;
-      bottom:20px;
-      left:50%;
-      transform:translateX(-50%);
-      width:90%;
-      max-width:640px;
-      background:#ffffff;
-      border-radius:16px;
-      box-shadow:0 20px 40px rgba(0,0,0,0.15);
-      border:1px solid rgba(0,0,0,0.06);
-      padding:20px;
-      display:none;
-      z-index:9999;
-    }
-
-    .cookie-content{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .cookie-content span{
-      font-size:14px;
-      color:#555;
-    }
-
-    .cookie-buttons{
-      display:flex;
-      gap:10px;
-    }
-
-    /* ===== MOBILE ===== */
-    @media (max-width: 560px){
-      .topbar{
-        flex-direction:column;
-        align-items:center;
-        text-align:center;
-      }
-
-      .brand{
-        min-width: auto;
-      }
-
-      .nav{
-        justify-content:center;
-        flex-wrap:wrap;
-        gap:14px;
-      }
-
-      .lang{
-        min-width: auto;
-        justify-content:center;
-      }
-
-      .card{
-        padding: 34px 22px;
-      }
-
-      .title{
-        font-size:30px;
-      }
-
-      .feature-row{
-        flex-direction:column;
-        gap:18px;
-      }
-
-      .app-icon{
-        width:130px;
-      }
-
-      .features{
-        min-width:auto;
-        text-align:left;
-        width:100%;
-        max-width:520px;
-      }
     }
   </style>
 </head>
@@ -353,7 +254,7 @@
 
     <div class="lang">
       <a href="../index.html" title="Русский">RU</a>
-      <span class="active" title="English">EN</span>
+      <a class="active" href="index.html" title="English">EN</a>
       <a href="../de/index.html" title="Deutsch">DE</a>
       <a href="../uk/index.html" title="Українська">UK</a>
     </div>
@@ -395,54 +296,6 @@
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
-
-  <!-- Cookie banner -->
-  <div id="cookie-banner" class="cookie-banner">
-    <div class="cookie-content">
-      <span>We use anonymous analytics to improve the website.</span>
-      <div class="cookie-buttons">
-        <button onclick="acceptCookies()" class="btn primary">Accept</button>
-        <button onclick="declineCookies()" class="btn secondary">Decline</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function loadAnalytics() {
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
-      document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-
-      gtag('js', new Date());
-      gtag('config', 'G-T3DB7K2NSS', { 'anonymize_ip': true });
-    }
-
-    function acceptCookies() {
-      localStorage.setItem("analytics_consent", "accepted");
-      loadAnalytics();
-      document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    function declineCookies() {
-      localStorage.setItem("analytics_consent", "declined");
-      document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    window.onload = function() {
-      var consent = localStorage.getItem("analytics_consent");
-
-      if (consent === "accepted") {
-        loadAnalytics();
-      } else if (!consent) {
-        document.getElementById("cookie-banner").style.display = "block";
-      }
-    }
-  </script>
 
 </body>
 </html>
