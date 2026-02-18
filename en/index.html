@@ -79,36 +79,39 @@
       color: var(--blue);
     }
 
-    .lang{
-      display:flex;
-      gap:10px;
-      font-size:13px;
-      align-items:center;
-      justify-content:flex-end;
-      min-width: 160px;
-    }
+    /* ===== LANG (как RU) ===== */
+.lang{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.2px;
+  opacity:0.9;
+  user-select:none;
+  white-space:nowrap;
+}
 
-    .lang a{
-      color: var(--muted);
-      text-decoration:none;
-      font-weight:700;
-      padding:6px 10px;
-      border-radius:10px;
-      border:1px solid transparent;
-      transition: 0.15s ease;
-    }
+.lang a{
+  color: var(--text);
+  text-decoration:none;
+  padding:6px 8px;
+  border-radius:8px;
+  border:1px solid transparent;
+  transition: 0.2s ease;
+}
 
-    .lang a:hover{
-      color: var(--blue);
-      background:#eef2f8;
-      border:1px solid var(--border);
-    }
+.lang a:hover{
+  color: var(--blue);
+  border-color: rgba(26,83,173,0.18);
+  background:#fff;
+}
 
-    .lang a.active{
-      color: var(--text);
-      background:#eef2f8;
-      border:1px solid var(--border);
-    }
+.lang .active{
+  color: var(--blue);
+  border-color: rgba(26,83,173,0.22);
+  background:#fff;
+}
 
     /* ===== LAYOUT ===== */
     .wrap{
