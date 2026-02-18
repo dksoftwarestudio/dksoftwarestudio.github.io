@@ -1,3 +1,4 @@
+<!-- Файл: index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,39 +7,6 @@
   <title>DK Software Studio</title>
 
   <style>
-    .cookie-banner{
-  position:fixed;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  max-width:640px;
-  background:#ffffff;
-  border-radius:16px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.15);
-  border:1px solid rgba(0,0,0,0.06);
-  padding:20px;
-  display:none;
-  z-index:9999;
-}
-
-.cookie-content{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.cookie-content span{
-  font-size:14px;
-  color:#555;
-}
-
-.cookie-buttons{
-  display:flex;
-  gap:10px;
-}
     :root{
       --blue:#1A53AD;
       --blueDark:#163e82;
@@ -58,8 +26,42 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR ===== */
+    /* ===== COOKIE BANNER ===== */
+    .cookie-banner{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:90%;
+      max-width:640px;
+      background:#ffffff;
+      border-radius:16px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,0,0,0.06);
+      padding:20px;
+      display:none;
+      z-index:9999;
+    }
 
+    .cookie-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .cookie-content span{
+      font-size:14px;
+      color:#555;
+    }
+
+    .cookie-buttons{
+      display:flex;
+      gap:10px;
+    }
+
+    /* ===== TOPBAR ===== */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -67,6 +69,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
+      gap: 12px;
     }
 
     .brand{
@@ -83,17 +86,19 @@
       display:block;
     }
 
+    /* ВАЖНО: убрал font-size:16px, чтобы было как на других страницах */
     .brand .name{
-  font-weight:600;
-  font-size:16px;
-  letter-spacing:0.2px;
-  white-space: nowrap;
-}
+      font-weight:600;
+      letter-spacing:0.2px;
+      white-space: nowrap;
+      color: var(--text);
+    }
 
     .nav{
       display:flex;
       gap:18px;
       align-items:center;
+      flex-wrap:wrap;
     }
 
     .nav a{
@@ -106,10 +111,10 @@
 
     .nav a:hover{
       color: var(--blue);
+      text-decoration:none;
     }
 
     /* ===== LAYOUT ===== */
-
     .wrap{
       max-width: 980px;
       margin: 0 auto;
@@ -150,6 +155,7 @@
       font-size:38px;
       font-weight:500;
       margin: 0 0 14px;
+      color: var(--text);
     }
 
     .subtitle{
@@ -201,6 +207,8 @@
       left:8px;
       color: var(--blue);
       font-size:20px;
+      line-height: 1;
+      top: 2px;
     }
 
     .btn-row{
@@ -218,6 +226,10 @@
       font-size:15px;
       font-weight:600;
       transition: 0.2s ease;
+      border:0;
+      cursor:pointer;
+      user-select:none;
+      display:inline-block;
     }
 
     .btn.primary{
@@ -248,18 +260,23 @@
     }
 
     /* ===== MOBILE ===== */
-
     @media (max-width: 560px){
-
       .topbar{
-        flex-direction:column;
-        gap:12px;
+        justify-content:center;
+        flex-wrap:wrap;
         text-align:center;
+        gap:12px;
       }
-
-      .nav{
+      .brand{
+        width:100%;
         justify-content:center;
       }
+      .nav{
+        width:100%;
+        justify-content:center;
+        gap:14px;
+      }
+      .brand .name{ white-space: normal; }
 
       .card{
         padding: 34px 22px;
@@ -277,12 +294,17 @@
       .app-icon{
         width:130px;
       }
+
+      .features{
+        min-width:auto;
+        width:100%;
+        max-width:520px;
+      }
     }
   </style>
 </head>
 
 <body>
-
   <div class="topbar">
     <a class="brand" href="index.html">
       <img src="dk-icon.png" alt="DK">
@@ -323,7 +345,7 @@
         </div>
 
         <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank">Скоро в Google Play</a>
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Скоро в Google Play</a>
           <a class="btn secondary" href="projects.html">Все проекты</a>
         </div>
 
@@ -332,54 +354,52 @@
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
+
   <div id="cookie-banner" class="cookie-banner">
-  <div class="cookie-content">
-    <span>
-      Мы используем анонимную аналитику для улучшения сайта.
-    </span>
-    <div class="cookie-buttons">
-      <button onclick="acceptCookies()" class="btn primary">Принять</button>
-      <button onclick="declineCookies()" class="btn secondary">Отклонить</button>
+    <div class="cookie-content">
+      <span>Мы используем анонимную аналитику для улучшения сайта.</span>
+      <div class="cookie-buttons">
+        <button type="button" onclick="acceptCookies()" class="btn primary">Принять</button>
+        <button type="button" onclick="declineCookies()" class="btn secondary">Отклонить</button>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-function loadAnalytics() {
-  var script = document.createElement('script');
-  script.async = true;
-  script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
-  document.head.appendChild(script);
+  <script>
+    function loadAnalytics() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
+      document.head.appendChild(script);
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
 
-  gtag('js', new Date());
-  gtag('config', 'G-T3DB7K2NSS');
-}
+      gtag('js', new Date());
+      gtag('config', 'G-T3DB7K2NSS');
+    }
 
-function acceptCookies() {
-  localStorage.setItem("analytics_consent", "accepted");
-  loadAnalytics();
-  document.getElementById("cookie-banner").style.display = "none";
-}
+    function acceptCookies() {
+      localStorage.setItem("analytics_consent", "accepted");
+      loadAnalytics();
+      document.getElementById("cookie-banner").style.display = "none";
+    }
 
-function declineCookies() {
-  localStorage.setItem("analytics_consent", "declined");
-  document.getElementById("cookie-banner").style.display = "none";
-}
+    function declineCookies() {
+      localStorage.setItem("analytics_consent", "declined");
+      document.getElementById("cookie-banner").style.display = "none";
+    }
 
-window.onload = function() {
-  var consent = localStorage.getItem("analytics_consent");
+    window.onload = function() {
+      var consent = localStorage.getItem("analytics_consent");
 
-  if (consent === "accepted") {
-    loadAnalytics();
-  } else if (!consent) {
-    document.getElementById("cookie-banner").style.display = "block";
-  }
-}
-</script>
-
+      if (consent === "accepted") {
+        loadAnalytics();
+      } else if (!consent) {
+        document.getElementById("cookie-banner").style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
