@@ -5,42 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>О студии — DK Software Studio</title>
 
-</head>
-
   <style>
-    .cookie-banner{
-  position:fixed;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  max-width:640px;
-  background:#ffffff;
-  border-radius:16px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.15);
-  border:1px solid rgba(0,0,0,0.06);
-  padding:20px;
-  display:none;
-  z-index:9999;
-}
-
-.cookie-content{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.cookie-content span{
-  font-size:14px;
-  color:#555;
-}
-
-.cookie-buttons{
-  display:flex;
-  gap:10px;
-}
     :root{
       --blue:#1A53AD;
       --blueDark:#163e82;
@@ -58,6 +23,38 @@
       font-family: Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
+    }
+
+    /* cookie banner */
+    .cookie-banner{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:90%;
+      max-width:640px;
+      background:#ffffff;
+      border-radius:16px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,0,0,0.06);
+      padding:20px;
+      display:none;
+      z-index:9999;
+    }
+    .cookie-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .cookie-content span{
+      font-size:14px;
+      color:#555;
+    }
+    .cookie-buttons{
+      display:flex;
+      gap:10px;
     }
 
     /* ШАПКА */
@@ -85,11 +82,11 @@
     }
 
     .brand .name{
-  font-weight:600;
-  letter-spacing:0.2px;
-  white-space: nowrap;
-  color: var(--text);
-}
+      font-weight:600;
+      letter-spacing:0.2px;
+      white-space: nowrap;
+      color: var(--text);
+    }
 
     .nav{
       display:flex;
@@ -99,13 +96,17 @@
     }
 
     .nav a{
-  color: var(--text);
-  text-decoration:none;
-  font-weight:600;
-  font-size:14px;
-}
+      color: var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+    }
 
-    .nav a:hover{ text-decoration:underline; }
+    /* аккуратный hover (без подчёркивания) */
+    .nav a:hover{
+      color: var(--blue);
+      text-decoration:none;
+    }
 
     /* ОСНОВНОЙ БЛОК */
     .wrap{
@@ -201,6 +202,9 @@
       font-size:16px;
       font-weight:700;
       transition:0.2s ease;
+      user-select:none;
+      border:0;
+      cursor:pointer;
     }
 
     .btn.primary{
@@ -250,6 +254,7 @@
 </head>
 
 <body>
+  <!-- дальше твой body без изменений -->
 
   <div class="topbar">
     <a class="brand" href="index.html">
