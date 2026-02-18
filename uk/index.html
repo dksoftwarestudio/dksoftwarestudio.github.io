@@ -27,13 +27,14 @@
 
     /* ===== TOPBAR ===== */
     .topbar{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 18px 20px 0;
-  display:flex;
-  align-items:center;
-  gap:40px;
-}
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 20px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
 
     .brand{
       display:flex;
@@ -41,10 +42,11 @@
       gap:12px;
       text-decoration:none;
       color:inherit;
+      min-width: 220px;
     }
 
     .brand img{
-      width:40px;
+      width: 40px;
       height:auto;
       display:block;
     }
@@ -54,20 +56,14 @@
       font-size:16px;
       letter-spacing:0.2px;
       white-space: nowrap;
-      color: var(--text);
     }
-
-    .right{
-  display:flex;
-  align-items:center;
-  gap:24px;
-}
 
     .nav{
       display:flex;
       gap:18px;
       align-items:center;
       flex-wrap:wrap;
+      justify-content:center;
     }
 
     .nav a{
@@ -76,13 +72,14 @@
       font-weight:600;
       font-size:14px;
       transition: color 0.2s ease;
+      white-space: nowrap;
     }
 
     .nav a:hover{
       color: var(--blue);
     }
 
-    /* ===== LANG (точно как RU) ===== */
+    /* ===== LANG ===== */
     .lang{
       display:flex;
       gap:10px;
@@ -168,7 +165,7 @@
     }
 
     .feature-row{
-      margin: 22px auto 10px;
+      margin: 22px auto;
       max-width: 720px;
       display:flex;
       align-items:center;
@@ -209,8 +206,6 @@
       left:8px;
       color: var(--blue);
       font-size:20px;
-      line-height:1;
-      top:2px;
     }
 
     .btn-row{
@@ -222,16 +217,13 @@
     }
 
     .btn{
-      display:inline-block;
       padding: 12px 26px;
       border-radius: 10px;
       text-decoration:none;
       font-size:15px;
-      font-weight:700;
+      font-weight:600;
       transition: 0.2s ease;
-      user-select:none;
-      border:none;
-      cursor:pointer;
+      display:inline-block;
     }
 
     .btn.primary{
@@ -252,7 +244,6 @@
 
     .btn.secondary:hover{
       background:#e3eaf6;
-      transform: translateY(-2px);
     }
 
     footer{
@@ -260,43 +251,6 @@
       text-align:center;
       color:#9aa6b2;
       font-size:13px;
-    }
-
-    /* ===== COOKIE BANNER ===== */
-    .cookie-banner{
-      position:fixed;
-      bottom:20px;
-      left:50%;
-      transform:translateX(-50%);
-      width:90%;
-      max-width:640px;
-      background:#ffffff;
-      border-radius:16px;
-      box-shadow:0 20px 40px rgba(0,0,0,0.15);
-      border:1px solid rgba(0,0,0,0.06);
-      padding:20px;
-      display:none;
-      z-index:9999;
-    }
-
-    .cookie-content{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .cookie-content span{
-      font-size:14px;
-      color:#555;
-      line-height:1.45;
-    }
-
-    .cookie-buttons{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
     }
 
     /* ===== MOBILE ===== */
@@ -307,29 +261,27 @@
         text-align:center;
       }
 
-      .right{
-        justify-content:center;
-      }
+      .brand{ min-width:auto; }
+      .brand .name{ white-space:normal; }
 
-      .nav{
-        justify-content:center;
-      }
+      .nav{ justify-content:center; }
 
-      .card{
-        padding: 34px 22px;
-      }
+      .lang{ justify-content:center; }
 
-      .title{
-        font-size:30px;
-      }
+      .card{ padding:34px 22px; }
+      .title{ font-size:30px; }
 
       .feature-row{
         flex-direction:column;
         gap:18px;
       }
 
-      .app-icon{
-        width:130px;
+      .app-icon{ width:130px; }
+
+      .features{
+        min-width:auto;
+        width:100%;
+        max-width:520px;
       }
     }
   </style>
@@ -343,19 +295,17 @@
       <div class="name">DK Software Studio</div>
     </a>
 
-    <div class="right">
-      <div class="nav">
-        <a href="about.html">Про студію</a>
-        <a href="projects.html">Проєкти</a>
-        <a href="contact.html">Контакт</a>
-      </div>
+    <div class="nav">
+      <a href="about.html">Про студію</a>
+      <a href="projects.html">Проєкти</a>
+      <a href="contact.html">Контакт</a>
+    </div>
 
-      <div class="lang">
-        <a href="../index.html" title="Русский">RU</a>
-        <a href="../en/index.html" title="English">EN</a>
-        <a href="../de/index.html" title="Deutsch">DE</a>
-        <a class="active" href="index.html" title="Українська">UK</a>
-      </div>
+    <div class="lang">
+      <a href="../index.html">RU</a>
+      <a href="../en/index.html">EN</a>
+      <a href="../de/index.html">DE</a>
+      <a class="active" href="index.html">UK</a>
     </div>
   </div>
 
@@ -395,56 +345,6 @@
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
-
-  <!-- Cookie banner -->
-  <div id="cookie-banner" class="cookie-banner">
-    <div class="cookie-content">
-      <span>Ми використовуємо анонімну аналітику для покращення сайту.</span>
-      <div class="cookie-buttons">
-        <button onclick="acceptCookies()" class="btn primary">Прийняти</button>
-        <button onclick="declineCookies()" class="btn secondary">Відхилити</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function loadAnalytics() {
-      if (window.__gaLoaded) return;
-      window.__gaLoaded = true;
-
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
-      document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-
-      gtag('js', new Date());
-      gtag('config', 'G-T3DB7K2NSS', { anonymize_ip: true });
-    }
-
-    function acceptCookies() {
-      localStorage.setItem("analytics_consent", "accepted");
-      loadAnalytics();
-      document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    function declineCookies() {
-      localStorage.setItem("analytics_consent", "declined");
-      document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    window.onload = function() {
-      var consent = localStorage.getItem("analytics_consent");
-      if (consent === "accepted") {
-        loadAnalytics();
-      } else if (!consent) {
-        document.getElementById("cookie-banner").style.display = "block";
-      }
-    }
-  </script>
 
 </body>
 </html>
