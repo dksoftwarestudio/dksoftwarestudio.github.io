@@ -6,61 +6,323 @@
   <title>DK Software Studio</title>
 
   <style>
-    .cookie-banner{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);width:90%;max-width:640px;background:#ffffff;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,0.15);border:1px solid rgba(0,0,0,0.06);padding:20px;display:none;z-index:9999;}
-    .cookie-content{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
-    .cookie-content span{font-size:14px;color:#555;}
-    .cookie-buttons{display:flex;gap:10px;}
+    :root{
+      --blue:#1A53AD;
+      --blueDark:#163e82;
+      --bg:#f4f6f9;
+      --text:#2c3e50;
+      --muted:#666;
+      --card:#ffffff;
+      --border:rgba(0,0,0,0.06);
+    }
 
-    :root{--blue:#1A53AD;--blueDark:#163e82;--bg:#f4f6f9;--text:#2c3e50;--muted:#666;--card:#ffffff;--border:rgba(0,0,0,0.06);}
-    *{box-sizing:border-box;}
-    body{margin:0;font-family:Arial, sans-serif;background:var(--bg);color:var(--text);}
+    *{ box-sizing:border-box; }
 
-    .topbar{max-width:980px;margin:0 auto;padding:18px 20px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;}
-    .brand img{width:40px;height:auto;display:block;}
-    .brand .name{font-weight:600;font-size:16px;letter-spacing:0.2px;white-space:nowrap;color:var(--text);}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
 
-    .nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
-    .nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px;}
-    .nav a:hover{color:var(--blue);text-decoration:none;}
+    .topbar{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 20px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
 
-    .lang{display:flex;align-items:center;gap:10px;margin-left:10px;font-size:13px;white-space:nowrap;}
-    .lang a{color:var(--muted);text-decoration:none;font-weight:700;padding:6px 10px;border-radius:10px;}
-    .lang a:hover{color:var(--blue);}
-    .lang .active{color:var(--text);background:#eef2f8;border:1px solid var(--border);}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+      min-width: 220px;
+    }
 
-    .wrap{max-width:980px;margin:0 auto;padding:28px 20px 70px;}
-    .hero{margin-top:18px;display:flex;justify-content:center;}
-    .card{width:100%;max-width:860px;background:var(--card);border-radius:18px;box-shadow:0 22px 55px rgba(0,0,0,0.07);border:1px solid var(--border);padding:48px 42px;text-align:center;}
+    .brand img{
+      width: 40px;
+      height:auto;
+      display:block;
+    }
 
-    .dk-logo{width:300px;margin:0 auto 28px;display:block;}
-    .tagline{font-size:18px;font-weight:600;color:var(--blue);margin-bottom:18px;}
-    .title{font-size:38px;font-weight:500;margin:0 0 14px;}
-    .subtitle{margin:0 auto 26px;max-width:720px;font-size:16px;line-height:1.7;color:var(--muted);}
+    .brand .name{
+      font-weight:600;
+      font-size:16px;
+      letter-spacing:0.2px;
+      white-space: nowrap;
+    }
 
-    .feature-row{margin:22px auto;max-width:720px;display:flex;align-items:center;justify-content:center;gap:30px;}
-    .app-icon{width:130px;border-radius:22px;box-shadow:0 14px 35px rgba(0,0,0,0.10);background:#fff;padding:12px;border:1px solid var(--border);}
+    .nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
 
-    .features{list-style:none;padding:0;margin:0;text-align:left;font-size:16px;line-height:1.9;color:#3a4b5c;min-width:280px;}
-    .features li{position:relative;padding-left:26px;margin:8px 0;}
-    .features li::before{content:"•";position:absolute;left:8px;color:var(--blue);font-size:20px;}
+    .nav a{
+      color: var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
 
-    .btn-row{margin-top:26px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-    .btn{padding:12px 26px;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600;transition:0.2s ease;border:0;cursor:pointer;}
-    .btn.primary{background:var(--blue);color:#fff;box-shadow:0 10px 25px rgba(26,83,173,0.22);}
-    .btn.primary:hover{background:var(--blueDark);transform:translateY(-2px);}
-    .btn.secondary{background:#eef2f8;color:var(--text);}
-    .btn.secondary:hover{background:#e3eaf6;}
+    .nav a:hover{
+      color: var(--blue);
+    }
 
-    footer{margin-top:30px;text-align:center;color:#9aa6b2;font-size:13px;}
+    .lang{
+      display:flex;
+      gap:10px;
+      font-size:13px;
+      align-items:center;
+      justify-content:flex-end;
+      min-width: 160px;
+    }
 
-    @media (max-width:560px){
-      .topbar{flex-direction:column;gap:12px;text-align:center;}
-      .nav{justify-content:center;}
-      .card{padding:34px 22px;}
-      .title{font-size:30px;}
-      .feature-row{flex-direction:column;gap:18px;}
-      .cookie-banner{bottom:14px;}
+    .lang a{
+      color: var(--muted);
+      text-decoration:none;
+      font-weight:700;
+      padding:6px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+      transition: 0.15s ease;
+    }
+
+    .lang a:hover{
+      color: var(--blue);
+      background:#eef2f8;
+      border:1px solid var(--border);
+    }
+
+    .lang a.active{
+      color: var(--text);
+      background:#eef2f8;
+      border:1px solid var(--border);
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 70px;
+    }
+
+    .hero{
+      margin-top: 18px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .card{
+      width:100%;
+      max-width: 860px;
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: 0 22px 55px rgba(0,0,0,0.07);
+      border: 1px solid var(--border);
+      padding: 48px 42px;
+      text-align:center;
+    }
+
+    .dk-logo{
+      width: 300px;
+      margin: 0 auto 28px;
+      display:block;
+    }
+
+    .tagline{
+      font-size:18px;
+      font-weight:600;
+      color: var(--blue);
+      margin-bottom: 18px;
+    }
+
+    .title{
+      font-size:38px;
+      font-weight:500;
+      margin: 0 0 14px;
+    }
+
+    .subtitle{
+      margin: 0 auto 26px;
+      max-width: 720px;
+      font-size:16px;
+      line-height:1.7;
+      color: var(--muted);
+    }
+
+    .feature-row{
+      margin: 22px auto;
+      max-width: 720px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 30px;
+    }
+
+    .app-icon{
+      width: 130px;
+      border-radius: 22px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.10);
+      background:#fff;
+      padding: 12px;
+      border: 1px solid var(--border);
+      flex: 0 0 auto;
+    }
+
+    .features{
+      list-style:none;
+      padding:0;
+      margin:0;
+      text-align:left;
+      font-size:16px;
+      line-height:1.9;
+      color:#3a4b5c;
+      min-width:280px;
+    }
+
+    .features li{
+      position:relative;
+      padding-left:26px;
+      margin:8px 0;
+    }
+
+    .features li::before{
+      content:"•";
+      position:absolute;
+      left:8px;
+      color: var(--blue);
+      font-size:20px;
+    }
+
+    .btn-row{
+      margin-top:26px;
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding: 12px 26px;
+      border-radius: 10px;
+      text-decoration:none;
+      font-size:15px;
+      font-weight:600;
+      transition: 0.2s ease;
+      display:inline-block;
+    }
+
+    .btn.primary{
+      background: var(--blue);
+      color:#fff;
+      box-shadow: 0 10px 25px rgba(26,83,173,0.22);
+    }
+
+    .btn.primary:hover{
+      background: var(--blueDark);
+      transform: translateY(-2px);
+    }
+
+    .btn.secondary{
+      background:#eef2f8;
+      color: var(--text);
+    }
+
+    .btn.secondary:hover{
+      background:#e3eaf6;
+    }
+
+    footer{
+      margin-top:30px;
+      text-align:center;
+      color:#9aa6b2;
+      font-size:13px;
+    }
+
+    .cookie-banner{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:90%;
+      max-width:640px;
+      background:#ffffff;
+      border-radius:16px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,0,0,0.06);
+      padding:20px;
+      display:none;
+      z-index:9999;
+    }
+
+    .cookie-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .cookie-content span{
+      font-size:14px;
+      color:#555;
+    }
+
+    .cookie-buttons{
+      display:flex;
+      gap:10px;
+    }
+
+    @media (max-width: 560px){
+      .topbar{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+      }
+
+      .brand{ min-width: auto; }
+      .brand .name{ white-space: normal; }
+
+      .nav{
+        justify-content:center;
+      }
+
+      .lang{
+        justify-content:center;
+        min-width:auto;
+      }
+
+      .card{
+        padding: 34px 22px;
+      }
+
+      .title{
+        font-size:30px;
+      }
+
+      .feature-row{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .app-icon{
+        width:130px;
+      }
+
+      .features{
+        min-width:auto;
+        width:100%;
+        max-width:520px;
+      }
     }
   </style>
 </head>
@@ -68,24 +330,23 @@
 <body>
 
   <div class="topbar">
-  <a class="brand" href="../index.html">
-    <img src="../dk-icon.png" alt="DK">
-    <div class="name">DK Software Studio</div>
-  </a>
+    <a class="brand" href="../index.html">
+      <img src="../dk-icon.png" alt="DK">
+      <div class="name">DK Software Studio</div>
+    </a>
 
-  <div class="nav">
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-  </div>
+    <div class="nav">
+      <a href="about.html">Über</a>
+      <a href="projects.html">Projekte</a>
+      <a href="contact.html">Kontakt</a>
+    </div>
 
-  <div class="lang">
-    <a href="../index.html">RU</a>
-    <span class="active">EN</span>
-    <a href="../de/index.html">DE</a>
-    <a href="../uk/index.html">UK</a>
-  </div>
-</div>
+    <div class="lang">
+      <a href="../index.html" title="Русский">RU</a>
+      <a href="../en/index.html" title="English">EN</a>
+      <a class="active" href="index.html" title="Deutsch">DE</a>
+      <a href="../uk/index.html" title="Українська">UK</a>
+    </div>
   </div>
 
   <div class="wrap">
@@ -100,22 +361,22 @@
 
         <div class="subtitle">
           Eine minimalistische Erinnerungs-App mit einem täglichen Link.
-          Öffne die richtige Seite mit einem Tippen — ohne unnötige Schritte und Ablenkungen.
+          Öffne die richtige Seite mit einem Tippen — ohne extra Schritte, ohne Ablenkungen.
         </div>
 
         <div class="feature-row">
-          <img class="app-icon" src="../jw-daily-alarm-icon.png" alt="JW Daily Alarm Icon">
+          <img class="app-icon" src="../jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
 
           <ul class="features">
-            <li>Tägliche Erinnerung zur gewünschten Zeit</li>
-            <li>Link sofort öffnen</li>
-            <li>Saubere, minimalistische Oberfläche</li>
+            <li>Tägliche Erinnerung zur gewählten Zeit</li>
+            <li>Sofortiges Öffnen des Links</li>
+            <li>Klares minimalistisches Interface</li>
             <li>Mehrsprachige Unterstützung</li>
           </ul>
         </div>
 
         <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank" rel="noopener">Demnächst bei Google Play</a>
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Bald bei Google Play</a>
           <a class="btn secondary" href="projects.html">Alle Projekte</a>
         </div>
 
@@ -163,8 +424,11 @@
 
     window.onload = function() {
       var consent = localStorage.getItem("analytics_consent");
-      if (consent === "accepted") loadAnalytics();
-      else if (!consent) document.getElementById("cookie-banner").style.display = "block";
+      if (consent === "accepted") {
+        loadAnalytics();
+      } else if (!consent) {
+        document.getElementById("cookie-banner").style.display = "block";
+      }
     }
   </script>
 
