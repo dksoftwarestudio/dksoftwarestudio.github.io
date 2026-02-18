@@ -25,6 +25,7 @@
       color: var(--text);
     }
 
+    /* ===== TOPBAR ===== */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -32,7 +33,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
+      gap:12px;
     }
 
     .brand{
@@ -41,11 +42,10 @@
       gap:12px;
       text-decoration:none;
       color:inherit;
-      min-width: 220px;
     }
 
     .brand img{
-      width: 40px;
+      width:40px;
       height:auto;
       display:block;
     }
@@ -55,6 +55,15 @@
       font-size:16px;
       letter-spacing:0.2px;
       white-space: nowrap;
+      color: var(--text);
+    }
+
+    .right{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
     .nav{
@@ -62,7 +71,6 @@
       gap:18px;
       align-items:center;
       flex-wrap:wrap;
-      justify-content:center;
     }
 
     .nav a{
@@ -71,7 +79,6 @@
       font-weight:600;
       font-size:14px;
       transition: color 0.2s ease;
-      white-space: nowrap;
     }
 
     .nav a:hover{
@@ -81,34 +88,37 @@
     .lang{
       display:flex;
       gap:10px;
-      font-size:13px;
       align-items:center;
-      justify-content:flex-end;
-      min-width: 160px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:0.2px;
+      opacity:0.9;
+      user-select:none;
+      white-space:nowrap;
     }
 
     .lang a{
-      color: var(--muted);
+      color: var(--text);
       text-decoration:none;
-      font-weight:700;
-      padding:6px 10px;
-      border-radius:10px;
+      padding:6px 8px;
+      border-radius:8px;
       border:1px solid transparent;
-      transition: 0.15s ease;
+      transition: 0.2s ease;
     }
 
     .lang a:hover{
       color: var(--blue);
-      background:#eef2f8;
-      border:1px solid var(--border);
+      border-color: rgba(26,83,173,0.18);
+      background:#fff;
     }
 
-    .lang a.active{
-      color: var(--text);
-      background:#eef2f8;
-      border:1px solid var(--border);
+    .lang .active{
+      color: var(--blue);
+      border-color: rgba(26,83,173,0.22);
+      background:#fff;
     }
 
+    /* ===== LAYOUT ===== */
     .wrap{
       max-width: 980px;
       margin: 0 auto;
@@ -160,7 +170,7 @@
     }
 
     .feature-row{
-      margin: 22px auto;
+      margin: 22px auto 10px;
       max-width: 720px;
       display:flex;
       align-items:center;
@@ -201,6 +211,8 @@
       left:8px;
       color: var(--blue);
       font-size:20px;
+      line-height:1;
+      top:2px;
     }
 
     .btn-row{
@@ -212,13 +224,16 @@
     }
 
     .btn{
+      display:inline-block;
       padding: 12px 26px;
       border-radius: 10px;
       text-decoration:none;
       font-size:15px;
-      font-weight:600;
+      font-weight:700;
       transition: 0.2s ease;
-      display:inline-block;
+      user-select:none;
+      border:none;
+      cursor:pointer;
     }
 
     .btn.primary{
@@ -239,6 +254,7 @@
 
     .btn.secondary:hover{
       background:#e3eaf6;
+      transform: translateY(-2px);
     }
 
     footer{
@@ -248,6 +264,7 @@
       font-size:13px;
     }
 
+    /* ===== COOKIE BANNER ===== */
     .cookie-banner{
       position:fixed;
       bottom:20px;
@@ -275,13 +292,16 @@
     .cookie-content span{
       font-size:14px;
       color:#555;
+      line-height:1.45;
     }
 
     .cookie-buttons{
       display:flex;
       gap:10px;
+      flex-wrap:wrap;
     }
 
+    /* ===== MOBILE ===== */
     @media (max-width: 560px){
       .topbar{
         flex-direction:column;
@@ -289,16 +309,12 @@
         text-align:center;
       }
 
-      .brand{ min-width: auto; }
-      .brand .name{ white-space: normal; }
-
-      .nav{
+      .right{
         justify-content:center;
       }
 
-      .lang{
+      .nav{
         justify-content:center;
-        min-width:auto;
       }
 
       .card{
@@ -317,12 +333,6 @@
       .app-icon{
         width:130px;
       }
-
-      .features{
-        min-width:auto;
-        width:100%;
-        max-width:520px;
-      }
     }
   </style>
 </head>
@@ -330,22 +340,24 @@
 <body>
 
   <div class="topbar">
-    <a class="brand" href="../index.html">
+    <a class="brand" href="index.html">
       <img src="../dk-icon.png" alt="DK">
       <div class="name">DK Software Studio</div>
     </a>
 
-    <div class="nav">
-      <a href="about.html">Über</a>
-      <a href="projects.html">Projekte</a>
-      <a href="contact.html">Kontakt</a>
-    </div>
+    <div class="right">
+      <div class="nav">
+        <a href="about.html">Über uns</a>
+        <a href="projects.html">Projekte</a>
+        <a href="contact.html">Kontakt</a>
+      </div>
 
-    <div class="lang">
-      <a href="../index.html" title="Русский">RU</a>
-      <a href="../en/index.html" title="English">EN</a>
-      <a class="active" href="index.html" title="Deutsch">DE</a>
-      <a href="../uk/index.html" title="Українська">UK</a>
+      <div class="lang">
+        <a href="../index.html" title="Русский">RU</a>
+        <a href="../en/index.html" title="English">EN</a>
+        <a class="active" href="index.html" title="Deutsch">DE</a>
+        <a href="../uk/index.html" title="Українська">UK</a>
+      </div>
     </div>
   </div>
 
@@ -368,10 +380,10 @@
           <img class="app-icon" src="../jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
 
           <ul class="features">
-            <li>Tägliche Erinnerung zur gewählten Zeit</li>
+            <li>Tägliche Erinnerung zur gewählten Uhrzeit</li>
             <li>Sofortiges Öffnen des Links</li>
-            <li>Klares minimalistisches Interface</li>
-            <li>Mehrsprachige Unterstützung</li>
+            <li>Saubere, minimalistische Oberfläche</li>
+            <li>Unterstützung mehrerer Sprachen</li>
           </ul>
         </div>
 
@@ -386,6 +398,7 @@
     <footer>© 2026 DK Software Studio</footer>
   </div>
 
+  <!-- Cookie banner -->
   <div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">
       <span>Wir verwenden anonyme Analysen, um die Website zu verbessern.</span>
@@ -398,6 +411,9 @@
 
   <script>
     function loadAnalytics() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+
       var script = document.createElement('script');
       script.async = true;
       script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
@@ -408,7 +424,7 @@
       window.gtag = gtag;
 
       gtag('js', new Date());
-      gtag('config', 'G-T3DB7K2NSS');
+      gtag('config', 'G-T3DB7K2NSS', { anonymize_ip: true });
     }
 
     function acceptCookies() {
