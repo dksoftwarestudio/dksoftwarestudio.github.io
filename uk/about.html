@@ -25,7 +25,6 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR ===== */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -33,7 +32,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
+      gap:12px;
     }
 
     .brand{
@@ -42,27 +41,24 @@
       gap:12px;
       text-decoration:none;
       color:inherit;
-      min-width:220px;
     }
 
     .brand img{
       width:40px;
       height:auto;
-      display:block;
     }
 
     .brand .name{
       font-weight:600;
-      font-size:16px;
       letter-spacing:0.2px;
-      white-space:nowrap;
+      white-space: nowrap;
+      color: var(--text);
     }
 
     .nav{
       display:flex;
-      gap:18px;
+      gap:16px;
       align-items:center;
-      justify-content:center;
       flex-wrap:wrap;
     }
 
@@ -71,149 +67,191 @@
       text-decoration:none;
       font-weight:600;
       font-size:14px;
-      transition:0.2s ease;
     }
 
     .nav a:hover{
       color: var(--blue);
     }
 
-    .lang{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      font-size:12px;
-      font-weight:700;
-      white-space:nowrap;
-    }
-
-    .lang a{
-      color: var(--text);
-      text-decoration:none;
-      padding:6px 8px;
-      border-radius:8px;
-      border:1px solid transparent;
-      transition:0.2s ease;
-    }
-
-    .lang a:hover{
-      color: var(--blue);
-      border-color: rgba(26,83,173,0.18);
-      background:#fff;
-    }
-
-    .lang .active{
-      color: var(--blue);
-      border-color: rgba(26,83,173,0.22);
-      background:#fff;
-    }
-
-    /* ===== LAYOUT ===== */
     .wrap{
       max-width:980px;
       margin:0 auto;
-      padding:28px 20px 70px;
+      padding:24px 20px 70px;
     }
 
     .hero{
+      margin-top:16px;
       display:flex;
       justify-content:center;
-      margin-top:18px;
     }
 
     .card{
       width:100%;
       max-width:860px;
-      background:var(--card);
+      background: var(--card);
       border-radius:18px;
       box-shadow:0 22px 55px rgba(0,0,0,0.07);
       border:1px solid var(--border);
-      padding:48px 42px;
+      padding:44px 42px;
       text-align:center;
     }
 
-    .title{
-      font-size:38px;
-      font-weight:500;
-      margin:0 0 18px;
+    .studio-logo{
+      width:240px;
+      border-radius:22px;
+      padding:14px;
+      background:#fff;
+      box-shadow:0 18px 40px rgba(0,0,0,0.10);
+      border:1px solid var(--border);
+      margin:0 auto 24px;
+      display:block;
     }
 
-    .text{
+    .title{
+      margin:0 0 14px;
+      font-size:38px;
+      line-height:1.1;
+      font-weight:500;
+    }
+
+    .subtitle{
+      margin:0 auto 22px;
       max-width:720px;
-      margin:0 auto 18px;
       font-size:16px;
       line-height:1.7;
       color: var(--muted);
     }
 
+    .features{
+      list-style:none;
+      padding:0;
+      margin:0 auto 24px;
+      max-width:720px;
+      text-align:left;
+      line-height:1.85;
+      font-size:16px;
+      color:#3a4b5c;
+    }
+
+    .features li{
+      position:relative;
+      padding-left:28px;
+      margin:8px 0;
+    }
+
+    .features li::before{
+      content:"•";
+      position:absolute;
+      left:10px;
+      top:-1px;
+      color:var(--blue);
+      font-size:22px;
+      line-height:1;
+    }
+
+    .btn-row{
+      margin-top:10px;
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:13px 28px;
+      border-radius:10px;
+      text-decoration:none;
+      font-size:16px;
+      font-weight:700;
+      transition:0.2s ease;
+      border:0;
+      cursor:pointer;
+    }
+
+    .btn.primary{
+      background:var(--blue);
+      color:#fff;
+      box-shadow:0 10px 25px rgba(26,83,173,0.22);
+    }
+
+    .btn.primary:hover{
+      background:var(--blueDark);
+      transform:translateY(-2px);
+    }
+
+    .btn.secondary{
+      background:#eef2f8;
+      color:var(--blue);
+    }
+
+    .btn.secondary:hover{
+      background:#e3eaf6;
+      transform:translateY(-2px);
+    }
+
     footer{
-      margin-top:30px;
+      margin-top:26px;
       text-align:center;
       color:#9aa6b2;
       font-size:13px;
     }
 
-    /* ===== MOBILE ===== */
     @media (max-width:560px){
       .topbar{
-        flex-direction:column;
-        gap:12px;
+        justify-content:center;
+        flex-wrap:wrap;
         text-align:center;
       }
 
-      .brand{ min-width:auto; }
-      .brand .name{ white-space:normal; }
-
-      .nav{ justify-content:center; }
-      .lang{ justify-content:center; }
+      .brand{ width:100%; justify-content:center; }
+      .nav{ width:100%; justify-content:center; gap:14px; }
 
       .card{ padding:34px 22px; }
       .title{ font-size:30px; }
+      .studio-logo{ width:200px; }
     }
   </style>
 </head>
 
 <body>
 
- <div class="topbar">
-  <a class="brand" href="../index.html">
-    <img src="../dk-icon.png" alt="DK">
-    <div class="name">DK Software Studio</div>
-  </a>
+  <div class="topbar">
+    <a class="brand" href="../index.html">
+      <img src="../dk-icon.png" alt="DK">
+      <div class="name">DK Software Studio</div>
+    </a>
 
-  <div class="nav">
-    <a class="active" href="about.html">Про студію</a>
-    <a href="projects.html">Проєкти</a>
-    <a href="contact.html">Контакт</a>
+    <div class="nav">
+      <a href="../index.html">Головна</a>
+      <a href="projects.html">Проєкти</a>
+      <a href="contact.html">Контакт</a>
+    </div>
   </div>
-
-  <div class="lang">
-    <a href="../index.html">RU</a>
-    <a href="../en/index.html">EN</a>
-    <a href="../de/index.html">DE</a>
-    <a class="active" href="about.html">UK</a>
-  </div>
-</div>
 
   <div class="wrap">
     <div class="hero">
       <div class="card">
 
+        <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio">
+
         <div class="title">Про студію</div>
 
-        <div class="text">
-          DK Software Studio — це невелика незалежна студія,
-          що створює прості, чисті та функціональні цифрові продукти.
+        <div class="subtitle">
+          DK Software Studio — невелика незалежна студія розробки.
+          Ми створюємо прості, акуратні та продумані цифрові продукти.
         </div>
 
-        <div class="text">
-          Ми зосереджуємося на мінімалістичному дизайні,
-          зручності використання та стабільній роботі.
-        </div>
+        <ul class="features">
+          <li>Мінімалізм — лише потрібні функції</li>
+          <li>Чистий інтерфейс без зайвого шуму</li>
+          <li>Надійність і передбачуваність роботи</li>
+          <li>Фокус на практичності — щоб працювало щодня</li>
+        </ul>
 
-        <div class="text">
-          Наша мета — створювати застосунки, які виконують свою задачу
-          без зайвих елементів і відволікань.
+        <div class="btn-row">
+          <a class="btn primary" href="projects.html">До проєктів</a>
+          <a class="btn secondary" href="../index.html">← На головну</a>
         </div>
 
       </div>
