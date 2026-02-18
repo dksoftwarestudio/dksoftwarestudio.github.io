@@ -25,16 +25,15 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR (same as RU) ===== */
+    /* ===== TOPBAR (Variant A) ===== */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
       padding: 18px 20px 0;
       display:flex;
-      flex-direction:column;
       align-items:center;
+      justify-content:space-between;
       gap:12px;
-      text-align:center;
     }
 
     .brand{
@@ -43,11 +42,14 @@
       gap:12px;
       text-decoration:none;
       color:inherit;
+      flex:0 0 auto;
+      min-width: 210px; /* keeps left block stable */
     }
 
     .brand img{
       width:40px;
       height:auto;
+      display:block;
     }
 
     .brand .name{
@@ -58,12 +60,13 @@
     }
 
     .nav{
+      flex:1 1 auto;
       display:flex;
+      justify-content:center;
       gap:20px;
       font-weight:600;
       font-size:14px;
-      flex-wrap:wrap;
-      justify-content:center;
+      white-space: nowrap;
     }
 
     .nav a{
@@ -76,23 +79,22 @@
     }
 
     .lang{
+      flex:0 0 auto;
       display:flex;
+      justify-content:flex-end;
       gap:10px;
       font-size:13px;
-      justify-content:center;
-      flex-wrap:wrap;
+      min-width: 210px; /* balances the left block */
     }
 
     .lang a, .lang span{
+      color: var(--muted);
       text-decoration:none;
       font-weight:700;
       padding:6px 10px;
       border-radius:10px;
+      line-height: 1;
       display:inline-block;
-    }
-
-    .lang a{
-      color: var(--muted);
     }
 
     .lang a:hover{
@@ -105,7 +107,7 @@
       border:1px solid var(--border);
     }
 
-    /* ===== LAYOUT (same as RU) ===== */
+    /* ===== LAYOUT ===== */
     .wrap{
       max-width: 980px;
       margin: 0 auto;
@@ -156,14 +158,13 @@
       color: var(--muted);
     }
 
-    /* EXACT RU-LIKE: icon left, bullets right */
     .feature-row{
-      margin: 22px auto;
-      max-width: 720px;
+      margin:22px auto;
+      max-width:720px;
       display:flex;
       align-items:center;
       justify-content:center;
-      gap: 30px;
+      gap:30px;
     }
 
     .app-icon{
@@ -211,16 +212,15 @@
     }
 
     .btn{
+      display:inline-block;
       padding:12px 26px;
       border-radius:10px;
       text-decoration:none;
       font-size:15px;
       font-weight:600;
       transition:0.2s ease;
-      user-select:none;
-      border:none;
+      border:0;
       cursor:pointer;
-      display:inline-block;
     }
 
     .btn.primary{
@@ -251,7 +251,7 @@
       font-size:13px;
     }
 
-    /* ===== COOKIE BANNER (same logic as RU) ===== */
+    /* ===== COOKIE BANNER ===== */
     .cookie-banner{
       position:fixed;
       bottom:20px;
@@ -279,17 +279,35 @@
     .cookie-content span{
       font-size:14px;
       color:#555;
-      line-height:1.45;
     }
 
     .cookie-buttons{
       display:flex;
       gap:10px;
-      flex-wrap:wrap;
     }
 
+    /* ===== MOBILE ===== */
     @media (max-width: 560px){
-      .brand .name{ white-space: normal; }
+      .topbar{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+      }
+
+      .brand{
+        min-width: auto;
+      }
+
+      .nav{
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:14px;
+      }
+
+      .lang{
+        min-width: auto;
+        justify-content:center;
+      }
 
       .card{
         padding: 34px 22px;
@@ -304,8 +322,13 @@
         gap:18px;
       }
 
+      .app-icon{
+        width:130px;
+      }
+
       .features{
         min-width:auto;
+        text-align:left;
         width:100%;
         max-width:520px;
       }
@@ -384,16 +407,10 @@
   </div>
 
   <script>
-    const GA_ID = "G-T3DB7K2NSS";
-
     function loadAnalytics() {
-      // Avoid loading twice
-      if (window.__gaLoaded) return;
-      window.__gaLoaded = true;
-
       var script = document.createElement('script');
       script.async = true;
-      script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
       document.head.appendChild(script);
 
       window.dataLayer = window.dataLayer || [];
@@ -401,9 +418,7 @@
       window.gtag = gtag;
 
       gtag('js', new Date());
-
-      // Minimal config (you can later add anonymize_ip / consent mode if needed)
-      gtag('config', GA_ID);
+      gtag('config', 'G-T3DB7K2NSS', { 'anonymize_ip': true });
     }
 
     function acceptCookies() {
@@ -417,7 +432,7 @@
       document.getElementById("cookie-banner").style.display = "none";
     }
 
-    window.addEventListener("load", function() {
+    window.onload = function() {
       var consent = localStorage.getItem("analytics_consent");
 
       if (consent === "accepted") {
@@ -425,7 +440,7 @@
       } else if (!consent) {
         document.getElementById("cookie-banner").style.display = "block";
       }
-    });
+    }
   </script>
 
 </body>
