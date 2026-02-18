@@ -25,63 +25,63 @@
       color: var(--text);
     }
 
-   /* ===== TOPBAR (финальная версия как EN) ===== */
+    /* ===== TOPBAR (как EN: brand слева, nav по центру, lang справа) ===== */
+    .topbar{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 20px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
 
-.topbar{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 18px 20px 0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+      min-width:220px;
+    }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-  color:inherit;
-}
+    .brand img{
+      width:40px;
+      height:auto;
+      display:block;
+    }
 
-.brand img{
-  width:40px;
-  height:auto;
-  display:block;
-}
+    .brand .name{
+      font-weight:600;
+      font-size:16px;
+      letter-spacing:0.2px;
+      white-space: nowrap;
+      color: var(--text);
+    }
 
-.brand .name{
-  font-weight:600;
-  font-size:16px;
-  letter-spacing:0.2px;
-  white-space: nowrap;
-  color: var(--text);
-}
+    .nav{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      justify-content:center;
+      flex:1;
+      flex-wrap:wrap;
+    }
 
-.right{
-  display:flex;
-  align-items:center;
-  gap:32px;
-}
+    .nav a{
+      color: var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
 
-.nav{
-  display:flex;
-  gap:24px;
-  align-items:center;
-}
+    .nav a:hover{
+      color: var(--blue);
+    }
 
-.nav a{
-  color: var(--text);
-  text-decoration:none;
-  font-weight:600;
-  font-size:14px;
-  transition: color 0.2s ease;
-}
-
-.nav a:hover{
-  color: var(--blue);
-}
-
+    /* Language switch — как в RU (белая рамка + синий текст на hover/active) */
     .lang{
       display:flex;
       gap:10px;
@@ -92,6 +92,8 @@
       opacity:0.9;
       user-select:none;
       white-space:nowrap;
+      min-width:220px;
+      justify-content:flex-end;
     }
 
     .lang a{
@@ -306,11 +308,17 @@
         text-align:center;
       }
 
-      .right{
+      .brand{
+        min-width:auto;
         justify-content:center;
       }
 
       .nav{
+        justify-content:center;
+      }
+
+      .lang{
+        min-width:auto;
         justify-content:center;
       }
 
@@ -342,19 +350,17 @@
       <div class="name">DK Software Studio</div>
     </a>
 
-    <div class="right">
-      <div class="nav">
-        <a href="about.html">О студии</a>
-        <a href="projects.html">Проекты</a>
-        <a href="contact.html">Контакт</a>
-      </div>
+    <div class="nav">
+      <a href="about.html">О студии</a>
+      <a href="projects.html">Проекты</a>
+      <a href="contact.html">Контакт</a>
+    </div>
 
-      <div class="lang">
-        <a class="active" href="index.html" title="Русский">RU</a>
-        <a href="en/index.html" title="English">EN</a>
-        <a href="de/index.html" title="Deutsch">DE</a>
-        <a href="uk/index.html" title="Українська">UK</a>
-      </div>
+    <div class="lang">
+      <a class="active" href="index.html" title="Русский">RU</a>
+      <a href="en/index.html" title="English">EN</a>
+      <a href="de/index.html" title="Deutsch">DE</a>
+      <a href="uk/index.html" title="Українська">UK</a>
     </div>
   </div>
 
