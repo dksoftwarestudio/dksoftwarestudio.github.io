@@ -25,24 +25,23 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR (как EN: brand слева, nav по центру, lang справа) ===== */
+    /* ===== TOPBAR (pixel perfect like EN) ===== */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
       padding: 18px 20px 0;
       display:flex;
       align-items:center;
-      justify-content:space-between;
-      gap:16px;
     }
 
+    /* LEFT */
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
       text-decoration:none;
       color:inherit;
-      min-width:220px;
+      width:220px; /* fixed width for symmetry */
     }
 
     .brand img{
@@ -55,17 +54,17 @@
       font-weight:600;
       font-size:16px;
       letter-spacing:0.2px;
-      white-space: nowrap;
+      white-space:nowrap;
       color: var(--text);
     }
 
+    /* CENTER */
     .nav{
+      flex:1;
       display:flex;
+      justify-content:center;
       gap:24px;
       align-items:center;
-      justify-content:center;
-      flex:1;
-      flex-wrap:wrap;
     }
 
     .nav a{
@@ -81,19 +80,19 @@
       color: var(--blue);
     }
 
-    /* Language switch — как в RU (белая рамка + синий текст на hover/active) */
+    /* RIGHT */
     .lang{
       display:flex;
       gap:10px;
       align-items:center;
+      justify-content:flex-end;
+      width:220px; /* same as left */
       font-size:12px;
       font-weight:700;
       letter-spacing:0.2px;
       opacity:0.9;
       user-select:none;
       white-space:nowrap;
-      min-width:220px;
-      justify-content:flex-end;
     }
 
     .lang a{
@@ -308,18 +307,15 @@
         text-align:center;
       }
 
-      .brand{
-        min-width:auto;
+      .brand,
+      .lang{
+        width:auto;
         justify-content:center;
       }
 
       .nav{
         justify-content:center;
-      }
-
-      .lang{
-        min-width:auto;
-        justify-content:center;
+        flex-wrap:wrap;
       }
 
       .card{
