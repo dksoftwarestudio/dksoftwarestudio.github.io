@@ -1,3 +1,4 @@
+<!-- Файл: contact.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -5,42 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Контакт — DK Software Studio</title>
 
-</head>
-
   <style>
-    .cookie-banner{
-  position:fixed;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  max-width:640px;
-  background:#ffffff;
-  border-radius:16px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.15);
-  border:1px solid rgba(0,0,0,0.06);
-  padding:20px;
-  display:none;
-  z-index:9999;
-}
-
-.cookie-content{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.cookie-content span{
-  font-size:14px;
-  color:#555;
-}
-
-.cookie-buttons{
-  display:flex;
-  gap:10px;
-}
     :root{
       --blue:#1A53AD;
       --blueDark:#163e82;
@@ -86,6 +52,7 @@
       font-weight:700;
       letter-spacing:0.2px;
       white-space: nowrap;
+      color: var(--text);
     }
     .nav{
       display:flex;
@@ -184,6 +151,8 @@
       font-weight: 700;
       transition: 0.2s ease;
       user-select:none;
+      border:0;
+      cursor:pointer;
     }
     .btn.primary{
       background: var(--blue);
@@ -208,6 +177,38 @@
       text-align:center;
       color:#9aa6b2;
       font-size: 13px;
+    }
+
+    /* cookie banner */
+    .cookie-banner{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:90%;
+      max-width:640px;
+      background:#ffffff;
+      border-radius:16px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,0,0,0.06);
+      padding:20px;
+      display:none;
+      z-index:9999;
+    }
+    .cookie-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .cookie-content span{
+      font-size:14px;
+      color:#555;
+    }
+    .cookie-buttons{
+      display:flex;
+      gap:10px;
     }
 
     @media (max-width: 560px){
@@ -275,53 +276,52 @@
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
+
   <div id="cookie-banner" class="cookie-banner">
-  <div class="cookie-content">
-    <span>
-      Мы используем анонимную аналитику для улучшения сайта.
-    </span>
-    <div class="cookie-buttons">
-      <button onclick="acceptCookies()" class="btn primary">Принять</button>
-      <button onclick="declineCookies()" class="btn secondary">Отклонить</button>
+    <div class="cookie-content">
+      <span>Мы используем анонимную аналитику для улучшения сайта.</span>
+      <div class="cookie-buttons">
+        <button type="button" onclick="acceptCookies()" class="btn primary">Принять</button>
+        <button type="button" onclick="declineCookies()" class="btn secondary">Отклонить</button>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-function loadAnalytics() {
-  var script = document.createElement('script');
-  script.async = true;
-  script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
-  document.head.appendChild(script);
+  <script>
+    function loadAnalytics() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
+      document.head.appendChild(script);
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
 
-  gtag('js', new Date());
-  gtag('config', 'G-T3DB7K2NSS');
-}
+      gtag('js', new Date());
+      gtag('config', 'G-T3DB7K2NSS');
+    }
 
-function acceptCookies() {
-  localStorage.setItem("analytics_consent", "accepted");
-  loadAnalytics();
-  document.getElementById("cookie-banner").style.display = "none";
-}
+    function acceptCookies() {
+      localStorage.setItem("analytics_consent", "accepted");
+      loadAnalytics();
+      document.getElementById("cookie-banner").style.display = "none";
+    }
 
-function declineCookies() {
-  localStorage.setItem("analytics_consent", "declined");
-  document.getElementById("cookie-banner").style.display = "none";
-}
+    function declineCookies() {
+      localStorage.setItem("analytics_consent", "declined");
+      document.getElementById("cookie-banner").style.display = "none";
+    }
 
-window.onload = function() {
-  var consent = localStorage.getItem("analytics_consent");
+    window.onload = function() {
+      var consent = localStorage.getItem("analytics_consent");
 
-  if (consent === "accepted") {
-    loadAnalytics();
-  } else if (!consent) {
-    document.getElementById("cookie-banner").style.display = "block";
-  }
-}
-</script>
+      if (consent === "accepted") {
+        loadAnalytics();
+      } else if (!consent) {
+        document.getElementById("cookie-banner").style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
