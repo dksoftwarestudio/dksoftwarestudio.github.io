@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -113,35 +113,35 @@
 
     .nav a:hover{
       color: var(--blue);
-      text-decoration:none;
     }
 
     /* ===== Language switch ===== */
-    .lang-switch{
+    .lang{
       display:flex;
+      gap:8px;
       align-items:center;
-      gap:6px;
-      font-size:13px;
-      font-weight:600;
-      white-space:nowrap;
     }
 
-    .lang-switch a{
+    .lang a{
+      font-size:12px;
+      font-weight:700;
       text-decoration:none;
       color: var(--muted);
+      padding:6px 8px;
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:#fff;
       transition:0.2s ease;
     }
 
-    .lang-switch a:hover{
+    .lang a:hover{
       color: var(--blue);
+      border-color: rgba(26,83,173,0.25);
     }
 
-    .lang-switch .active{
-      color: var(--text);
-    }
-
-    .lang-switch span{
-      color:#bbb;
+    .lang a.active{
+      color: var(--blue);
+      border-color: rgba(26,83,173,0.35);
     }
 
     /* ===== LAYOUT ===== */
@@ -249,16 +249,14 @@
     }
 
     .btn{
-      display:inline-block;
       padding: 12px 26px;
       border-radius: 10px;
       text-decoration:none;
       font-size:15px;
       font-weight:600;
-      transition: 0.2s ease;
-      user-select:none;
       border:0;
       cursor:pointer;
+      transition:0.2s ease;
     }
 
     .btn.primary{
@@ -277,11 +275,6 @@
       color: var(--text);
     }
 
-    .btn.secondary:hover{
-      background:#e3eaf6;
-      transform: translateY(-2px);
-    }
-
     footer{
       margin-top:30px;
       text-align:center;
@@ -289,7 +282,6 @@
       font-size:13px;
     }
 
-    /* ===== MOBILE ===== */
     @media (max-width: 560px){
       .topbar{
         flex-direction:column;
@@ -299,12 +291,10 @@
 
       .nav{
         justify-content:center;
-        gap:14px;
       }
 
-      .lang-switch{
+      .lang{
         justify-content:center;
-        margin-top:2px;
       }
 
       .card{
@@ -316,16 +306,11 @@
       }
 
       .dk-logo{
-        width: 220px;
+        width:220px;
       }
 
       .feature-row{
         flex-direction:column;
-        gap:18px;
-      }
-
-      .cookie-banner{
-        bottom:14px; /* mobile spacing */
       }
     }
   </style>
@@ -340,28 +325,16 @@
     </a>
 
     <div class="nav">
-          <div class="nav">
       <a href="about.html">О студии</a>
       <a href="projects.html">Проекты</a>
       <a href="contact.html">Контакт</a>
     </div>
 
     <div class="lang">
-      <a href="/index.html" class="active">EN</a>
+      <a href="/index.html" class="active">RU</a>
+      <a href="/index.html">EN</a>
       <a href="/de/index.html">DE</a>
-      <a href="/ru/index.html">RU</a>
       <a href="/uk/index.html">UK</a>
-    </div>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-    <div class="lang-switch" aria-label="Language">
-      <a class="active" href="index.html">EN</a><span>|</span>
-      <a href="ru/index.html">RU</a><span>|</span>
-      <a href="de/index.html">DE</a><span>|</span>
-      <a href="uk/index.html">UK</a>
     </div>
   </div>
 
@@ -371,29 +344,13 @@
 
         <img class="dk-logo" src="logo.png" alt="DK Software Studio">
 
-        <div class="tagline">Simple. Clean. Functional.</div>
+        <div class="tagline">Просто. Чисто. Функционально.</div>
 
         <div class="title">JW Daily Alarm</div>
 
         <div class="subtitle">
-          A minimalist reminder app with a daily link.
-          Open the right page with one tap — no extra steps, no distractions.
-        </div>
-
-        <div class="feature-row">
-          <img class="app-icon" src="jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
-
-          <ul class="features">
-            <li>Daily reminder at your chosen time</li>
-            <li>Instant link opening</li>
-            <li>Clean minimalist interface</li>
-            <li>Multiple languages supported</li>
-          </ul>
-        </div>
-
-        <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank" rel="noopener">Coming soon on Google Play</a>
-          <a class="btn secondary" href="projects.html">All projects</a>
+          Минималистичное приложение-напоминание с ежедневной ссылкой.
+          Открывайте нужную страницу одним нажатием — без лишних действий и отвлечений.
         </div>
 
       </div>
@@ -401,56 +358,6 @@
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
-
-  <!-- Cookie banner -->
-  <div id="cookie-banner" class="cookie-banner">
-    <div class="cookie-content">
-      <span>We use anonymous analytics to improve the website.</span>
-      <div class="cookie-buttons">
-        <button onclick="acceptCookies()" class="btn primary">Accept</button>
-        <button onclick="declineCookies()" class="btn secondary">Decline</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function loadAnalytics() {
-      if (window.__gaLoaded) return;
-      window.__gaLoaded = true;
-
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
-      document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-
-      gtag('js', new Date());
-      gtag('config', 'G-T3DB7K2NSS');
-    }
-
-    function acceptCookies() {
-      localStorage.setItem("analytics_consent", "accepted");
-      loadAnalytics();
-      document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    function declineCookies() {
-      localStorage.setItem("analytics_consent", "declined");
-      document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    window.onload = function() {
-      var consent = localStorage.getItem("analytics_consent");
-      if (consent === "accepted") {
-        loadAnalytics();
-      } else if (!consent) {
-        document.getElementById("cookie-banner").style.display = "block";
-      }
-    }
-  </script>
 
 </body>
 </html>
