@@ -25,13 +25,15 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR (pixel perfect like EN) ===== */
+    /* ===== TOPBAR (match inner pages: brand left, menu+langs right) ===== */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
       padding: 18px 20px 0;
       display:flex;
       align-items:center;
+      justify-content:space-between;
+      gap:12px;
     }
 
     /* LEFT */
@@ -41,7 +43,7 @@
       gap:12px;
       text-decoration:none;
       color:inherit;
-      width:220px; /* fixed width for symmetry */
+      white-space: nowrap;
     }
 
     .brand img{
@@ -58,13 +60,20 @@
       color: var(--text);
     }
 
-    /* CENTER */
-    .nav{
-      flex:1;
+    /* RIGHT (menu + langs) */
+    .topbar-right{
       display:flex;
-      justify-content:center;
-      gap:24px;
       align-items:center;
+      gap:22px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
     }
 
     .nav a{
@@ -80,13 +89,10 @@
       color: var(--blue);
     }
 
-    /* RIGHT */
     .lang{
       display:flex;
       gap:10px;
       align-items:center;
-      justify-content:flex-end;
-      width:220px; /* same as left */
       font-size:12px;
       font-weight:700;
       letter-spacing:0.2px;
@@ -307,10 +313,13 @@
         text-align:center;
       }
 
-      .brand,
-      .lang{
-        width:auto;
+      .brand{
         justify-content:center;
+      }
+
+      .topbar-right{
+        justify-content:center;
+        gap:12px;
       }
 
       .nav{
@@ -346,17 +355,19 @@
       <div class="name">DK Software Studio</div>
     </a>
 
-    <div class="nav">
-      <a href="about.html">О студии</a>
-      <a href="projects.html">Проекты</a>
-      <a href="contact.html">Контакт</a>
-    </div>
+    <div class="topbar-right">
+      <div class="nav">
+        <a href="about.html">О студии</a>
+        <a href="projects.html">Проекты</a>
+        <a href="contact.html">Контакт</a>
+      </div>
 
-    <div class="lang">
-      <a class="active" href="index.html" title="Русский">RU</a>
-      <a href="en/index.html" title="English">EN</a>
-      <a href="de/index.html" title="Deutsch">DE</a>
-      <a href="uk/index.html" title="Українська">UK</a>
+      <div class="lang">
+        <a class="active" href="index.html" title="Русский">RU</a>
+        <a href="en/index.html" title="English">EN</a>
+        <a href="de/index.html" title="Deutsch">DE</a>
+        <a href="uk/index.html" title="Українська">UK</a>
+      </div>
     </div>
   </div>
 
