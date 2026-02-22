@@ -25,55 +25,30 @@
       color: var(--text);
     }
 
-    /* cookie banner */
-    .cookie-banner{
-      position:fixed;
-      bottom:20px;
-      left:50%;
-      transform:translateX(-50%);
-      width:90%;
-      max-width:640px;
-      background:#ffffff;
-      border-radius:16px;
-      box-shadow:0 20px 40px rgba(0,0,0,0.15);
-      border:1px solid rgba(0,0,0,0.06);
-      padding:20px;
-      display:none;
-      z-index:9999;
-    }
-    .cookie-content{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-    .cookie-content span{
-      font-size:14px;
-      color:#555;
-    }
-    .cookie-buttons{
-      display:flex;
-      gap:10px;
+    /* =========================
+       HEADER BASELINE
+    ========================== */
+
+    .topbar{
+      padding: 18px 20px 0;
     }
 
-    /* ШАПКА */
-    .topbar{
+    .topbar-inner{
       max-width: 980px;
       margin: 0 auto;
-      padding: 18px 20px 0;
       display:flex;
       align-items:center;
-      justify-content:space-between;
       gap:12px;
     }
 
+    /* Бренд слева */
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
       text-decoration:none;
       color:inherit;
+      white-space: nowrap;
     }
 
     .brand img{
@@ -84,13 +59,15 @@
     .brand .name{
       font-weight:600;
       letter-spacing:0.2px;
-      white-space: nowrap;
       color: var(--text);
     }
 
+    /* Навигация строго по центру */
     .nav{
+      flex: 1;
       display:flex;
-      gap:16px;
+      justify-content:center;
+      gap:20px;
       align-items:center;
       flex-wrap:wrap;
     }
@@ -102,13 +79,26 @@
       font-size:14px;
     }
 
-    /* аккуратный hover (без подчёркивания) */
     .nav a:hover{
       color: var(--blue);
-      text-decoration:none;
     }
 
-    /* ОСНОВНОЙ БЛОК */
+    .nav a.active{
+      color: var(--blue);
+    }
+
+    /* Правая зона (на будущее языки) */
+    .topbar-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      white-space: nowrap;
+    }
+
+    /* =========================
+       MAIN LAYOUT
+    ========================== */
+
     .wrap{
       max-width:980px;
       margin:0 auto;
@@ -132,7 +122,6 @@
       text-align:center;
     }
 
-    /* ЛОГО В КАРТОЧКЕ */
     .studio-logo{
       width:240px;
       border-radius:22px;
@@ -235,45 +224,93 @@
       font-size:13px;
     }
 
+    /* =========================
+       MOBILE
+    ========================== */
+
     @media (max-width:560px){
-      .topbar{
-        justify-content:center;
+
+      .topbar-inner{
         flex-wrap:wrap;
+        justify-content:center;
         text-align:center;
       }
 
       .brand{ width:100%; justify-content:center; }
       .nav{ width:100%; justify-content:center; gap:14px; }
+      .topbar-right{ width:100%; justify-content:center; }
 
       .card{ padding:34px 22px; }
       .title{ font-size:30px; }
-
       .studio-logo{ width:200px; }
     }
+
+    /* =========================
+       COOKIE BANNER
+    ========================== */
+
+    .cookie-banner{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:90%;
+      max-width:640px;
+      background:#ffffff;
+      border-radius:16px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,0,0,0.06);
+      padding:20px;
+      display:none;
+      z-index:9999;
+    }
+
+    .cookie-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .cookie-content span{
+      font-size:14px;
+      color:#555;
+    }
+
+    .cookie-buttons{
+      display:flex;
+      gap:10px;
+    }
+
   </style>
 </head>
 
 <body>
-  <!-- дальше твой body без изменений -->
 
-  <div class="topbar">
-    <a class="brand" href="index.html">
-      <img src="dk-icon.png" alt="DK">
-      <div class="name">DK Software Studio</div>
-    </a>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        <img src="dk-icon.png" alt="DK">
+        <div class="name">DK Software Studio</div>
+      </a>
 
-    <div class="nav">
-      <a href="index.html">Главная</a>
-      <a href="projects.html">Проекты</a>
-      <a href="contact.html">Контакт</a>
+      <nav class="nav">
+        <a href="about.html" class="active">О студии</a>
+        <a href="projects.html">Проекты</a>
+        <a href="contact.html">Контакт</a>
+      </nav>
+
+      <div class="topbar-right"></div>
     </div>
-  </div>
+  </header>
 
+  <!-- CONTENT -->
   <div class="wrap">
     <div class="hero">
       <div class="card">
 
-        <!-- Логотип в карточке -->
         <img class="studio-logo" src="dk-icon1.png" alt="DK Software Studio">
 
         <div class="title">О студии</div>
@@ -300,17 +337,18 @@
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
+
+  <!-- COOKIE -->
   <div id="cookie-banner" class="cookie-banner">
-  <div class="cookie-content">
-    <span>
-      Мы используем анонимную аналитику для улучшения сайта.
-    </span>
-    <div class="cookie-buttons">
-      <button onclick="acceptCookies()" class="btn primary">Принять</button>
-      <button onclick="declineCookies()" class="btn secondary">Отклонить</button>
+    <div class="cookie-content">
+      <span>Мы используем анонимную аналитику для улучшения сайта.</span>
+      <div class="cookie-buttons">
+        <button onclick="acceptCookies()" class="btn primary">Принять</button>
+        <button onclick="declineCookies()" class="btn secondary">Отклонить</button>
+      </div>
     </div>
   </div>
-</div>
+
   <script src="analytics.js"></script>
 
 </body>
