@@ -25,24 +25,24 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR ===== */
+    /* ===== TOPBAR (langs center, menu right) ===== */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
       padding: 18px 20px 0;
       display:flex;
       align-items:center;
-      justify-content:space-between;
       gap:16px;
     }
 
+    /* LEFT */
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
       text-decoration:none;
       color:inherit;
-      min-width: 220px;
+      white-space:nowrap;
     }
 
     .brand img{
@@ -58,29 +58,11 @@
       white-space: nowrap;
     }
 
-    .nav{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-
-    .nav a{
-      color: var(--text);
-      text-decoration:none;
-      font-weight:600;
-      font-size:14px;
-      transition: color 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .nav a:hover{
-      color: var(--blue);
-    }
-
+    /* CENTER (LANG) */
     .lang{
+      flex:1;
       display:flex;
+      justify-content:center;
       gap:10px;
       align-items:center;
       font-size:12px;
@@ -110,6 +92,28 @@
       color: var(--blue);
       border-color: rgba(26,83,173,0.22);
       background:#fff;
+    }
+
+    /* RIGHT (MENU) */
+    .nav{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      color: var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav a:hover{
+      color: var(--blue);
     }
 
     /* ===== LAYOUT ===== */
@@ -260,12 +264,12 @@
         text-align:center;
       }
 
-      .brand{ min-width:auto; }
+      .brand{ justify-content:center; }
       .brand .name{ white-space:normal; }
 
-      .nav{ justify-content:center; }
-
       .lang{ justify-content:center; }
+
+      .nav{ justify-content:center; }
 
       .card{ padding:34px 22px; }
       .title{ font-size:30px; }
@@ -294,17 +298,17 @@
       <div class="name">DK Software Studio</div>
     </a>
 
-    <div class="nav">
-      <a href="about.html">Über uns</a>
-      <a href="projects.html">Projekte</a>
-      <a href="contact.html">Kontakt</a>
-    </div>
-
     <div class="lang">
       <a href="../index.html">RU</a>
       <a href="../en/index.html">EN</a>
       <a class="active" href="index.html">DE</a>
       <a href="../uk/index.html">UK</a>
+    </div>
+
+    <div class="nav">
+      <a href="about.html">Über uns</a>
+      <a href="projects.html">Projekte</a>
+      <a href="contact.html">Kontakt</a>
     </div>
   </div>
 
