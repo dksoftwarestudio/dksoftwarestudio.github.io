@@ -1,341 +1,317 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>О студии — DK Software Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>О студии — DK Software Studio</title>
 
-<style>
-:root{
-  --blue:#1A53AD;
-  --blueDark:#163e82;
-  --bg:#f4f6f9;
-  --text:#2c3e50;
-  --muted:#666;
-  --card:#ffffff;
-  --border:rgba(0,0,0,0.06);
-}
+  <style>
+    :root{
+      --blue:#1A53AD;
+      --blueDark:#163e82;
+      --bg:#f4f6f9;
+      --text:#2c3e50;
+      --muted:#666;
+      --card:#ffffff;
+      --border:rgba(0,0,0,0.06);
+    }
 
-*{box-sizing:border-box;}
+    *{ box-sizing:border-box; }
 
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
 
-/* ================= HEADER ================= */
+    /* cookie banner */
+    .cookie-banner{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:90%;
+      max-width:640px;
+      background:#ffffff;
+      border-radius:16px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,0,0,0.06);
+      padding:20px;
+      display:none;
+      z-index:9999;
+    }
+    .cookie-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .cookie-content span{
+      font-size:14px;
+      color:#555;
+    }
+    .cookie-buttons{
+      display:flex;
+      gap:10px;
+    }
 
-.topbar{
-  padding:18px 20px 0;
-}
+    /* ШАПКА */
+    .topbar{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 20px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
 
-.topbar-inner{
-  max-width:980px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  gap:20px;
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+    }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-  color:inherit;
-  white-space:nowrap;
-}
+    .brand img{
+      width:40px;
+      height:auto;
+    }
 
-.brand img{
-  width:42px;
-}
+    .brand .name{
+      font-weight:600;
+      letter-spacing:0.2px;
+      white-space: nowrap;
+      color: var(--text);
+    }
 
-.brand .name{
-  font-weight:700;
-}
+    .nav{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
 
-.nav{
-  flex:1;
-  display:flex;
-  justify-content:center;
-  gap:22px;
-}
+    .nav a{
+      color: var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+    }
 
-.nav-link{
-  text-decoration:none;
-  color:var(--text);
-  font-weight:600;
-  font-size:14px;
-}
+    /* аккуратный hover (без подчёркивания) */
+    .nav a:hover{
+      color: var(--blue);
+      text-decoration:none;
+    }
 
-.nav-link:hover{
-  color:var(--blue);
-}
+    /* ОСНОВНОЙ БЛОК */
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      padding:24px 20px 70px;
+    }
 
-.nav-link.is-active{
-  color:var(--blue);
-}
+    .hero{
+      margin-top:16px;
+      display:flex;
+      justify-content:center;
+    }
 
-.langs{
-  display:flex;
-  gap:14px;
-}
+    .card{
+      width:100%;
+      max-width:860px;
+      background: var(--card);
+      border-radius:18px;
+      box-shadow:0 22px 55px rgba(0,0,0,0.07);
+      border:1px solid var(--border);
+      padding:44px 42px;
+      text-align:center;
+    }
 
-.lang-link{
-  text-decoration:none;
-  font-size:13px;
-  font-weight:700;
-  color:#7b8794;
-}
+    /* ЛОГО В КАРТОЧКЕ */
+    .studio-logo{
+      width:240px;
+      border-radius:22px;
+      padding:14px;
+      background:#fff;
+      box-shadow:0 18px 40px rgba(0,0,0,0.10);
+      border:1px solid var(--border);
+      margin:0 auto 24px;
+      display:block;
+    }
 
-.lang-link:hover{
-  color:var(--blue);
-}
+    .title{
+      margin:0 0 14px;
+      font-size:38px;
+      line-height:1.1;
+      font-weight:500;
+    }
 
-.lang-link.is-active{
-  color:var(--blue);
-  background:rgba(26,83,173,0.10);
-  padding:6px 10px;
-  border-radius:10px;
-}
+    .subtitle{
+      margin:0 auto 22px;
+      max-width:720px;
+      font-size:16px;
+      line-height:1.7;
+      color: var(--muted);
+    }
 
-/* ================= MAIN ================= */
+    .features{
+      list-style:none;
+      padding:0;
+      margin:0 auto 24px;
+      max-width:720px;
+      text-align:left;
+      line-height:1.85;
+      font-size:16px;
+      color:#3a4b5c;
+    }
 
-.wrap{
-  max-width:980px;
-  margin:0 auto;
-  padding:24px 20px 70px;
-}
+    .features li{
+      position:relative;
+      padding-left:28px;
+      margin:8px 0;
+    }
 
-.hero{
-  margin-top:16px;
-  display:flex;
-  justify-content:center;
-}
+    .features li::before{
+      content:"•";
+      position:absolute;
+      left:10px;
+      top:-1px;
+      color:var(--blue);
+      font-size:22px;
+      line-height:1;
+    }
 
-.card{
-  width:100%;
-  max-width:860px;
-  background:var(--card);
-  border-radius:18px;
-  box-shadow:0 22px 55px rgba(0,0,0,0.07);
-  border:1px solid var(--border);
-  padding:44px 42px;
-  text-align:center;
-}
+    .btn-row{
+      margin-top:10px;
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
 
-.studio-logo{
-  width:240px;
-  border-radius:22px;
-  padding:14px;
-  background:#fff;
-  box-shadow:0 18px 40px rgba(0,0,0,0.10);
-  border:1px solid var(--border);
-  margin:0 auto 24px;
-  display:block;
-}
+    .btn{
+      display:inline-block;
+      padding:13px 28px;
+      border-radius:10px;
+      text-decoration:none;
+      font-size:16px;
+      font-weight:700;
+      transition:0.2s ease;
+      user-select:none;
+      border:0;
+      cursor:pointer;
+    }
 
-.title{
-  margin:0 0 14px;
-  font-size:38px;
-  font-weight:500;
-}
+    .btn.primary{
+      background:var(--blue);
+      color:#fff;
+      box-shadow:0 10px 25px rgba(26,83,173,0.22);
+    }
 
-.subtitle{
-  margin:0 auto 22px;
-  max-width:720px;
-  font-size:16px;
-  line-height:1.7;
-  color:var(--muted);
-}
+    .btn.primary:hover{
+      background:var(--blueDark);
+      transform:translateY(-2px);
+    }
 
-.features{
-  list-style:none;
-  padding:0;
-  margin:0 auto 24px;
-  max-width:720px;
-  text-align:left;
-  line-height:1.85;
-  font-size:16px;
-}
+    .btn.secondary{
+      background:#eef2f8;
+      color:var(--blue);
+    }
 
-.features li{
-  position:relative;
-  padding-left:28px;
-  margin:8px 0;
-}
+    .btn.secondary:hover{
+      background:#e3eaf6;
+      transform:translateY(-2px);
+    }
 
-.features li::before{
-  content:"•";
-  position:absolute;
-  left:10px;
-  top:-1px;
-  color:var(--blue);
-  font-size:22px;
-}
+    footer{
+      margin-top:26px;
+      text-align:center;
+      color:#9aa6b2;
+      font-size:13px;
+    }
 
-.btn-row{
-  margin-top:10px;
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
+    @media (max-width:560px){
+      .topbar{
+        justify-content:center;
+        flex-wrap:wrap;
+        text-align:center;
+      }
 
-.btn{
-  padding:13px 28px;
-  border-radius:10px;
-  text-decoration:none;
-  font-size:16px;
-  font-weight:700;
-  transition:.2s;
-}
+      .brand{ width:100%; justify-content:center; }
+      .nav{ width:100%; justify-content:center; gap:14px; }
 
-.btn.primary{
-  background:var(--blue);
-  color:#fff;
-}
+      .card{ padding:34px 22px; }
+      .title{ font-size:30px; }
 
-.btn.primary:hover{
-  background:var(--blueDark);
-  transform:translateY(-2px);
-}
-
-.btn.secondary{
-  background:#eef2f8;
-  color:var(--blue);
-}
-
-.btn.secondary:hover{
-  background:#e3eaf6;
-  transform:translateY(-2px);
-}
-
-footer{
-  margin-top:26px;
-  text-align:center;
-  color:#9aa6b2;
-  font-size:13px;
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width:560px){
-  .topbar-inner{
-    flex-wrap:wrap;
-    justify-content:center;
-    text-align:center;
-  }
-
-  .brand{width:100%; justify-content:center;}
-  .nav{width:100%; justify-content:center;}
-  .langs{width:100%; justify-content:center;}
-
-  .card{padding:34px 22px;}
-  .title{font-size:30px;}
-  .studio-logo{width:200px;}
-}
-
-/* ================= COOKIE ================= */
-
-.cookie-banner{
-  position:fixed;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  max-width:640px;
-  background:#fff;
-  border-radius:16px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.15);
-  padding:20px;
-  display:none;
-  z-index:9999;
-}
-
-.cookie-content{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.cookie-buttons{
-  display:flex;
-  gap:10px;
-}
-</style>
+      .studio-logo{ width:200px; }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- дальше твой body без изменений -->
 
-<header class="topbar">
-  <div class="topbar-inner">
+  <div class="topbar">
     <a class="brand" href="index.html">
       <img src="dk-icon.png" alt="DK">
       <div class="name">DK Software Studio</div>
     </a>
 
-    <nav class="nav">
-      <a href="about.html" class="nav-link is-active">О студии</a>
-      <a href="projects.html" class="nav-link">Проекты</a>
-      <a href="contact.html" class="nav-link">Контакт</a>
-    </nav>
-
-    <div class="langs">
-      <a href="about.html" class="lang-link is-active">RU</a>
-      <a href="about-en.html" class="lang-link">EN</a>
-      <a href="about-de.html" class="lang-link">DE</a>
-      <a href="about-uk.html" class="lang-link">UK</a>
-    </div>
-  </div>
-</header>
-
-<div class="wrap">
-  <div class="hero">
-    <div class="card">
-
-      <img class="studio-logo" src="dk-icon1.png" alt="DK Software Studio">
-
-      <div class="title">О студии</div>
-
-      <div class="subtitle">
-        DK Software Studio — небольшая независимая студия разработки.
-        Мы создаём простые, аккуратные и продуманные цифровые продукты.
-      </div>
-
-      <ul class="features">
-        <li>Минимализм — только нужные функции</li>
-        <li>Чистый интерфейс без лишнего шума</li>
-        <li>Надёжность и предсказуемость работы</li>
-        <li>Фокус на практичности — чтобы работало каждый день</li>
-      </ul>
-
-      <div class="btn-row">
-        <a class="btn primary" href="projects.html">К проектам</a>
-        <a class="btn secondary" href="index.html">← На главную</a>
-      </div>
-
+    <div class="nav">
+      <a href="index.html">Главная</a>
+      <a href="projects.html">Проекты</a>
+      <a href="contact.html">Контакт</a>
     </div>
   </div>
 
-  <footer>© 2026 DK Software Studio</footer>
-</div>
+  <div class="wrap">
+    <div class="hero">
+      <div class="card">
 
-<div id="cookie-banner" class="cookie-banner">
+        <!-- Логотип в карточке -->
+        <img class="studio-logo" src="dk-icon1.png" alt="DK Software Studio">
+
+        <div class="title">О студии</div>
+
+        <div class="subtitle">
+          DK Software Studio — небольшая независимая студия разработки.
+          Мы создаём простые, аккуратные и продуманные цифровые продукты.
+        </div>
+
+        <ul class="features">
+          <li>Минимализм — только нужные функции</li>
+          <li>Чистый интерфейс без лишнего шума</li>
+          <li>Надёжность и предсказуемость работы</li>
+          <li>Фокус на практичности — чтобы работало каждый день</li>
+        </ul>
+
+        <div class="btn-row">
+          <a class="btn primary" href="projects.html">К проектам</a>
+          <a class="btn secondary" href="index.html">← На главную</a>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>© 2026 DK Software Studio</footer>
+  </div>
+  <div id="cookie-banner" class="cookie-banner">
   <div class="cookie-content">
-    <span>Мы используем анонимную аналитику для улучшения сайта.</span>
+    <span>
+      Мы используем анонимную аналитику для улучшения сайта.
+    </span>
     <div class="cookie-buttons">
       <button onclick="acceptCookies()" class="btn primary">Принять</button>
       <button onclick="declineCookies()" class="btn secondary">Отклонить</button>
     </div>
   </div>
 </div>
-
-<script src="analytics.js"></script>
+  <script src="analytics.js"></script>
 
 </body>
 </html>
