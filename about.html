@@ -256,22 +256,29 @@
 <body>
   <!-- дальше твой body без изменений -->
 
-  <div class="topbar">
+ <header class="topbar">
+  <div class="topbar-inner">
+
     <a class="brand" href="index.html">
       <img src="dk-icon.png" alt="DK">
-      <div class="name">DK Software Studio</div>
+      <span class="brand-name">DK Software Studio</span>
     </a>
 
-    <div class="nav">
-      <a href="index.html">Главная</a>
-      <a href="projects.html">Проекты</a>
-      <a href="contact.html">Контакт</a>
-    </div>
-  </div>
+    <nav class="nav">
+      <a href="about.html" class="nav-link">О студии</a>
+      <a href="projects.html" class="nav-link">Проекты</a>
+      <a href="contact.html" class="nav-link">Контакт</a>
+    </nav>
 
-  <div class="wrap">
-    <div class="hero">
-      <div class="card">
+    <div class="langs">
+      <a href="index.html" class="lang-link is-active">RU</a>
+      <a href="index-en.html" class="lang-link">EN</a>
+      <a href="index-de.html" class="lang-link">DE</a>
+      <a href="index-uk.html" class="lang-link">UK</a>
+    </div>
+
+  </div>
+</header>
 
         <!-- Логотип в карточке -->
         <img class="studio-logo" src="dk-icon1.png" alt="DK Software Studio">
