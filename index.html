@@ -1,386 +1,411 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>DK Software Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DK Software Studio</title>
 
-<style>
-:root{
-  --blue:#1A53AD;
-  --blueDark:#163e82;
-  --bg:#f4f6f9;
-  --text:#2c3e50;
-  --muted:#666;
-  --card:#ffffff;
-  --border:rgba(0,0,0,0.06);
-}
+  <style>
+    :root{
+      --blue:#1A53AD;
+      --blueDark:#163e82;
+      --bg:#f4f6f9;
+      --text:#2c3e50;
+      --muted:#666;
+      --card:#ffffff;
+      --border:rgba(0,0,0,0.06);
+    }
 
-*{ box-sizing:border-box; }
+    *{ box-sizing:border-box; }
 
-body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
 
-/* ===== TOPBAR ===== */
-.topbar{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 18px 20px 0;
-  display:flex;
-  align-items:center;
-}
+    /* ===== TOPBAR ===== */
+    .topbar{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 20px 0;
+      display:flex;
+      align-items:center;
+    }
 
-/* LEFT */
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-  color:inherit;
-  white-space:nowrap;
-}
+    /* LEFT */
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+      white-space:nowrap;
+    }
 
-.brand img{
-  width:40px;
-  height:auto;
-}
+    .brand img{
+      width:40px;
+      height:auto;
+    }
 
-.brand .name{
-  font-weight:600;
-  font-size:16px;
-  letter-spacing:0.2px;
-  color: var(--text);
-}
+    .brand .name{
+      font-weight:600;
+      font-size:16px;
+      letter-spacing:0.2px;
+      color: var(--text);
+    }
 
-/* CENTER (LANGUAGES) */
-.lang{
-  flex:1;
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  align-items:center;
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:0.2px;
-  user-select:none;
-}
+    /* CENTER (LANGUAGES) */
+    .lang{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      align-items:center;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:0.2px;
+      user-select:none;
+    }
 
-.lang a{
-  color: var(--text);
-  text-decoration:none;
-  padding:6px 8px;
-  border-radius:8px;
-  border:1px solid transparent;
-  transition:0.2s ease;
-}
+    .lang a{
+      color: var(--text);
+      text-decoration:none;
+      padding:6px 8px;
+      border-radius:8px;
+      border:1px solid transparent;
+      transition:0.2s ease;
+    }
 
-.lang a:hover{
-  color: var(--blue);
-  border-color: rgba(26,83,173,0.18);
-  background:#fff;
-}
+    .lang a:hover{
+      color: var(--blue);
+      border-color: rgba(26,83,173,0.18);
+      background:#fff;
+    }
 
-.lang .active{
-  color: var(--blue);
-  border-color: rgba(26,83,173,0.22);
-  background:#fff;
-}
+    .lang .active{
+      color: var(--blue);
+      border-color: rgba(26,83,173,0.22);
+      background:#fff;
+    }
 
-/* RIGHT (MENU) */
-.nav{
-  display:flex;
-  gap:24px;
-  align-items:center;
-}
+    /* RIGHT (MENU) */
+    .nav{
+      display:flex;
+      gap:24px;
+      align-items:center;
+    }
 
-.nav a{
-  color: var(--text);
-  text-decoration:none;
-  font-weight:600;
-  font-size:14px;
-  white-space:nowrap;
-  transition:0.2s ease;
-}
+    .nav a{
+      color: var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      white-space:nowrap;
+      transition:0.2s ease;
+    }
 
-.nav a:hover{
-  color: var(--blue);
-}
+    .nav a:hover{
+      color: var(--blue);
+    }
 
-/* ===== LAYOUT ===== */
-.wrap{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 28px 20px 70px;
-}
+    /* ===== LAYOUT ===== */
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 70px;
+    }
 
-.hero{
-  margin-top: 18px;
-  display:flex;
-  justify-content:center;
-}
+    .hero{
+      margin-top: 18px;
+      display:flex;
+      justify-content:center;
+    }
 
-.card{
-  width:100%;
-  max-width: 860px;
-  background: var(--card);
-  border-radius: 18px;
-  box-shadow: 0 22px 55px rgba(0,0,0,0.07);
-  border: 1px solid var(--border);
-  padding: 48px 42px;
-  text-align:center;
-}
+    .card{
+      width:100%;
+      max-width: 860px;
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: 0 22px 55px rgba(0,0,0,0.07);
+      border: 1px solid var(--border);
+      padding: 48px 42px;
+      text-align:center;
+    }
 
-.dk-logo{
-  width: 300px;
-  margin: 0 auto 28px;
-  display:block;
-}
+    /* secondary cards (Pro / Calendar) */
+    .pro-card{
+      padding:40px 42px;
+    }
 
-.tagline{
-  font-size:18px;
-  font-weight:600;
-  color: var(--blue);
-  margin-bottom: 18px;
-}
+    .dk-logo{
+      width: 300px;
+      margin: 0 auto 28px;
+      display:block;
+    }
 
-.title{
-  font-size:38px;
-  font-weight:500;
-  margin: 0 0 14px;
-}
+    .tagline{
+      font-size:18px;
+      font-weight:600;
+      color: var(--blue);
+      margin-bottom: 18px;
+    }
 
-.subtitle{
-  margin: 0 auto 26px;
-  max-width: 720px;
-  font-size:16px;
-  line-height:1.7;
-  color: var(--muted);
-}
+    /* All card titles одинаковые (как ты просил) */
+    .title{
+      font-size:22px;
+      font-weight:600;
+      margin: 0 0 14px;
+    }
 
-.feature-row{
-  margin: 22px auto 10px;
-  max-width: 720px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap: 30px;
-}
+    .subtitle{
+      margin: 0 auto 26px;
+      max-width: 720px;
+      font-size:16px;
+      line-height:1.7;
+      color: var(--muted);
+    }
 
-.app-icon{
-  width: 130px;
-  border-radius: 22px;
-  box-shadow: 0 14px 35px rgba(0,0,0,0.10);
-  background:#fff;
-  padding: 12px;
-  border: 1px solid var(--border);
-}
+    /* secondary subtitles (Pro / Calendar) чуть компактнее */
+    .pro-card .subtitle{
+      margin-bottom:18px;
+    }
 
-.features{
-  list-style:none;
-  padding:0;
-  margin:0;
-  text-align:left;
-  font-size:16px;
-  line-height:1.9;
-  color:#3a4b5c;
-}
+    .feature-row{
+      margin: 22px auto 10px;
+      max-width: 720px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 30px;
+    }
 
-.features li{
-  position:relative;
-  padding-left:26px;
-  margin:8px 0;
-}
+    .app-icon{
+      width: 130px;
+      border-radius: 22px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.10);
+      background:#fff;
+      padding: 12px;
+      border: 1px solid var(--border);
+    }
 
-.features li::before{
-  content:"•";
-  position:absolute;
-  left:8px;
-  color: var(--blue);
-  font-size:20px;
-}
+    .features{
+      list-style:none;
+      padding:0;
+      margin:0;
+      text-align:left;
+      font-size:16px;
+      line-height:1.9;
+      color:#3a4b5c;
+    }
 
-.btn-row{
-  margin-top:26px;
-  display:flex;
-  gap:14px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
+    .features li{
+      position:relative;
+      padding-left:26px;
+      margin:8px 0;
+    }
 
-.btn{
-  display:inline-block;
-  padding: 12px 26px;
-  border-radius: 10px;
-  text-decoration:none;
-  font-size:15px;
-  font-weight:700;
-  transition: 0.2s ease;
-  border:none;
-  cursor:pointer;
-}
+    .features li::before{
+      content:"•";
+      position:absolute;
+      left:8px;
+      color: var(--blue);
+      font-size:20px;
+    }
 
-.btn.primary{
-  background: var(--blue);
-  color:#fff;
-  box-shadow: 0 10px 25px rgba(26,83,173,0.22);
-}
+    /* features for secondary cards */
+    .pro-features{
+      max-width:500px;
+      margin:0 auto 22px;
+      text-align:left;
+    }
 
-.btn.primary:hover{
-  background: var(--blueDark);
-  transform: translateY(-2px);
-}
+    .btn-row{
+      margin-top:26px;
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
 
-.btn.secondary{
-  background:#eef2f8;
-  color: var(--text);
-}
+    .btn{
+      display:inline-block;
+      padding: 12px 26px;
+      border-radius: 10px;
+      text-decoration:none;
+      font-size:15px;
+      font-weight:700;
+      transition: 0.2s ease;
+      border:none;
+      cursor:pointer;
+    }
 
-.btn.secondary:hover{
-  background:#e3eaf6;
-  transform: translateY(-2px);
-}
+    .btn.primary{
+      background: var(--blue);
+      color:#fff;
+      box-shadow: 0 10px 25px rgba(26,83,173,0.22);
+    }
 
-footer{
-  margin-top:30px;
-  text-align:center;
-  color:#9aa6b2;
-  font-size:13px;
-}
+    .btn.primary:hover{
+      background: var(--blueDark);
+      transform: translateY(-2px);
+    }
 
-/* ===== MOBILE ===== */
-@media (max-width:560px){
-  .topbar{
-    flex-direction:column;
-    gap:12px;
-    text-align:center;
-  }
+    .btn.secondary{
+      background:#eef2f8;
+      color: var(--text);
+    }
 
-  .brand,
-  .lang,
-  .nav{
-    justify-content:center;
-  }
+    .btn.secondary:hover{
+      background:#e3eaf6;
+      transform: translateY(-2px);
+    }
 
-  .feature-row{
-    flex-direction:column;
-    gap:18px;
-  }
+    footer{
+      margin-top:30px;
+      text-align:center;
+      color:#9aa6b2;
+      font-size:13px;
+    }
 
-  .card{
-    padding:34px 22px;
-  }
+    /* ===== MOBILE ===== */
+    @media (max-width:560px){
+      .topbar{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+      }
 
-  .title{
-    font-size:30px;
-  }
-}
-</style>
+      .brand,
+      .lang,
+      .nav{
+        justify-content:center;
+      }
+
+      .feature-row{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .card{
+        padding:34px 22px;
+      }
+
+      /* оставляем одинаково 22px и на мобилке */
+      .title{
+        font-size:22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="topbar">
-  <a class="brand" href="index.html">
-    <img src="dk-icon.png" alt="DK">
-    <div class="name">DK Software Studio</div>
-  </a>
+  <div class="topbar">
+    <a class="brand" href="index.html">
+      <img src="dk-icon.png" alt="DK">
+      <div class="name">DK Software Studio</div>
+    </a>
 
-  <div class="lang">
-    <a class="active" href="index.html">RU</a>
-    <a href="en/index.html">EN</a>
-    <a href="de/index.html">DE</a>
-    <a href="uk/index.html">UK</a>
+    <div class="lang">
+      <a class="active" href="index.html">RU</a>
+      <a href="en/index.html">EN</a>
+      <a href="de/index.html">DE</a>
+      <a href="uk/index.html">UK</a>
+    </div>
+
+    <div class="nav">
+      <a href="about.html">О студии</a>
+      <a href="projects.html">Проекты</a>
+      <a href="contact.html">Контакт</a>
+    </div>
   </div>
 
-  <div class="nav">
-    <a href="about.html">О студии</a>
-    <a href="projects.html">Проекты</a>
-    <a href="contact.html">Контакт</a>
-  </div>
-</div>
+  <div class="wrap">
 
-<div class="wrap">
-  <div class="hero">
-    <div class="card">
+    <!-- MAIN CARD -->
+    <div class="hero">
+      <div class="card">
 
-      <img class="dk-logo" src="logo.png" alt="DK Software Studio">
+        <img class="dk-logo" src="logo.png" alt="DK Software Studio">
 
-      <div class="tagline">Просто. Чисто. Функционально.</div>
+        <div class="tagline">Просто. Чисто. Функционально.</div>
 
-      <div class="title">JW Daily Alarm</div>
+        <div class="title">JW Daily Alarm</div>
 
-      <div class="subtitle">
-        Минималистичное приложение-напоминание с ежедневной ссылкой.
-        Открывайте нужную страницу одним нажатием — без лишних действий и отвлечений.
+        <div class="subtitle">
+          Минималистичное приложение-напоминание с ежедневной ссылкой.
+          Открывайте нужную страницу одним нажатием — без лишних действий и отвлечений.
+        </div>
+
+        <div class="feature-row">
+          <img class="app-icon" src="jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
+
+          <ul class="features">
+            <li>Ежедневное напоминание в выбранное время</li>
+            <li>Мгновенное открытие ссылки</li>
+            <li>Чистый минималистичный интерфейс</li>
+            <li>Поддержка нескольких языков</li>
+          </ul>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn primary" href="#">Скоро в Google Play</a>
+          <a class="btn secondary" href="projects.html">Все проекты</a>
+        </div>
+
       </div>
+    </div>
 
-      <div class="feature-row">
-        <img class="app-icon" src="jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
+    <!-- PRO BLOCK -->
+    <div class="hero">
+      <div class="card pro-card">
 
-        <ul class="features">
-          <li>Ежедневное напоминание в выбранное время</li>
-          <li>Мгновенное открытие ссылки</li>
-          <li>Чистый минималистичный интерфейс</li>
-          <li>Поддержка нескольких языков</li>
+        <div class="title">🚀 В разработке: Pro-версия</div>
+
+        <div class="subtitle">
+          В будущем появится расширенная версия приложения с более гибкими настройками —
+          без лишнего шума и с тем же минималистичным подходом.
+        </div>
+
+        <ul class="features pro-features">
+          <li>До 5 ссылок</li>
+          <li>До 5 независимых будильников</li>
+          <li>Гибкая настройка</li>
+          <li>Без рекламы</li>
         </ul>
+
+        <div class="btn-row">
+          <a class="btn secondary" href="projects.html">Подробнее</a>
+        </div>
+
       </div>
-
-      <div class="btn-row">
-        <a class="btn primary" href="#">Скоро в Google Play</a>
-        <a class="btn secondary" href="projects.html">Все проекты</a>
-      </div>
-
-       </div>
-  </div>
-
-  <!-- PRO BLOCK -->
-  <div class="hero">
-    <div class="card" style="padding:40px 42px;">
-
-      <div class="title" style="font-size:26px;">🚀 В разработке: Pro-версия</div>
-
-      <div class="subtitle" style="margin-bottom:18px;">
-        В будущем появится расширенная версия приложения с более гибкими настройками —
-        без лишнего шума и с тем же минималистичным подходом.
-      </div>
-
-      <ul class="features" style="max-width:500px; margin:0 auto 22px; text-align:left;">
-        <li>До 5 ссылок</li>
-        <li>До 5 независимых будильников</li>
-        <li>Гибкая настройка</li>
-        <li>Без рекламы</li>
-      </ul>
-
-      <div class="btn-row">
-        <a class="btn secondary" href="projects.html">Подробнее</a>
-      </div>
-
-    </div>
-  </div>
-  <!-- CALENDAR CARD -->
-<div class="hero">
-  <div class="card pro-card">
-
-    <div class="title">📅 В разработке: JW Calendar</div>
-
-    <div class="subtitle">
-      Отдельное приложение-календарь для удобного учёта служения.
-      Наглядная сетка месяца и быстрый итог без лишней сложности.
     </div>
 
-    <ul class="features pro-features">
-      <li>Фиксированная сетка 6×7</li>
-      <li>Подсветка текущего дня</li>
-      <li>Автоматический итог за месяц</li>
-      <li>Быстрая отправка отчёта</li>
-    </ul>
+    <!-- CALENDAR CARD -->
+    <div class="hero">
+      <div class="card pro-card">
 
+        <div class="title">📅 В разработке: JW Calendar</div>
+
+        <div class="subtitle">
+          Отдельное приложение-календарь для удобного учёта служения.
+          Наглядная сетка месяца и быстрый итог без лишней сложности.
+        </div>
+
+        <ul class="features pro-features">
+          <li>Фиксированная сетка 6×7</li>
+          <li>Подсветка текущего дня</li>
+          <li>Автоматический итог за месяц</li>
+          <li>Быстрая отправка отчёта</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <footer>© 2026 DK Software Studio</footer>
   </div>
-</div>
 
-  <footer>© 2026 DK Software Studio</footer>
-</div>
+</body>
+</html>
