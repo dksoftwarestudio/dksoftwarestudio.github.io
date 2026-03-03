@@ -25,7 +25,7 @@
       color: var(--text);
     }
 
-    /* top nav (єдиний для всіх сторінок) */
+    /* top nav */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -67,7 +67,6 @@
     }
     .nav a:hover{
       color: var(--blue);
-      text-decoration:none;
     }
 
     /* layout */
@@ -122,7 +121,6 @@
     .contact-box svg{
       width: 18px;
       height: 18px;
-      flex: 0 0 18px;
       fill: var(--blue);
     }
     .contact-box a{
@@ -131,7 +129,21 @@
     }
     .contact-box a:hover{
       color: var(--blue);
+    }
+
+    /* LinkedIn */
+    .social{
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .social a{
+      color: var(--blue);
       text-decoration:none;
+      font-weight:600;
+    }
+    .social a:hover{
+      color: var(--blueDark);
     }
 
     .btn-row{
@@ -149,7 +161,6 @@
       font-size: 16px;
       font-weight: 700;
       transition: 0.2s ease;
-      user-select:none;
       border:0;
       cursor:pointer;
     }
@@ -176,38 +187,6 @@
       text-align:center;
       color:#9aa6b2;
       font-size: 13px;
-    }
-
-    /* cookie banner */
-    .cookie-banner{
-      position:fixed;
-      bottom:20px;
-      left:50%;
-      transform:translateX(-50%);
-      width:90%;
-      max-width:640px;
-      background:#ffffff;
-      border-radius:16px;
-      box-shadow:0 20px 40px rgba(0,0,0,0.15);
-      border:1px solid rgba(0,0,0,0.06);
-      padding:20px;
-      display:none;
-      z-index:9999;
-    }
-    .cookie-content{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-    .cookie-content span{
-      font-size:14px;
-      color:#555;
-    }
-    .cookie-buttons{
-      display:flex;
-      gap:10px;
     }
 
     @media (max-width: 560px){
@@ -259,10 +238,17 @@
         </div>
 
         <div class="contact-box">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/>
           </svg>
           <a href="mailto:dksoftware.studio@gmail.com">dksoftware.studio@gmail.com</a>
+        </div>
+
+        <div class="social">
+          LinkedIn:
+          <a href="ТВОЯ_ССЫЛКА_НА_LINKEDIN" target="_blank" rel="noopener">
+            переглянути профіль
+          </a>
         </div>
 
         <div class="btn-row">
@@ -274,16 +260,6 @@
     </div>
 
     <footer>© 2026 DK Software Studio</footer>
-  </div>
-
-  <div id="cookie-banner" class="cookie-banner">
-    <div class="cookie-content">
-      <span>Ми використовуємо анонімну аналітику для покращення сайту.</span>
-      <div class="cookie-buttons">
-        <button type="button" onclick="acceptCookies()" class="btn primary">Прийняти</button>
-        <button type="button" onclick="declineCookies()" class="btn secondary">Відхилити</button>
-      </div>
-    </div>
   </div>
 
   <script src="../analytics.js"></script>
