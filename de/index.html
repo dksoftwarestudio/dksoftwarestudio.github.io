@@ -56,6 +56,7 @@
       font-size:16px;
       letter-spacing:0.2px;
       white-space: nowrap;
+      color: var(--text);
     }
 
     /* CENTER (LANG) */
@@ -140,22 +141,29 @@
       text-align:center;
     }
 
+    /* Secondary cards (Pro / Calendar) */
+    .pro-card{
+      padding:40px 42px;
+    }
+
     .dk-logo{
       width: 300px;
       margin: 0 auto 28px;
       display:block;
     }
 
+    /* Tagline bigger (like RU) */
     .tagline{
-      font-size:18px;
-      font-weight:600;
+      font-size:24px;
+      font-weight:700;
       color: var(--blue);
       margin-bottom: 18px;
     }
 
+    /* All titles same (22px) */
     .title{
-      font-size:38px;
-      font-weight:500;
+      font-size:22px;
+      font-weight:600;
       margin: 0 0 14px;
     }
 
@@ -211,6 +219,14 @@
       font-size:20px;
     }
 
+    /* Features for secondary cards */
+    .pro-features{
+      max-width:500px;
+      margin:0 auto 22px;
+      text-align:left;
+      min-width:auto;
+    }
+
     .btn-row{
       margin-top:26px;
       display:flex;
@@ -224,9 +240,11 @@
       border-radius: 10px;
       text-decoration:none;
       font-size:15px;
-      font-weight:600;
+      font-weight:700;
       transition: 0.2s ease;
       display:inline-block;
+      border:none;
+      cursor:pointer;
     }
 
     .btn.primary{
@@ -247,6 +265,7 @@
 
     .btn.secondary:hover{
       background:#e3eaf6;
+      transform: translateY(-2px);
     }
 
     footer{
@@ -272,7 +291,9 @@
       .nav{ justify-content:center; }
 
       .card{ padding:34px 22px; }
-      .title{ font-size:30px; }
+
+      /* keep title 22px on mobile */
+      .title{ font-size:22px; }
 
       .feature-row{
         flex-direction:column;
@@ -286,6 +307,8 @@
         width:100%;
         max-width:520px;
       }
+
+      .tagline{ font-size:22px; }
     }
   </style>
 </head>
@@ -312,7 +335,8 @@
     </div>
   </div>
 
-   <div class="wrap">
+  <div class="wrap">
+
     <!-- MAIN CARD -->
     <div class="hero">
       <div class="card">
@@ -347,18 +371,18 @@
       </div>
     </div>
 
-    <!-- PRO CARD (separate) -->
+    <!-- PRO CARD -->
     <div class="hero">
-      <div class="card" style="padding:40px 42px;">
+      <div class="card pro-card">
 
-        <div class="title" style="font-size:22px;">🚀 In Entwicklung: Pro-Version</div>
+        <div class="title">🚀 In Entwicklung: Pro-Version</div>
 
         <div class="subtitle" style="margin-bottom:18px;">
           Eine erweiterte Version der App wird in Zukunft mit flexibleren Einstellungen verfügbar sein —
           ohne unnötige Komplexität und im gleichen minimalistischen Stil.
         </div>
 
-        <ul class="features" style="max-width:500px; margin:0 auto 22px; text-align:left;">
+        <ul class="features pro-features">
           <li>Bis zu 5 Links</li>
           <li>Bis zu 5 unabhängige Alarme</li>
           <li>Flexible Einstellungen</li>
@@ -371,26 +395,30 @@
 
       </div>
     </div>
-     <!-- CALENDAR CARD -->
-<div class="hero">
-  <div class="card pro-card">
 
-    <div class="title">📅 In Entwicklung: JW Calendar</div>
+    <!-- CALENDAR CARD -->
+    <div class="hero">
+      <div class="card pro-card">
 
-    <div class="subtitle">
-      Eine eigenständige Kalender-App zur einfachen Erfassung des Dienstes.
-      Klare Monatsübersicht und schnelle Monatszusammenfassung.
+        <div class="title">📅 In Entwicklung: JW Calendar</div>
+
+        <div class="subtitle">
+          Eine eigenständige Kalender-App zur einfachen Erfassung des Dienstes.
+          Klare Monatsübersicht und schnelle Monatszusammenfassung.
+        </div>
+
+        <ul class="features pro-features">
+          <li>Feste 6×7 Rasterstruktur</li>
+          <li>Hervorhebung des aktuellen Tages</li>
+          <li>Automatische Monatsgesamtzeit</li>
+          <li>Schnelle Berichtübermittlung</li>
+        </ul>
+
+      </div>
     </div>
-
-    <ul class="features pro-features">
-      <li>Feste 6×7 Rasterstruktur</li>
-      <li>Hervorhebung des aktuellen Tages</li>
-      <li>Automatische Monatsgesamtzeit</li>
-      <li>Schnelle Berichtübermittlung</li>
-    </ul>
-
-  </div>
-</div>
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
+
+</body>
+</html>
