@@ -131,19 +131,27 @@
       color: var(--blue);
     }
 
-    /* LinkedIn */
+    /* LinkedIn (clean, one line) */
     .social{
-      margin-top: 8px;
-      font-size: 14px;
-      color: var(--muted);
+      margin-top: 18px;
     }
     .social a{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:14px;
+      font-weight:600;
       color: var(--blue);
       text-decoration:none;
-      font-weight:600;
     }
     .social a:hover{
       color: var(--blueDark);
+    }
+    .social svg{
+      width:16px;
+      height:16px;
+      fill: var(--blue);
+      flex: 0 0 16px;
     }
 
     .btn-row{
@@ -238,20 +246,23 @@
         </div>
 
         <div class="contact-box">
-          <svg viewBox="0 0 24 24">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/>
           </svg>
           <a href="mailto:dksoftware.studio@gmail.com">dksoftware.studio@gmail.com</a>
         </div>
 
+        <!-- LinkedIn -->
         <div class="social">
-          LinkedIn:
-          <div class="social">
-  LinkedIn:
-  <a href="https://www.linkedin.com/in/dimitri-klevzov" target="_blank" rel="noopener">
-    view profile
-  </a>
-</div>
+          <a href="https://www.linkedin.com/in/dimitri-klevzov?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+             target="_blank"
+             rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6S0 4.88 0 3.5 1.12 1 2.49 1 4.98 2.12 4.98 3.5zM.24 8.25H4.7V24H.24zM8.34 8.25h4.27v2.16h.06c.6-1.13 2.07-2.32 4.27-2.32 4.57 0 5.41 3.01 5.41 6.92V24h-4.46v-7.98c0-1.9-.03-4.35-2.65-4.35-2.65 0-3.06 2.07-3.06 4.21V24H8.34z"/>
+            </svg>
+            <span>LinkedIn: view profile</span>
+          </a>
+        </div>
 
         <div class="btn-row">
           <a class="btn primary" href="mailto:dksoftware.studio@gmail.com">Send email</a>
