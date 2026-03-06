@@ -66,7 +66,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 12px;
+      gap:12px;
     }
 
     .brand{
@@ -78,7 +78,7 @@
     }
 
     .brand img{
-      width: 40px;
+      width:40px;
       height:auto;
       display:block;
     }
@@ -86,8 +86,8 @@
     .brand .name{
       font-weight:600;
       letter-spacing:0.2px;
-      white-space: nowrap;
-      color: var(--text);
+      white-space:nowrap;
+      color:var(--text);
     }
 
     .nav{
@@ -98,156 +98,180 @@
     }
 
     .nav a{
-      color: var(--text);
+      color:var(--text);
       text-decoration:none;
       font-weight:600;
       font-size:14px;
-      transition: color 0.2s ease;
+      transition:color 0.2s ease;
     }
 
     .nav a:hover{
-      color: var(--blue);
+      color:var(--blue);
     }
 
     .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 24px 20px 70px;
+      max-width:980px;
+      margin:0 auto;
+      padding:24px 20px 70px;
     }
 
     .hero{
-      margin-top: 16px;
+      margin-top:16px;
       display:flex;
       justify-content:center;
     }
 
     .card{
       width:100%;
-      max-width: 860px;
-      background: var(--card);
-      border-radius: 18px;
-      box-shadow: 0 22px 55px rgba(0,0,0,0.07);
-      border: 1px solid var(--border);
-      padding: 44px 42px;
+      max-width:860px;
+      background:var(--card);
+      border-radius:18px;
+      box-shadow:0 22px 55px rgba(0,0,0,0.07);
+      border:1px solid var(--border);
+      padding:44px 42px;
       text-align:center;
     }
 
     .title{
-      margin: 0 0 8px;
-      font-size: 38px;
-      line-height: 1.1;
-      font-weight: 500;
+      margin:0 0 8px;
+      font-size:38px;
+      line-height:1.1;
+      font-weight:500;
     }
 
     .subtitle{
-      margin: 0 auto 22px;
-      max-width: 720px;
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--muted);
+      margin:0 auto 26px;
+      max-width:720px;
+      font-size:16px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .projects-grid{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      max-width:760px;
+      margin:0 auto;
     }
 
     .project{
-      margin: 0 auto;
-      max-width: 760px;
-      background: #f7f9fc;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 22px;
+      background:#f7f9fc;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:22px;
       display:flex;
       align-items:center;
-      gap: 18px;
+      gap:18px;
       text-align:left;
     }
 
     .project img{
-      width: 88px;
+      width:88px;
       height:auto;
-      border-radius: 18px;
+      border-radius:18px;
       background:#fff;
-      padding: 10px;
-      border: 1px solid var(--border);
-      box-shadow: 0 14px 30px rgba(0,0,0,0.08);
-      flex: 0 0 auto;
+      padding:10px;
+      border:1px solid var(--border);
+      box-shadow:0 14px 30px rgba(0,0,0,0.08);
+      flex:0 0 auto;
     }
 
     .p-title{
-      font-size: 22px;
-      font-weight: 800;
-      margin: 0 0 6px;
+      font-size:22px;
+      font-weight:800;
+      margin:0 0 6px;
     }
 
     .p-desc{
-      margin: 0 0 14px;
-      color: var(--muted);
-      line-height: 1.6;
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.6;
     }
 
     .btn-row{
       display:flex;
-      gap: 12px;
+      gap:12px;
       flex-wrap:wrap;
       align-items:center;
     }
 
     .btn{
       display:inline-block;
-      padding: 12px 22px;
-      border-radius: 10px;
+      padding:12px 22px;
+      border-radius:10px;
       text-decoration:none;
-      font-size: 15px;
-      font-weight: 700;
-      transition: 0.2s ease;
+      font-size:15px;
+      font-weight:700;
+      transition:0.2s ease;
       user-select:none;
       border:0;
       cursor:pointer;
     }
 
     .btn.primary{
-      background: var(--blue);
-      color: #fff;
-      box-shadow: 0 10px 25px rgba(26,83,173,0.22);
+      background:var(--blue);
+      color:#fff;
+      box-shadow:0 10px 25px rgba(26,83,173,0.22);
     }
 
     .btn.primary:hover{
-      background: var(--blueDark);
-      transform: translateY(-2px);
+      background:var(--blueDark);
+      transform:translateY(-2px);
     }
 
     .btn.secondary{
-      background: #eef2f8;
-      color: var(--blue);
+      background:#eef2f8;
+      color:var(--blue);
     }
 
     .btn.secondary:hover{
-      background: #e3eaf6;
-      transform: translateY(-2px);
+      background:#e3eaf6;
+      transform:translateY(-2px);
     }
 
     footer{
-      margin-top: 26px;
+      margin-top:26px;
       text-align:center;
       color:#9aa6b2;
-      font-size: 13px;
+      font-size:13px;
     }
 
-    @media (max-width: 560px){
+    @media (max-width:560px){
       .topbar{
         justify-content:center;
         flex-wrap:wrap;
         text-align:center;
       }
-      .brand{ width:100%; justify-content:center; }
-      .nav{ width:100%; justify-content:center; gap:14px; }
-      .brand .name{ white-space: normal; }
 
-      .card{ padding: 34px 22px; }
-      .title{ font-size: 30px; }
+      .brand{
+        width:100%;
+        justify-content:center;
+      }
+
+      .nav{
+        width:100%;
+        justify-content:center;
+        gap:14px;
+      }
+
+      .brand .name{
+        white-space:normal;
+      }
+
+      .card{
+        padding:34px 22px;
+      }
+
+      .title{
+        font-size:30px;
+      }
 
       .project{
         flex-direction:column;
         text-align:center;
       }
+
       .btn-row{
         justify-content:center;
       }
@@ -263,7 +287,7 @@
     </a>
 
     <div class="nav">
-      <a href="index.html">Startseite</a>
+      <a href="../index.html">Startseite</a>
       <a href="about.html">Über uns</a>
       <a href="projects.html">Projekte</a>
       <a href="contact.html">Kontakt</a>
@@ -276,25 +300,92 @@
 
         <div class="title">Projekte</div>
         <div class="subtitle">
-          Eine Übersicht unserer Apps und Experimente.  
-          Der aktuelle Fokus liegt auf dem ersten öffentlichen Release.
+          Aktuelle und geplante Projekte von DK Software Studio.
         </div>
 
-        <div class="project">
-          <img src="../jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
+        <div class="projects-grid">
 
-          <div>
-            <div class="p-title">JW Daily Alarm</div>
-            <div class="p-desc">
-              Eine minimalistische Erinnerungs-App mit täglichem Link.  
-              Öffnen Sie die gewünschte Seite mit einem Klick — ohne zusätzliche Schritte oder Ablenkungen.
-            </div>
-
-            <div class="btn-row">
-              <a class="btn primary" href="jw-daily-alarm.html">Mehr erfahren</a>
-              <a class="btn secondary" href="index.html">← Zur Startseite</a>
+          <div class="project">
+            <img src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
+            <div>
+              <div class="p-title">Daily Text Alarm</div>
+              <div class="p-desc">
+                Eine minimalistische Erinnerungs-App mit täglichem Link.
+                Öffnen Sie die gewünschte Seite mit einem Klick — ohne zusätzliche Schritte oder Ablenkungen.
+              </div>
+              <div class="btn-row">
+                <a class="btn primary" href="jw-daily-alarm.html">Mehr erfahren</a>
+                <a class="btn secondary" href="../index.html">← Zur Startseite</a>
+              </div>
             </div>
           </div>
+
+          <div class="project">
+            <img src="../dk-icon.png" alt="Calendar icon">
+            <div>
+              <div class="p-title">Daily Calendar</div>
+              <div class="p-desc">
+                Eine einfache Kalender-App zur übersichtlichen Erfassung von Zeiten und schnellen Monatsübersicht.
+              </div>
+              <div class="btn-row">
+                <a class="btn secondary" href="#">In Entwicklung</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="../dk-icon.png" alt="Pro icon">
+            <div>
+              <div class="p-title">Daily Text Alarm Pro</div>
+              <div class="p-desc">
+                Eine erweiterte Version der App mit zusätzlichen Erinnerungen und flexibleren Einstellungen.
+              </div>
+              <div class="btn-row">
+                <a class="btn secondary" href="#">Geplant</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="../dk-icon.png" alt="Reminder Alarm icon">
+            <div>
+              <div class="p-title">Reminder Alarm</div>
+              <div class="p-desc">
+                Eine minimalistische Erinnerungs-App mit Prioritäten und wiederholtem Alarm bis zur Bestätigung.
+              </div>
+              <div class="btn-row">
+                <a class="btn secondary" href="#">Geplant</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="../dk-icon.png" alt="Weather App icon">
+            <div>
+              <div class="p-title">Weather App</div>
+              <div class="p-desc">
+                Eine minimalistische App für den schnellen Überblick über die Wetterbedingungen der nächsten Tage.
+                Hilft schnell einzuschätzen, ob der Tag für Aktivitäten und Ausflüge geeignet ist.
+              </div>
+              <div class="btn-row">
+                <a class="btn secondary" href="#">Konzept</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="../dk-icon.png" alt="Blocknot icon">
+            <div>
+              <div class="p-title">Blocknot</div>
+              <div class="p-desc">
+                Ein minimalistischer Tagesplaner für schnelle Notizen, einfache Planung und übersichtliche Tagesstruktur.
+              </div>
+              <div class="btn-row">
+                <a class="btn secondary" href="#">Konzept</a>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
