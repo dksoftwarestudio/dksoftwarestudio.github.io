@@ -25,7 +25,6 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR ===== */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -34,7 +33,6 @@
       align-items:center;
     }
 
-    /* LEFT */
     .brand{
       display:flex;
       align-items:center;
@@ -56,7 +54,6 @@
       color: var(--text);
     }
 
-    /* CENTER (LANGUAGES) */
     .lang{
       flex:1;
       display:flex;
@@ -90,7 +87,6 @@
       background:#fff;
     }
 
-    /* RIGHT (MENU) */
     .nav{
       display:flex;
       gap:24px;
@@ -110,7 +106,6 @@
       color: var(--blue);
     }
 
-    /* ===== LAYOUT ===== */
     .wrap{
       max-width: 980px;
       margin: 0 auto;
@@ -134,7 +129,6 @@
       text-align:center;
     }
 
-    /* secondary cards (Pro / Calendar) */
     .pro-card{
       padding:40px 42px;
     }
@@ -146,13 +140,12 @@
     }
 
     .tagline{
-  font-size:24px;
-  font-weight:700;
-  color: var(--blue);
-  margin-bottom: 22px;
-}
+      font-size:24px;
+      font-weight:700;
+      color: var(--blue);
+      margin-bottom: 22px;
+    }
 
-    /* All card titles одинаковые (как ты просил) */
     .title{
       font-size:22px;
       font-weight:600;
@@ -167,7 +160,6 @@
       color: var(--muted);
     }
 
-    /* secondary subtitles (Pro / Calendar) чуть компактнее */
     .pro-card .subtitle{
       margin-bottom:18px;
     }
@@ -214,7 +206,6 @@
       font-size:20px;
     }
 
-    /* features for secondary cards */
     .pro-features{
       max-width:500px;
       margin:0 auto 22px;
@@ -269,7 +260,6 @@
       font-size:13px;
     }
 
-    /* ===== MOBILE ===== */
     @media (max-width:560px){
       .topbar{
         flex-direction:column;
@@ -292,7 +282,6 @@
         padding:34px 22px;
       }
 
-      /* оставляем одинаково 22px и на мобилке */
       .title{
         font-size:22px;
       }
@@ -303,7 +292,7 @@
 <body>
 
   <div class="topbar">
-    <a class="brand" href="index.html">
+    <a class="brand" href="ru.html">
       <img src="dk-icon.png" alt="DK">
       <div class="name">DK Software Studio</div>
     </a>
@@ -311,7 +300,7 @@
     <div class="lang">
       <a class="active" href="ru.html">RU</a>
       <a href="en/index.html">EN</a>
-      <a href="de/index.html">DE</a>
+      <a href="index.html">DE</a>
       <a href="uk/index.html">UK</a>
     </div>
 
@@ -324,7 +313,6 @@
 
   <div class="wrap">
 
-    <!-- MAIN CARD -->
     <div class="hero">
       <div class="card">
 
@@ -358,7 +346,6 @@
       </div>
     </div>
 
-    <!-- PRO BLOCK -->
     <div class="hero">
       <div class="card pro-card">
 
@@ -383,7 +370,6 @@
       </div>
     </div>
 
-    <!-- CALENDAR CARD -->
     <div class="hero">
       <div class="card pro-card">
 
