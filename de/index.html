@@ -259,6 +259,33 @@
       color:#9aa6b2;
       font-size:13px;
     }
+
+    @media (max-width:560px){
+      .topbar{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+      }
+
+      .brand,
+      .lang,
+      .nav{
+        justify-content:center;
+      }
+
+      .feature-row{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .card{
+        padding:34px 22px;
+      }
+
+      .title{
+        font-size:22px;
+      }
+    }
   </style>
 </head>
 
@@ -266,16 +293,16 @@
 
   <div class="topbar">
     <a class="brand" href="index.html">
-      <img src="dk-icon.png" alt="DK">
+      <img src="../dk-icon.png" alt="DK">
       <div class="name">DK Software Studio</div>
     </a>
 
     <div class="lang">
-  <a href="../ru.html">RU</a>
-  <a href="../en/index.html">EN</a>
-  <a class="active" href="index.html">DE</a>
-  <a href="../uk/index.html">UK</a>
-</div>
+      <a href="../ru.html">RU</a>
+      <a href="../en/index.html">EN</a>
+      <a class="active" href="index.html">DE</a>
+      <a href="../uk/index.html">UK</a>
+    </div>
 
     <div class="nav">
       <a href="about.html">Über uns</a>
@@ -289,7 +316,7 @@
     <div class="hero">
       <div class="card">
 
-        <img class="dk-logo" src="logo.png" alt="DK Software Studio">
+        <img class="dk-logo" src="../logo.png" alt="DK Software Studio">
 
         <div class="tagline">Einfach. Klar. Funktional.</div>
 
@@ -301,7 +328,7 @@
         </div>
 
         <div class="feature-row">
-          <img class="app-icon" src="jw-daily-alarm-icon.png">
+          <img class="app-icon" src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
 
           <ul class="features">
             <li>Tägliche Erinnerung zur gewählten Uhrzeit</li>
@@ -312,7 +339,7 @@
         </div>
 
         <div class="btn-row">
-          <a class="btn primary">Bald im Google Play Store</a>
+          <a class="btn primary" href="#">Bald im Google Play Store</a>
           <a class="btn secondary" href="projects.html">Alle Projekte</a>
         </div>
 
