@@ -26,7 +26,6 @@
       -webkit-text-size-adjust:100%;
     }
 
-    /* top nav */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -36,6 +35,7 @@
       justify-content:space-between;
       gap: 12px;
     }
+
     .brand{
       display:flex;
       align-items:center;
@@ -43,44 +43,50 @@
       text-decoration:none;
       color:inherit;
     }
+
     .brand img{
       width: 40px;
       height:auto;
       display:block;
     }
+
     .brand .name{
       font-weight:700;
       letter-spacing:0.2px;
       white-space: nowrap;
       color: var(--text);
     }
+
     .nav{
       display:flex;
       gap:16px;
       align-items:center;
       flex-wrap:wrap;
     }
+
     .nav a{
       color: var(--text);
       text-decoration:none;
       font-weight:600;
       font-size:14px;
     }
+
     .nav a:hover{
       color: var(--blue);
     }
 
-    /* layout */
     .wrap{
       max-width: 980px;
       margin: 0 auto;
       padding: 24px 20px 70px;
     }
+
     .hero{
       margin-top: 16px;
       display:flex;
       justify-content:center;
     }
+
     .card{
       width:100%;
       max-width: 860px;
@@ -92,9 +98,10 @@
       text-align:center;
       transition: box-shadow 0.25s ease;
     }
+
     .card:hover{
-  box-shadow: 0 16px 40px rgba(0,0,0,0.10);
-}
+      box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+    }
 
     .title{
       margin: 0 0 10px;
@@ -103,6 +110,7 @@
       line-height: 1.1;
       color: var(--text);
     }
+
     .subtitle{
       margin: 0 auto 18px;
       max-width: 720px;
@@ -123,42 +131,65 @@
       color: var(--text);
       font-weight: 700;
     }
+
     .contact-box svg{
       width: 18px;
       height: 18px;
       fill: var(--blue);
     }
+
     .contact-box a{
       color: inherit;
       text-decoration:none;
     }
+
     .contact-box a:hover{
       color: var(--blue);
     }
 
-    /* LinkedIn */
     .social{
       margin-top: 18px;
     }
+
     .social a{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  font-size:14px;
-  font-weight:600;
-  color: var(--blue);
-  text-decoration:none;
-  transition: all 0.2s ease;
-}
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:12px;
+      background:#ffffff;
+      border:1px solid rgba(26,83,173,0.14);
+      color: var(--blue);
+      text-decoration:none;
+      font-size:14px;
+      font-weight:700;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+    }
+
     .social a:hover{
-  color: var(--blueDark);
-  transform: translateY(-1px);
-}
-    .social svg{
-      width:18px;
-      height:18px;
-      fill: var(--blue);
-      flex: 0 0 16px;
+      color: var(--blueDark);
+      border-color: rgba(26,83,173,0.24);
+      background:#f8fbff;
+      transform: translateY(-1px);
+    }
+
+    .linkedin-icon{
+      width:22px;
+      height:22px;
+      border-radius:6px;
+      background:#0A66C2;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      flex: 0 0 22px;
+    }
+
+    .linkedin-icon svg{
+      width:12px;
+      height:12px;
+      fill:#ffffff;
+      display:block;
     }
 
     .btn-row{
@@ -168,6 +199,7 @@
       justify-content:center;
       flex-wrap:wrap;
     }
+
     .btn{
       display:inline-block;
       padding: 13px 28px;
@@ -179,26 +211,31 @@
       border:0;
       cursor:pointer;
     }
+
     .btn.primary{
       background: var(--blue);
       color: #fff;
       box-shadow: 0 10px 25px rgba(26,83,173,0.22);
     }
+
     .btn.primary:hover{
       background: var(--blueDark);
       transform: translateY(-2px);
     }
+
     .btn.secondary{
       background: #eef2f8;
       color: var(--blue);
     }
+
     .btn.secondary:hover{
       background: #e3eaf6;
       transform: translateY(-2px);
     }
+
     .btn:active{
-  transform: scale(0.97);
-}
+      transform: scale(0.97);
+    }
 
     footer{
       margin-top: 26px;
@@ -213,19 +250,35 @@
         flex-wrap:wrap;
         text-align:center;
       }
+
       .brand{
         width:100%;
         justify-content:center;
       }
+
       .nav{
         width:100%;
         justify-content:center;
         gap:14px;
       }
-      .brand .name{ white-space: normal; }
 
-      .card{ padding: 34px 22px; }
-      .title{ font-size: 30px; }
+      .brand .name{
+        white-space: normal;
+      }
+
+      .card{
+        padding: 34px 22px;
+      }
+
+      .title{
+        font-size: 30px;
+      }
+
+      .social a{
+        max-width:100%;
+        justify-content:center;
+        text-align:center;
+      }
     }
   </style>
 </head>
@@ -238,7 +291,7 @@
     </a>
 
     <div class="nav">
-      <a href="index.html">Home</a>
+      <a href="../index.html">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
@@ -252,7 +305,7 @@
         <div class="title">Contact</div>
 
         <div class="subtitle">
-          For questions, suggestions, or collaboration — feel free to email:
+          For questions, suggestions, or collaboration — feel free to contact us by email:
         </div>
 
         <div class="contact-box">
@@ -262,21 +315,22 @@
           <a href="mailto:dksoftware.studio@gmail.com">dksoftware.studio@gmail.com</a>
         </div>
 
-        <!-- LinkedIn -->
         <div class="social">
           <a href="https://www.linkedin.com/in/dimitri-klevzov/"
              target="_blank"
              rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6S0 4.88 0 3.5 1.12 1 2.49 1 4.98 2.12 4.98 3.5zM.24 8.25H4.7V24H.24zM8.34 8.25h4.27v2.16h.06c.6-1.13 2.07-2.32 4.27-2.32 4.57 0 5.41 3.01 5.41 6.92V24h-4.46v-7.98c0-1.9-.03-4.35-2.65-4.35-2.65 0-3.06 2.07-3.06 4.21V24H8.34z"/>
-            </svg>
+            <span class="linkedin-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6.94 8.5H3.56V19h3.38V8.5zM5.25 3A2.03 2.03 0 0 0 3.2 5.03c0 1.12.9 2.03 2.02 2.03h.03c1.14 0 2.03-.91 2.03-2.03A2.02 2.02 0 0 0 5.25 3zM20.44 12.3c0-3.15-1.68-4.61-3.92-4.61-1.81 0-2.62 1-3.07 1.7V8.5h-3.38c.04.6 0 10.5 0 10.5h3.38v-5.86c0-.31.02-.62.11-.84.24-.62.79-1.26 1.72-1.26 1.21 0 1.69.93 1.69 2.29V19H20.44V12.3z"/>
+              </svg>
+            </span>
             <span>LinkedIn: view profile</span>
           </a>
         </div>
 
         <div class="btn-row">
           <a class="btn primary" href="mailto:dksoftware.studio@gmail.com">Send email</a>
-          <a class="btn secondary" href="index.html">← Back to home</a>
+          <a class="btn secondary" href="../index.html">← Back to home</a>
         </div>
 
       </div>
