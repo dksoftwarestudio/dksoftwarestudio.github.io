@@ -33,6 +33,7 @@ padding:18px 20px 0;
 display:flex;
 align-items:center;
 justify-content:space-between;
+gap:12px;
 }
 
 .brand{
@@ -45,16 +46,22 @@ color:inherit;
 
 .brand img{
 width:40px;
+height:auto;
+display:block;
 }
 
 .brand .name{
 font-weight:600;
 letter-spacing:0.2px;
+white-space:nowrap;
+color:var(--text);
 }
 
 .nav{
 display:flex;
 gap:16px;
+align-items:center;
+flex-wrap:wrap;
 }
 
 .nav a{
@@ -62,6 +69,7 @@ color:var(--text);
 text-decoration:none;
 font-weight:600;
 font-size:14px;
+white-space:nowrap;
 }
 
 .nav a:hover{
@@ -126,11 +134,13 @@ text-align:left;
 
 .project img{
 width:88px;
+height:auto;
 border-radius:18px;
 background:#fff;
 padding:10px;
 border:1px solid var(--border);
 box-shadow:0 14px 30px rgba(0,0,0,0.08);
+flex:0 0 auto;
 }
 
 .p-title{
@@ -149,6 +159,7 @@ line-height:1.6;
 display:flex;
 gap:12px;
 flex-wrap:wrap;
+align-items:center;
 }
 
 .btn{
@@ -159,6 +170,8 @@ font-size:15px;
 font-weight:700;
 border:0;
 cursor:pointer;
+display:inline-block;
+transition:0.2s ease;
 }
 
 .btn.primary{
@@ -168,6 +181,7 @@ color:#fff;
 
 .btn.primary:hover{
 background:var(--blueDark);
+transform:translateY(-2px);
 }
 
 .btn.secondary{
@@ -175,11 +189,58 @@ background:#eef2f8;
 color:var(--blue);
 }
 
+.btn.secondary:hover{
+background:#e3eaf6;
+transform:translateY(-2px);
+}
+
 footer{
 margin-top:26px;
 text-align:center;
 color:#9aa6b2;
 font-size:13px;
+}
+
+@media (max-width:560px){
+
+.topbar{
+justify-content:center;
+flex-wrap:wrap;
+text-align:center;
+}
+
+.brand{
+width:100%;
+justify-content:center;
+}
+
+.nav{
+width:100%;
+justify-content:center;
+gap:14px;
+}
+
+.brand .name{
+white-space:normal;
+}
+
+.card{
+padding:34px 22px;
+}
+
+.title{
+font-size:30px;
+}
+
+.project{
+flex-direction:column;
+text-align:center;
+}
+
+.btn-row{
+justify-content:center;
+}
+
 }
 
 </style>
@@ -190,7 +251,7 @@ font-size:13px;
 <div class="topbar">
 
 <a class="brand" href="ru.html">
-<img src="dk-icon.png">
+<img src="dk-icon.png" alt="DK">
 <div class="name">DK Software Studio</div>
 </a>
 
@@ -218,7 +279,7 @@ font-size:13px;
 
 <div class="project">
 
-<img src="jw-daily-alarm-icon.png">
+<img src="jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
 
 <div>
 
@@ -239,7 +300,7 @@ font-size:13px;
 
 <div class="project">
 
-<img src="dk-icon.png">
+<img src="dk-icon.png" alt="Daily Calendar icon">
 
 <div>
 
@@ -258,7 +319,7 @@ font-size:13px;
 
 <div class="project">
 
-<img src="dk-icon.png">
+<img src="dk-icon.png" alt="Daily Text Alarm Pro icon">
 
 <div>
 
@@ -277,7 +338,7 @@ font-size:13px;
 
 <div class="project">
 
-<img src="dk-icon.png">
+<img src="dk-icon.png" alt="Reminder Alarm icon">
 
 <div>
 
@@ -296,7 +357,7 @@ font-size:13px;
 
 <div class="project">
 
-<img src="dk-icon.png">
+<img src="dk-icon.png" alt="Weather App icon">
 
 <div>
 
@@ -316,7 +377,7 @@ font-size:13px;
 
 <div class="project">
 
-<img src="dk-icon.png">
+<img src="dk-icon.png" alt="Blocknot icon">
 
 <div>
 
