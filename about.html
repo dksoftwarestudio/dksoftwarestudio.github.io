@@ -41,6 +41,7 @@
       display:none;
       z-index:9999;
     }
+
     .cookie-content{
       display:flex;
       justify-content:space-between;
@@ -48,10 +49,12 @@
       gap:20px;
       flex-wrap:wrap;
     }
+
     .cookie-content span{
       font-size:14px;
       color:#555;
     }
+
     .cookie-buttons{
       display:flex;
       gap:10px;
@@ -102,7 +105,6 @@
       font-size:14px;
     }
 
-    /* аккуратный hover (без подчёркивания) */
     .nav a:hover{
       color: var(--blue);
       text-decoration:none;
@@ -254,16 +256,15 @@
 </head>
 
 <body>
-  <!-- дальше твой body без изменений -->
 
   <div class="topbar">
-    <a class="brand" href="index.html">
+    <a class="brand" href="ru.html">
       <img src="dk-icon.png" alt="DK">
       <div class="name">DK Software Studio</div>
     </a>
 
     <div class="nav">
-      <a href="index.html">Главная</a>
+      <a href="ru.html">Главная</a>
       <a href="projects.html">Проекты</a>
       <a href="contact.html">Контакт</a>
     </div>
@@ -273,15 +274,14 @@
     <div class="hero">
       <div class="card">
 
-        <!-- Логотип в карточке -->
         <img class="studio-logo" src="dk-icon1.png" alt="DK Software Studio">
 
         <div class="title">О студии</div>
 
         <div class="subtitle">
           DK Software Studio — независимая студия разработки мобильных приложений для iOS и Android.
-Мы создаём простые и функциональные приложения с чистым интерфейсом и продуманным пользовательским опытом.
-Также студия занимается разработкой веб-проектов и сайтов.
+          Мы создаём простые и функциональные приложения с чистым интерфейсом и продуманным пользовательским опытом.
+          Также студия занимается разработкой веб-проектов и сайтов.
         </div>
 
         <ul class="features">
@@ -293,7 +293,7 @@
 
         <div class="btn-row">
           <a class="btn primary" href="projects.html">К проектам</a>
-          <a class="btn secondary" href="index.html">← На главную</a>
+          <a class="btn secondary" href="ru.html">← На главную</a>
         </div>
 
       </div>
@@ -301,17 +301,19 @@
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
+
   <div id="cookie-banner" class="cookie-banner">
-  <div class="cookie-content">
-    <span>
-      Мы используем анонимную аналитику для улучшения сайта.
-    </span>
-    <div class="cookie-buttons">
-      <button onclick="acceptCookies()" class="btn primary">Принять</button>
-      <button onclick="declineCookies()" class="btn secondary">Отклонить</button>
+    <div class="cookie-content">
+      <span>
+        Мы используем анонимную аналитику для улучшения сайта.
+      </span>
+      <div class="cookie-buttons">
+        <button onclick="acceptCookies()" class="btn primary">Принять</button>
+        <button onclick="declineCookies()" class="btn secondary">Отклонить</button>
+      </div>
     </div>
   </div>
-</div>
+
   <script src="analytics.js"></script>
 
 </body>
