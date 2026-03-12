@@ -10,11 +10,12 @@
 :root{
 --blue:#1A53AD;
 --blueDark:#163e82;
---bg:#f4f6f9;
---text:#2c3e50;
+--bg:#F5F5F5;
+--text:#555555;
 --muted:#666;
 --card:#ffffff;
 --border:rgba(0,0,0,0.06);
+--disabled:#8e99a8;
 }
 
 *{box-sizing:border-box;}
@@ -194,6 +195,13 @@ background:#e3eaf6;
 transform:translateY(-2px);
 }
 
+.btn.disabled{
+background:#eef2f8;
+color:var(--disabled);
+cursor:default;
+pointer-events:none;
+}
+
 footer{
 margin-top:26px;
 text-align:center;
@@ -251,7 +259,7 @@ justify-content:center;
 <div class="topbar">
 
 <a class="brand" href="index.html">
-<img src="../dk-icon.png" alt="DK">
+<img src="../dk-icon.png" alt="DK Software Studio">
 <div class="name">DK Software Studio</div>
 </a>
 
@@ -292,7 +300,15 @@ justify-content:center;
 
 <div class="btn-row">
 <a class="btn primary" href="jw-daily-alarm.html">Детальніше</a>
-<a class="btn secondary" href="index.html">← На головну</a>
+
+<a class="btn secondary"
+href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
+target="_blank">
+Google Play
+</a>
+
+<span class="btn disabled">App Store — soon</span>
+
 </div>
 
 </div>
@@ -311,7 +327,7 @@ justify-content:center;
 </div>
 
 <div class="btn-row">
-<a class="btn secondary">У розробці</a>
+<span class="btn secondary">У розробці</span>
 </div>
 
 </div>
@@ -330,7 +346,7 @@ justify-content:center;
 </div>
 
 <div class="btn-row">
-<a class="btn secondary">Заплановано</a>
+<span class="btn secondary">Заплановано</span>
 </div>
 
 </div>
@@ -349,7 +365,7 @@ justify-content:center;
 </div>
 
 <div class="btn-row">
-<a class="btn secondary">Заплановано</a>
+<span class="btn secondary">Заплановано</span>
 </div>
 
 </div>
@@ -369,7 +385,7 @@ justify-content:center;
 </div>
 
 <div class="btn-row">
-<a class="btn secondary">Концепція</a>
+<span class="btn secondary">Концепція</span>
 </div>
 
 </div>
@@ -388,7 +404,7 @@ justify-content:center;
 </div>
 
 <div class="btn-row">
-<a class="btn secondary">Концепція</a>
+<span class="btn secondary">Концепція</span>
 </div>
 
 </div>
