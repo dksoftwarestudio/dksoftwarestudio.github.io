@@ -9,11 +9,12 @@
     :root{
       --blue:#1A53AD;
       --blueDark:#163e82;
-      --bg:#f4f6f9;
-      --text:#2c3e50;
+      --bg:#F5F5F5;
+      --text:#555555;
       --muted:#666;
       --card:#ffffff;
       --border:rgba(0,0,0,0.06);
+      --disabled:#8e99a8;
     }
 
     *{ box-sizing:border-box; }
@@ -25,7 +26,6 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR (langs center, menu right) ===== */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -35,7 +35,6 @@
       gap:16px;
     }
 
-    /* LEFT */
     .brand{
       display:flex;
       align-items:center;
@@ -56,9 +55,9 @@
       font-size:16px;
       letter-spacing:0.2px;
       white-space:nowrap;
+      color:var(--text);
     }
 
-    /* CENTER (LANG) */
     .lang{
       flex:1;
       display:flex;
@@ -94,7 +93,6 @@
       background:#fff;
     }
 
-    /* RIGHT (MENU) */
     .nav{
       display:flex;
       gap:24px;
@@ -116,7 +114,6 @@
       color:var(--blue);
     }
 
-    /* ===== LAYOUT ===== */
     .wrap{
       max-width:980px;
       margin:0 auto;
@@ -140,7 +137,6 @@
       text-align:center;
     }
 
-    /* ===== PRO CARD ===== */
     .pro-card{
       padding:40px 42px;
     }
@@ -247,7 +243,7 @@
       border-radius:10px;
       text-decoration:none;
       font-size:15px;
-      font-weight:600;
+      font-weight:700;
       transition:0.2s ease;
       display:inline-block;
       border:none;
@@ -272,6 +268,14 @@
 
     .btn.secondary:hover{
       background:#e3eaf6;
+      transform:translateY(-2px);
+    }
+
+    .btn.disabled{
+      background:#eef2f8;
+      color:var(--disabled);
+      cursor:default;
+      pointer-events:none;
     }
 
     footer{
@@ -281,7 +285,6 @@
       font-size:13px;
     }
 
-    /* ===== COOKIE BANNER ===== */
     .cookie-banner{
       position:fixed;
       bottom:20px;
@@ -316,7 +319,6 @@
       gap:10px;
     }
 
-    /* ===== MOBILE ===== */
     @media (max-width:560px){
       .topbar{
         flex-direction:column;
@@ -365,17 +367,17 @@
 <body>
 
   <div class="topbar">
-    <a class="brand" href="../index.html">
-      <img src="../dk-icon.png" alt="DK">
+    <a class="brand" href="index.html">
+      <img src="../dk-icon.png" alt="DK Software Studio">
       <div class="name">DK Software Studio</div>
     </a>
 
     <div class="lang">
-  <a href="../index.html">DE</a>
-  <a class="active" href="index.html">EN</a>
-  <a href="../uk/index.html">UK</a>
-  <a href="../ru.html">RU</a>
-</div>
+      <a href="../index.html">DE</a>
+      <a class="active" href="index.html">EN</a>
+      <a href="../uk/index.html">UK</a>
+      <a href="../ru.html">RU</a>
+    </div>
 
     <div class="nav">
       <a href="about.html">About</a>
@@ -388,7 +390,7 @@
     <div class="hero">
       <div class="card">
 
-        <img class="dk-logo" src="../logo.png" alt="DK Software Studio">
+        <img class="dk-logo" src="../logo.png" alt="DK Software Studio logo">
 
         <div class="tagline">Simple. Clean. Functional.</div>
 
@@ -411,9 +413,33 @@
         </div>
 
         <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank" rel="noopener">Coming soon on Google Play</a>
-          <a class="btn secondary" href="projects.html">All projects</a>
+          <a class="btn secondary" href="jw-daily-alarm.html">Learn more</a>
+          <a class="btn primary"
+             href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
+             target="_blank" rel="noopener">Google Play</a>
+          <span class="btn disabled">App Store — soon</span>
         </div>
+
+      </div>
+    </div>
+
+    <!-- CALENDAR CARD -->
+    <div class="hero">
+      <div class="card pro-card">
+
+        <div class="title">📅 In Development: Daily Calendar</div>
+
+        <div class="subtitle">
+          A simple calendar app for quick monthly overview
+          and easy time tracking.
+        </div>
+
+        <ul class="features pro-features">
+          <li>Fixed 6×7 grid layout</li>
+          <li>Highlighting of the current day</li>
+          <li>Automatic monthly total</li>
+          <li>Quick report submission</li>
+        </ul>
 
       </div>
     </div>
@@ -439,27 +465,6 @@
         <div class="btn-row pro-actions">
           <a class="btn secondary" href="projects.html">Learn more</a>
         </div>
-
-      </div>
-    </div>
-
-    <!-- CALENDAR CARD -->
-    <div class="hero">
-      <div class="card pro-card">
-
-        <div class="title">📅 In Development: Daily Calendar</div>
-
-        <div class="subtitle">
-          A simple calendar app for quick monthly overview
-          and easy time tracking.
-        </div>
-
-        <ul class="features pro-features">
-          <li>Fixed 6×7 grid layout</li>
-          <li>Highlighting of the current day</li>
-          <li>Automatic monthly total</li>
-          <li>Quick report submission</li>
-        </ul>
 
       </div>
     </div>
