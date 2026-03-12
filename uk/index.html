@@ -14,6 +14,7 @@
       --muted:#666;
       --card:#ffffff;
       --border:rgba(0,0,0,0.06);
+      --disabled:#8e99a8;
     }
 
     *{ box-sizing:border-box; }
@@ -259,6 +260,13 @@
       transform: translateY(-2px);
     }
 
+    .btn.disabled{
+      background:#eef2f8;
+      color:var(--disabled);
+      cursor:default;
+      pointer-events:none;
+    }
+
     footer{
       margin-top:30px;
       text-align:center;
@@ -298,6 +306,17 @@
       }
 
       .tagline{ font-size:22px; }
+
+      .btn-row{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .btn{
+        width:100%;
+        max-width:320px;
+        text-align:center;
+      }
     }
   </style>
 </head>
@@ -352,8 +371,55 @@
         </div>
 
         <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank" rel="noopener">Скоро в Google Play</a>
-          <a class="btn secondary" href="projects.html">Усі проєкти</a>
+          <a class="btn secondary" href="jw-daily-alarm.html">Детальніше</a>
+          <a class="btn primary"
+             href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
+             target="_blank" rel="noopener">Google Play</a>
+          <span class="btn disabled">App Store — soon</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card pro-card">
+
+        <div class="title">📅 У розробці: Daily Calendar</div>
+
+        <div class="subtitle">
+          Простий календарний додаток для зручного обліку часу.
+          Наочна сітка місяця та швидкий підсумок без зайвої складності.
+        </div>
+
+        <ul class="features pro-features">
+          <li>Фіксована сітка 6×7</li>
+          <li>Підсвітка поточного дня</li>
+          <li>Автоматичний підсумок за місяць</li>
+          <li>Швидке надсилання звіту</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card pro-card">
+
+        <div class="title">🚀 У розробці: Pro-версія</div>
+
+        <div class="subtitle">
+          У майбутньому з’явиться розширена версія застосунку з більш гнучкими налаштуваннями —
+          без зайвого шуму та з тим самим мінімалістичним підходом.
+        </div>
+
+        <ul class="features pro-features">
+          <li>До 5 посилань</li>
+          <li>До 5 незалежних будильників</li>
+          <li>Гнучке налаштування</li>
+          <li>Без реклами</li>
+        </ul>
+
+        <div class="btn-row" style="margin-top:10px;">
+          <a class="btn secondary" href="projects.html">Детальніше</a>
         </div>
 
       </div>
