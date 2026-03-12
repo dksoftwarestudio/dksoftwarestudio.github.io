@@ -10,11 +10,12 @@
 :root{
 --blue:#1A53AD;
 --blueDark:#163e82;
---bg:#f4f6f9;
---text:#2c3e50;
+--bg:#f5f5f5;
+--text:#555555;
 --muted:#666;
 --card:#ffffff;
 --border:rgba(0,0,0,0.06);
+--disabled:#8e99a8;
 }
 
 *{box-sizing:border-box;}
@@ -194,6 +195,13 @@ background:#e3eaf6;
 transform:translateY(-2px);
 }
 
+.btn.disabled{
+background:#eef2f8;
+color:var(--disabled);
+cursor:default;
+pointer-events:none;
+}
+
 footer{
 margin-top:26px;
 text-align:center;
@@ -277,6 +285,7 @@ Current and upcoming projects of DK Software Studio.
 
 <div class="projects-grid">
 
+<!-- Daily Text Alarm -->
 <div class="project">
 
 <img src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
@@ -292,12 +301,20 @@ Open the right page with one tap — without extra steps or distractions.
 
 <div class="btn-row">
 <a class="btn primary" href="jw-daily-alarm.html">Learn more</a>
-<a class="btn secondary" href="index.html">← Back to home</a>
+
+<a class="btn secondary"
+href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
+target="_blank">
+Google Play
+</a>
+
+<span class="btn disabled">App Store — soon</span>
 </div>
 
 </div>
 </div>
 
+<!-- Daily Calendar -->
 <div class="project">
 
 <img src="../dk-icon.png" alt="Daily Calendar icon">
@@ -311,12 +328,13 @@ A simple app for convenient time tracking and quick monthly overview.
 </div>
 
 <div class="btn-row">
-<a class="btn secondary">In development</a>
+<span class="btn secondary">In development</span>
 </div>
 
 </div>
 </div>
 
+<!-- Daily Text Alarm Pro -->
 <div class="project">
 
 <img src="../dk-icon.png" alt="Daily Text Alarm Pro icon">
@@ -330,12 +348,13 @@ An extended version of the app with additional reminders and more flexible setti
 </div>
 
 <div class="btn-row">
-<a class="btn secondary">Planned</a>
+<span class="btn secondary">Planned</span>
 </div>
 
 </div>
 </div>
 
+<!-- Reminder Alarm -->
 <div class="project">
 
 <img src="../dk-icon.png" alt="Reminder Alarm icon">
@@ -349,12 +368,13 @@ A minimalist reminder app with a priority system and repeated alarm until the ta
 </div>
 
 <div class="btn-row">
-<a class="btn secondary">Planned</a>
+<span class="btn secondary">Planned</span>
 </div>
 
 </div>
 </div>
 
+<!-- Weather App -->
 <div class="project">
 
 <img src="../dk-icon.png" alt="Weather App icon">
@@ -369,12 +389,13 @@ Helps you quickly understand whether a day is suitable for outdoor activities an
 </div>
 
 <div class="btn-row">
-<a class="btn secondary">Concept</a>
+<span class="btn secondary">Concept</span>
 </div>
 
 </div>
 </div>
 
+<!-- Blocknot -->
 <div class="project">
 
 <img src="../dk-icon.png" alt="Blocknot icon">
@@ -388,7 +409,7 @@ A minimalist planner for quick daily planning and simple event notes.
 </div>
 
 <div class="btn-row">
-<a class="btn secondary">Concept</a>
+<span class="btn secondary">Concept</span>
 </div>
 
 </div>
