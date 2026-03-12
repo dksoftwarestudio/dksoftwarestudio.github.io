@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JW Daily Alarm — DK Software Studio</title>
+  <title>Daily Text Alarm — DK Software Studio</title>
 
   <style>
     .cookie-banner{
@@ -43,11 +43,12 @@
     :root{
       --blue:#1A53AD;
       --blueDark:#163e82;
-      --bg:#f4f6f9;
-      --text:#2c3e50;
+      --bg:#F5F5F5;
+      --text:#555555;
       --muted:#666;
       --card:#ffffff;
       --border:rgba(0,0,0,0.06);
+      --disabled:#8e99a8;
     }
 
     *{ box-sizing:border-box; }
@@ -103,6 +104,7 @@
       font-weight:600;
       font-size:14px;
       transition: color 0.2s ease;
+      white-space:nowrap;
     }
 
     .nav a:hover{
@@ -236,6 +238,13 @@
       transform: translateY(-2px);
     }
 
+    .btn.disabled{
+      background:#eef2f8;
+      color:var(--disabled);
+      cursor:default;
+      pointer-events:none;
+    }
+
     footer{
       margin-top: 26px;
       text-align:center;
@@ -249,19 +258,29 @@
         flex-wrap:wrap;
         text-align:center;
       }
+
       .brand{
         width:100%;
         justify-content:center;
       }
+
       .nav{
         width:100%;
         justify-content:center;
         gap:14px;
       }
-      .brand .name{ white-space: normal; }
 
-      .card{ padding: 34px 22px; }
-      .title{ font-size: 30px; }
+      .brand .name{
+        white-space: normal;
+      }
+
+      .card{
+        padding: 34px 22px;
+      }
+
+      .title{
+        font-size: 30px;
+      }
 
       .feature-row{
         flex-direction:column;
@@ -277,14 +296,25 @@
         width: 100%;
         max-width: 520px;
       }
+
+      .btn-row{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .btn{
+        width:100%;
+        max-width:320px;
+        text-align:center;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="topbar">
-    <a class="brand" href="../index.html">
-      <img src="../dk-icon.png" alt="DK">
+    <a class="brand" href="index.html">
+      <img src="../dk-icon.png" alt="DK Software Studio">
       <div class="name">DK Software Studio</div>
     </a>
 
@@ -300,7 +330,7 @@
     <div class="hero">
       <div class="card">
 
-        <div class="title">JW Daily Alarm</div>
+        <div class="title">Daily Text Alarm</div>
 
         <div class="subtitle">
           Мінімалістичний застосунок-нагадування з щоденним посиланням.
@@ -308,7 +338,7 @@
         </div>
 
         <div class="feature-row">
-          <img class="app-icon" src="../jw-daily-alarm-icon.png" alt="JW Daily Alarm icon">
+          <img class="app-icon" src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
 
           <ul class="features">
             <li>Щоденне сповіщення у вибраний час</li>
@@ -319,7 +349,10 @@
         </div>
 
         <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank" rel="noopener">Скоро в Google Play</a>
+          <a class="btn primary"
+             href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
+             target="_blank" rel="noopener">Google Play</a>
+          <span class="btn disabled">App Store — soon</span>
           <a class="btn secondary" href="projects.html">← До проєктів</a>
         </div>
 
