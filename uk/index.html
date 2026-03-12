@@ -9,8 +9,8 @@
     :root{
       --blue:#1A53AD;
       --blueDark:#163e82;
-      --bg:#f4f6f9;
-      --text:#2c3e50;
+      --bg:#F5F5F5;
+      --text:#555555;
       --muted:#666;
       --card:#ffffff;
       --border:rgba(0,0,0,0.06);
@@ -25,7 +25,6 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR (langs center, menu right) ===== */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -35,7 +34,6 @@
       gap:16px;
     }
 
-    /* LEFT */
     .brand{
       display:flex;
       align-items:center;
@@ -59,7 +57,6 @@
       color: var(--text);
     }
 
-    /* CENTER (LANG) */
     .lang{
       flex:1;
       display:flex;
@@ -95,7 +92,6 @@
       background:#fff;
     }
 
-    /* RIGHT (MENU) */
     .nav{
       display:flex;
       gap:24px;
@@ -117,7 +113,6 @@
       color: var(--blue);
     }
 
-    /* ===== LAYOUT ===== */
     .wrap{
       max-width: 980px;
       margin: 0 auto;
@@ -141,7 +136,6 @@
       text-align:center;
     }
 
-    /* Secondary cards (Pro / Calendar) */
     .pro-card{
       padding:40px 42px;
     }
@@ -217,7 +211,6 @@
       font-size:20px;
     }
 
-    /* Features for secondary cards */
     .pro-features{
       max-width:500px;
       margin:0 auto 22px;
@@ -273,7 +266,6 @@
       font-size:13px;
     }
 
-    /* ===== MOBILE ===== */
     @media (max-width: 560px){
       .topbar{
         flex-direction:column;
@@ -314,7 +306,7 @@
 
   <div class="topbar">
     <a class="brand" href="index.html">
-      <img src="../dk-icon.png" alt="DK">
+      <img src="../dk-icon.png" alt="DK Software Studio">
       <div class="name">DK Software Studio</div>
     </a>
 
@@ -334,11 +326,10 @@
 
   <div class="wrap">
 
-    <!-- MAIN CARD -->
     <div class="hero">
       <div class="card">
 
-        <img class="dk-logo" src="../logo.png" alt="DK Software Studio">
+        <img class="dk-logo" src="../logo.png" alt="DK Software Studio logo">
 
         <div class="tagline">Просто. Чисто. Функціонально.</div>
 
@@ -368,53 +359,8 @@
       </div>
     </div>
 
-    <!-- PRO CARD -->
-    <div class="hero">
-      <div class="card pro-card">
-
-        <div class="title">🚀 У розробці: Pro-версія</div>
-
-        <div class="subtitle">
-          У майбутньому з’явиться розширена версія застосунку з більш гнучкими налаштуваннями —
-          без зайвого шуму та з тим самим мінімалістичним підходом.
-        </div>
-
-        <ul class="features pro-features">
-          <li>До 5 посилань</li>
-          <li>До 5 незалежних будильників</li>
-          <li>Гнучке налаштування</li>
-          <li>Без реклами</li>
-        </ul>
-
-        <div class="btn-row" style="margin-top:10px;">
-          <a class="btn secondary" href="projects.html">Детальніше</a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- CALENDAR CARD -->
-    <div class="hero">
-      <div class="card pro-card">
-
-        <div class="title">📅 У розробці: Daily Calendar</div>
-
-        <div class="subtitle">
-          Простий календарний додаток для зручного обліку часу.
-          Наочна сітка місяця та швидкий підсумок без зайвої складності.
-        </div>
-
-        <ul class="features pro-features">
-          <li>Фіксована сітка 6×7</li>
-          <li>Підсвітка поточного дня</li>
-          <li>Автоматичний підсумок за місяць</li>
-          <li>Швидке надсилання звіту</li>
-        </ul>
-
-      </div>
-    </div>
-
     <footer>© 2026 DK Software Studio</footer>
+
   </div>
 
 </body>
