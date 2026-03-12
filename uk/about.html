@@ -9,8 +9,8 @@
     :root{
       --blue:#1A53AD;
       --blueDark:#163e82;
-      --bg:#f4f6f9;
-      --text:#2c3e50;
+      --bg:#f5f5f5;
+      --text:#555555;
       --muted:#666;
       --card:#ffffff;
       --border:rgba(0,0,0,0.06);
@@ -46,6 +46,7 @@
     .brand img{
       width:40px;
       height:auto;
+      display:block;
     }
 
     .brand .name{
@@ -67,6 +68,7 @@
       text-decoration:none;
       font-weight:600;
       font-size:14px;
+      white-space:nowrap;
     }
 
     .nav a:hover{
@@ -198,18 +200,40 @@
     }
 
     @media (max-width:560px){
+
       .topbar{
         justify-content:center;
         flex-wrap:wrap;
         text-align:center;
       }
 
-      .brand{ width:100%; justify-content:center; }
-      .nav{ width:100%; justify-content:center; gap:14px; }
+      .brand{
+        width:100%;
+        justify-content:center;
+      }
 
-      .card{ padding:34px 22px; }
-      .title{ font-size:30px; }
-      .studio-logo{ width:200px; }
+      .nav{
+        width:100%;
+        justify-content:center;
+        gap:14px;
+      }
+
+      .brand .name{
+        white-space:normal;
+      }
+
+      .card{
+        padding:34px 22px;
+      }
+
+      .title{
+        font-size:30px;
+      }
+
+      .studio-logo{
+        width:200px;
+      }
+
     }
   </style>
 </head>
@@ -218,7 +242,7 @@
 
   <div class="topbar">
     <a class="brand" href="index.html">
-      <img src="../dk-icon.png" alt="DK">
+      <img src="../dk-icon.png" alt="DK Software Studio">
       <div class="name">DK Software Studio</div>
     </a>
 
@@ -233,7 +257,7 @@
     <div class="hero">
       <div class="card">
 
-        <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio">
+        <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio logo">
 
         <div class="title">Про студію</div>
 
