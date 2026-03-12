@@ -9,11 +9,13 @@
     :root{
       --blue:#1A53AD;
       --blueDark:#163e82;
-      --bg:#f4f6f9;
-      --text:#2c3e50;
+      --bg:#f5f5f5;
+      --text:#555555;
       --muted:#666;
       --card:#ffffff;
       --border:rgba(0,0,0,0.06);
+      --disabledBg:#eef2f8;
+      --disabledText:#8a94a3;
     }
 
     *{ box-sizing:border-box; }
@@ -25,7 +27,6 @@
       color: var(--text);
     }
 
-    /* ===== TOPBAR (langs center, menu right) ===== */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -35,7 +36,6 @@
       gap:16px;
     }
 
-    /* LEFT */
     .brand{
       display:flex;
       align-items:center;
@@ -59,7 +59,6 @@
       color: var(--text);
     }
 
-    /* CENTER (LANG) */
     .lang{
       flex:1;
       display:flex;
@@ -95,7 +94,6 @@
       background:#fff;
     }
 
-    /* RIGHT (MENU) */
     .nav{
       display:flex;
       gap:24px;
@@ -117,7 +115,6 @@
       color: var(--blue);
     }
 
-    /* ===== LAYOUT ===== */
     .wrap{
       max-width: 980px;
       margin: 0 auto;
@@ -141,7 +138,6 @@
       text-align:center;
     }
 
-    /* Secondary cards (Pro / Calendar) */
     .pro-card{
       padding:40px 42px;
     }
@@ -217,7 +213,6 @@
       font-size:20px;
     }
 
-    /* Features for secondary cards */
     .pro-features{
       max-width:500px;
       margin:0 auto 22px;
@@ -266,6 +261,13 @@
       transform: translateY(-2px);
     }
 
+    .btn.disabled{
+      background: var(--disabledBg);
+      color: var(--disabledText);
+      cursor: default;
+      pointer-events: none;
+    }
+
     footer{
       margin-top:30px;
       text-align:center;
@@ -273,7 +275,6 @@
       font-size:13px;
     }
 
-    /* ===== MOBILE ===== */
     @media (max-width: 560px){
       .topbar{
         flex-direction:column;
@@ -306,6 +307,17 @@
       }
 
       .tagline{ font-size:22px; }
+
+      .btn-row{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .btn{
+        width:100%;
+        max-width:320px;
+        text-align:center;
+      }
     }
   </style>
 </head>
@@ -361,9 +373,31 @@
         </div>
 
         <div class="btn-row">
-          <a class="btn primary" href="#" target="_blank" rel="noopener">Bald im Google Play Store</a>
-          <a class="btn secondary" href="de/projects.html">Alle Projekte</a>
+          <a class="btn secondary" href="de/jw-daily-alarm.html">Mehr erfahren</a>
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank" rel="noopener">Google Play</a>
+          <span class="btn disabled">App Store — скоро</span>
         </div>
+
+      </div>
+    </div>
+
+    <!-- CALENDAR CARD -->
+    <div class="hero">
+      <div class="card pro-card">
+
+        <div class="title">📅 In Entwicklung: Daily Calendar</div>
+
+        <div class="subtitle">
+          Eine eigenständige Kalender-App zur einfachen Erfassung des Dienstes.
+          Klare Monatsübersicht und schnelle Monatszusammenfassung.
+        </div>
+
+        <ul class="features pro-features">
+          <li>Feste 6×7 Rasterstruktur</li>
+          <li>Hervorhebung des aktuellen Tages</li>
+          <li>Automatische Monatsgesamtzeit</li>
+          <li>Schnelle Berichtübermittlung</li>
+        </ul>
 
       </div>
     </div>
@@ -389,27 +423,6 @@
         <div class="btn-row" style="margin-top:10px;">
           <a class="btn secondary" href="de/projects.html">Mehr erfahren</a>
         </div>
-
-      </div>
-    </div>
-
-    <!-- CALENDAR CARD -->
-    <div class="hero">
-      <div class="card pro-card">
-
-        <div class="title">📅 In Entwicklung: Daily Calendar</div>
-
-        <div class="subtitle">
-          Eine eigenständige Kalender-App zur einfachen Erfassung des Dienstes.
-          Klare Monatsübersicht und schnelle Monatszusammenfassung.
-        </div>
-
-        <ul class="features pro-features">
-          <li>Feste 6×7 Rasterstruktur</li>
-          <li>Hervorhebung des aktuellen Tages</li>
-          <li>Automatische Monatsgesamtzeit</li>
-          <li>Schnelle Berichtübermittlung</li>
-        </ul>
 
       </div>
     </div>
