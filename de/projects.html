@@ -168,6 +168,12 @@
       align-items:center;
       gap:18px;
       text-align:left;
+      transition:transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project:hover{
+      transform:translateY(-3px);
+      box-shadow:0 18px 38px rgba(0,0,0,0.08);
     }
 
     .project img{
@@ -273,6 +279,11 @@
       .project{
         flex-direction:column;
         text-align:center;
+      }
+
+      .project:hover{
+        transform:none;
+        box-shadow:none;
       }
 
       .btn-row{
