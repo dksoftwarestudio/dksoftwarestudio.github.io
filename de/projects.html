@@ -61,9 +61,9 @@
     }
 
     .topbar{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 18px 20px 0;
+      max-width:980px;
+      margin:0 auto;
+      padding:18px 20px 0;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -76,6 +76,7 @@
       gap:12px;
       text-decoration:none;
       color:inherit;
+      flex:0 0 auto;
     }
 
     .brand img{
@@ -95,6 +96,7 @@
       display:flex;
       gap:16px;
       align-items:center;
+      justify-content:flex-end;
       flex-wrap:wrap;
     }
 
@@ -246,8 +248,28 @@
       font-size:13px;
     }
 
-    @media (max-width:560px){
+    @media (max-width:768px){
+      .topbar{
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:14px;
+        text-align:center;
+      }
 
+      .brand{
+        width:100%;
+        justify-content:center;
+      }
+
+      .nav{
+        width:100%;
+        justify-content:center;
+        gap:10px 18px;
+      }
+    }
+
+    @media (max-width:560px){
       .project{
         flex-direction:column;
         text-align:center;
@@ -257,6 +279,17 @@
         justify-content:center;
       }
 
+      .card{
+        padding:36px 22px;
+      }
+
+      .title{
+        font-size:32px;
+      }
+
+      .subtitle{
+        font-size:15px;
+      }
     }
   </style>
 </head>
@@ -278,153 +311,139 @@
 </div>
 
 <div class="wrap">
-<div class="hero">
-<div class="card">
+  <div class="hero">
+    <div class="card">
 
-<div class="title">Projekte</div>
+      <div class="title">Projekte</div>
 
-<div class="subtitle">
-Aktuelle und geplante Projekte von DK Software Studio.
-</div>
+      <div class="subtitle">
+        Aktuelle und geplante Projekte von DK Software Studio.
+      </div>
 
-<div class="projects-grid">
+      <div class="projects-grid">
 
-<!-- Daily Text Alarm -->
-<div class="project">
-<img src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
-<div>
+        <!-- Daily Text Alarm -->
+        <div class="project">
+          <img src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
+          <div>
+            <div class="p-title">Daily Text Alarm</div>
 
-<div class="p-title">Daily Text Alarm</div>
+            <div class="p-desc">
+              Eine minimalistische Erinnerungs-App mit täglichem Link.
+              Öffnen Sie die gewünschte Seite mit einem Klick — ohne zusätzliche Schritte oder Ablenkungen.
+            </div>
 
-<div class="p-desc">
-Eine minimalistische Erinnerungs-App mit täglichem Link.
-Öffnen Sie die gewünschte Seite mit einem Klick — ohne zusätzliche Schritte oder Ablenkungen.
-</div>
+            <div class="btn-row">
+              <a class="btn primary" href="jw-daily-alarm.html">Mehr erfahren</a>
 
-<div class="btn-row">
-<a class="btn primary" href="jw-daily-alarm.html">Mehr erfahren</a>
+              <a class="btn secondary"
+                 href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
+                 target="_blank">
+                Google Play
+              </a>
 
-<a class="btn secondary"
-href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
-target="_blank">
-Google Play
-</a>
+              <span class="btn disabled">App Store — bald</span>
+            </div>
+          </div>
+        </div>
 
-<span class="btn disabled">App Store — bald</span>
+        <!-- Daily Calendar -->
+        <div class="project">
+          <img src="../dk-icon.png" alt="Calendar icon">
+          <div>
+            <div class="p-title">Daily Calendar</div>
 
-</div>
-</div>
-</div>
+            <div class="p-desc">
+              Eine einfache Kalender-App zur übersichtlichen Erfassung von Zeiten und einer schnellen Monatsübersicht.
+            </div>
 
-<!-- Daily Calendar -->
-<div class="project">
-<img src="../dk-icon.png" alt="Calendar icon">
-<div>
+            <div class="btn-row">
+              <span class="btn secondary">In Entwicklung</span>
+            </div>
+          </div>
+        </div>
 
-<div class="p-title">Daily Calendar</div>
+        <!-- Daily Text Alarm Pro -->
+        <div class="project">
+          <img src="../dk-icon.png" alt="Pro icon">
+          <div>
+            <div class="p-title">Daily Text Alarm Pro</div>
 
-<div class="p-desc">
-Eine einfache Kalender-App zur übersichtlichen Erfassung von Zeiten und einer schnellen Monatsübersicht.
-</div>
+            <div class="p-desc">
+              Eine erweiterte Version der App mit zusätzlichen Erinnerungen und flexibleren Einstellungen.
+            </div>
 
-<div class="btn-row">
-<span class="btn secondary">In Entwicklung</span>
-</div>
+            <div class="btn-row">
+              <span class="btn secondary">Geplant</span>
+            </div>
+          </div>
+        </div>
 
-</div>
-</div>
+        <!-- Reminder Alarm -->
+        <div class="project">
+          <img src="../dk-icon.png" alt="Reminder Alarm icon">
+          <div>
+            <div class="p-title">Reminder Alarm</div>
 
-<!-- Daily Text Alarm Pro -->
-<div class="project">
-<img src="../dk-icon.png" alt="Pro icon">
-<div>
+            <div class="p-desc">
+              Eine minimalistische Erinnerungs-App mit Prioritäten und wiederholtem Alarm bis zur Bestätigung.
+            </div>
 
-<div class="p-title">Daily Text Alarm Pro</div>
+            <div class="btn-row">
+              <span class="btn secondary">Geplant</span>
+            </div>
+          </div>
+        </div>
 
-<div class="p-desc">
-Eine erweiterte Version der App mit zusätzlichen Erinnerungen und flexibleren Einstellungen.
-</div>
+        <!-- Weather -->
+        <div class="project">
+          <img src="../dk-icon.png" alt="Weather icon">
+          <div>
+            <div class="p-title">Weather App</div>
 
-<div class="btn-row">
-<span class="btn secondary">Geplant</span>
-</div>
+            <div class="p-desc">
+              Eine minimalistische App für den schnellen Überblick über die Wetterbedingungen der nächsten Tage.
+            </div>
 
-</div>
-</div>
+            <div class="btn-row">
+              <span class="btn secondary">Konzept</span>
+            </div>
+          </div>
+        </div>
 
-<!-- Reminder Alarm -->
-<div class="project">
-<img src="../dk-icon.png" alt="Reminder Alarm icon">
-<div>
+        <!-- Blocknot -->
+        <div class="project">
+          <img src="../dk-icon.png" alt="Blocknot icon">
+          <div>
+            <div class="p-title">Blocknot</div>
 
-<div class="p-title">Reminder Alarm</div>
+            <div class="p-desc">
+              Ein minimalistischer Tagesplaner für schnelle Notizen und einfache Planung.
+            </div>
 
-<div class="p-desc">
-Eine minimalistische Erinnerungs-App mit Prioritäten und wiederholtem Alarm bis zur Bestätigung.
-</div>
+            <div class="btn-row">
+              <span class="btn secondary">Konzept</span>
+            </div>
+          </div>
+        </div>
 
-<div class="btn-row">
-<span class="btn secondary">Geplant</span>
-</div>
+      </div>
 
-</div>
-</div>
+    </div>
+  </div>
 
-<!-- Weather -->
-<div class="project">
-<img src="../dk-icon.png" alt="Weather icon">
-<div>
-
-<div class="p-title">Weather App</div>
-
-<div class="p-desc">
-Eine minimalistische App für den schnellen Überblick über die Wetterbedingungen der nächsten Tage.
-</div>
-
-<div class="btn-row">
-<span class="btn secondary">Konzept</span>
-</div>
-
-</div>
-</div>
-
-<!-- Blocknot -->
-<div class="project">
-<img src="../dk-icon.png" alt="Blocknot icon">
-<div>
-
-<div class="p-title">Blocknot</div>
-
-<div class="p-desc">
-Ein minimalistischer Tagesplaner für schnelle Notizen und einfache Planung.
-</div>
-
-<div class="btn-row">
-<span class="btn secondary">Konzept</span>
-</div>
-
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-<footer>© 2026 DK Software Studio</footer>
-
+  <footer>© 2026 DK Software Studio</footer>
 </div>
 
 <div id="cookie-banner" class="cookie-banner">
-<div class="cookie-content">
-<span>Wir verwenden anonyme Analysen, um die Website zu verbessern.</span>
+  <div class="cookie-content">
+    <span>Wir verwenden anonyme Analysen, um die Website zu verbessern.</span>
 
-<div class="cookie-buttons">
-<button type="button" onclick="acceptCookies()" class="btn primary">Akzeptieren</button>
-<button type="button" onclick="declineCookies()" class="btn secondary">Ablehnen</button>
-</div>
-
-</div>
+    <div class="cookie-buttons">
+      <button type="button" onclick="acceptCookies()" class="btn primary">Akzeptieren</button>
+      <button type="button" onclick="declineCookies()" class="btn secondary">Ablehnen</button>
+    </div>
+  </div>
 </div>
 
 <script src="../analytics.js"></script>
