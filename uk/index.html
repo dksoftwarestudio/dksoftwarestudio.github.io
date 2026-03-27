@@ -212,13 +212,6 @@
       font-size:20px;
     }
 
-    .pro-features{
-      max-width:500px;
-      margin:0 auto 22px;
-      text-align:left;
-      min-width:auto;
-    }
-
     .btn-row{
       margin-top:26px;
       display:flex;
@@ -245,25 +238,14 @@
       box-shadow: 0 10px 25px rgba(26,83,173,0.22);
     }
 
-    .btn.primary:hover{
-      background: var(--blueDark);
-      transform: translateY(-2px);
-    }
-
     .btn.secondary{
       background:#eef2f8;
       color: var(--text);
     }
 
-    .btn.secondary:hover{
-      background:#e3eaf6;
-      transform: translateY(-2px);
-    }
-
     .btn.disabled{
       background:#eef2f8;
       color:var(--disabled);
-      cursor:default;
       pointer-events:none;
     }
 
@@ -272,51 +254,6 @@
       text-align:center;
       color:#9aa6b2;
       font-size:13px;
-    }
-
-    @media (max-width: 560px){
-      .topbar{
-        flex-direction:column;
-        gap:12px;
-        text-align:center;
-      }
-
-      .brand{ justify-content:center; }
-      .brand .name{ white-space:normal; }
-
-      .lang{ justify-content:center; }
-
-      .nav{ justify-content:center; }
-
-      .card{ padding:34px 22px; }
-
-      .title{ font-size:22px; }
-
-      .feature-row{
-        flex-direction:column;
-        gap:18px;
-      }
-
-      .app-icon{ width:130px; }
-
-      .features{
-        min-width:auto;
-        width:100%;
-        max-width:520px;
-      }
-
-      .tagline{ font-size:22px; }
-
-      .btn-row{
-        flex-direction:column;
-        align-items:center;
-      }
-
-      .btn{
-        width:100%;
-        max-width:320px;
-        text-align:center;
-      }
     }
   </style>
 </head>
@@ -345,81 +282,91 @@
 
   <div class="wrap">
 
+    <!-- DAILY TEXT ALARM -->
     <div class="hero">
       <div class="card">
 
-        <img class="dk-logo" src="../logo.png" alt="DK Software Studio logo">
+        <img class="dk-logo" src="../logo.png" alt="DK Software Studio">
 
         <div class="tagline">Просто. Чисто. Функціонально.</div>
 
         <div class="title">Daily Text Alarm</div>
 
         <div class="subtitle">
-          Мінімалістичний додаток-нагадування для щоденного тексту.
-          Відкривайте потрібну сторінку одним натисканням — без зайвих кроків і без відволікань.
+          Мінімалістичний додаток-нагадування з щоденним посиланням.
+          Відкривайте потрібну сторінку одним натисканням — без зайвих кроків.
         </div>
 
         <div class="feature-row">
-          <img class="app-icon" src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
+          <img class="app-icon" src="../jw-daily-alarm-icon.png">
 
           <ul class="features">
-            <li>Щоденне нагадування у вибраний час</li>
+            <li>Щоденне нагадування</li>
             <li>Миттєве відкриття посилання</li>
-            <li>Чистий мінімалістичний інтерфейс</li>
-            <li>Підтримка кількох мов</li>
+            <li>Чистий дизайн</li>
+            <li>Кілька мов</li>
           </ul>
         </div>
 
         <div class="btn-row">
           <a class="btn secondary" href="jw-daily-alarm.html">Детальніше</a>
-          <a class="btn primary"
-             href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
-             target="_blank" rel="noopener">Google Play</a>
-          <span class="btn disabled">App Store — скоро</span>
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank">Google Play</a>
         </div>
 
       </div>
     </div>
 
+    <!-- MINISTRY CALENDAR -->
     <div class="hero">
       <div class="card pro-card">
 
-        <div class="title">📅 У розробці: Daily Calendar</div>
+        <div class="title">Ministry Calendar</div>
 
         <div class="subtitle">
-          Простий календарний додаток для зручного обліку часу.
-          Наочна сітка місяця та швидкий підсумок без зайвої складності.
+          Простий календар для обліку часу.
+          Зручний перегляд місяця, таймер і швидкий звіт.
         </div>
 
-        <ul class="features pro-features">
-          <li>Фіксована сітка 6×7</li>
-          <li>Підсвітка поточного дня</li>
-          <li>Автоматичний підсумок за місяць</li>
-          <li>Швидке надсилання звіту</li>
-        </ul>
+        <div class="feature-row">
+          <img class="app-icon" src="../img/ministry-calendar.png">
+
+          <ul class="features">
+            <li>Сітка місяця</li>
+            <li>Облік часу</li>
+            <li>Таймер</li>
+            <li>Швидкий звіт</li>
+          </ul>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn secondary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar" target="_blank">Google Play</a>
+        </div>
 
       </div>
     </div>
 
+    <!-- BLOCKNOT -->
     <div class="hero">
       <div class="card pro-card">
 
-        <div class="title">🚀 У розробці: Pro-версія</div>
+        <div class="title">📝 У розробці: Blocknot</div>
 
         <div class="subtitle">
-          У майбутньому з’явиться розширена версія застосунку з більш гнучкими налаштуваннями —
-          без зайвого шуму та з тим самим мінімалістичним підходом.
+          Мінімалістичний планер для нотаток і ідей.
         </div>
 
-        <ul class="features pro-features">
-          <li>До 5 посилань</li>
-          <li>До 5 незалежних будильників</li>
-          <li>Гнучке налаштування</li>
-          <li>Без реклами</li>
-        </ul>
+        <div class="feature-row">
+          <img class="app-icon" src="../img/blocknot.png">
 
-        <div class="btn-row" style="margin-top:10px;">
-          <a class="btn secondary" href="projects.html">Детальніше</a>
+          <ul class="features">
+            <li>Огляд тижня</li>
+            <li>Швидкий запис</li>
+            <li>Мінімалізм</li>
+          </ul>
+        </div>
+
+        <div class="btn-row">
+          <span class="btn disabled">У розробці</span>
         </div>
 
       </div>
