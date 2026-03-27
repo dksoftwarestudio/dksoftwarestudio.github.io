@@ -32,6 +32,7 @@
       padding: 18px 20px 0;
       display:flex;
       align-items:center;
+      gap:16px;
     }
 
     .brand{
@@ -54,6 +55,7 @@
       font-size:16px;
       letter-spacing:0.2px;
       color: var(--text);
+      white-space: nowrap;
     }
 
     .lang{
@@ -66,6 +68,7 @@
       font-weight:700;
       letter-spacing:0.2px;
       user-select:none;
+      white-space:nowrap;
     }
 
     .lang a{
@@ -93,6 +96,8 @@
       display:flex;
       gap:24px;
       align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
     }
 
     .nav a{
@@ -193,6 +198,7 @@
       font-size:16px;
       line-height:1.9;
       color:#3a4b5c;
+      min-width:280px;
     }
 
     .features li{
@@ -278,11 +284,12 @@
         text-align:center;
       }
 
-      .brand,
-      .lang,
-      .nav{
-        justify-content:center;
-      }
+      .brand{ justify-content:center; }
+      .brand .name{ white-space:normal; }
+
+      .lang{ justify-content:center; }
+
+      .nav{ justify-content:center; }
 
       .feature-row{
         flex-direction:column;
@@ -369,8 +376,8 @@
         </div>
 
         <div class="btn-row">
-          <a class="btn primary" href="jw-daily-alarm.html">Подробнее</a>
-          <a class="btn secondary"
+          <a class="btn secondary" href="jw-daily-alarm.html">Подробнее</a>
+          <a class="btn primary"
              href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
              target="_blank" rel="noopener">Google Play</a>
           <span class="btn disabled">App Store — скоро</span>
@@ -402,9 +409,9 @@
           </ul>
         </div>
 
-       <div class="btn-row">
-  <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar" target="_blank">Google Play</a>
-</div>
+        <div class="btn-row">
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar" target="_blank" rel="noopener">Google Play</a>
+        </div>
 
       </div>
     </div>
@@ -432,7 +439,7 @@
 
         <div class="btn-row">
           <span class="btn secondary">В разработке</span>
-       </div>
+        </div>
 
       </div>
     </div>
