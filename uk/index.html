@@ -238,15 +238,26 @@
       box-shadow: 0 10px 25px rgba(26,83,173,0.22);
     }
 
+    .btn.primary:hover{
+      background: var(--blueDark);
+      transform: translateY(-2px);
+    }
+
     .btn.secondary{
       background:#eef2f8;
       color: var(--text);
+    }
+
+    .btn.secondary:hover{
+      background:#e3eaf6;
+      transform: translateY(-2px);
     }
 
     .btn.disabled{
       background:#eef2f8;
       color:var(--disabled);
       pointer-events:none;
+      cursor:default;
     }
 
     footer{
@@ -254,6 +265,59 @@
       text-align:center;
       color:#9aa6b2;
       font-size:13px;
+    }
+
+    @media (max-width:560px){
+      .topbar{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+      }
+
+      .brand{ justify-content:center; }
+      .brand .name{ white-space:normal; }
+
+      .lang{ justify-content:center; }
+
+      .nav{ justify-content:center; }
+
+      .card{
+        padding:34px 22px;
+      }
+
+      .title{
+        font-size:22px;
+      }
+
+      .feature-row{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .app-icon{
+        width:130px;
+      }
+
+      .features{
+        min-width:auto;
+        width:100%;
+        max-width:520px;
+      }
+
+      .tagline{
+        font-size:22px;
+      }
+
+      .btn-row{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .btn{
+        width:100%;
+        max-width:320px;
+        text-align:center;
+      }
     }
   </style>
 </head>
@@ -298,7 +362,7 @@
         </div>
 
         <div class="feature-row">
-          <img class="app-icon" src="../jw-daily-alarm-icon.png">
+          <img class="app-icon" src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
 
           <ul class="features">
             <li>Щоденне нагадування</li>
@@ -310,7 +374,7 @@
 
         <div class="btn-row">
           <a class="btn secondary" href="jw-daily-alarm.html">Детальніше</a>
-          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank">Google Play</a>
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank" rel="noopener">Google Play</a>
         </div>
 
       </div>
@@ -328,7 +392,7 @@
         </div>
 
         <div class="feature-row">
-          <img class="app-icon" src="../img/ministry-calendar.png">
+          <img class="app-icon" src="../img/ministry-calendar.png" alt="Ministry Calendar icon">
 
           <ul class="features">
             <li>Сітка місяця</li>
@@ -339,8 +403,8 @@
         </div>
 
         <div class="btn-row">
-  <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar" target="_blank">Google Play</a>
-</div>
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar" target="_blank" rel="noopener">Google Play</a>
+        </div>
 
       </div>
     </div>
@@ -356,7 +420,7 @@
         </div>
 
         <div class="feature-row">
-          <img class="app-icon" src="../img/blocknot.png">
+          <img class="app-icon" src="../img/blocknot.png" alt="Blocknot icon">
 
           <ul class="features">
             <li>Огляд тижня</li>
