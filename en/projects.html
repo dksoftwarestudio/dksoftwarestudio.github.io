@@ -1,452 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — DK Software Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — DK Software Studio</title>
 
-<style>
+  <style>
+    .cookie-banner{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:90%;
+      max-width:640px;
+      background:#ffffff;
+      border-radius:16px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,0,0,0.06);
+      padding:20px;
+      display:none;
+      z-index:9999;
+    }
 
-:root{
---blue:#1A53AD;
---blueDark:#163e82;
---bg:#f5f5f5;
---text:#555555;
---muted:#666;
---card:#ffffff;
---border:rgba(0,0,0,0.06);
---disabled:#8e99a8;
-}
+    .cookie-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
 
-*{box-sizing:border-box;}
+    .cookie-content span{
+      font-size:14px;
+      color:#555;
+    }
 
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:var(--bg);
-color:var(--text);
-}
+    .cookie-buttons{
+      display:flex;
+      gap:10px;
+    }
 
-.topbar{
-max-width:980px;
-margin:0 auto;
-padding:18px 20px 0;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:12px;
-}
+    :root{
+      --blue:#1A53AD;
+      --blueDark:#163e82;
+      --bg:#f5f5f5;
+      --text:#555555;
+      --muted:#666;
+      --card:#ffffff;
+      --border:rgba(0,0,0,0.06);
+      --disabled:#8e99a8;
+    }
 
-.brand{
-display:flex;
-align-items:center;
-gap:12px;
-text-decoration:none;
-color:inherit;
-flex:0 0 auto;
-}
+    *{ box-sizing:border-box; }
 
-.brand img{
-width:40px;
-height:auto;
-display:block;
-}
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
 
-.brand .name{
-font-weight:600;
-letter-spacing:0.2px;
-white-space:nowrap;
-color:var(--text);
-}
+    .topbar{
+      max-width:980px;
+      margin:0 auto;
+      padding:18px 20px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
 
-.nav{
-display:flex;
-gap:16px;
-align-items:center;
-justify-content:flex-end;
-flex-wrap:wrap;
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+      flex:0 0 auto;
+    }
 
-.nav a{
-color:var(--text);
-text-decoration:none;
-font-weight:600;
-font-size:14px;
-white-space:nowrap;
-transition:color 0.2s ease;
-}
+    .brand img{
+      width:40px;
+      height:auto;
+      display:block;
+    }
 
-.nav a:hover{
-color:var(--blue);
-}
+    .brand .name{
+      font-weight:600;
+      letter-spacing:0.2px;
+      white-space:nowrap;
+      color:var(--text);
+    }
 
-.wrap{
-max-width:980px;
-margin:0 auto;
-padding:24px 20px 70px;
-}
+    .nav{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
 
-.hero{
-margin-top:16px;
-display:flex;
-justify-content:center;
-}
+    .nav a{
+      color:var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      transition:color 0.2s ease;
+      white-space:nowrap;
+    }
 
-.card{
-width:100%;
-max-width:860px;
-background:var(--card);
-border-radius:18px;
-box-shadow:0 22px 55px rgba(0,0,0,0.07);
-border:1px solid var(--border);
-padding:44px 42px;
-text-align:center;
-}
+    .nav a:hover{
+      color:var(--blue);
+    }
 
-.title{
-font-size:38px;
-font-weight:500;
-margin:0 0 8px;
-line-height:1.1;
-}
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      padding:24px 20px 70px;
+    }
 
-.subtitle{
-margin:0 auto 26px;
-max-width:720px;
-font-size:16px;
-line-height:1.7;
-color:var(--muted);
-}
+    .hero{
+      margin-top:16px;
+      display:flex;
+      justify-content:center;
+    }
 
-.projects-grid{
-display:flex;
-flex-direction:column;
-gap:18px;
-max-width:760px;
-margin:0 auto;
-}
+    .card{
+      width:100%;
+      max-width:860px;
+      background:var(--card);
+      border-radius:18px;
+      box-shadow:0 22px 55px rgba(0,0,0,0.07);
+      border:1px solid var(--border);
+      padding:44px 42px;
+      text-align:center;
+    }
 
-.project{
-background:#f7f9fc;
-border:1px solid var(--border);
-border-radius:16px;
-padding:22px;
-display:flex;
-align-items:center;
-gap:18px;
-text-align:left;
-transition:transform 0.25s ease, box-shadow 0.25s ease;
-}
+    .title{
+      margin:0 0 8px;
+      font-size:38px;
+      line-height:1.1;
+      font-weight:500;
+    }
 
-.project:hover{
-transform:translateY(-3px);
-box-shadow:0 18px 38px rgba(0,0,0,0.08);
-}
+    .subtitle{
+      margin:0 auto 26px;
+      max-width:720px;
+      font-size:16px;
+      line-height:1.7;
+      color:var(--muted);
+    }
 
-.project img{
-width:88px;
-height:auto;
-border-radius:18px;
-background:#fff;
-padding:10px;
-border:1px solid var(--border);
-box-shadow:0 14px 30px rgba(0,0,0,0.08);
-flex:0 0 auto;
-}
+    .projects-grid{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      max-width:760px;
+      margin:0 auto;
+    }
 
-.p-title{
-font-size:22px;
-font-weight:800;
-margin:0 0 6px;
-}
+    .project{
+      background:#f7f9fc;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:22px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      text-align:left;
+      transition:transform 0.25s ease, box-shadow 0.25s ease;
+    }
 
-.p-desc{
-margin:0 0 14px;
-color:var(--muted);
-line-height:1.6;
-}
+    .project:hover{
+      transform:translateY(-3px);
+      box-shadow:0 18px 38px rgba(0,0,0,0.08);
+    }
 
-.btn-row{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-align-items:center;
-}
+    .project img{
+      width:88px;
+      height:auto;
+      border-radius:18px;
+      background:#fff;
+      padding:10px;
+      border:1px solid var(--border);
+      box-shadow:0 14px 30px rgba(0,0,0,0.08);
+      flex:0 0 auto;
+    }
 
-.btn{
-padding:12px 22px;
-border-radius:10px;
-text-decoration:none;
-font-size:15px;
-font-weight:700;
-border:0;
-cursor:pointer;
-display:inline-block;
-transition:0.2s ease;
-}
+    .p-title{
+      font-size:22px;
+      font-weight:800;
+      margin:0 0 6px;
+    }
 
-.btn.primary{
-background:var(--blue);
-color:#fff;
-box-shadow:0 10px 25px rgba(26,83,173,0.22);
-}
+    .p-desc{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.6;
+    }
 
-.btn.primary:hover{
-background:var(--blueDark);
-transform:translateY(-2px);
-}
+    .btn-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
 
-.btn.secondary{
-background:#eef2f8;
-color:var(--blue);
-}
+    .btn{
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:10px;
+      text-decoration:none;
+      font-size:15px;
+      font-weight:700;
+      transition:0.2s ease;
+      user-select:none;
+      border:0;
+      cursor:pointer;
+    }
 
-.btn.secondary:hover{
-background:#e3eaf6;
-transform:translateY(-2px);
-}
+    .btn.primary{
+      background:var(--blue);
+      color:#fff;
+      box-shadow:0 10px 25px rgba(26,83,173,0.22);
+    }
 
-.btn.disabled{
-background:#eef2f8;
-color:var(--disabled);
-cursor:default;
-pointer-events:none;
-}
+    .btn.primary:hover{
+      background:var(--blueDark);
+      transform:translateY(-2px);
+    }
 
-footer{
-margin-top:26px;
-text-align:center;
-color:#9aa6b2;
-font-size:13px;
-}
+    .btn.secondary{
+      background:#eef2f8;
+      color:var(--blue);
+    }
 
-@media (max-width:768px){
-.topbar{
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:14px;
-text-align:center;
-}
+    .btn.secondary:hover{
+      background:#e3eaf6;
+      transform:translateY(-2px);
+    }
 
-.brand{
-width:100%;
-justify-content:center;
-}
+    .btn.disabled{
+      background:#eef2f8;
+      color:var(--disabled);
+      cursor:default;
+      pointer-events:none;
+    }
 
-.nav{
-width:100%;
-justify-content:center;
-gap:10px 18px;
-}
-}
+    footer{
+      margin-top:26px;
+      text-align:center;
+      color:#9aa6b2;
+      font-size:13px;
+    }
 
-@media (max-width:560px){
+    @media (max-width:768px){
+      .topbar{
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:14px;
+        text-align:center;
+      }
 
-.project{
-flex-direction:column;
-text-align:center;
-}
+      .brand{
+        width:100%;
+        justify-content:center;
+      }
 
-.project:hover{
-transform:none;
-box-shadow:none;
-}
+      .nav{
+        width:100%;
+        justify-content:center;
+        gap:10px 18px;
+      }
+    }
 
-.btn-row{
-justify-content:center;
-}
+    @media (max-width:560px){
+      .project{
+        flex-direction:column;
+        text-align:center;
+      }
 
-.card{
-padding:36px 22px;
-}
+      .project:hover{
+        transform:none;
+        box-shadow:none;
+      }
 
-.title{
-font-size:32px;
-}
+      .btn-row{
+        justify-content:center;
+      }
 
-.subtitle{
-font-size:15px;
-}
+      .card{
+        padding:36px 22px;
+      }
 
-.brand .name{
-white-space:normal;
-}
+      .title{
+        font-size:32px;
+      }
 
-}
-
-</style>
+      .subtitle{
+        font-size:15px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <div class="topbar">
+  <a class="brand" href="../index.html">
+    <img src="../dk-icon.png" alt="DK">
+    <div class="name">DK Software Studio</div>
+  </a>
 
-<a class="brand" href="index.html">
-<img src="../dk-icon.png" alt="DK">
-<div class="name">DK Software Studio</div>
-</a>
-
-<div class="nav">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="projects.html">Projects</a>
-<a href="contact.html">Contact</a>
-</div>
-
+  <div class="nav">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </div>
 
 <div class="wrap">
-<div class="hero">
+  <div class="hero">
+    <div class="card">
 
-<div class="card">
+      <div class="title">Projects</div>
 
-<div class="title">Projects</div>
+      <div class="subtitle">
+        Current and planned projects from DK Software Studio.
+      </div>
 
-<div class="subtitle">
-Current and upcoming projects of DK Software Studio.
+      <div class="projects-grid">
+
+        <!-- Daily Text Alarm -->
+        <div class="project">
+          <img src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
+          <div>
+            <div class="p-title">Daily Text Alarm</div>
+
+            <div class="p-desc">
+              A minimalist reminder app with a daily link.
+              Open the page you need with one tap — without extra steps or distractions.
+            </div>
+
+            <div class="btn-row">
+              <a class="btn primary" href="jw-daily-alarm.html">Learn more</a>
+
+              <a class="btn secondary"
+                 href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
+                 target="_blank" rel="noopener">
+                Google Play
+              </a>
+
+              <span class="btn disabled">App Store — soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ministry Calendar -->
+        <div class="project">
+          <img src="../img/ministry-calendar.png" alt="Ministry Calendar icon">
+          <div>
+            <div class="p-title">Ministry Calendar</div>
+
+            <div class="p-desc">
+              A simple calendar app for clear time tracking,
+              with monthly overview, built-in timer and quick report submission.
+            </div>
+
+            <div class="btn-row">
+              <a class="btn secondary"
+                 href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar"
+                 target="_blank" rel="noopener">
+                Google Play
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blocknot -->
+        <div class="project">
+          <img src="../img/blocknot.png" alt="Blocknot icon">
+          <div>
+            <div class="p-title">Blocknot</div>
+
+            <div class="p-desc">
+              A minimalist weekly planner for quick notes and simple organization.
+            </div>
+
+            <div class="btn-row">
+              <span class="btn secondary">In development</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daily Text Alarm Pro -->
+        <div class="project">
+          <img src="../dk-icon.png" alt="Pro icon">
+          <div>
+            <div class="p-title">Daily Text Alarm Pro</div>
+
+            <div class="p-desc">
+              An extended version of the app with additional reminders and more flexible settings.
+            </div>
+
+            <div class="btn-row">
+              <span class="btn secondary">Planned</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reminder Alarm -->
+        <div class="project">
+          <img src="../dk-icon.png" alt="Reminder Alarm icon">
+          <div>
+            <div class="p-title">Reminder Alarm</div>
+
+            <div class="p-desc">
+              A minimalist reminder app with priorities and repeated alarms until confirmed.
+            </div>
+
+            <div class="btn-row">
+              <span class="btn secondary">Planned</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather -->
+        <div class="project">
+          <img src="../dk-icon.png" alt="Weather icon">
+          <div>
+            <div class="p-title">Weather App</div>
+
+            <div class="p-desc">
+              A minimalist app for a quick overview of weather conditions for the next few days.
+            </div>
+
+            <div class="btn-row">
+              <span class="btn secondary">Concept</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer>© 2026 DK Software Studio</footer>
 </div>
 
-<div class="projects-grid">
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-content">
+    <span>We use anonymous analytics to improve the website.</span>
 
-<!-- Daily Text Alarm -->
-<div class="project">
-
-<img src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
-
-<div>
-
-<div class="p-title">Daily Text Alarm</div>
-
-<div class="p-desc">
-A minimalist reminder app with a daily link.
-Open the right page with one tap — without extra steps or distractions.
+    <div class="cookie-buttons">
+      <button type="button" onclick="acceptCookies()" class="btn primary">Accept</button>
+      <button type="button" onclick="declineCookies()" class="btn secondary">Decline</button>
+    </div>
+  </div>
 </div>
 
-<div class="btn-row">
-<a class="btn primary" href="jw-daily-alarm.html">Learn more</a>
-
-<a class="btn secondary"
-href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
-target="_blank">
-Google Play
-</a>
-
-<span class="btn disabled">App Store — soon</span>
-</div>
-
-</div>
-</div>
-
-<!-- Daily Calendar -->
-<div class="project">
-
-<img src="../dk-icon.png" alt="Daily Calendar icon">
-
-<div>
-
-<div class="p-title">Daily Calendar</div>
-
-<div class="p-desc">
-A simple app for convenient time tracking and quick monthly overview.
-</div>
-
-<div class="btn-row">
-<span class="btn secondary">In development</span>
-</div>
-
-</div>
-</div>
-
-<!-- Daily Text Alarm Pro -->
-<div class="project">
-
-<img src="../dk-icon.png" alt="Daily Text Alarm Pro icon">
-
-<div>
-
-<div class="p-title">Daily Text Alarm Pro</div>
-
-<div class="p-desc">
-An extended version of the app with additional reminders and more flexible settings.
-</div>
-
-<div class="btn-row">
-<span class="btn secondary">Planned</span>
-</div>
-
-</div>
-</div>
-
-<!-- Reminder Alarm -->
-<div class="project">
-
-<img src="../dk-icon.png" alt="Reminder Alarm icon">
-
-<div>
-
-<div class="p-title">Reminder Alarm</div>
-
-<div class="p-desc">
-A minimalist reminder app with a priority system and repeated alarm until the task is completed.
-</div>
-
-<div class="btn-row">
-<span class="btn secondary">Planned</span>
-</div>
-
-</div>
-</div>
-
-<!-- Weather App -->
-<div class="project">
-
-<img src="../dk-icon.png" alt="Weather App icon">
-
-<div>
-
-<div class="p-title">Weather App</div>
-
-<div class="p-desc">
-A minimalist app for quickly checking weather conditions for the coming days.
-Helps you quickly understand whether a day is suitable for outdoor activities and trips.
-</div>
-
-<div class="btn-row">
-<span class="btn secondary">Concept</span>
-</div>
-
-</div>
-</div>
-
-<!-- Blocknot -->
-<div class="project">
-
-<img src="../dk-icon.png" alt="Blocknot icon">
-
-<div>
-
-<div class="p-title">Blocknot</div>
-
-<div class="p-desc">
-A minimalist planner for quick daily planning and simple event notes.
-</div>
-
-<div class="btn-row">
-<span class="btn secondary">Concept</span>
-</div>
-
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-<footer>© 2026 DK Software Studio</footer>
+<script src="../analytics.js"></script>
 
 </body>
 </html>
