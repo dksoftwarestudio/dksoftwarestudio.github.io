@@ -275,9 +275,57 @@
       font-size:13px;
     }
 
-    @media (max-width: 560px){
+    @media (max-width:560px){
+      .topbar{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+      }
+
+      .brand{ justify-content:center; }
+      .brand .name{ white-space:normal; }
+
+      .lang{ justify-content:center; }
+
+      .nav{ justify-content:center; }
+
+      .card{
+        padding:34px 22px;
+      }
+
+      .title{
+        font-size:22px;
+      }
+
       .feature-row{
         flex-direction:column;
+        gap:18px;
+      }
+
+      .app-icon{
+        width:130px;
+      }
+
+      .features,
+      .pro-features{
+        min-width:auto;
+        width:100%;
+        max-width:520px;
+      }
+
+      .tagline{
+        font-size:22px;
+      }
+
+      .btn-row{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .btn{
+        width:100%;
+        max-width:320px;
+        text-align:center;
       }
     }
   </style>
@@ -311,7 +359,7 @@
     <div class="hero">
       <div class="card">
 
-        <img class="dk-logo" src="logo.png">
+        <img class="dk-logo" src="logo.png" alt="DK Software Studio">
 
         <div class="tagline">Einfach. Klar. Funktional.</div>
 
@@ -322,7 +370,7 @@
         </div>
 
         <div class="feature-row">
-          <img class="app-icon" src="jw-daily-alarm-icon.png">
+          <img class="app-icon" src="jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
 
           <ul class="features">
             <li>Tägliche Erinnerung</li>
@@ -333,7 +381,7 @@
         </div>
 
         <div class="btn-row">
-          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank">Google Play</a>
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank" rel="noopener">Google Play</a>
         </div>
 
       </div>
@@ -350,7 +398,7 @@
         </div>
 
         <div class="feature-row">
-          <img class="app-icon" src="img/ministry-calendar.png">
+          <img class="app-icon" src="img/ministry-calendar.png" alt="Ministry Calendar icon">
 
           <ul class="features">
             <li>Monatsübersicht</li>
@@ -361,7 +409,7 @@
         </div>
 
         <div class="btn-row">
-          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar" target="_blank">Google Play</a>
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar" target="_blank" rel="noopener">Google Play</a>
         </div>
 
       </div>
@@ -378,7 +426,7 @@
         </div>
 
         <div class="feature-row">
-          <img class="app-icon" src="img/blocknot.png">
+          <img class="app-icon" src="img/blocknot.png" alt="Blocknot icon">
 
           <ul class="features">
             <li>Wochenübersicht</li>
