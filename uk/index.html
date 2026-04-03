@@ -1,445 +1,453 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DK Software Studio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проєкти — DK Software Studio</title>
 
-  <style>
-    :root{
-      --blue:#1A53AD;
-      --blueDark:#163e82;
-      --bg:#F5F5F5;
-      --text:#555555;
-      --muted:#666;
-      --card:#ffffff;
-      --border:rgba(0,0,0,0.06);
-      --disabled:#8e99a8;
-    }
+<style>
 
-    *{ box-sizing:border-box; }
+:root{
+--blue:#1A53AD;
+--blueDark:#163e82;
+--bg:#F5F5F5;
+--text:#555555;
+--muted:#666;
+--card:#ffffff;
+--border:rgba(0,0,0,0.06);
+--disabled:#8e99a8;
+}
 
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
+*{box-sizing:border-box;}
 
-    .topbar{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 18px 20px 0;
-      display:flex;
-      align-items:center;
-      gap:16px;
-    }
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:var(--bg);
+color:var(--text);
+}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:inherit;
-      white-space:nowrap;
-    }
+.topbar{
+max-width:980px;
+margin:0 auto;
+padding:18px 20px 0;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:12px;
+}
 
-    .brand img{
-      width:40px;
-      height:auto;
-      display:block;
-    }
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
+color:inherit;
+flex:0 0 auto;
+}
 
-    .brand .name{
-      font-weight:600;
-      font-size:16px;
-      letter-spacing:0.2px;
-      white-space: nowrap;
-      color: var(--text);
-    }
+.brand img{
+width:40px;
+height:auto;
+display:block;
+}
 
-    .lang{
-      flex:1;
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      align-items:center;
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:0.2px;
-      opacity:0.9;
-      user-select:none;
-      white-space:nowrap;
-    }
+.brand .name{
+font-weight:600;
+letter-spacing:0.2px;
+white-space:nowrap;
+color:var(--text);
+}
 
-    .lang a{
-      color: var(--text);
-      text-decoration:none;
-      padding:6px 8px;
-      border-radius:8px;
-      border:1px solid transparent;
-      transition: 0.2s ease;
-    }
+.nav{
+display:flex;
+gap:16px;
+align-items:center;
+justify-content:flex-end;
+flex-wrap:wrap;
+}
 
-    .lang a:hover{
-      color: var(--blue);
-      border-color: rgba(26,83,173,0.18);
-      background:#fff;
-    }
+.nav a{
+color:var(--text);
+text-decoration:none;
+font-weight:600;
+font-size:14px;
+white-space:nowrap;
+transition:color 0.2s ease;
+}
 
-    .lang .active{
-      color: var(--blue);
-      border-color: rgba(26,83,173,0.22);
-      background:#fff;
-    }
+.nav a:hover{
+color:var(--blue);
+}
 
-    .nav{
-      display:flex;
-      gap:24px;
-      align-items:center;
-      justify-content:flex-end;
-      flex-wrap:wrap;
-    }
+.wrap{
+max-width:980px;
+margin:0 auto;
+padding:24px 20px 70px;
+}
 
-    .nav a{
-      color: var(--text);
-      text-decoration:none;
-      font-weight:600;
-      font-size:14px;
-      transition: color 0.2s ease;
-      white-space: nowrap;
-    }
+.hero{
+margin-top:16px;
+display:flex;
+justify-content:center;
+}
 
-    .nav a:hover{
-      color: var(--blue);
-    }
+.card{
+width:100%;
+max-width:860px;
+background:var(--card);
+border-radius:18px;
+box-shadow:0 22px 55px rgba(0,0,0,0.07);
+border:1px solid var(--border);
+padding:44px 42px;
+text-align:center;
+}
 
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 28px 20px 70px;
-    }
+.title{
+font-size:38px;
+font-weight:500;
+margin:0 0 8px;
+line-height:1.1;
+}
 
-    .hero{
-      margin-top: 18px;
-      display:flex;
-      justify-content:center;
-    }
+.subtitle{
+margin:0 auto 26px;
+max-width:720px;
+font-size:16px;
+line-height:1.7;
+color:var(--muted);
+}
 
-    .card{
-      width:100%;
-      max-width: 860px;
-      background: var(--card);
-      border-radius: 18px;
-      box-shadow: 0 22px 55px rgba(0,0,0,0.07);
-      border: 1px solid var(--border);
-      padding: 48px 42px;
-      text-align:center;
-    }
+.projects-grid{
+display:flex;
+flex-direction:column;
+gap:18px;
+max-width:760px;
+margin:0 auto;
+}
 
-    .pro-card{
-      padding:40px 42px;
-    }
+.project{
+background:#f7f9fc;
+border:1px solid var(--border);
+border-radius:16px;
+padding:22px;
+display:flex;
+align-items:center;
+gap:18px;
+text-align:left;
+transition:transform 0.25s ease, box-shadow 0.25s ease;
+will-change:transform;
+}
 
-    .dk-logo{
-      width: 300px;
-      margin: 0 auto 28px;
-      display:block;
-    }
+.project:hover{
+transform:translateY(-3px);
+box-shadow:0 18px 38px rgba(0,0,0,0.08);
+}
 
-    .tagline{
-      font-size:18px;
-      font-weight:600;
-      color: var(--blue);
-      margin-bottom:18px;
-    }
+.project img{
+width:88px;
+height:auto;
+border-radius:18px;
+background:#fff;
+padding:10px;
+border:1px solid var(--border);
+box-shadow:0 14px 30px rgba(0,0,0,0.08);
+flex:0 0 auto;
+}
 
-    .title{
-      font-size:28px;
-      font-weight:500;
-      margin:0 0 14px;
-    }
+.p-title{
+font-size:22px;
+font-weight:800;
+margin:0 0 6px;
+}
 
-    .subtitle{
-      margin: 0 auto 26px;
-      max-width: 720px;
-      font-size:16px;
-      line-height:1.7;
-      color: var(--muted);
-    }
+.p-desc{
+margin:0 0 14px;
+color:var(--muted);
+line-height:1.6;
+}
 
-    .feature-row{
-      margin: 22px auto;
-      max-width: 720px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap: 30px;
-    }
+.btn-row{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+align-items:center;
+}
 
-    .app-icon{
-      width: 130px;
-      border-radius: 22px;
-      box-shadow: 0 14px 35px rgba(0,0,0,0.10);
-      background:#fff;
-      padding: 12px;
-      border: 1px solid var(--border);
-      flex: 0 0 auto;
-    }
+.btn{
+padding:12px 22px;
+border-radius:10px;
+text-decoration:none;
+font-size:15px;
+font-weight:700;
+border:0;
+cursor:pointer;
+display:inline-block;
+transition:0.2s ease;
+}
 
-    .features{
-      list-style:none;
-      padding:0;
-      margin:0;
-      text-align:left;
-      font-size:16px;
-      line-height:1.9;
-      color:#3a4b5c;
-      min-width:280px;
-    }
+.btn.primary{
+background:var(--blue);
+color:#fff;
+box-shadow:0 10px 25px rgba(26,83,173,0.22);
+}
 
-    .features li{
-      position:relative;
-      padding-left:26px;
-      margin:8px 0;
-    }
+.btn.primary:hover{
+background:var(--blueDark);
+transform:translateY(-2px);
+}
 
-    .features li::before{
-      content:"•";
-      position:absolute;
-      left:8px;
-      color: var(--blue);
-      font-size:20px;
-    }
+.btn.secondary{
+background:#eef2f8;
+color:var(--blue);
+}
 
-    .btn-row{
-      margin-top:26px;
-      display:flex;
-      gap:14px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
+.btn.secondary:hover{
+background:#e3eaf6;
+transform:translateY(-2px);
+}
 
-    .btn{
-      padding: 12px 26px;
-      border-radius: 10px;
-      text-decoration:none;
-      font-size:15px;
-      font-weight:700;
-      transition: 0.2s ease;
-      display:inline-block;
-      border:none;
-      cursor:pointer;
-    }
+.btn.disabled{
+background:#eef2f8;
+color:var(--disabled);
+cursor:default;
+pointer-events:none;
+}
 
-    .btn.primary{
-      background: var(--blue);
-      color:#fff;
-      box-shadow: 0 10px 25px rgba(26,83,173,0.22);
-    }
+footer{
+margin-top:26px;
+text-align:center;
+color:#9aa6b2;
+font-size:13px;
+}
 
-    .btn.primary:hover{
-      background: var(--blueDark);
-      transform: translateY(-2px);
-    }
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:opacity 0.6s ease, transform 0.6s ease;
+}
 
-    .btn.secondary{
-      background:#eef2f8;
-      color: var(--text);
-    }
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
 
-    .btn.secondary:hover{
-      background:#e3eaf6;
-      transform: translateY(-2px);
-    }
+@media (max-width:768px){
+.topbar{
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:14px;
+text-align:center;
+}
 
-    .btn.disabled{
-      background:#eef2f8;
-      color:var(--disabled);
-      pointer-events:none;
-      cursor:default;
-    }
+.brand{
+width:100%;
+justify-content:center;
+}
 
-    footer{
-      margin-top:30px;
-      text-align:center;
-      color:#9aa6b2;
-      font-size:13px;
-    }
+.nav{
+width:100%;
+justify-content:center;
+gap:10px 18px;
+}
 
-    @media (max-width:560px){
-      .topbar{
-        flex-direction:column;
-        gap:12px;
-        text-align:center;
-      }
+.btn-row{
+flex-direction:column;
+align-items:center;
+}
 
-      .brand{ justify-content:center; }
-      .brand .name{ white-space:normal; }
+.btn{
+width:100%;
+max-width:320px;
+text-align:center;
+}
+}
 
-      .lang{ justify-content:center; }
+@media (max-width:560px){
+.project{
+flex-direction:column;
+text-align:center;
+}
 
-      .nav{ justify-content:center; }
+.project:hover{
+transform:none;
+box-shadow:none;
+}
 
-      .card{
-        padding:34px 22px;
-      }
+.btn-row{
+justify-content:center;
+}
 
-      .title{
-        font-size:22px;
-      }
+.card{
+padding:36px 22px;
+}
 
-      .feature-row{
-        flex-direction:column;
-        gap:18px;
-      }
+.title{
+font-size:32px;
+}
 
-      .app-icon{
-        width:130px;
-      }
+.subtitle{
+font-size:15px;
+}
 
-      .features{
-        min-width:auto;
-        width:100%;
-        max-width:520px;
-      }
+.brand .name{
+white-space:normal;
+}
+}
 
-      .tagline{
-        font-size:22px;
-      }
-
-      .btn-row{
-        flex-direction:column;
-        align-items:center;
-      }
-
-      .btn{
-        width:100%;
-        max-width:320px;
-        text-align:center;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <div class="topbar">
-    <a class="brand" href="index.html">
-      <img src="../dk-icon.png" alt="DK Software Studio">
-      <div class="name">DK Software Studio</div>
-    </a>
+<div class="topbar">
 
-    <div class="lang">
-      <a href="../index.html">DE</a>
-      <a href="../en/index.html">EN</a>
-      <a class="active" href="index.html">UK</a>
-      <a href="../ru.html">RU</a>
-    </div>
+<a class="brand" href="index.html">
+<img src="../dk-icon.png" alt="DK Software Studio">
+<div class="name">DK Software Studio</div>
+</a>
 
-    <div class="nav">
-      <a href="about.html">Про студію</a>
-      <a href="projects.html">Проєкти</a>
-      <a href="contact.html">Контакт</a>
-    </div>
-  </div>
+<div class="nav">
+<a href="index.html">Головна</a>
+<a href="about.html">Про студію</a>
+<a href="projects.html">Проєкти</a>
+<a href="contact.html">Контакт</a>
+</div>
 
-  <div class="wrap">
+</div>
 
-    <!-- DAILY TEXT ALARM -->
-    <div class="hero">
-      <div class="card">
+<div class="wrap">
+<div class="hero">
 
-        <img class="dk-logo" src="../logo.png" alt="DK Software Studio">
+<div class="card">
 
-        <div class="tagline">Просто. Чисто. Функціонально.</div>
+<div class="title">Проєкти</div>
 
-        <div class="title">Daily Text Alarm</div>
+<div class="subtitle">
+Поточні та заплановані проєкти DK Software Studio.
+</div>
 
-        <div class="subtitle">
-          Мінімалістичний додаток-нагадування з щоденним посиланням.
-          Відкривайте потрібну сторінку одним натисканням — без зайвих кроків.
-        </div>
+<div class="projects-grid">
 
-        <div class="feature-row">
-          <img class="app-icon" src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
+<!-- Daily Text Alarm -->
+<div class="project reveal">
+<img src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
+<div>
+<div class="p-title">Daily Text Alarm</div>
+<div class="p-desc">
+Мінімалістичний додаток-нагадування з щоденним посиланням.
+Відкривайте потрібну сторінку одним натисканням — без зайвих дій і відволікань.
+</div>
+<div class="btn-row">
+<a class="btn secondary" href="jw-daily-alarm.html">Детальніше</a>
+<a class="btn primary"
+href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
+target="_blank" rel="noopener">Google Play</a>
+<span class="btn disabled">App Store — скоро</span>
+</div>
+</div>
+</div>
 
-          <ul class="features">
-            <li>Щоденне нагадування</li>
-            <li>Миттєве відкриття посилання</li>
-            <li>Чистий дизайн</li>
-            <li>Кілька мов</li>
-          </ul>
-        </div>
+<!-- Ministry Calendar -->
+<div class="project reveal">
+<img src="../img/ministry-calendar.png" alt="Ministry Calendar icon">
+<div>
+<div class="p-title">Ministry Calendar</div>
+<div class="p-desc">
+Простий додаток-календар для обліку часу,
+з оглядом місяця, таймером і швидким звітом.
+</div>
+<div class="btn-row">
+<a class="btn primary"
+href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar"
+target="_blank" rel="noopener">Google Play</a>
+</div>
+</div>
+</div>
 
-        <div class="btn-row">
-          <a class="btn secondary" href="jw-daily-alarm.html">Детальніше</a>
-          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank" rel="noopener">Google Play</a>
-          <span class="btn disabled">App Store — скоро</span>
-        </div>
+<!-- Blocknot -->
+<div class="project reveal">
+<img src="../img/blocknot.png" alt="Blocknot icon">
+<div>
+<div class="p-title">Blocknot</div>
+<div class="p-desc">
+Мінімалістичний тижневий планер для швидких нотаток і простої організації.
+</div>
+<div class="btn-row">
+<span class="btn secondary">У розробці</span>
+</div>
+</div>
+</div>
 
-      </div>
-    </div>
+<!-- Daily Text Alarm Pro -->
+<div class="project reveal">
+<img src="../dk-icon.png" alt="Pro icon">
+<div>
+<div class="p-title">Daily Text Alarm Pro</div>
+<div class="p-desc">
+Розширена версія додатка з додатковими нагадуваннями та гнучкішими налаштуваннями.
+</div>
+<div class="btn-row">
+<span class="btn secondary">Заплановано</span>
+</div>
+</div>
+</div>
 
-    <!-- MINISTRY CALENDAR -->
-    <div class="hero">
-      <div class="card pro-card">
+<!-- Reminder Alarm -->
+<div class="project reveal">
+<img src="../dk-icon.png" alt="Reminder Alarm icon">
+<div>
+<div class="p-title">Reminder Alarm</div>
+<div class="p-desc">
+Мінімалістичний додаток нагадувань із пріоритетами та повторенням до виконання задачі.
+</div>
+<div class="btn-row">
+<span class="btn secondary">Заплановано</span>
+</div>
+</div>
+</div>
 
-        <div class="title">Ministry Calendar</div>
+<!-- Weather -->
+<div class="project reveal">
+<img src="../dk-icon.png" alt="Weather icon">
+<div>
+<div class="p-title">Weather App</div>
+<div class="p-desc">
+Мінімалістичний додаток для швидкого перегляду погодних умов на найближчі дні.
+</div>
+<div class="btn-row">
+<span class="btn secondary">Концепція</span>
+</div>
+</div>
+</div>
 
-        <div class="subtitle">
-          Простий календар для обліку часу.
-          Зручний перегляд місяця, таймер і швидкий звіт.
-        </div>
+</div>
 
-        <div class="feature-row">
-          <img class="app-icon" src="../img/ministry-calendar.png" alt="Ministry Calendar icon">
+</div>
 
-          <ul class="features">
-            <li>Сітка місяця</li>
-            <li>Облік часу</li>
-            <li>Таймер</li>
-            <li>Швидкий звіт</li>
-          </ul>
-        </div>
+</div>
+</div>
 
-        <div class="btn-row">
-          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar" target="_blank" rel="noopener">Google Play</a>
-        </div>
+<footer>© 2026 DK Software Studio</footer>
 
-      </div>
-    </div>
+<script>
+const reveals = document.querySelectorAll('.reveal');
 
-    <!-- BLOCKNOT -->
-    <div class="hero">
-      <div class="card pro-card">
+function revealOnScroll() {
+  reveals.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
 
-        <div class="title">📝 У розробці: Blocknot</div>
+    if (elementTop < windowHeight - 80) {
+      el.classList.add('active');
+    }
+  });
+}
 
-        <div class="subtitle">
-          Мінімалістичний планер для нотаток і ідей.
-        </div>
-
-        <div class="feature-row">
-          <img class="app-icon" src="../img/blocknot.png" alt="Blocknot icon">
-
-          <ul class="features">
-            <li>Огляд тижня</li>
-            <li>Швидкий запис</li>
-            <li>Мінімалізм</li>
-          </ul>
-        </div>
-
-        <div class="btn-row">
-          <span class="btn disabled">У розробці</span>
-        </div>
-
-      </div>
-    </div>
-
-    <footer>© 2026 DK Software Studio</footer>
-
-  </div>
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
 
 </body>
 </html>
