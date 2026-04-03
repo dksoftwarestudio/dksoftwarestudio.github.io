@@ -268,11 +268,30 @@
       pointer-events: none;
     }
 
+    .p-desc{
+      margin: 0 auto 26px;
+      max-width: 720px;
+      font-size:16px;
+      line-height:1.7;
+      color: var(--muted);
+    }
+
     footer{
       margin-top:30px;
       text-align:center;
       color:#9aa6b2;
       font-size:13px;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(30px);
+      transition:opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
     }
 
     @media (max-width:560px){
@@ -357,7 +376,7 @@
 
     <!-- DAILY TEXT -->
     <div class="hero">
-      <div class="card">
+      <div class="card reveal">
 
         <img class="dk-logo" src="logo.png" alt="DK Software Studio">
 
@@ -367,7 +386,7 @@
 
         <div class="subtitle">
           Eine minimalistische Erinnerungs-App mit täglichem Link.
-Öffnen Sie die gewünschte Seite mit nur einem Tipp — ohne zusätzliche Schritte und ohne Ablenkung.
+          Öffnen Sie die gewünschte Seite mit nur einem Tipp — ohne zusätzliche Schritte und ohne Ablenkung.
         </div>
 
         <div class="feature-row">
@@ -381,24 +400,24 @@
           </ul>
         </div>
 
-       <div class="btn-row">
-  <a class="btn secondary" href="de/jw-daily-alarm.html">Mehr erfahren</a>
-  <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank" rel="noopener">Google Play</a>
-  <span class="btn disabled">App Store — bald</span>
-</div>
+        <div class="btn-row">
+          <a class="btn secondary" href="de/jw-daily-alarm.html">Mehr erfahren</a>
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank" rel="noopener">Google Play</a>
+          <span class="btn disabled">App Store — bald</span>
+        </div>
 
       </div>
     </div>
 
     <!-- CALENDAR -->
     <div class="hero">
-      <div class="card pro-card">
+      <div class="card pro-card reveal">
 
         <div class="title">Ministry Calendar</div>
 
         <div class="p-desc">
-Eine einfache Kalender-App für eine klare Monatsübersicht, Zeiterfassung und schnelle Berichtsübermittlung.
-</div>
+          Eine einfache Kalender-App für eine klare Monatsübersicht, Zeiterfassung und schnelle Berichtsübermittlung.
+        </div>
 
         <div class="feature-row">
           <img class="app-icon" src="img/ministry-calendar.png" alt="Ministry Calendar icon">
@@ -420,34 +439,52 @@ Eine einfache Kalender-App für eine klare Monatsübersicht, Zeiterfassung und s
 
     <!-- BLOCKNOT -->
     <div class="hero">
-      <div class="card pro-card">
+      <div class="card pro-card reveal">
 
-       <div class="title">📝 In Entwicklung: Blocknot</div>
+        <div class="title">📝 In Entwicklung: Blocknot</div>
 
-<div class="subtitle">
-Ein minimalistischer Wochenplaner für schnelle Notizen und einfache Organisation.
-</div>
+        <div class="subtitle">
+          Ein minimalistischer Wochenplaner für schnelle Notizen und einfache Organisation.
+        </div>
 
-<div class="feature-row">
-  <img class="app-icon" src="../img/blocknot.png" alt="Blocknot icon">
+        <div class="feature-row">
+          <img class="app-icon" src="img/blocknot.png" alt="Blocknot icon">
 
-  <ul class="features">
-    <li>Wochenübersicht</li>
-    <li>Schnelles Schreiben</li>
-    <li>Minimalistisches Design</li>
-    <li>Fokus auf das Wesentliche</li>
-  </ul>
-</div>
+          <ul class="features">
+            <li>Wochenübersicht</li>
+            <li>Schnelles Schreiben</li>
+            <li>Minimalistisches Design</li>
+            <li>Fokus auf das Wesentliche</li>
+          </ul>
+        </div>
 
-<div class="btn-row">
-  <span class="btn disabled">Bald verfügbar</span>
-</div>
+        <div class="btn-row">
+          <span class="btn disabled">Bald verfügbar</span>
+        </div>
 
       </div>
     </div>
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+      reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 80) {
+          el.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 
 </body>
 </html>
