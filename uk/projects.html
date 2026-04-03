@@ -136,6 +136,7 @@ align-items:center;
 gap:18px;
 text-align:left;
 transition:transform 0.25s ease, box-shadow 0.25s ease;
+will-change:transform;
 }
 
 .project:hover{
@@ -218,6 +219,17 @@ margin-top:26px;
 text-align:center;
 color:#9aa6b2;
 font-size:13px;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
 }
 
 @media (max-width:768px){
@@ -319,7 +331,7 @@ font-size:13px;
 <div class="projects-grid">
 
 <!-- Daily Text Alarm -->
-<div class="project">
+<div class="project reveal">
   <img src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
   <div>
     <div class="p-title">Daily Text Alarm</div>
@@ -344,7 +356,7 @@ font-size:13px;
 </div>
 
 <!-- Ministry Calendar -->
-<div class="project">
+<div class="project reveal">
 <img src="../img/ministry-calendar.png" alt="Ministry Calendar icon">
 <div>
 <div class="p-title">Ministry Calendar</div>
@@ -355,13 +367,13 @@ font-size:13px;
 <div class="btn-row">
 <a class="btn primary"
 href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar"
-target="_blank">Google Play</a>
+target="_blank" rel="noopener">Google Play</a>
 </div>
 </div>
 </div>
 
 <!-- Blocknot -->
-<div class="project">
+<div class="project reveal">
 <img src="../img/blocknot.png" alt="Blocknot icon">
 <div>
 <div class="p-title">Blocknot</div>
@@ -375,7 +387,7 @@ target="_blank">Google Play</a>
 </div>
 
 <!-- Daily Text Alarm Pro -->
-<div class="project">
+<div class="project reveal">
 <img src="../dk-icon.png" alt="Pro icon">
 <div>
 <div class="p-title">Daily Text Alarm Pro</div>
@@ -389,7 +401,7 @@ target="_blank">Google Play</a>
 </div>
 
 <!-- Reminder Alarm -->
-<div class="project">
+<div class="project reveal">
 <img src="../dk-icon.png" alt="Reminder Alarm icon">
 <div>
 <div class="p-title">Reminder Alarm</div>
@@ -403,7 +415,7 @@ target="_blank">Google Play</a>
 </div>
 
 <!-- Weather -->
-<div class="project">
+<div class="project reveal">
 <img src="../dk-icon.png" alt="Weather icon">
 <div>
 <div class="p-title">Weather App</div>
@@ -424,6 +436,24 @@ target="_blank">Google Play</a>
 </div>
 
 <footer>© 2026 DK Software Studio</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+function revealOnScroll() {
+  reveals.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 80) {
+      el.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
 
 </body>
 </html>
