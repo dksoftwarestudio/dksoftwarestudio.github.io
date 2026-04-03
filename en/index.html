@@ -301,61 +301,72 @@
       gap:10px;
     }
 
-   @media (max-width:768px){
-  .topbar{
-    flex-direction:column;
-    gap:12px;
-    text-align:center;
-  }
+    .reveal{
+      opacity:0;
+      transform:translateY(30px);
+      transition:opacity 0.6s ease, transform 0.6s ease;
+    }
 
-  .brand{ justify-content:center; }
-  .brand .name{ white-space:normal; }
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
 
-  .lang{ justify-content:center; }
+    @media (max-width:768px){
+      .topbar{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+      }
 
-  .nav{ justify-content:center; }
+      .brand{ justify-content:center; }
+      .brand .name{ white-space:normal; }
 
-  .card{
-    padding:34px 22px;
-  }
+      .lang{ justify-content:center; }
 
-  .title{
-    font-size:22px;
-  }
+      .nav{ justify-content:center; }
 
-  .feature-row{
-    flex-direction:column;
-    gap:18px;
-  }
+      .card{
+        padding:34px 22px;
+      }
 
-  .app-icon{
-    width:130px;
-  }
+      .title{
+        font-size:22px;
+      }
 
-  .features,
-  .pro-features{
-    min-width:auto;
-    width:100%;
-    max-width:520px;
-  }
+      .feature-row{
+        flex-direction:column;
+        gap:18px;
+      }
 
-  .tagline{
-    font-size:22px;
-  }
+      .app-icon{
+        width:130px;
+      }
 
-  .btn-row{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:14px;
-  }
+      .features,
+      .pro-features{
+        min-width:auto;
+        width:100%;
+        max-width:520px;
+      }
 
-  .btn{
-    width:100%;
-    max-width:320px;
-    text-align:center;
-  }
-}
+      .tagline{
+        font-size:22px;
+      }
+
+      .btn-row{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:14px;
+      }
+
+      .btn{
+        width:100%;
+        max-width:320px;
+        text-align:center;
+      }
+    }
   </style>
 </head>
 
@@ -383,7 +394,7 @@
 
   <div class="wrap">
     <div class="hero">
-      <div class="card">
+      <div class="card reveal">
 
         <img class="dk-logo" src="../logo.png" alt="DK Software Studio logo">
 
@@ -420,7 +431,7 @@
 
     <!-- MINISTRY CALENDAR -->
     <div class="hero">
-      <div class="card pro-card">
+      <div class="card pro-card reveal">
 
         <div class="title">Ministry Calendar</div>
 
@@ -451,7 +462,7 @@
 
     <!-- BLOCKNOT -->
     <div class="hero">
-      <div class="card pro-card">
+      <div class="card pro-card reveal">
 
         <div class="title">📝 In Development: Blocknot</div>
 
@@ -491,6 +502,22 @@
   </div>
 
   <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+      reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 80) {
+          el.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
     function loadAnalytics() {
       if (window.__gaLoaded) return;
       window.__gaLoaded = true;
