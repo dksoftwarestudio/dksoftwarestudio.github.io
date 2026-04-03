@@ -277,6 +277,17 @@
       font-size:13px;
     }
 
+    .reveal{
+      opacity:0;
+      transform:translateY(30px);
+      transition:opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
     @media (max-width:560px){
       .topbar{
         flex-direction:column;
@@ -351,7 +362,7 @@
 
     <!-- DAILY TEXT ALARM -->
     <div class="hero">
-      <div class="card">
+      <div class="card reveal">
 
         <img class="dk-logo" src="logo.png" alt="DK Software Studio logo">
 
@@ -388,7 +399,7 @@
 
     <!-- MINISTRY CALENDAR -->
     <div class="hero">
-      <div class="card pro-card">
+      <div class="card pro-card reveal">
 
         <div class="title">Ministry Calendar</div>
 
@@ -418,7 +429,7 @@
 
     <!-- BLOCKNOT -->
     <div class="hero">
-      <div class="card pro-card">
+      <div class="card pro-card reveal">
 
         <div class="title">📝 В разработке: Blocknot</div>
 
@@ -446,6 +457,24 @@
 
     <footer>© 2026 DK Software Studio</footer>
   </div>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+      reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 80) {
+          el.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 
 </body>
 </html>
