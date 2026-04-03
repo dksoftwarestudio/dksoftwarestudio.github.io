@@ -169,6 +169,7 @@
       gap:18px;
       text-align:left;
       transition:transform 0.25s ease, box-shadow 0.25s ease;
+      will-change:transform;
     }
 
     .project:hover{
@@ -254,66 +255,81 @@
       font-size:13px;
     }
 
+    .reveal{
+      opacity:0;
+      transform:translateY(30px);
+      transition:opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
     @media (max-width:768px){
-  .topbar{
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:14px;
-    text-align:center;
-  }
+      .topbar{
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:14px;
+        text-align:center;
+      }
 
-  .brand{
-    width:100%;
-    justify-content:center;
-  }
+      .brand{
+        width:100%;
+        justify-content:center;
+      }
 
-  .nav{
-    width:100%;
-    justify-content:center;
-    gap:10px 18px;
-  }
+      .nav{
+        width:100%;
+        justify-content:center;
+        gap:10px 18px;
+      }
 
-  .btn-row{
-    flex-direction:column;
-    align-items:center;
-  }
+      .btn-row{
+        flex-direction:column;
+        align-items:center;
+      }
 
-  .btn{
-    width:100%;
-    max-width:320px;
-    text-align:center;
-  }
-}
+      .btn{
+        width:100%;
+        max-width:320px;
+        text-align:center;
+      }
+    }
 
-@media (max-width:560px){
-  .project{
-    flex-direction:column;
-    text-align:center;
-  }
+    @media (max-width:560px){
+      .project{
+        flex-direction:column;
+        text-align:center;
+      }
 
-  .project:hover{
-    transform:none;
-    box-shadow:none;
-  }
+      .project:hover{
+        transform:none;
+        box-shadow:none;
+      }
 
-  .btn-row{
-    justify-content:center;
-  }
+      .btn-row{
+        justify-content:center;
+      }
 
-  .card{
-    padding:36px 22px;
-  }
+      .card{
+        padding:36px 22px;
+      }
 
-  .title{
-    font-size:32px;
-  }
+      .title{
+        font-size:32px;
+      }
 
-  .subtitle{
-    font-size:15px;
-  }
-}
-</style>
+      .subtitle{
+        font-size:15px;
+      }
+
+      .brand .name{
+        white-space:normal;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -345,7 +361,7 @@
       <div class="projects-grid">
 
         <!-- Daily Text Alarm -->
-        <div class="project">
+        <div class="project reveal">
           <img src="../jw-daily-alarm-icon.png" alt="Daily Text Alarm icon">
           <div>
             <div class="p-title">Daily Text Alarm</div>
@@ -355,16 +371,16 @@
               Öffnen Sie die gewünschte Seite mit einem Klick — ohne zusätzliche Schritte oder Ablenkungen.
             </div>
 
-           <div class="btn-row">
-  <a class="btn secondary" href="de/jw-daily-alarm.html">Mehr erfahren</a>
-  <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank">Google Play</a>
-  <span class="btn disabled">App Store — bald</span>
-</div>
+            <div class="btn-row">
+              <a class="btn secondary" href="jw-daily-alarm.html">Mehr erfahren</a>
+              <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank" rel="noopener">Google Play</a>
+              <span class="btn disabled">App Store — bald</span>
+            </div>
           </div>
         </div>
 
         <!-- Ministry Calendar -->
-        <div class="project">
+        <div class="project reveal">
           <img src="../img/ministry-calendar.png" alt="Ministry Calendar icon">
           <div>
             <div class="p-title">Ministry Calendar</div>
@@ -375,33 +391,31 @@
             </div>
 
             <div class="btn-row">
-             <a class="btn primary"
-href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar"
-target="_blank" rel="noopener">
-Google Play
-</a>
+              <a class="btn primary"
+                 href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar"
+                 target="_blank" rel="noopener">Google Play</a>
             </div>
           </div>
         </div>
 
         <!-- Blocknot -->
-<div class="project">
-  <img src="../img/blocknot.png" alt="Blocknot icon">
-  <div>
-    <div class="p-title">Blocknot</div>
+        <div class="project reveal">
+          <img src="../img/blocknot.png" alt="Blocknot icon">
+          <div>
+            <div class="p-title">Blocknot</div>
 
-    <div class="p-desc">
-      Ein minimalistischer Wochenplaner für schnelle Notizen und einfache Planung.
-    </div>
+            <div class="p-desc">
+              Ein minimalistischer Wochenplaner für schnelle Notizen und einfache Planung.
+            </div>
 
-    <div class="btn-row">
-      <span class="btn secondary">In Entwicklung</span>
-    </div>
-  </div>
-</div>
+            <div class="btn-row">
+              <span class="btn secondary">In Entwicklung</span>
+            </div>
+          </div>
+        </div>
 
         <!-- Daily Text Alarm Pro -->
-        <div class="project">
+        <div class="project reveal">
           <img src="../dk-icon.png" alt="Pro icon">
           <div>
             <div class="p-title">Daily Text Alarm Pro</div>
@@ -417,7 +431,7 @@ Google Play
         </div>
 
         <!-- Reminder Alarm -->
-        <div class="project">
+        <div class="project reveal">
           <img src="../dk-icon.png" alt="Reminder Alarm icon">
           <div>
             <div class="p-title">Reminder Alarm</div>
@@ -433,7 +447,7 @@ Google Play
         </div>
 
         <!-- Weather -->
-        <div class="project">
+        <div class="project reveal">
           <img src="../dk-icon.png" alt="Weather icon">
           <div>
             <div class="p-title">Weather App</div>
@@ -468,6 +482,24 @@ Google Play
 </div>
 
 <script src="../analytics.js"></script>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+function revealOnScroll() {
+  reveals.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 80) {
+      el.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
 
 </body>
 </html>
