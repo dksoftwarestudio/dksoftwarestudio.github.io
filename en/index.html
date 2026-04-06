@@ -19,6 +19,10 @@
 
     *{ box-sizing:border-box; }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
       font-family: Arial, sans-serif;
@@ -267,40 +271,6 @@
       font-size:13px;
     }
 
-    .cookie-banner{
-      position:fixed;
-      bottom:20px;
-      left:50%;
-      transform:translateX(-50%);
-      width:90%;
-      max-width:640px;
-      background:#ffffff;
-      border-radius:16px;
-      box-shadow:0 20px 40px rgba(0,0,0,0.15);
-      border:1px solid rgba(0,0,0,0.06);
-      padding:20px;
-      display:none;
-      z-index:9999;
-    }
-
-    .cookie-content{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .cookie-content span{
-      font-size:14px;
-      color:#555;
-    }
-
-    .cookie-buttons{
-      display:flex;
-      gap:10px;
-    }
-
     .reveal{
       opacity:0;
       transform:translateY(30px);
@@ -310,6 +280,82 @@
     .reveal.active{
       opacity:1;
       transform:translateY(0);
+    }
+
+    .cookie-banner{
+      position:fixed;
+      left:20px;
+      right:20px;
+      bottom:20px;
+      max-width:760px;
+      margin:0 auto;
+      background:#ffffff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow:0 18px 45px rgba(0,0,0,0.12);
+      padding:18px 18px 16px;
+      z-index:2000;
+      display:none;
+    }
+
+    .cookie-banner.show{
+      display:block;
+    }
+
+    .cookie-banner h3{
+      margin:0 0 8px;
+      font-size:18px;
+      color:#2F2F2F;
+    }
+
+    .cookie-banner p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:14px;
+    }
+
+    .cookie-banner p a{
+      color:var(--blue);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .cookie-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    .cookie-btn{
+      appearance:none;
+      border:none;
+      cursor:pointer;
+      border-radius:10px;
+      padding:11px 18px;
+      font-size:14px;
+      font-weight:700;
+      transition:0.2s ease;
+    }
+
+    .cookie-btn.accept{
+      background:var(--blue);
+      color:#fff;
+      box-shadow:0 10px 25px rgba(26,83,173,0.22);
+    }
+
+    .cookie-btn.accept:hover{
+      transform:translateY(-2px);
+    }
+
+    .cookie-btn.reject{
+      background:#EEF2F8;
+      color:#2F2F2F;
+    }
+
+    .cookie-btn.reject:hover{
+      transform:translateY(-2px);
     }
 
     @media (max-width:768px){
@@ -343,8 +389,7 @@
         width:130px;
       }
 
-      .features,
-      .pro-features{
+      .features{
         min-width:auto;
         width:100%;
         max-width:520px;
@@ -365,6 +410,18 @@
         width:100%;
         max-width:320px;
         text-align:center;
+      }
+
+      .cookie-banner{
+        left:12px;
+        right:12px;
+        bottom:12px;
+        padding:16px 14px 14px;
+      }
+
+      .cookie-actions{
+        flex-direction:column;
+        align-items:stretch;
       }
     }
   </style>
@@ -427,7 +484,6 @@
       </div>
     </div>
 
-    <!-- MINISTRY CALENDAR -->
     <div class="hero">
       <div class="card pro-card reveal">
 
@@ -458,7 +514,6 @@
       </div>
     </div>
 
-    <!-- BLOCKNOT -->
     <div class="hero">
       <div class="card pro-card reveal">
 
@@ -489,17 +544,59 @@
     <footer>© 2026 DK Software Studio</footer>
   </div>
 
-  <div id="cookie-banner" class="cookie-banner">
-    <div class="cookie-content">
-      <span>We use anonymous analytics to improve the website.</span>
-      <div class="cookie-buttons">
-        <button onclick="acceptCookies()" class="btn primary">Accept</button>
-        <button onclick="declineCookies()" class="btn secondary">Decline</button>
-      </div>
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <h3>Cookie Settings</h3>
+    <p>
+      This website uses optional analytics cookies to understand and improve how the site is used.
+      You can accept or decline. More information can be found in the
+      <a href="datenschutz.html">Privacy Policy</a>.
+    </p>
+    <div class="cookie-actions">
+      <button id="acceptCookies" class="cookie-btn accept" type="button">Accept</button>
+      <button id="rejectCookies" class="cookie-btn reject" type="button">Decline</button>
     </div>
   </div>
 
   <script>
+    const GA_ID = 'G-T3DB7K2NSS';
+    const COOKIE_KEY = 'dk_cookie_choice_en';
+
+    function loadGoogleAnalytics() {
+      if (window.gaLoaded) return;
+      window.gaLoaded = true;
+
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID, { anonymize_ip: true });
+    }
+
+    const cookieBanner = document.getElementById('cookieBanner');
+    const savedCookieChoice = localStorage.getItem(COOKIE_KEY);
+
+    if (savedCookieChoice === 'accepted') {
+      loadGoogleAnalytics();
+    } else if (!savedCookieChoice) {
+      cookieBanner.classList.add('show');
+    }
+
+    document.getElementById('acceptCookies').addEventListener('click', () => {
+      localStorage.setItem(COOKIE_KEY, 'accepted');
+      cookieBanner.classList.remove('show');
+      loadGoogleAnalytics();
+    });
+
+    document.getElementById('rejectCookies').addEventListener('click', () => {
+      localStorage.setItem(COOKIE_KEY, 'rejected');
+      cookieBanner.classList.remove('show');
+    });
+
     const reveals = document.querySelectorAll('.reveal');
 
     function revealOnScroll() {
@@ -515,43 +612,6 @@
 
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
-
-    function loadAnalytics() {
-      if (window.__gaLoaded) return;
-      window.__gaLoaded = true;
-
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
-      document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      window.gtag = gtag;
-
-      gtag('js', new Date());
-      gtag('config', 'G-T3DB7K2NSS', { anonymize_ip: true });
-    }
-
-    function acceptCookies() {
-      localStorage.setItem("analytics_consent", "accepted");
-      loadAnalytics();
-      document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    function declineCookies() {
-      localStorage.setItem("analytics_consent", "declined");
-      document.getElementById("cookie-banner").style.display = "none";
-    }
-
-    window.onload = function() {
-      var consent = localStorage.getItem("analytics_consent");
-      if (consent === "accepted") {
-        loadAnalytics();
-      } else if (!consent) {
-        document.getElementById("cookie-banner").style.display = "block";
-      }
-    };
   </script>
 
 </body>
