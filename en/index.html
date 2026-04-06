@@ -11,6 +11,7 @@
       --blueDark:#163e82;
       --bg:#F5F5F5;
       --text:#555555;
+      --textDark:#2F2F2F;
       --muted:#666;
       --card:#ffffff;
       --border:rgba(0,0,0,0.06);
@@ -59,7 +60,7 @@
       font-size:16px;
       letter-spacing:0.2px;
       white-space:nowrap;
-      color:var(--text);
+      color:var(--textDark);
     }
 
     .lang{
@@ -162,6 +163,7 @@
       font-size:28px;
       font-weight:500;
       margin:0 0 14px;
+      color:var(--textDark);
     }
 
     .subtitle{
@@ -269,6 +271,16 @@
       text-align:center;
       color:#9aa6b2;
       font-size:13px;
+    }
+
+    footer a{
+      color:#9aa6b2;
+      text-decoration:none;
+      margin:0 6px;
+    }
+
+    footer a:hover{
+      color:var(--blue);
     }
 
     .reveal{
@@ -541,7 +553,11 @@
       </div>
     </div>
 
-    <footer>© 2026 DK Software Studio</footer>
+    <footer>
+      © 2026 DK Software Studio ·
+      <a href="../de/impressum.html">Impressum</a> ·
+      <a href="../de/datenschutz.html">Privacy Policy</a>
+    </footer>
   </div>
 
   <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
@@ -549,7 +565,7 @@
     <p>
       This website uses optional analytics cookies to understand and improve how the site is used.
       You can accept or decline. More information can be found in the
-      <a href="datenschutz.html">Privacy Policy</a>.
+      <a href="../de/datenschutz.html">Privacy Policy</a>.
     </p>
     <div class="cookie-actions">
       <button id="acceptCookies" class="cookie-btn accept" type="button">Accept</button>
@@ -558,8 +574,8 @@
   </div>
 
   <script>
-    const GA_ID = 'G-T3DB7K2NSS';
-    const COOKIE_KEY = 'dk_cookie_choice_en';
+    const GA_ID = 'G-GZ2FXMBG67';
+    const COOKIE_KEY = 'dk_cookie_choice';
 
     function loadGoogleAnalytics() {
       if (window.gaLoaded) return;
