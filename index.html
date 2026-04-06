@@ -287,6 +287,16 @@
       font-size:13px;
     }
 
+    footer a{
+      color:#9aa6b2;
+      text-decoration:none;
+      margin:0 6px;
+    }
+
+    footer a:hover{
+      color:var(--blue);
+    }
+
     .reveal{
       opacity:0;
       transform:translateY(30px);
@@ -464,7 +474,6 @@
 
   <div class="wrap">
 
-    <!-- DAILY TEXT -->
     <div class="hero">
       <div class="card reveal">
 
@@ -499,7 +508,6 @@
       </div>
     </div>
 
-    <!-- CALENDAR -->
     <div class="hero">
       <div class="card pro-card reveal">
 
@@ -527,7 +535,6 @@
       </div>
     </div>
 
-    <!-- BLOCKNOT -->
     <div class="hero">
       <div class="card pro-card reveal">
 
@@ -555,109 +562,12 @@
       </div>
     </div>
 
-      <!-- BLOCKNOT -->
-    <div class="hero">
-      <div class="card pro-card reveal">
-
-        <div class="title">📝 In Entwicklung: Blocknot</div>
-
-        <div class="subtitle">
-          Ein minimalistischer Wochenplaner für schnelle Notizen und einfache Organisation.
-        </div>
-
-        <div class="feature-row">
-          <img class="app-icon" src="img/blocknot.png" alt="Blocknot icon">
-
-          <ul class="features">
-            <li>Wochenübersicht</li>
-            <li>Schnelles Schreiben</li>
-            <li>Minimalistisches Design</li>
-            <li>Fokus auf das Wesentliche</li>
-          </ul>
-        </div>
-
-        <div class="btn-row">
-          <span class="btn disabled">Bald verfügbar</span>
-        </div>
-
-      </div>
-    </div>
-
-    <footer>© 2026 DK Software Studio</footer>
+    <footer>
+      © 2026 DK Software Studio<br>
+      <a href="de/impressum.html">Impressum</a> · 
+      <a href="de/datenschutz.html">Datenschutz</a>
+    </footer>
   </div>
-
-  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Hinweis">
-    <h3>Cookie-Einstellungen</h3>
-    <p>
-      Diese Website verwendet optionale Analyse-Cookies, um die Nutzung der Seite zu verstehen und zu verbessern.
-      Sie können zustimmen oder ablehnen. Weitere Informationen finden Sie in der
-      <a href="de/datenschutz.html">Datenschutzerklärung</a>.
-    </p>
-    <div class="cookie-actions">
-      <button id="acceptCookies" class="cookie-btn accept" type="button">Akzeptieren</button>
-      <button id="rejectCookies" class="cookie-btn reject" type="button">Ablehnen</button>
-    </div>
-  </div>
-
-  <script>
-    const GA_ID = 'G-GZ2FXMBG67';
-    const COOKIE_KEY = 'dk_cookie_choice';
-
-    function loadGoogleAnalytics() {
-      if (window.gaLoaded) return;
-      window.gaLoaded = true;
-
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-      document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){window.dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', GA_ID, { anonymize_ip: true });
-    }
-
-    const cookieBanner = document.getElementById('cookieBanner');
-    const savedCookieChoice = localStorage.getItem(COOKIE_KEY);
-
-    if (savedCookieChoice === 'accepted') {
-      loadGoogleAnalytics();
-    } else if (!savedCookieChoice) {
-      cookieBanner.classList.add('show');
-    }
-
-    document.getElementById('acceptCookies').addEventListener('click', () => {
-      localStorage.setItem(COOKIE_KEY, 'accepted');
-      cookieBanner.classList.remove('show');
-      loadGoogleAnalytics();
-    });
-
-    document.getElementById('rejectCookies').addEventListener('click', () => {
-      localStorage.setItem(COOKIE_KEY, 'rejected');
-      cookieBanner.classList.remove('show');
-    });
-
-    const reveals = document.querySelectorAll('.reveal');
-
-    function revealOnScroll() {
-      reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 80) {
-          el.classList.add('active');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-  </script>
-
-</body>
-</html>
 
   <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Hinweis">
     <h3>Cookie-Einstellungen</h3>
