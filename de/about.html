@@ -9,8 +9,9 @@
     :root{
       --blue:#1A53AD;
       --blueDark:#163e82;
-      --bg:#f4f6f9;
-      --text:#2c3e50;
+      --bg:#F5F5F5;
+      --text:#555555;
+      --textDark:#2F2F2F;
       --muted:#666;
       --card:#ffffff;
       --border:rgba(0,0,0,0.06);
@@ -25,7 +26,6 @@
       color: var(--text);
     }
 
-    /* ШАПКА */
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -46,20 +46,16 @@
 
     .brand img{
       width:40px;
-      height:auto;
     }
 
     .brand .name{
       font-weight:600;
-      letter-spacing:0.2px;
-      white-space: nowrap;
-      color: var(--text);
+      color: var(--textDark);
     }
 
     .nav{
       display:flex;
       gap:16px;
-      align-items:center;
       flex-wrap:wrap;
     }
 
@@ -72,10 +68,8 @@
 
     .nav a:hover{
       color: var(--blue);
-      text-decoration:none;
     }
 
-    /* ОСНОВНОЙ БЛОК */
     .wrap{
       max-width:980px;
       margin:0 auto;
@@ -99,62 +93,54 @@
       text-align:center;
     }
 
-    /* ЛОГО В КАРТОЧКЕ */
     .studio-logo{
-      width:240px;
-      border-radius:22px;
+      width:220px;
       padding:14px;
       background:#fff;
-      box-shadow:0 18px 40px rgba(0,0,0,0.10);
+      border-radius:22px;
       border:1px solid var(--border);
       margin:0 auto 24px;
-      display:block;
     }
 
     .title{
-      margin:0 0 14px;
-      font-size:38px;
-      line-height:1.1;
+      font-size:34px;
+      margin-bottom:14px;
+      color:var(--textDark);
       font-weight:500;
     }
 
     .subtitle{
+      max-width:700px;
       margin:0 auto 22px;
-      max-width:720px;
-      font-size:16px;
       line-height:1.7;
-      color: var(--muted);
+      color:var(--muted);
+      font-size:16px;
     }
 
     .features{
       list-style:none;
       padding:0;
       margin:0 auto 24px;
-      max-width:720px;
+      max-width:700px;
       text-align:left;
-      line-height:1.85;
-      font-size:16px;
-      color:#3a4b5c;
+      line-height:1.8;
     }
 
     .features li{
+      padding-left:26px;
       position:relative;
-      padding-left:28px;
       margin:8px 0;
     }
 
     .features li::before{
       content:"•";
       position:absolute;
-      left:10px;
-      top:-1px;
+      left:8px;
       color:var(--blue);
-      font-size:22px;
-      line-height:1;
+      font-size:20px;
     }
 
     .btn-row{
-      margin-top:10px;
       display:flex;
       gap:12px;
       justify-content:center;
@@ -162,22 +148,17 @@
     }
 
     .btn{
-      display:inline-block;
-      padding:13px 28px;
+      padding:12px 24px;
       border-radius:10px;
       text-decoration:none;
-      font-size:16px;
       font-weight:700;
+      font-size:15px;
       transition:0.2s ease;
-      user-select:none;
-      border:0;
-      cursor:pointer;
     }
 
     .btn.primary{
       background:var(--blue);
       color:#fff;
-      box-shadow:0 10px 25px rgba(26,83,173,0.22);
     }
 
     .btn.primary:hover{
@@ -187,35 +168,62 @@
 
     .btn.secondary{
       background:#eef2f8;
-      color:var(--blue);
+      color:var(--text);
     }
 
     .btn.secondary:hover{
-      background:#e3eaf6;
       transform:translateY(-2px);
     }
 
     footer{
-      margin-top:26px;
+      margin-top:30px;
       text-align:center;
       color:#9aa6b2;
       font-size:13px;
     }
 
+    footer a{
+      color:#9aa6b2;
+      text-decoration:none;
+      margin:0 6px;
+    }
+
+    footer a:hover{
+      color:var(--blue);
+    }
+
     @media (max-width:560px){
       .topbar{
-        justify-content:center;
-        flex-wrap:wrap;
+        flex-direction:column;
         text-align:center;
       }
 
-      .brand{ width:100%; justify-content:center; }
-      .nav{ width:100%; justify-content:center; gap:14px; }
+      .nav{
+        justify-content:center;
+      }
 
-      .card{ padding:34px 22px; }
-      .title{ font-size:30px; }
+      .card{
+        padding:32px 20px;
+      }
 
-      .studio-logo{ width:200px; }
+      .title{
+        font-size:28px;
+      }
+
+      .studio-logo{
+        width:180px;
+      }
+
+      .btn-row{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .btn{
+        width:100%;
+        max-width:300px;
+        text-align:center;
+      }
     }
   </style>
 </head>
@@ -244,27 +252,35 @@
         <div class="title">Über uns</div>
 
         <div class="subtitle">
-          DK Software Studio ist ein unabhängiges Studio für die Entwicklung von mobilen Anwendungen für iOS und Android.
-          Wir entwickeln einfache und funktionale Apps mit einer klaren Benutzeroberfläche und einem durchdachten Nutzererlebnis.
-          Darüber hinaus entwickelt das Studio auch Webprojekte und Websites.
+          DK Software Studio ist ein unabhängiges Entwicklerstudio aus Deutschland.
+          Wir entwickeln einfache, klare und funktionale Apps für den Alltag.
+        </div>
+
+        <div class="subtitle">
+          Unser Fokus liegt auf minimalistischen Anwendungen ohne Ablenkung —
+          reduziert auf das, was wirklich zählt.
         </div>
 
         <ul class="features">
-          <li>Minimalismus — nur die wichtigsten Funktionen</li>
-          <li>Saubere Oberfläche ohne unnötigen Ballast</li>
-          <li>Zuverlässigkeit und vorhersehbare Leistung</li>
-          <li>Fokus auf Praktikabilität — damit es jeden Tag funktioniert</li>
+          <li>Minimalistische Apps ohne unnötige Funktionen</li>
+          <li>Klare und verständliche Benutzeroberfläche</li>
+          <li>Zuverlässige und stabile Nutzung im Alltag</li>
+          <li>Keine Werbung — unterstützt von Nutzern</li>
         </ul>
 
         <div class="btn-row">
-          <a class="btn primary" href="projects.html">Zu den Projekten</a>
+          <a class="btn primary" href="projects.html">Projekte ansehen</a>
           <a class="btn secondary" href="../index.html">← Zur Startseite</a>
         </div>
 
       </div>
     </div>
 
-    <footer>© 2026 DK Software Studio</footer>
+    <footer>
+      © 2026 DK Software Studio ·
+      <a href="impressum.html">Impressum</a> ·
+      <a href="datenschutz.html">Datenschutz</a>
+    </footer>
   </div>
 
 </body>
