@@ -1,120 +1,219 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenschutzerklärung – DK Software Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung – DK Software Studio</title>
 
-<style>
-:root{
-  --blue:#1A53AD;
-  --bg:#F5F5F5;
-  --text:#555555;
-  --textDark:#2F2F2F;
-  --card:#ffffff;
-  --border:rgba(0,0,0,0.06);
-}
+  <style>
+    :root{
+      --blue:#1A53AD;
+      --bg:#F5F5F5;
+      --text:#555555;
+      --textDark:#2F2F2F;
+      --card:#ffffff;
+      --border:rgba(0,0,0,0.06);
+      --shadow:0 18px 45px rgba(0,0,0,0.07);
+    }
 
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+    *{ box-sizing:border-box; }
 
-.wrap{
-  max-width:860px;
-  margin:0 auto;
-  padding:40px 20px;
-}
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
 
-.card{
-  background:var(--card);
-  border-radius:18px;
-  padding:32px;
-  border:1px solid var(--border);
-}
+    .wrap{
+      max-width:900px;
+      margin:0 auto;
+      padding:32px 20px 70px;
+    }
 
-h1{
-  margin-top:0;
-  color:var(--textDark);
-}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:34px 28px;
+    }
 
-h2{
-  margin-top:28px;
-  color:var(--textDark);
-}
+    h1{
+      margin:0 0 18px;
+      font-size:30px;
+      color:var(--textDark);
+    }
 
-p{
-  line-height:1.7;
-}
+    h2{
+      margin:28px 0 10px;
+      font-size:22px;
+      color:var(--textDark);
+    }
 
-a{
-  color:var(--blue);
-  text-decoration:none;
-}
-</style>
+    p{
+      margin:0 0 14px;
+      line-height:1.75;
+    }
+
+    a{
+      color:var(--blue);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .back{
+      display:inline-block;
+      margin-bottom:18px;
+      font-weight:700;
+    }
+
+    @media (max-width:700px){
+      .card{
+        padding:26px 20px;
+      }
+
+      h1{
+        font-size:26px;
+      }
+
+      h2{
+        font-size:20px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="wrap">
-  <div class="card">
+  <div class="wrap">
+    <a class="back" href="../index.html">← Zurück zur Startseite</a>
 
-    <h1>Datenschutzerklärung</h1>
+    <div class="card">
+      <h1>Datenschutzerklärung</h1>
 
-    <p>Diese Website wird betrieben von DK Software Studio.</p>
+      <p>
+        Der Schutz Ihrer persönlichen Daten ist uns wichtig. In dieser Datenschutzerklärung informieren wir Sie darüber,
+        welche personenbezogenen Daten beim Besuch dieser Website verarbeitet werden und zu welchem Zweck dies geschieht.
+      </p>
 
-    <h2>1. Allgemeine Hinweise</h2>
-    <p>
-      Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website kann grundsätzlich ohne Registrierung genutzt werden.
-    </p>
+      <h2>1. Verantwortliche Stelle</h2>
+      <p>
+        Verantwortlich für die Datenverarbeitung auf dieser Website ist:
+      </p>
+      <p>
+        DK Software Studio<br>
+        Dmitry [Nachname ergänzen]<br>
+        [Straße und Hausnummer ergänzen]<br>
+        [PLZ und Ort ergänzen]<br>
+        Deutschland<br>
+        E-Mail: dksoftware.studio@gmail.com
+      </p>
 
-    <h2>2. Erhebung und Verarbeitung von Daten</h2>
-    <p>
-      Personenbezogene Daten werden nur erhoben, wenn Sie uns diese freiwillig mitteilen,
-      z. B. über das Kontaktformular.
-    </p>
+      <h2>2. Allgemeine Hinweise zur Datenverarbeitung</h2>
+      <p>
+        Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
+        Die Verarbeitung erfolgt ausschließlich im Rahmen der geltenden datenschutzrechtlichen Vorschriften.
+      </p>
 
-    <h2>3. Kontaktformular</h2>
-    <p>
-      Wenn Sie uns über das Formular kontaktieren, werden Ihre Angaben (Name, E-Mail, Anfrage)
-      zur Bearbeitung gespeichert.
-    </p>
-    <p>
-      Die Verarbeitung erfolgt über den Dienst <strong>Formspree</strong>.
-      Weitere Informationen finden Sie unter:
-      <a href="https://formspree.io" target="_blank">https://formspree.io</a>
-    </p>
+      <h2>3. Hosting</h2>
+      <p>
+        Diese Website wird über GitHub Pages bereitgestellt. Beim Aufruf der Website können durch den Hosting-Anbieter
+        technisch erforderliche Daten verarbeitet werden, insbesondere Server-Logdaten wie IP-Adresse,
+        Datum und Uhrzeit des Zugriffs, Browsertyp, Betriebssystem und aufgerufene Seiten.
+      </p>
+      <p>
+        Weitere Informationen zur Datenverarbeitung durch GitHub finden Sie in der Datenschutzerklärung von GitHub:
+        <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">
+          GitHub Privacy Statement
+        </a>
+      </p>
 
-    <h2>4. Google Analytics</h2>
-    <p>
-      Diese Website nutzt Google Analytics, einen Webanalysedienst der Google Ireland Limited.
-      Die Nutzung erfolgt nur nach Ihrer ausdrücklichen Zustimmung über das Cookie-Banner.
-    </p>
-    <p>
-      IP-Adressen werden anonymisiert (anonymize_ip).
-    </p>
+      <h2>4. Cookies und Einwilligungsverwaltung</h2>
+      <p>
+        Diese Website verwendet ein Cookie-Consent-Banner, um Ihre Entscheidung über optionale Analyse-Cookies zu speichern.
+        Dabei wird lokal im Browser gespeichert, ob Sie der Nutzung von Analyse-Cookies zugestimmt oder diese abgelehnt haben.
+      </p>
+      <p>
+        Diese Speicherung erfolgt, um Ihre Auswahl bei weiteren Besuchen der Website zu berücksichtigen.
+      </p>
 
-    <h2>5. Cookies</h2>
-    <p>
-      Diese Website verwendet Cookies nur für Analysezwecke.
-      Sie können der Nutzung zustimmen oder sie ablehnen.
-    </p>
+      <h2>5. Google Analytics</h2>
+      <p>
+        Diese Website nutzt Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House,
+        Barrow Street, Dublin 4, Irland.
+      </p>
+      <p>
+        Google Analytics wird auf dieser Website ausschließlich nach Ihrer ausdrücklichen Einwilligung über das Cookie-Banner aktiviert.
+      </p>
+      <p>
+        Mit Hilfe von Google Analytics können wir die Nutzung unserer Website statistisch auswerten und unser Angebot verbessern.
+      </p>
+      <p>
+        Nach der Aktivierung können unter anderem Informationen über Seitenaufrufe, Verweildauer, verwendete Geräte,
+        Browserinformationen und ungefähre Standortdaten verarbeitet werden.
+      </p>
+      <p>
+        Die IP-Anonymisierung ist aktiviert.
+      </p>
+      <p>
+        Rechtsgrundlage für die Verarbeitung ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO
+        sowie § 25 Abs. 1 TDDDG.
+      </p>
+      <p>
+        Sie können eine bereits erteilte Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen,
+        indem Sie die Cookie-Einstellungen in Ihrem Browser löschen und die Website erneut aufrufen.
+      </p>
+      <p>
+        Weitere Informationen zur Datenverarbeitung durch Google finden Sie hier:
+        <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener">
+          Datenschutzerklärung von Google
+        </a>
+      </p>
 
-    <h2>6. Ihre Rechte</h2>
-    <p>
-      Sie haben jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer gespeicherten Daten.
-    </p>
+      <h2>6. Externe Links</h2>
+      <p>
+        Diese Website enthält Links zu externen Seiten, insbesondere zu Google Play.
+        Beim Anklicken eines solchen Links verlassen Sie diese Website.
+        Für die Inhalte und die Datenverarbeitung auf externen Websites sind ausschließlich deren jeweilige Betreiber verantwortlich.
+      </p>
 
-    <h2>7. Kontakt</h2>
-    <p>
-      DK Software Studio<br>
-      E-Mail: dksoftware.studio@gmail.com
-    </p>
+      <h2>7. Kontaktaufnahme</h2>
+      <p>
+        Wenn Sie uns per E-Mail kontaktieren, werden die von Ihnen übermittelten Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.
+      </p>
+      <p>
+        Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO,
+        sofern Ihre Anfrage mit vorvertraglichen Maßnahmen oder einem Vertrag zusammenhängt,
+        oder Art. 6 Abs. 1 lit. f DSGVO bei allgemeinen Anfragen.
+      </p>
 
+      <h2>8. Speicherdauer</h2>
+      <p>
+        Personenbezogene Daten werden nur so lange gespeichert, wie dies für den jeweiligen Zweck erforderlich ist
+        oder gesetzliche Aufbewahrungspflichten bestehen.
+      </p>
+
+      <h2>9. Ihre Rechte</h2>
+      <p>
+        Sie haben im Rahmen der gesetzlichen Vorschriften das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten,
+        auf Berichtigung unrichtiger Daten, auf Löschung, auf Einschränkung der Verarbeitung sowie auf Widerspruch gegen die Verarbeitung.
+      </p>
+      <p>
+        Sofern die Verarbeitung auf Ihrer Einwilligung beruht, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.
+      </p>
+      <p>
+        Außerdem haben Sie das Recht, sich bei einer zuständigen Datenschutzaufsichtsbehörde zu beschweren.
+      </p>
+
+      <h2>10. Stand</h2>
+      <p>
+        Stand dieser Datenschutzerklärung: April 2026
+      </p>
+    </div>
   </div>
-</div>
 
 </body>
 </html>
