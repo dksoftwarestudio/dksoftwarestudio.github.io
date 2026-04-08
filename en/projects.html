@@ -112,11 +112,46 @@
     }
 
     .subtitle{
-      margin:0 auto 26px;
+      margin:0 auto 14px;
       max-width:720px;
       font-size:16px;
       line-height:1.7;
       color:var(--muted);
+    }
+
+    .intro-note{
+      max-width:720px;
+      margin:0 auto 30px;
+      padding:16px 18px;
+      background:#f7f9fc;
+      border:1px solid var(--border);
+      border-radius:14px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .intro-note strong{
+      color:var(--textDark);
+      font-weight:700;
+    }
+
+    .group-title{
+      max-width:760px;
+      margin:34px auto 14px;
+      text-align:left;
+      font-size:20px;
+      font-weight:700;
+      color:var(--blue);
+    }
+
+    .group-subtitle{
+      max-width:760px;
+      margin:0 auto 18px;
+      text-align:left;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:15px;
     }
 
     .projects-grid{
@@ -147,7 +182,8 @@
 
     .project img{
       width:88px;
-      height:auto;
+      height:88px;
+      object-fit:contain;
       border-radius:18px;
       background:#fff;
       padding:10px;
@@ -380,6 +416,16 @@
         font-size:15px;
       }
 
+      .intro-note{
+        font-size:14px;
+        padding:14px 14px;
+      }
+
+      .group-title,
+      .group-subtitle{
+        text-align:center;
+      }
+
       .brand .name{
         white-space:normal;
       }
@@ -402,13 +448,13 @@
 <body>
 
 <div class="topbar">
-  <a class="brand" href="index.html">
-    <img src="dk-icon.png" alt="DK">
+  <a class="brand" href="../index.html">
+    <img src="../dk-icon.png" alt="DK">
     <div class="name">DK Software Studio</div>
   </a>
 
   <div class="nav">
-    <a href="index.html">Home</a>
+    <a href="../index.html">Home</a>
     <a href="about.html">About</a>
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
@@ -422,7 +468,16 @@
       <div class="title">Projects</div>
 
       <div class="subtitle">
-        Current and planned projects from DK Software Studio — focused on simplicity, clarity, and everyday usability.
+        DK Software Studio develops minimalist apps and lean web projects — from simple tools to regional platforms.
+      </div>
+
+      <div class="intro-note">
+        <strong>Built in Hof (Saale).</strong> Clear software, real projects, no agency overhead.
+      </div>
+
+      <div class="group-title">Apps</div>
+      <div class="group-subtitle">
+        Simple, practical apps for everyday use — without unnecessary complexity.
       </div>
 
       <div class="projects-grid">
@@ -439,11 +494,7 @@
 
             <div class="btn-row">
               <a class="btn secondary" href="jw-daily-alarm.html">Learn more</a>
-              <a class="btn primary"
-                 href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
-                 target="_blank" rel="noopener">
-                Google Play
-              </a>
+              <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank" rel="noopener">Google Play</a>
               <span class="btn disabled">App Store — soon</span>
             </div>
           </div>
@@ -456,15 +507,13 @@
 
             <div class="p-desc">
               A simple calendar app for clear time tracking,
-              with a monthly overview, built-in timer, and quick report submission.
+              with monthly overviews, a built-in timer, and quick report submission.
             </div>
 
             <div class="btn-row">
               <a class="btn primary"
                  href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar"
-                 target="_blank" rel="noopener">
-                Google Play
-              </a>
+                 target="_blank" rel="noopener">Google Play</a>
             </div>
           </div>
         </div>
@@ -475,7 +524,7 @@
             <div class="p-title">Blocknot</div>
 
             <div class="p-desc">
-              A minimalist weekly planner for quick notes and simple organization.
+              A minimalist weekly planner for quick notes and simple planning.
             </div>
 
             <div class="btn-row">
@@ -520,11 +569,68 @@
             <div class="p-title">Weather App</div>
 
             <div class="p-desc">
-              A minimalist app for a quick overview of weather conditions over the next few days.
+              A minimalist app for a quick overview of weather conditions over the coming days.
             </div>
 
             <div class="btn-row">
               <span class="btn secondary">Concept</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="group-title">Local Web Projects</div>
+      <div class="group-subtitle">
+        Regional lead and service platforms for local businesses in Hof (Saale).
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project reveal">
+          <img src="https://hof-reinigung.de/logo-reinigung.png" alt="Reinigung Hof logo">
+          <div>
+            <div class="p-title">Reinigung Hof</div>
+
+            <div class="p-desc">
+              A regional platform for cleaning services in Hof — focused on local visibility,
+              direct inquiries, and simple, clear user experience.
+            </div>
+
+            <div class="btn-row">
+              <a class="btn secondary" href="https://hof-reinigung.de" target="_blank" rel="noopener">Open website</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project reveal">
+          <img src="https://hof-gartenservice.de/logo-gartenservice.png" alt="Gartenservice Hof logo">
+          <div>
+            <div class="p-title">Gartenservice Hof</div>
+
+            <div class="p-desc">
+              A local web project for garden care and outdoor services in Hof,
+              built as a simple platform between customers and regional providers.
+            </div>
+
+            <div class="btn-row">
+              <a class="btn secondary" href="https://hof-gartenservice.de" target="_blank" rel="noopener">Open website</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project reveal">
+          <img src="https://hof-handwerker.de/logo-handwerker.png" alt="Handwerker Hof logo">
+          <div>
+            <div class="p-title">Handwerker Hof</div>
+
+            <div class="p-desc">
+              A lean platform for local tradespeople and service requests in Hof —
+              developed and tested as an in-house project by DK Software Studio.
+            </div>
+
+            <div class="btn-row">
+              <a class="btn secondary" href="https://hof-handwerker.de" target="_blank" rel="noopener">Open website</a>
             </div>
           </div>
         </div>
@@ -536,8 +642,8 @@
 
   <footer>
     © 2026 DK Software Studio ·
-    <a href="imprint.html">Imprint</a> ·
-    <a href="privacy.html">Privacy Policy</a>
+    <a href="impressum.html">Imprint</a> ·
+    <a href="datenschutz.html">Privacy Policy</a>
   </footer>
 </div>
 
@@ -546,7 +652,7 @@
   <p>
     This website uses optional analytics cookies to understand and improve how the site is used.
     You can accept or decline. More information can be found in the
-    <a href="privacy.html">Privacy Policy</a>.
+    <a href="datenschutz.html">Privacy Policy</a>.
   </p>
   <div class="cookie-actions">
     <button id="acceptCookies" class="cookie-btn accept" type="button">Accept</button>
