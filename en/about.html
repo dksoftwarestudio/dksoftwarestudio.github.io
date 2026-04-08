@@ -46,21 +46,16 @@
 
     .brand img{
       width:40px;
-      height:auto;
-      display:block;
     }
 
     .brand .name{
       font-weight:600;
-      letter-spacing:0.2px;
-      white-space: nowrap;
       color: var(--textDark);
     }
 
     .nav{
       display:flex;
       gap:16px;
-      align-items:center;
       flex-wrap:wrap;
     }
 
@@ -69,12 +64,10 @@
       text-decoration:none;
       font-weight:600;
       font-size:14px;
-      white-space:nowrap;
     }
 
     .nav a:hover{
       color: var(--blue);
-      text-decoration:none;
     }
 
     .wrap{
@@ -102,60 +95,69 @@
 
     .studio-logo{
       width:220px;
-      border-radius:22px;
       padding:14px;
       background:#fff;
-      box-shadow:0 18px 40px rgba(0,0,0,0.10);
+      border-radius:22px;
       border:1px solid var(--border);
       margin:0 auto 24px;
-      display:block;
     }
 
     .title{
-      margin:0 0 14px;
-      font-size:38px;
-      line-height:1.1;
-      font-weight:500;
+      font-size:34px;
+      margin-bottom:14px;
       color:var(--textDark);
+      font-weight:500;
     }
 
     .subtitle{
-      margin:0 auto 22px;
-      max-width:720px;
-      font-size:16px;
+      max-width:700px;
+      margin:0 auto 18px;
       line-height:1.7;
-      color: var(--muted);
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .intro-note{
+      max-width:700px;
+      margin:0 auto 24px;
+      padding:16px 18px;
+      background:#f7f9fc;
+      border:1px solid var(--border);
+      border-radius:14px;
+      line-height:1.7;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .intro-note strong{
+      color:var(--textDark);
+      font-weight:700;
     }
 
     .features{
       list-style:none;
       padding:0;
       margin:0 auto 24px;
-      max-width:720px;
+      max-width:700px;
       text-align:left;
-      line-height:1.85;
-      font-size:16px;
-      color:#3a4b5c;
+      line-height:1.8;
     }
 
     .features li{
+      padding-left:26px;
       position:relative;
-      padding-left:28px;
       margin:8px 0;
     }
 
     .features li::before{
       content:"•";
       position:absolute;
-      left:10px;
-      top:-1px;
+      left:8px;
       color:var(--blue);
-      font-size:22px;
-      line-height:1;
+      font-size:20px;
     }
 
     .btn-row{
-      margin-top:10px;
       display:flex;
       gap:12px;
       justify-content:center;
@@ -163,22 +165,17 @@
     }
 
     .btn{
-      display:inline-block;
-      padding:13px 28px;
+      padding:12px 24px;
       border-radius:10px;
       text-decoration:none;
-      font-size:16px;
       font-weight:700;
+      font-size:15px;
       transition:0.2s ease;
-      user-select:none;
-      border:0;
-      cursor:pointer;
     }
 
     .btn.primary{
       background:var(--blue);
       color:#fff;
-      box-shadow:0 10px 25px rgba(26,83,173,0.22);
     }
 
     .btn.primary:hover{
@@ -188,11 +185,10 @@
 
     .btn.secondary{
       background:#eef2f8;
-      color:var(--blue);
+      color:var(--text);
     }
 
     .btn.secondary:hover{
-      background:#e3eaf6;
       transform:translateY(-2px);
     }
 
@@ -213,97 +209,32 @@
       color:var(--blue);
     }
 
-    .cookie-banner{
-      position:fixed;
-      left:20px;
-      right:20px;
-      bottom:20px;
-      max-width:760px;
-      margin:0 auto;
-      background:#ffffff;
-      border:1px solid var(--border);
-      border-radius:18px;
-      box-shadow:0 18px 45px rgba(0,0,0,0.12);
-      padding:18px 18px 16px;
-      z-index:2000;
-      display:none;
-    }
-
-    .cookie-banner.show{
-      display:block;
-    }
-
-    .cookie-banner h3{
-      margin:0 0 8px;
-      font-size:18px;
-      color:#2F2F2F;
-    }
-
-    .cookie-banner p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.6;
-      font-size:14px;
-    }
-
-    .cookie-banner p a{
-      color:var(--blue);
-      text-decoration:none;
-      font-weight:700;
-    }
-
-    .cookie-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:14px;
-    }
-
-    .cookie-btn{
-      appearance:none;
-      border:none;
-      cursor:pointer;
-      border-radius:10px;
-      padding:11px 18px;
-      font-size:14px;
-      font-weight:700;
-      transition:0.2s ease;
-    }
-
-    .cookie-btn.accept{
-      background:var(--blue);
-      color:#fff;
-      box-shadow:0 10px 25px rgba(26,83,173,0.22);
-    }
-
-    .cookie-btn.accept:hover{
-      transform:translateY(-2px);
-    }
-
-    .cookie-btn.reject{
-      background:#EEF2F8;
-      color:#2F2F2F;
-    }
-
-    .cookie-btn.reject:hover{
-      transform:translateY(-2px);
-    }
-
     @media (max-width:560px){
       .topbar{
-        justify-content:center;
-        flex-wrap:wrap;
+        flex-direction:column;
         text-align:center;
       }
 
-      .brand{ width:100%; justify-content:center; }
-      .nav{ width:100%; justify-content:center; gap:14px; }
+      .nav{
+        justify-content:center;
+      }
 
-      .brand .name{ white-space:normal; }
+      .card{
+        padding:32px 20px;
+      }
 
-      .card{ padding:34px 22px; }
-      .title{ font-size:30px; }
-      .studio-logo{ width:180px; }
+      .title{
+        font-size:28px;
+      }
+
+      .studio-logo{
+        width:180px;
+      }
+
+      .intro-note{
+        font-size:14px;
+        padding:14px 14px;
+      }
 
       .btn-row{
         flex-direction:column;
@@ -312,20 +243,8 @@
 
       .btn{
         width:100%;
-        max-width:320px;
+        max-width:300px;
         text-align:center;
-      }
-
-      .cookie-banner{
-        left:12px;
-        right:12px;
-        bottom:12px;
-        padding:16px 14px 14px;
-      }
-
-      .cookie-actions{
-        flex-direction:column;
-        align-items:stretch;
       }
     }
   </style>
@@ -334,13 +253,13 @@
 <body>
 
   <div class="topbar">
-    <a class="brand" href="index.html">
-      <img src="../dk-icon.png" alt="DK Software Studio">
+    <a class="brand" href="../index.html">
+      <img src="../dk-icon.png" alt="DK">
       <div class="name">DK Software Studio</div>
     </a>
 
     <div class="nav">
-      <a href="index.html">Home</a>
+      <a href="../index.html">Home</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </div>
@@ -350,30 +269,38 @@
     <div class="hero">
       <div class="card">
 
-        <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio logo">
+        <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio">
 
         <div class="title">About</div>
 
         <div class="subtitle">
-          DK Software Studio is an independent studio based in Germany.
-          We build simple, clean and functional apps for everyday use.
+          DK Software Studio is an independent development studio based in Germany.
+          We create simple, clear, and functional digital products.
         </div>
 
         <div class="subtitle">
-          Our focus is on minimalist products without distraction —
+          Our focus is on minimalist apps and lean web projects —
           reduced to what really matters.
         </div>
 
+        <div class="intro-note">
+          <strong>Built in Hof (Saale).</strong> Clear software, real projects, no agency overhead.
+        </div>
+
         <ul class="features">
-          <li>Minimalist apps with only essential features</li>
-          <li>Clean and easy-to-understand interface</li>
-          <li>Reliable and consistent everyday use</li>
+          <li>Minimalist apps without unnecessary features</li>
+          <li>Lean web projects with clear user experience</li>
+          <li>Simple and reliable products for everyday use</li>
           <li>No ads — supported by users</li>
         </ul>
 
+        <div class="subtitle">
+          In addition to its own app projects, DK Software Studio also develops regional platforms and tests digital product ideas with a clear and practical focus.
+        </div>
+
         <div class="btn-row">
-          <a class="btn primary" href="projects.html">View projects</a>
-          <a class="btn secondary" href="index.html">← Back to home</a>
+          <a class="btn primary" href="projects.html">View Projects</a>
+          <a class="btn secondary" href="../index.html">← Back to Home</a>
         </div>
 
       </div>
@@ -381,64 +308,10 @@
 
     <footer>
       © 2026 DK Software Studio ·
-      <a href="../de/impressum.html">Impressum</a> ·
-      <a href="../de/datenschutz.html">Privacy Policy</a>
+      <a href="impressum.html">Imprint</a> ·
+      <a href="datenschutz.html">Privacy Policy</a>
     </footer>
   </div>
-
-  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
-    <h3>Cookie Settings</h3>
-    <p>
-      This website uses optional analytics cookies to understand and improve how the site is used.
-      You can accept or decline. More information can be found in the
-      <a href="../de/datenschutz.html">Privacy Policy</a>.
-    </p>
-    <div class="cookie-actions">
-      <button id="acceptCookies" class="cookie-btn accept" type="button">Accept</button>
-      <button id="rejectCookies" class="cookie-btn reject" type="button">Decline</button>
-    </div>
-  </div>
-
-  <script>
-    const GA_ID = 'G-GZ2FXMBG67';
-    const COOKIE_KEY = 'dk_cookie_choice';
-
-    function loadGoogleAnalytics() {
-      if (window.gaLoaded) return;
-      window.gaLoaded = true;
-
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-      document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){window.dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', GA_ID, { anonymize_ip: true });
-    }
-
-    const cookieBanner = document.getElementById('cookieBanner');
-    const savedCookieChoice = localStorage.getItem(COOKIE_KEY);
-
-    if (savedCookieChoice === 'accepted') {
-      loadGoogleAnalytics();
-    } else if (!savedCookieChoice) {
-      cookieBanner.classList.add('show');
-    }
-
-    document.getElementById('acceptCookies').addEventListener('click', () => {
-      localStorage.setItem(COOKIE_KEY, 'accepted');
-      cookieBanner.classList.remove('show');
-      loadGoogleAnalytics();
-    });
-
-    document.getElementById('rejectCookies').addEventListener('click', () => {
-      localStorage.setItem(COOKIE_KEY, 'rejected');
-      cookieBanner.classList.remove('show');
-    });
-  </script>
 
 </body>
 </html>
