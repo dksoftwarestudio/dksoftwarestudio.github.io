@@ -112,11 +112,46 @@
     }
 
     .subtitle{
-      margin:0 auto 26px;
+      margin:0 auto 14px;
       max-width:720px;
       font-size:16px;
       line-height:1.7;
       color:var(--muted);
+    }
+
+    .intro-note{
+      max-width:720px;
+      margin:0 auto 30px;
+      padding:16px 18px;
+      background:#f7f9fc;
+      border:1px solid var(--border);
+      border-radius:14px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .intro-note strong{
+      color:var(--textDark);
+      font-weight:700;
+    }
+
+    .group-title{
+      max-width:760px;
+      margin:34px auto 14px;
+      text-align:left;
+      font-size:20px;
+      font-weight:700;
+      color:var(--blue);
+    }
+
+    .group-subtitle{
+      max-width:760px;
+      margin:0 auto 18px;
+      text-align:left;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:15px;
     }
 
     .projects-grid{
@@ -147,7 +182,8 @@
 
     .project img{
       width:88px;
-      height:auto;
+      height:88px;
+      object-fit:contain;
       border-radius:18px;
       background:#fff;
       padding:10px;
@@ -380,6 +416,16 @@
         font-size:15px;
       }
 
+      .intro-note{
+        font-size:14px;
+        padding:14px 14px;
+      }
+
+      .group-title,
+      .group-subtitle{
+        text-align:center;
+      }
+
       .brand .name{
         white-space:normal;
       }
@@ -422,7 +468,16 @@
       <div class="title">Projekte</div>
 
       <div class="subtitle">
-        Aktuelle und geplante Projekte von DK Software Studio.
+        DK Software Studio entwickelt minimalistische Apps und schlanke Web-Projekte — von einfachen Tools bis zu regionalen Plattformen.
+      </div>
+
+      <div class="intro-note">
+        <strong>Entwicklung aus Hof (Saale).</strong> Klare Software, echte Projekte, kein Agentur-Overhead.
+      </div>
+
+      <div class="group-title">Apps</div>
+      <div class="group-subtitle">
+        Einfache, funktionale Anwendungen für den Alltag — ohne unnötige Komplexität.
       </div>
 
       <div class="projects-grid">
@@ -519,6 +574,63 @@
 
             <div class="btn-row">
               <span class="btn secondary">Konzept</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="group-title">Local Web Projects</div>
+      <div class="group-subtitle">
+        Regionale Vermittlungsplattformen für Dienstleistungen in Hof (Saale).
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project reveal">
+          <img src="https://hof-reinigung.de/logo-reinigung.png" alt="Reinigung Hof logo">
+          <div>
+            <div class="p-title">Reinigung Hof</div>
+
+            <div class="p-desc">
+              Eine regionale Plattform für Reinigungsdienste in Hof — mit Fokus auf lokale Sichtbarkeit,
+              direkte Anfragen und klare, einfache Nutzerführung.
+            </div>
+
+            <div class="btn-row">
+              <a class="btn secondary" href="https://hof-reinigung.de" target="_blank" rel="noopener">Website öffnen</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project reveal">
+          <img src="https://hof-gartenservice.de/logo-gartenservice.png" alt="Gartenservice Hof logo">
+          <div>
+            <div class="p-title">Gartenservice Hof</div>
+
+            <div class="p-desc">
+              Ein lokales Web-Projekt für Gartenpflege und Außenbereiche in Hof,
+              aufgebaut als einfache Plattform zwischen Kunden und regionalen Anbietern.
+            </div>
+
+            <div class="btn-row">
+              <a class="btn secondary" href="https://hof-gartenservice.de" target="_blank" rel="noopener">Website öffnen</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project reveal">
+          <img src="https://hof-handwerker.de/logo-handwerker.png" alt="Handwerker Hof logo">
+          <div>
+            <div class="p-title">Handwerker Hof</div>
+
+            <div class="p-desc">
+              Eine schlanke Plattform für lokale Handwerker und Service-Anfragen in Hof —
+              als eigenes Projekt von DK Software Studio entwickelt und getestet.
+            </div>
+
+            <div class="btn-row">
+              <a class="btn secondary" href="https://hof-handwerker.de" target="_blank" rel="noopener">Website öffnen</a>
             </div>
           </div>
         </div>
