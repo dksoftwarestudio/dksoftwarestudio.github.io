@@ -163,6 +163,7 @@
       font-size:28px;
       font-weight:500;
       margin:0 0 14px;
+      color:#2F2F2F;
     }
 
     .subtitle{
@@ -171,6 +172,23 @@
       font-size:16px;
       line-height:1.7;
       color: var(--muted);
+    }
+
+    .intro-note{
+      max-width:720px;
+      margin:0 auto 26px;
+      padding:16px 18px;
+      background:#f7f9fc;
+      border:1px solid var(--border);
+      border-radius:14px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .intro-note strong{
+      color:#2F2F2F;
+      font-weight:700;
     }
 
     .feature-row{
@@ -278,6 +296,77 @@
       font-size:16px;
       line-height:1.7;
       color: var(--muted);
+    }
+
+    .section-mini{
+      max-width:760px;
+      margin:0 auto 16px;
+      text-align:center;
+    }
+
+    .section-mini-title{
+      margin:0 0 10px;
+      font-size:22px;
+      font-weight:600;
+      color:var(--blue);
+    }
+
+    .section-mini-text{
+      margin:0 auto 24px;
+      max-width:700px;
+      font-size:15px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    .web-grid{
+      max-width:760px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .web-item{
+      background:#f7f9fc;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:20px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      text-align:left;
+      transition:transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .web-item:hover{
+      transform:translateY(-3px);
+      box-shadow:0 18px 38px rgba(0,0,0,0.08);
+    }
+
+    .web-item img{
+      width:88px;
+      height:88px;
+      object-fit:contain;
+      border-radius:18px;
+      background:#fff;
+      padding:10px;
+      border:1px solid var(--border);
+      box-shadow:0 14px 30px rgba(0,0,0,0.08);
+      flex:0 0 auto;
+    }
+
+    .web-item-title{
+      margin:0 0 6px;
+      font-size:21px;
+      font-weight:800;
+      color:#2F2F2F;
+    }
+
+    .web-item-desc{
+      margin:0 0 12px;
+      color:var(--muted);
+      line-height:1.6;
     }
 
     footer{
@@ -411,6 +500,11 @@
         gap:18px;
       }
 
+      .web-item{
+        flex-direction:column;
+        text-align:center;
+      }
+
       .app-icon{
         width:130px;
       }
@@ -424,6 +518,11 @@
 
       .tagline{
         font-size:22px;
+      }
+
+      .intro-note{
+        font-size:14px;
+        padding:14px 14px;
       }
 
       .btn-row{
@@ -480,6 +579,11 @@
         <img class="dk-logo" src="logo.png" alt="DK Software Studio">
 
         <div class="tagline">Einfach. Klar. Funktional.</div>
+
+        <div class="intro-note">
+          <strong>DK Software Studio entwickelt minimalistische Apps und schlanke Web-Projekte</strong> —
+          von einfachen Alltags-Tools bis zu regionalen Plattformen mit klarem Fokus auf Funktion und Nutzerführung.
+        </div>
 
         <div class="title">Daily Text Alarm</div>
 
@@ -557,6 +661,56 @@
 
         <div class="btn-row">
           <span class="btn disabled">Bald verfügbar</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card pro-card reveal">
+
+        <div class="section-mini">
+          <div class="section-mini-title">Local Web Projects</div>
+          <div class="section-mini-text">
+            Regionale Web-Projekte und Plattformen aus Hof (Saale) — entwickelt, aufgebaut und praktisch getestet.
+          </div>
+        </div>
+
+        <div class="web-grid">
+
+          <div class="web-item">
+            <img src="https://hof-reinigung.de/logo-reinigung.png" alt="Reinigung Hof logo">
+            <div>
+              <div class="web-item-title">Reinigung Hof</div>
+              <div class="web-item-desc">
+                Eine regionale Plattform für Reinigungsdienste in Hof mit klarem Fokus auf lokale Sichtbarkeit und direkte Anfragen.
+              </div>
+              <a class="btn secondary" href="https://hof-reinigung.de" target="_blank" rel="noopener">Website öffnen</a>
+            </div>
+          </div>
+
+          <div class="web-item">
+            <img src="https://hof-gartenservice.de/logo-gartenservice.png" alt="Gartenservice Hof logo">
+            <div>
+              <div class="web-item-title">Gartenservice Hof</div>
+              <div class="web-item-desc">
+                Ein lokales Web-Projekt für Gartenpflege und Außenbereiche in Hof — einfach, klar und regional ausgerichtet.
+              </div>
+              <a class="btn secondary" href="https://hof-gartenservice.de" target="_blank" rel="noopener">Website öffnen</a>
+            </div>
+          </div>
+
+          <div class="web-item">
+            <img src="https://hof-handwerker.de/logo-handwerker.png" alt="Handwerker Hof logo">
+            <div>
+              <div class="web-item-title">Handwerker Hof</div>
+              <div class="web-item-desc">
+                Eine schlanke Plattform für lokale Handwerker und Service-Anfragen in Hof — als eigenes Projekt von DK Software Studio entwickelt.
+              </div>
+              <a class="btn secondary" href="https://hof-handwerker.de" target="_blank" rel="noopener">Website öffnen</a>
+            </div>
+          </div>
+
         </div>
 
       </div>
