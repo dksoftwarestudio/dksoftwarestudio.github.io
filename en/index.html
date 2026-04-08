@@ -472,6 +472,82 @@
     .cookie-btn.reject:hover{
       transform:translateY(-2px);
     }
+
+    @media (max-width:560px){
+      .topbar{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+      }
+
+      .brand{ justify-content:center; }
+      .brand .name{ white-space:normal; }
+
+      .lang{ justify-content:center; }
+
+      .nav{ justify-content:center; }
+
+      .card{
+        padding:34px 22px;
+      }
+
+      .title{
+        font-size:22px;
+      }
+
+      .feature-row{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .web-item{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .app-icon{
+        width:130px;
+      }
+
+      .features,
+      .pro-features{
+        min-width:auto;
+        width:100%;
+        max-width:520px;
+      }
+
+      .tagline{
+        font-size:22px;
+      }
+
+      .intro-note{
+        font-size:14px;
+        padding:14px 14px;
+      }
+
+      .btn-row{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .btn{
+        width:100%;
+        max-width:320px;
+        text-align:center;
+      }
+
+      .cookie-banner{
+        left:12px;
+        right:12px;
+        bottom:12px;
+        padding:16px 14px 14px;
+      }
+
+      .cookie-actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+    }
   </style>
 </head>
 
@@ -505,15 +581,15 @@
         <div class="tagline">Simple. Clean. Functional.</div>
 
         <div class="intro-note">
-          <strong>DK Software Studio builds minimalist apps and lean web projects</strong> —
-          from simple everyday tools to regional platforms with a clear focus on functionality and usability.
+          <strong>DK Software Studio develops minimalist apps and lean web projects</strong> —
+          from simple everyday tools to regional platforms with a clear focus on functionality and user experience.
         </div>
 
         <div class="title">Daily Text Alarm</div>
 
         <div class="subtitle">
           A minimalist reminder app with a daily link.
-          Open the page you need with just one tap — without extra steps or distractions.
+          Open the page you need with just one tap — without extra steps and without distractions.
         </div>
 
         <div class="feature-row">
@@ -529,8 +605,112 @@
 
         <div class="btn-row">
           <a class="btn secondary" href="en/jw-daily-alarm.html">Learn more</a>
-          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank">Google Play</a>
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" target="_blank" rel="noopener">Google Play</a>
           <span class="btn disabled">App Store — soon</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card pro-card reveal">
+
+        <div class="title">Ministry Calendar</div>
+
+        <div class="p-desc">
+          A simple calendar app for a clear monthly overview, time tracking, and quick report submission.
+        </div>
+
+        <div class="feature-row">
+          <img class="app-icon" src="img/ministry-calendar.png" alt="Ministry Calendar icon">
+
+          <ul class="features">
+            <li>Monthly overview</li>
+            <li>Built-in timer</li>
+            <li>Quick reporting</li>
+            <li>Multilingual</li>
+          </ul>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar" target="_blank" rel="noopener">Google Play</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card pro-card reveal">
+
+        <div class="title">📝 In Development: Blocknot</div>
+
+        <div class="subtitle">
+          A minimalist weekly planner for quick notes and simple organization.
+        </div>
+
+        <div class="feature-row">
+          <img class="app-icon" src="img/blocknot.png" alt="Blocknot icon">
+
+          <ul class="features">
+            <li>Weekly overview</li>
+            <li>Fast writing</li>
+            <li>Minimalist design</li>
+            <li>Focus on essentials</li>
+          </ul>
+        </div>
+
+        <div class="btn-row">
+          <span class="btn disabled">Coming soon</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card pro-card reveal">
+
+        <div class="section-mini">
+          <div class="section-mini-title">Local Web Projects</div>
+          <div class="section-mini-text">
+            Regional web projects and platforms from Hof (Saale) — developed, launched, and tested in practice.
+          </div>
+        </div>
+
+        <div class="web-grid">
+
+          <div class="web-item">
+            <img src="https://hof-reinigung.de/logo-reinigung.png" alt="Reinigung Hof logo">
+            <div>
+              <div class="web-item-title">Reinigung Hof</div>
+              <div class="web-item-desc">
+                A regional platform for cleaning services in Hof with a clear focus on local visibility and direct inquiries.
+              </div>
+              <a class="btn secondary" href="https://hof-reinigung.de" target="_blank" rel="noopener">Open website</a>
+            </div>
+          </div>
+
+          <div class="web-item">
+            <img src="https://hof-gartenservice.de/logo-gartenservice.png" alt="Gartenservice Hof logo">
+            <div>
+              <div class="web-item-title">Gartenservice Hof</div>
+              <div class="web-item-desc">
+                A local web project for garden care and outdoor services in Hof — simple, clear, and regionally focused.
+              </div>
+              <a class="btn secondary" href="https://hof-gartenservice.de" target="_blank" rel="noopener">Open website</a>
+            </div>
+          </div>
+
+          <div class="web-item">
+            <img src="https://hof-handwerker.de/logo-handwerker.png" alt="Handwerker Hof logo">
+            <div>
+              <div class="web-item-title">Handwerker Hof</div>
+              <div class="web-item-desc">
+                A lean platform for local tradespeople and service inquiries in Hof — developed as an in-house project by DK Software Studio.
+              </div>
+              <a class="btn secondary" href="https://hof-handwerker.de" target="_blank" rel="noopener">Open website</a>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -542,6 +722,76 @@
       <a href="en/datenschutz.html">Privacy Policy</a>
     </footer>
   </div>
+
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <h3>Cookie Settings</h3>
+    <p>
+      This website uses optional analytics cookies to understand and improve how the site is used.
+      You can accept or decline. More information can be found in the
+      <a href="en/datenschutz.html">Privacy Policy</a>.
+    </p>
+    <div class="cookie-actions">
+      <button id="acceptCookies" class="cookie-btn accept" type="button">Accept</button>
+      <button id="rejectCookies" class="cookie-btn reject" type="button">Decline</button>
+    </div>
+  </div>
+
+  <script>
+    const GA_ID = 'G-T3DB7K2NSS';
+    const COOKIE_KEY = 'dk_cookie_choice';
+
+    function loadGoogleAnalytics() {
+      if (window.gaLoaded) return;
+      window.gaLoaded = true;
+
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID, { anonymize_ip: true });
+    }
+
+    const cookieBanner = document.getElementById('cookieBanner');
+    const savedCookieChoice = localStorage.getItem(COOKIE_KEY);
+
+    if (savedCookieChoice === 'accepted') {
+      loadGoogleAnalytics();
+    } else if (!savedCookieChoice) {
+      cookieBanner.classList.add('show');
+    }
+
+    document.getElementById('acceptCookies').addEventListener('click', () => {
+      localStorage.setItem(COOKIE_KEY, 'accepted');
+      cookieBanner.classList.remove('show');
+      loadGoogleAnalytics();
+    });
+
+    document.getElementById('rejectCookies').addEventListener('click', () => {
+      localStorage.setItem(COOKIE_KEY, 'rejected');
+      cookieBanner.classList.remove('show');
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+      reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 80) {
+          el.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 
 </body>
 </html>
