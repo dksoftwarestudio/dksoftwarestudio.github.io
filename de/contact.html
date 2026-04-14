@@ -27,14 +27,16 @@
       -webkit-text-size-adjust:100%;
     }
 
+    /* ===== TOPBAR ===== */
+
     .topbar{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 18px 20px 0;
+      max-width:980px;
+      margin:0 auto;
+      padding:18px 20px 0;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 12px;
+      gap:12px;
     }
 
     .brand{
@@ -46,12 +48,12 @@
     }
 
     .brand img{
-      width: 40px;
+      width:40px;
     }
 
     .brand .name{
       font-weight:600;
-      color: var(--textDark);
+      color:var(--textDark);
     }
 
     .nav{
@@ -61,34 +63,38 @@
     }
 
     .nav a{
-      color: var(--text);
+      color:var(--text);
       text-decoration:none;
       font-weight:600;
       font-size:14px;
     }
 
-    .nav a:hover{ color: var(--blue); }
+    .nav a:hover{
+      color:var(--blue);
+    }
+
+    /* ===== CONTENT ===== */
 
     .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 24px 20px 70px;
+      max-width:980px;
+      margin:0 auto;
+      padding:24px 20px 70px;
     }
 
     .hero{
-      margin-top: 16px;
+      margin-top:16px;
       display:flex;
       justify-content:center;
     }
 
     .card{
       width:100%;
-      max-width: 860px;
-      background: var(--card);
-      border-radius: 18px;
-      box-shadow: 0 22px 55px rgba(0,0,0,0.07);
-      border: 1px solid var(--border);
-      padding: 44px 42px;
+      max-width:860px;
+      background:var(--card);
+      border-radius:18px;
+      box-shadow:0 22px 55px rgba(0,0,0,0.07);
+      border:1px solid var(--border);
+      padding:44px 42px;
       text-align:center;
     }
 
@@ -128,6 +134,8 @@
     .contact-box a:hover{
       color:var(--blue);
     }
+
+    /* ===== BUTTONS ===== */
 
     .btn-row{
       margin-top:22px;
@@ -179,6 +187,8 @@
       transform:translateY(-2px);
     }
 
+    /* ===== SOCIAL ===== */
+
     .social{
       margin-top:18px;
     }
@@ -191,11 +201,20 @@
       border-radius:12px;
       background:#ffffff;
       border:1px solid rgba(26,83,173,0.14);
-      color: var(--blue);
+      color:var(--blue);
       text-decoration:none;
       font-size:14px;
       font-weight:700;
     }
+
+    .social a:hover{
+      color:var(--blueDark);
+      border-color:rgba(26,83,173,0.24);
+      background:#f8fbff;
+      transform:translateY(-1px);
+    }
+
+    /* ===== FOOTER ===== */
 
     footer{
       margin-top:30px;
@@ -210,7 +229,60 @@
       margin:0 6px;
     }
 
-    footer a:hover{ color:var(--blue); }
+    footer a:hover{
+      color:var(--blue);
+    }
+
+    /* ===== MOBILE FIX (ВАЖНО) ===== */
+
+    @media (max-width:560px){
+
+      .topbar{
+        justify-content:center;
+        flex-wrap:wrap;
+        text-align:center;
+      }
+
+      .brand{
+        width:100%;
+        justify-content:center;
+      }
+
+      .nav{
+        width:100%;
+        justify-content:center;
+        gap:14px;
+      }
+
+      .brand .name{
+        white-space:normal;
+      }
+
+      .card{
+        padding:34px 22px;
+      }
+
+      .title{
+        font-size:30px;
+      }
+
+      .btn-row{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .btn{
+        width:100%;
+        max-width:320px;
+        text-align:center;
+      }
+
+      .social a{
+        max-width:100%;
+        justify-content:center;
+      }
+    }
+
   </style>
 </head>
 
@@ -249,19 +321,26 @@
       </div>
 
       <div class="btn-row">
-        <a class="btn primary" href="mailto:dksoftware.studio@gmail.com">E-Mail senden</a>
+
+        <a class="btn primary" href="mailto:dksoftware.studio@gmail.com">
+          E-Mail senden
+        </a>
 
         <a class="btn whatsapp"
            href="https://wa.me/491624012037?text=Hallo,%20ich%20habe%20eine%20Frage%20zu%20DK%20Software%20Studio."
-           target="_blank">
+           target="_blank"
+           rel="noopener">
           WhatsApp schreiben
         </a>
 
-        <a class="btn secondary" href="../index.html">← Zur Startseite</a>
+        <a class="btn secondary" href="../index.html">
+          ← Zur Startseite
+        </a>
+
       </div>
 
       <div class="social">
-        <a href="https://www.linkedin.com/in/dimitri-klevzov/" target="_blank">
+        <a href="https://www.linkedin.com/in/dimitri-klevzov/" target="_blank" rel="noopener">
           LinkedIn: Profil ansehen
         </a>
       </div>
