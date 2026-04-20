@@ -26,6 +26,8 @@
       color: var(--text);
     }
 
+    /* ===== HEADER ===== */
+
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -70,11 +72,41 @@
       color: var(--blue);
     }
 
+    /* ===== LAYOUT ===== */
+
     .wrap{
-      max-width:980px;
+      max-width:1400px;
       margin:0 auto;
       padding:24px 20px 70px;
     }
+
+    .page-layout{
+      display:flex;
+      justify-content:center;
+      gap:24px;
+    }
+
+    .side{
+      width:240px;
+      flex:0 0 240px;
+    }
+
+    .side img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      display:block;
+      border-radius:18px;
+      box-shadow:0 18px 45px rgba(0,0,0,0.08);
+      border:1px solid var(--border);
+    }
+
+    .main-content{
+      max-width:980px;
+      width:100%;
+    }
+
+    /* ===== CARD ===== */
 
     .hero{
       margin-top:16px;
@@ -209,6 +241,14 @@
       color:var(--blue);
     }
 
+    /* ===== MOBILE ===== */
+
+    @media (max-width:1200px){
+      .side{
+        display:none;
+      }
+    }
+
     @media (max-width:560px){
       .topbar{
         flex-direction:column;
@@ -247,6 +287,7 @@
         text-align:center;
       }
     }
+
   </style>
 </head>
 
@@ -266,51 +307,70 @@
   </div>
 
   <div class="wrap">
-    <div class="hero">
-      <div class="card">
+    <div class="page-layout">
 
-        <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio">
+      <!-- ЛЕВАЯ -->
+      <div class="side">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80">
+      </div>
 
-        <div class="title">Über uns</div>
+      <!-- КОНТЕНТ -->
+      <div class="main-content">
 
-        <div class="subtitle">
-          DK Software Studio ist ein unabhängiges Entwicklerstudio aus Deutschland.
-          Wir entwickeln einfache, klare und funktionale digitale Produkte.
+        <div class="hero">
+          <div class="card">
+
+            <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio">
+
+            <div class="title">Über uns</div>
+
+            <div class="subtitle">
+              DK Software Studio ist ein unabhängiges Entwicklerstudio aus Deutschland.
+              Wir entwickeln einfache, klare und funktionale digitale Produkte.
+            </div>
+
+            <div class="subtitle">
+              Unser Fokus liegt auf minimalistischen Anwendungen und schlanken Web-Projekten —
+              reduziert auf das, was wirklich zählt.
+            </div>
+
+            <div class="intro-note">
+              <strong>Entwicklung aus Hof (Saale).</strong> Klare Software, echte Projekte, kein Agentur-Overhead.
+            </div>
+
+            <ul class="features">
+              <li>Minimalistische Apps ohne unnötige Funktionen</li>
+              <li>Schlanke Web-Projekte mit klarer Nutzerführung</li>
+              <li>Verständliche und stabile Produkte für den Alltag</li>
+              <li>Keine Werbung — unterstützt von Nutzern</li>
+            </ul>
+
+            <div class="subtitle">
+              Neben eigenen App-Projekten entwickelt DK Software Studio auch regionale Plattformen und testet digitale Produktideen mit klarem, praktischem Fokus.
+            </div>
+
+            <div class="btn-row">
+              <a class="btn primary" href="projects.html">Projekte ansehen</a>
+              <a class="btn secondary" href="../index.html">← Zur Startseite</a>
+            </div>
+
+          </div>
         </div>
 
-        <div class="subtitle">
-          Unser Fokus liegt auf minimalistischen Anwendungen und schlanken Web-Projekten —
-          reduziert auf das, was wirklich zählt.
-        </div>
-
-        <div class="intro-note">
-          <strong>Entwicklung aus Hof (Saale).</strong> Klare Software, echte Projekte, kein Agentur-Overhead.
-        </div>
-
-        <ul class="features">
-          <li>Minimalistische Apps ohne unnötige Funktionen</li>
-          <li>Schlanke Web-Projekte mit klarer Nutzerführung</li>
-          <li>Verständliche und stabile Produkte für den Alltag</li>
-          <li>Keine Werbung — unterstützt von Nutzern</li>
-        </ul>
-
-        <div class="subtitle">
-          Neben eigenen App-Projekten entwickelt DK Software Studio auch regionale Plattformen und testet digitale Produktideen mit klarem, praktischem Fokus.
-        </div>
-
-        <div class="btn-row">
-          <a class="btn primary" href="projects.html">Projekte ansehen</a>
-          <a class="btn secondary" href="../index.html">← Zur Startseite</a>
-        </div>
+        <footer>
+          © 2026 DK Software Studio ·
+          <a href="impressum.html">Impressum</a> ·
+          <a href="datenschutz.html">Datenschutz</a>
+        </footer>
 
       </div>
-    </div>
 
-    <footer>
-      © 2026 DK Software Studio ·
-      <a href="impressum.html">Impressum</a> ·
-      <a href="datenschutz.html">Datenschutz</a>
-    </footer>
+      <!-- ПРАВАЯ -->
+      <div class="side">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80">
+      </div>
+
+    </div>
   </div>
 
 </body>
