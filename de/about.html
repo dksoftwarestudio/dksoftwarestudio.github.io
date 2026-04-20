@@ -1,3 +1,5 @@
+About DE DK Software Studio
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -70,41 +72,11 @@
       color: var(--blue);
     }
 
-    /* ===== LAYOUT ===== */
-
     .wrap{
-      max-width:1400px;
+      max-width:980px;
       margin:0 auto;
       padding:24px 20px 70px;
     }
-
-    .page-layout{
-      display:flex;
-      justify-content:center;
-      gap:24px;
-    }
-
-    .side{
-      width:240px;
-      flex:0 0 240px;
-    }
-
-    .side img{
-      width:100%;
-      height:420px;
-      object-fit:cover;
-      display:block;
-      border-radius:18px;
-      box-shadow:0 18px 45px rgba(0,0,0,0.08);
-      border:1px solid var(--border);
-    }
-
-    .main-content{
-      max-width:980px;
-      width:100%;
-    }
-
-    /* ===== CARD ===== */
 
     .hero{
       margin-top:16px;
@@ -239,14 +211,44 @@
       color:var(--blue);
     }
 
-    /* ===== MOBILE ===== */
+    @media (max-width:560px){
+      .topbar{
+        flex-direction:column;
+        text-align:center;
+      }
 
-    @media (max-width:1200px){
-      .side{
-        display:none;
+      .nav{
+        justify-content:center;
+      }
+
+      .card{
+        padding:32px 20px;
+      }
+
+      .title{
+        font-size:28px;
+      }
+
+      .studio-logo{
+        width:180px;
+      }
+
+      .intro-note{
+        font-size:14px;
+        padding:14px 14px;
+      }
+
+      .btn-row{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .btn{
+        width:100%;
+        max-width:300px;
+        text-align:center;
       }
     }
-
   </style>
 </head>
 
@@ -266,674 +268,52 @@
   </div>
 
   <div class="wrap">
-    <div class="page-layout">
+    <div class="hero">
+      <div class="card">
 
-      <!-- LEFT -->
-      <div class="side">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80">
-      </div>
+        <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio">
 
-      <!-- CONTENT -->
-      <div class="main-content">
+        <div class="title">Über uns</div>
 
-        <div class="hero">
-          <div class="card">
-
-            <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio">
-
-            <div class="title">Über uns</div>
-
-            <div class="subtitle">
-              DK Software Studio ist ein unabhängiges Entwicklerstudio aus Deutschland.
-              Wir entwickeln einfache, klare und funktionale digitale Produkte.
-            </div>
-
-            <div class="subtitle">
-              Unser Fokus liegt auf minimalistischen Anwendungen und schlanken Web-Projekten —
-              reduziert auf das, was wirklich zählt.
-            </div>
-
-            <div class="intro-note">
-              <strong>Entwicklung aus Hof (Saale).</strong> Klare Software, echte Projekte, kein Agentur-Overhead.
-            </div>
-            <!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Über uns — DK Software Studio</title>
-
-  <style>
-    :root{
-      --blue:#1A53AD;
-      --blueDark:#163e82;
-      --bg:#F5F5F5;
-      --text:#555555;
-      --textDark:#2F2F2F;
-      --muted:#666;
-      --card:#ffffff;
-      --border:rgba(0,0,0,0.06);
-    }
-
-    *{ box-sizing:border-box; }
-
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    .topbar{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 18px 20px 0;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:inherit;
-    }
-
-    .brand img{
-      width:40px;
-    }
-
-    .brand .name{
-      font-weight:600;
-      color: var(--textDark);
-    }
-
-    .nav{
-      display:flex;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    .nav a{
-      color: var(--text);
-      text-decoration:none;
-      font-weight:600;
-      font-size:14px;
-    }
-
-    .nav a:hover{
-      color: var(--blue);
-    }
-
-    /* ===== LAYOUT ===== */
-
-    .wrap{
-      max-width:1400px;
-      margin:0 auto;
-      padding:24px 20px 70px;
-    }
-
-    .page-layout{
-      display:flex;
-      justify-content:center;
-      gap:24px;
-    }
-
-    .side{
-      width:240px;
-      flex:0 0 240px;
-    }
-
-    .side img{
-      width:100%;
-      height:420px;
-      object-fit:cover;
-      display:block;
-      border-radius:18px;
-      box-shadow:0 18px 45px rgba(0,0,0,0.08);
-      border:1px solid var(--border);
-    }
-
-    .main-content{
-      max-width:980px;
-      width:100%;
-    }
-
-    /* ===== CARD ===== */
-
-    .hero{
-      margin-top:16px;
-      display:flex;
-      justify-content:center;
-    }
-
-    .card{
-      width:100%;
-      max-width:860px;
-      background: var(--card);
-      border-radius:18px;
-      box-shadow:0 22px 55px rgba(0,0,0,0.07);
-      border:1px solid var(--border);
-      padding:44px 42px;
-      text-align:center;
-    }
-
-    .studio-logo{
-      width:220px;
-      padding:14px;
-      background:#fff;
-      border-radius:22px;
-      border:1px solid var(--border);
-      margin:0 auto 24px;
-    }
-
-    .title{
-      font-size:34px;
-      margin-bottom:14px;
-      color:var(--textDark);
-      font-weight:500;
-    }
-
-    .subtitle{
-      max-width:700px;
-      margin:0 auto 18px;
-      line-height:1.7;
-      color:var(--muted);
-      font-size:16px;
-    }
-
-    .intro-note{
-      max-width:700px;
-      margin:0 auto 24px;
-      padding:16px 18px;
-      background:#f7f9fc;
-      border:1px solid var(--border);
-      border-radius:14px;
-      line-height:1.7;
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    .intro-note strong{
-      color:var(--textDark);
-      font-weight:700;
-    }
-
-    .features{
-      list-style:none;
-      padding:0;
-      margin:0 auto 24px;
-      max-width:700px;
-      text-align:left;
-      line-height:1.8;
-    }
-
-    .features li{
-      padding-left:26px;
-      position:relative;
-      margin:8px 0;
-    }
-
-    .features li::before{
-      content:"•";
-      position:absolute;
-      left:8px;
-      color:var(--blue);
-      font-size:20px;
-    }
-
-    .btn-row{
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:12px 24px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:15px;
-      transition:0.2s ease;
-    }
-
-    .btn.primary{
-      background:var(--blue);
-      color:#fff;
-    }
-
-    .btn.primary:hover{
-      background:var(--blueDark);
-      transform:translateY(-2px);
-    }
-
-    .btn.secondary{
-      background:#eef2f8;
-      color:var(--text);
-    }
-
-    .btn.secondary:hover{
-      transform:translateY(-2px);
-    }
-
-    footer{
-      margin-top:30px;
-      text-align:center;
-      color:#9aa6b2;
-      font-size:13px;
-    }
-
-    footer a{
-      color:#9aa6b2;
-      text-decoration:none;
-      margin:0 6px;
-    }
-
-    footer a:hover{
-      color:var(--blue);
-    }
-
-    /* ===== MOBILE ===== */
-
-    @media (max-width:1200px){
-      .side{
-        display:none;
-      }
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <div class="topbar">
-    <a class="brand" href="../index.html">
-      <img src="../dk-icon.png" alt="DK">
-      <div class="name">DK Software Studio</div>
-    </a>
-
-    <div class="nav">
-      <a href="../index.html">Startseite</a>
-      <a href="projects.html">Projekte</a>
-      <a href="contact.html">Kontakt</a>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div class="page-layout">
-
-      <!-- LEFT -->
-      <div class="side">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80">
-      </div>
-
-      <!-- CONTENT -->
-      <div class="main-content">
-
-        <div class="hero">
-          <div class="card">
-
-            <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio">
-
-            <div class="title">Über uns</div>
-
-            <div class="subtitle">
-              DK Software Studio ist ein unabhängiges Entwicklerstudio aus Deutschland.
-              Wir entwickeln einfache, klare und funktionale digitale Produkte.
-            </div>
-
-            <div class="subtitle">
-              Unser Fokus liegt auf minimalistischen Anwendungen und schlanken Web-Projekten —
-              reduziert auf das, was wirklich zählt.
-            </div>
-
-            <div class="intro-note">
-              <strong>Entwicklung aus Hof (Saale).</strong> Klare Software, echte Projekte, kein Agentur-Overhead.
-            </div>
-            <!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Über uns — DK Software Studio</title>
-
-  <style>
-    :root{
-      --blue:#1A53AD;
-      --blueDark:#163e82;
-      --bg:#F5F5F5;
-      --text:#555555;
-      --textDark:#2F2F2F;
-      --muted:#666;
-      --card:#ffffff;
-      --border:rgba(0,0,0,0.06);
-    }
-
-    *{ box-sizing:border-box; }
-
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    .topbar{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 18px 20px 0;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:inherit;
-    }
-
-    .brand img{
-      width:40px;
-    }
-
-    .brand .name{
-      font-weight:600;
-      color: var(--textDark);
-    }
-
-    .nav{
-      display:flex;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    .nav a{
-      color: var(--text);
-      text-decoration:none;
-      font-weight:600;
-      font-size:14px;
-    }
-
-    .nav a:hover{
-      color: var(--blue);
-    }
-
-    /* ===== LAYOUT ===== */
-
-    .wrap{
-      max-width:1400px;
-      margin:0 auto;
-      padding:24px 20px 70px;
-    }
-
-    .page-layout{
-      display:flex;
-      justify-content:center;
-      gap:24px;
-    }
-
-    .side{
-      width:240px;
-      flex:0 0 240px;
-    }
-
-    .side img{
-      width:100%;
-      height:420px;
-      object-fit:cover;
-      display:block;
-      border-radius:18px;
-      box-shadow:0 18px 45px rgba(0,0,0,0.08);
-      border:1px solid var(--border);
-    }
-
-    .main-content{
-      max-width:980px;
-      width:100%;
-    }
-
-    /* ===== CARD ===== */
-
-    .hero{
-      margin-top:16px;
-      display:flex;
-      justify-content:center;
-    }
-
-    .card{
-      width:100%;
-      max-width:860px;
-      background: var(--card);
-      border-radius:18px;
-      box-shadow:0 22px 55px rgba(0,0,0,0.07);
-      border:1px solid var(--border);
-      padding:44px 42px;
-      text-align:center;
-    }
-
-    .studio-logo{
-      width:220px;
-      padding:14px;
-      background:#fff;
-      border-radius:22px;
-      border:1px solid var(--border);
-      margin:0 auto 24px;
-    }
-
-    .title{
-      font-size:34px;
-      margin-bottom:14px;
-      color:var(--textDark);
-      font-weight:500;
-    }
-
-    .subtitle{
-      max-width:700px;
-      margin:0 auto 18px;
-      line-height:1.7;
-      color:var(--muted);
-      font-size:16px;
-    }
-
-    .intro-note{
-      max-width:700px;
-      margin:0 auto 24px;
-      padding:16px 18px;
-      background:#f7f9fc;
-      border:1px solid var(--border);
-      border-radius:14px;
-      line-height:1.7;
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    .intro-note strong{
-      color:var(--textDark);
-      font-weight:700;
-    }
-
-    .features{
-      list-style:none;
-      padding:0;
-      margin:0 auto 24px;
-      max-width:700px;
-      text-align:left;
-      line-height:1.8;
-    }
-
-    .features li{
-      padding-left:26px;
-      position:relative;
-      margin:8px 0;
-    }
-
-    .features li::before{
-      content:"•";
-      position:absolute;
-      left:8px;
-      color:var(--blue);
-      font-size:20px;
-    }
-
-    .btn-row{
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:12px 24px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:15px;
-      transition:0.2s ease;
-    }
-
-    .btn.primary{
-      background:var(--blue);
-      color:#fff;
-    }
-
-    .btn.primary:hover{
-      background:var(--blueDark);
-      transform:translateY(-2px);
-    }
-
-    .btn.secondary{
-      background:#eef2f8;
-      color:var(--text);
-    }
-
-    .btn.secondary:hover{
-      transform:translateY(-2px);
-    }
-
-    footer{
-      margin-top:30px;
-      text-align:center;
-      color:#9aa6b2;
-      font-size:13px;
-    }
-
-    footer a{
-      color:#9aa6b2;
-      text-decoration:none;
-      margin:0 6px;
-    }
-
-    footer a:hover{
-      color:var(--blue);
-    }
-
-    /* ===== MOBILE ===== */
-
-    @media (max-width:1200px){
-      .side{
-        display:none;
-      }
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <div class="topbar">
-    <a class="brand" href="../index.html">
-      <img src="../dk-icon.png" alt="DK">
-      <div class="name">DK Software Studio</div>
-    </a>
-
-    <div class="nav">
-      <a href="../index.html">Startseite</a>
-      <a href="projects.html">Projekte</a>
-      <a href="contact.html">Kontakt</a>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <div class="page-layout">
-
-      <!-- LEFT -->
-      <div class="side">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80">
-      </div>
-
-      <!-- CONTENT -->
-      <div class="main-content">
-
-        <div class="hero">
-          <div class="card">
-
-            <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio">
-
-            <div class="title">Über uns</div>
-
-            <div class="subtitle">
-              DK Software Studio ist ein unabhängiges Entwicklerstudio aus Deutschland.
-              Wir entwickeln einfache, klare und funktionale digitale Produkte.
-            </div>
-
-            <div class="subtitle">
-              Unser Fokus liegt auf minimalistischen Anwendungen und schlanken Web-Projekten —
-              reduziert auf das, was wirklich zählt.
-            </div>
-
-            <div class="intro-note">
-  <strong>Entwicklung aus Hof (Saale).</strong> Klare Software, echte Projekte, kein Agentur-Overhead.
-</div>
-
-<div class="subtitle">
-  Ich arbeite bewusst unabhängig bzw. in kleinen Strukturen —
-  ohne Agentur-Overhead, unnötige Prozesse oder Komplexität.
-</div>
-
-<ul class="features">
-              <li>Minimalistische Apps ohne unnötige Funktionen</li>
-              <li>Schlanke Web-Projekte mit klarer Nutzerführung</li>
-              <li>Verständliche und stabile Produkte für den Alltag</li>
-              <li>Keine Werbung — unterstützt von Nutzern</li>
-            </ul>
-
-            <div class="subtitle">
-              Neben eigenen App-Projekten entwickelt DK Software Studio auch regionale Plattformen und testet digitale Produktideen mit klarem, praktischem Fokus.
-            </div>
-
-            <div class="btn-row">
-              <a class="btn primary" href="projects.html">Projekte ansehen</a>
-              <a class="btn secondary" href="../index.html">← Zur Startseite</a>
-            </div>
-
-          </div>
+        <div class="subtitle">
+          DK Software Studio ist ein unabhängiges Entwicklerstudio aus Deutschland.
+          Wir entwickeln einfache, klare und funktionale digitale Produkte.
         </div>
 
-        <footer>
-          © 2026 DK Software Studio ·
-          <a href="impressum.html">Impressum</a> ·
-          <a href="datenschutz.html">Datenschutz</a>
-        </footer>
+        <div class="subtitle">
+          Unser Fokus liegt auf minimalistischen Anwendungen und schlanken Web-Projekten —
+          reduziert auf das, was wirklich zählt.
+        </div>
+
+        <div class="intro-note">
+          <strong>Entwicklung aus Hof (Saale).</strong> Klare Software, echte Projekte, kein Agentur-Overhead.
+        </div>
+
+        <ul class="features">
+          <li>Minimalistische Apps ohne unnötige Funktionen</li>
+          <li>Schlanke Web-Projekte mit klarer Nutzerführung</li>
+          <li>Verständliche und stabile Produkte für den Alltag</li>
+          <li>Keine Werbung — unterstützt von Nutzern</li>
+        </ul>
+
+        <div class="subtitle">
+          Neben eigenen App-Projekten entwickelt DK Software Studio auch regionale Plattformen und testet digitale Produktideen mit klarem, praktischem Fokus.
+        </div>
+
+        <div class="btn-row">
+          <a class="btn primary" href="projects.html">Projekte ansehen</a>
+          <a class="btn secondary" href="../index.html">← Zur Startseite</a>
+        </div>
 
       </div>
-
-      <!-- RIGHT -->
-      <div class="side">
-        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=900&q=80">
-      </div>
-
     </div>
+
+    <footer>
+      © 2026 DK Software Studio ·
+      <a href="impressum.html">Impressum</a> ·
+      <a href="datenschutz.html">Datenschutz</a>
+    </footer>
   </div>
 
 </body>
 </html>
-
-           
