@@ -472,6 +472,46 @@
     .cookie-btn.reject:hover{
       transform:translateY(-2px);
     }
+    /* ===== SIDE IMAGES ===== */
+
+.wrap{
+  max-width:1400px;
+  margin:0 auto;
+  padding:28px 20px 70px;
+}
+
+.page-layout{
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  align-items:flex-start;
+}
+
+.side{
+  width:300px;
+  flex:0 0 300px;
+}
+
+.side img{
+  width:100%;
+  height:460px;
+  object-fit:cover;
+  display:block;
+  border-radius:18px;
+  box-shadow:0 18px 45px rgba(0,0,0,0.08);
+  border:1px solid var(--border);
+}
+
+.main-content{
+  max-width:980px;
+  width:100%;
+}
+
+@media (max-width:1200px){
+  .side{
+    display:none;
+  }
+}
 
     @media (max-width:560px){
       .topbar{
@@ -572,6 +612,13 @@
   </div>
 
   <div class="wrap">
+  <div class="page-layout">
+
+    <div class="side">
+      <img src="https://images.unsplash.com/photo-1529336953121-a0ceee0b8d03?auto=format&fit=crop&w=900&q=80" alt="Workspace">
+    </div>
+
+    <div class="main-content">
 
     <div class="hero">
       <div class="card reveal">
@@ -745,14 +792,22 @@
       </div>
     </div>
 
-    <footer>
+        <footer>
       © 2026 DK Software Studio<br>
       <a href="impressum.html">Imprint</a> · 
       <a href="datenschutz.html">Privacy Policy</a>
     </footer>
-  </div>
 
-  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    </div>
+
+    <div class="side">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Development workspace">
+    </div>
+
+  </div>
+</div>
+
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
     <h3>Cookie Settings</h3>
     <p>
       This website uses optional analytics cookies to understand and improve how the site is used.
