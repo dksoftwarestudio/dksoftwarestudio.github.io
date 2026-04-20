@@ -26,6 +26,8 @@
       color: var(--text);
     }
 
+    /* HEADER */
+
     .topbar{
       max-width: 980px;
       margin: 0 auto;
@@ -70,11 +72,41 @@
       color: var(--blue);
     }
 
+    /* LAYOUT */
+
     .wrap{
-      max-width:980px;
+      max-width:1400px;
       margin:0 auto;
       padding:24px 20px 70px;
     }
+
+    .page-layout{
+      display:flex;
+      justify-content:center;
+      gap:24px;
+    }
+
+    .side{
+      width:240px;
+      flex:0 0 240px;
+    }
+
+    .side img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      display:block;
+      border-radius:18px;
+      box-shadow:0 18px 45px rgba(0,0,0,0.08);
+      border:1px solid var(--border);
+    }
+
+    .main-content{
+      max-width:980px;
+      width:100%;
+    }
+
+    /* CARD */
 
     .hero{
       margin-top:16px;
@@ -209,6 +241,14 @@
       color:var(--blue);
     }
 
+    /* RESPONSIVE */
+
+    @media (max-width:1200px){
+      .side{
+        display:none;
+      }
+    }
+
     @media (max-width:560px){
       .topbar{
         flex-direction:column;
@@ -266,51 +306,70 @@
   </div>
 
   <div class="wrap">
-    <div class="hero">
-      <div class="card">
+    <div class="page-layout">
 
-        <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio">
+      <!-- LEFT IMAGE -->
+      <div class="side">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80">
+      </div>
 
-        <div class="title">About</div>
+      <!-- CONTENT -->
+      <div class="main-content">
 
-        <div class="subtitle">
-          DK Software Studio is an independent development studio based in Germany.
-          We create simple, clear, and functional digital products.
+        <div class="hero">
+          <div class="card">
+
+            <img class="studio-logo" src="../dk-icon1.png" alt="DK Software Studio">
+
+            <div class="title">About</div>
+
+            <div class="subtitle">
+              DK Software Studio is an independent development studio based in Germany.
+              We create simple, clear, and functional digital products.
+            </div>
+
+            <div class="subtitle">
+              Our focus is on minimalist apps and lean web projects —
+              reduced to what really matters.
+            </div>
+
+            <div class="intro-note">
+              <strong>Built in Hof (Saale).</strong> Clear software, real projects, no agency overhead.
+            </div>
+
+            <ul class="features">
+              <li>Minimalist apps without unnecessary features</li>
+              <li>Lean web projects with clear user experience</li>
+              <li>Simple and reliable products for everyday use</li>
+              <li>No ads — supported by users</li>
+            </ul>
+
+            <div class="subtitle">
+              In addition to its own app projects, DK Software Studio also develops regional platforms and tests digital product ideas with a clear and practical focus.
+            </div>
+
+            <div class="btn-row">
+              <a class="btn primary" href="projects.html">View Projects</a>
+              <a class="btn secondary" href="index.html">← Back to Home</a>
+            </div>
+
+          </div>
         </div>
 
-        <div class="subtitle">
-          Our focus is on minimalist apps and lean web projects —
-          reduced to what really matters.
-        </div>
-
-        <div class="intro-note">
-          <strong>Built in Hof (Saale).</strong> Clear software, real projects, no agency overhead.
-        </div>
-
-        <ul class="features">
-          <li>Minimalist apps without unnecessary features</li>
-          <li>Lean web projects with clear user experience</li>
-          <li>Simple and reliable products for everyday use</li>
-          <li>No ads — supported by users</li>
-        </ul>
-
-        <div class="subtitle">
-          In addition to its own app projects, DK Software Studio also develops regional platforms and tests digital product ideas with a clear and practical focus.
-        </div>
-
-        <div class="btn-row">
-          <a class="btn primary" href="projects.html">View Projects</a>
-          <a class="btn secondary" href="index.html">← Back to Home</a>
-        </div>
+        <footer>
+          © 2026 DK Software Studio ·
+          <a href="impressum.html">Imprint</a> ·
+          <a href="datenschutz.html">Privacy Policy</a>
+        </footer>
 
       </div>
-    </div>
 
-    <footer>
-      © 2026 DK Software Studio ·
-      <a href="impressum.html">Imprint</a> ·
-      <a href="datenschutz.html">Privacy Policy</a>
-    </footer>
+      <!-- RIGHT IMAGE -->
+      <div class="side">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80">
+      </div>
+
+    </div>
   </div>
 
 </body>
