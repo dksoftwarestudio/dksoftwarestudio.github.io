@@ -472,6 +472,34 @@
     .cookie-btn.reject:hover{
       transform:translateY(-2px);
     }
+        #toTopBtn{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:48px;
+      height:48px;
+      border:none;
+      border-radius:14px;
+      background:var(--blue);
+      color:#fff;
+      font-size:20px;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(0,0,0,0.15);
+      opacity:0;
+      pointer-events:none;
+      transition:0.25s ease;
+      z-index:9999;
+    }
+
+    #toTopBtn:hover{
+      transform:translateY(-2px);
+    }
+
+    #toTopBtn.show{
+      opacity:1;
+      pointer-events:auto;
+    }
 
     @media (max-width:560px){
       .topbar{
@@ -546,6 +574,12 @@
       .cookie-actions{
         flex-direction:column;
         align-items:stretch;
+      }
+            #toTopBtn{
+        right:18px;
+        bottom:18px;
+        width:46px;
+        height:46px;
       }
     }
   /* ===== SIDE IMAGES ===== */
