@@ -441,6 +441,46 @@
         flex-direction:column;
         align-items:stretch;
       }
+      /* ===== TO TOP BUTTON ===== */
+
+#toTopBtn{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:14px;
+  background:var(--blue);
+  color:#fff;
+  font-size:20px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 24px rgba(0,0,0,0.15);
+  opacity:0;
+  pointer-events:none;
+  transition:0.25s ease;
+  z-index:9999;
+}
+
+#toTopBtn:hover{
+  transform:translateY(-2px);
+}
+
+#toTopBtn.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* mobile */
+@media (max-width:560px){
+  #toTopBtn{
+    right:18px;
+    bottom:18px;
+    width:46px;
+    height:46px;
+  }
+}
     }
   </style>
 </head>
@@ -651,6 +691,8 @@
   </footer>
 </div>
 
+  <button id="toTopBtn" aria-label="Nach oben">↑</button>
+
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Hinweis">
   <h3>Cookie-Einstellungen</h3>
   <p>
@@ -719,6 +761,22 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
+  const toTopBtn = document.getElementById('toTopBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    toTopBtn.classList.add('show');
+  } else {
+    toTopBtn.classList.remove('show');
+  }
+});
+
+toTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 </script>
 
 </body>
