@@ -24,9 +24,11 @@
 </head>
 <body class="bg-zinc-50 text-zinc-700 font-sans">
 
-  <!-- Header -->
+  <!-- ==================== HEADER ==================== -->
   <header class="bg-white border-b sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+      <!-- Logo -->
       <a href="../index.html" class="flex items-center gap-3">
         <img src="../dk-icon.png" alt="DK" class="w-10 h-10">
         <div>
@@ -35,6 +37,7 @@
         </div>
       </a>
 
+      <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="../index.html" class="hover:text-blue-600 transition">Startseite</a>
         <a href="about.html" class="hover:text-blue-600 transition">Über uns</a>
@@ -42,14 +45,32 @@
         <a href="contact.html" class="hover:text-blue-600 transition">Kontakt</a>
       </nav>
 
-      <a href="../index.html" 
-         class="px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-2xl hover:bg-blue-700 transition">
-        Zur Startseite
-      </a>
+      <!-- Right side -->
+      <div class="flex items-center gap-4">
+        <a href="../index.html" 
+           class="hidden md:block px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-2xl hover:bg-blue-700 transition">
+          Zur Startseite
+        </a>
+
+        <button id="menuButton" 
+                class="md:hidden text-4xl leading-none text-zinc-700 hover:text-zinc-900 transition-colors">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+        <a href="../index.html" class="py-2">Startseite</a>
+        <a href="about.html" class="py-2">Über uns</a>
+        <a href="projects.html" class="py-2">Projekte</a>
+        <a href="contact.html" class="py-2">Kontakt</a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- ==================== HERO ==================== -->
   <section class="bg-gradient-to-br from-blue-700 to-blue-800 text-white py-24">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h1 class="text-5xl md:text-6xl font-bold tracking-tighter mb-6">Projekte</h1>
@@ -86,8 +107,7 @@
               Eine Seite — ein Tipp, ohne Ablenkung.
             </p>
             <div class="flex flex-wrap gap-3 justify-center">
-              <a href="jw-daily-alarm.html" 
-                 class="text-blue-600 font-medium hover:underline">Mehr erfahren →</a>
+              <a href="jw-daily-alarm.html" class="text-blue-600 font-medium hover:underline">Mehr erfahren →</a>
               <a href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm" 
                  target="_blank" rel="noopener"
                  class="bg-blue-600 text-white px-6 py-2.5 rounded-2xl text-sm font-semibold">
@@ -142,7 +162,7 @@
                  class="app-icon w-28 h-28 mx-auto mb-8 rounded-3xl shadow-md">
             <h3 class="font-bold text-2xl text-center mb-3">My Reminder</h3>
             <p class="text-zinc-600 text-center mb-8 leading-relaxed">
-              Erinnerungen mit Prioritäten — bleiben aktiv, bis sie erledigt sind.
+              Erinnerungen mit Prioritäten — остаются активными, пока не будут выполнены.
             </p>
             <div class="text-center">
               <span class="inline-block bg-amber-100 text-amber-700 px-5 py-2 rounded-2xl text-sm font-medium">
@@ -165,7 +185,7 @@
           <h2 class="text-4xl font-bold text-zinc-900">Regionale Web-Projekte</h2>
         </div>
         <p class="text-zinc-600 max-w-md text-right hidden md:block">
-          Praktisch getestete Plattformen für Hof (Saale) und Umgebung.
+          Praktisch getestete Plattformen для Hof (Saale) и Umgebung.
         </p>
       </div>
 
@@ -173,13 +193,12 @@
 
         <div class="project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden">
           <div class="h-52 bg-zinc-50 flex items-center justify-center p-8">
-            <img src="https://hof-reinigung.de/logo-reinigung.png" alt="Reinigung Hof" 
-                 class="max-h-32 object-contain">
+            <img src="https://hof-reinigung.de/logo-reinigung.png" alt="Reinigung Hof" class="max-h-32 object-contain">
           </div>
           <div class="p-8">
             <h3 class="font-bold text-xl mb-3">Reinigung Hof</h3>
             <p class="text-zinc-600 text-sm leading-relaxed mb-6">
-              Regionale Plattform für Reinigungsdienste in Hof — direkte Anfragen, lokale Firmen, ohne große Vermittler.
+              Regionale Plattform для Reinigungsdienste in Hof — direkte Anfragen, lokale Firmen, ohne большие посредники.
             </p>
             <a href="https://hof-reinigung.de" target="_blank" rel="noopener"
                class="text-blue-600 font-medium inline-flex items-center gap-2 hover:underline">
@@ -190,13 +209,12 @@
 
         <div class="project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden">
           <div class="h-52 bg-zinc-50 flex items-center justify-center p-8">
-            <img src="https://hof-gartenservice.de/logo-gartenservice.png" alt="Gartenservice Hof" 
-                 class="max-h-32 object-contain">
+            <img src="https://hof-gartenservice.de/logo-gartenservice.png" alt="Gartenservice Hof" class="max-h-32 object-contain">
           </div>
           <div class="p-8">
             <h3 class="font-bold text-xl mb-3">Gartenservice Hof</h3>
             <p class="text-zinc-600 text-sm leading-relaxed mb-6">
-              Lokale Plattform für Gartenpflege und Außenbereiche in Hof (Saale).
+              Lokale Plattform для Gartenpflege und Außenbereiche в Hof (Saale).
             </p>
             <a href="https://hof-gartenservice.de" target="_blank" rel="noopener"
                class="text-blue-600 font-medium inline-flex items-center gap-2 hover:underline">
@@ -207,13 +225,12 @@
 
         <div class="project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden">
           <div class="h-52 bg-zinc-50 flex items-center justify-center p-8">
-            <img src="https://hof-handwerker.de/logo-handwerker.png" alt="Handwerker Hof" 
-                 class="max-h-32 object-contain">
+            <img src="https://hof-handwerker.de/logo-handwerker.png" alt="Handwerker Hof" class="max-h-32 object-contain">
           </div>
           <div class="p-8">
             <h3 class="font-bold text-xl mb-3">Handwerker Hof</h3>
             <p class="text-zinc-600 text-sm leading-relaxed mb-6">
-              Schlanke Plattform für lokale Handwerker und Service-Anfragen in Hof.
+              Schlanke Plattform для локальных Handwerker и Service-Anfragen в Hof.
             </p>
             <a href="https://hof-handwerker.de" target="_blank" rel="noopener"
                class="text-blue-600 font-medium inline-flex items-center gap-2 hover:underline">
@@ -229,7 +246,7 @@
   <!-- CTA -->
   <section class="py-20 bg-blue-700 text-white">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-6">Haben Sie ein Projekt oder eine Idee?</h2>
+      <h2 class="text-4xl font-bold mb-6">Haben Sie ein Projekt или eine Idee?</h2>
       <p class="text-blue-100 mb-10 max-w-md mx-auto">
         Ob App oder regionale Web-Lösung — lassen Sie uns darüber sprechen.
       </p>
@@ -261,6 +278,34 @@
   </footer>
 
   <script>
+    // ==================== MOBILE MENU ====================
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+
+          if (mobileMenu.classList.contains('hidden')) {
+            menuButton.textContent = '☰';
+          } else {
+            menuButton.textContent = '✕';
+          }
+        });
+      }
+
+      // Close menu when clicking any link
+      const mobileLinks = document.querySelectorAll('#mobileMenu a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          if (menuButton) menuButton.textContent = '☰';
+        });
+      });
+    });
+
+    // Tailwind config
     tailwind.config = {
       content: [],
       theme: {
@@ -272,7 +317,7 @@
           }
         }
       }
-    }
+    };
   </script>
 </body>
 </html>
