@@ -12,6 +12,8 @@
   <!-- Header -->
   <header class="bg-white border-b sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+      <!-- Logo -->
       <a href="../index.html" class="flex items-center gap-3">
         <img src="../dk-icon.png" alt="DK" class="w-10 h-10">
         <div>
@@ -20,6 +22,7 @@
         </div>
       </a>
 
+      <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="../index.html" class="hover:text-blue-600 transition">Startseite</a>
         <a href="about.html" class="hover:text-blue-600 transition">Über uns</a>
@@ -27,10 +30,28 @@
         <a href="contact.html" class="text-blue-600 font-semibold">Kontakt</a>
       </nav>
 
-      <a href="../index.html" 
-         class="px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-2xl hover:bg-blue-700 transition">
-        Zur Startseite
-      </a>
+      <!-- Right side -->
+      <div class="flex items-center gap-4">
+        <a href="../index.html" 
+           class="hidden md:block px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-2xl hover:bg-blue-700 transition">
+          Zur Startseite
+        </a>
+
+        <button id="menuButton" 
+                class="md:hidden text-4xl leading-none text-zinc-700 hover:text-zinc-900 transition-colors">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+        <a href="../index.html" class="py-2">Startseite</a>
+        <a href="about.html" class="py-2">Über uns</a>
+        <a href="projects.html" class="py-2">Projekte</a>
+        <a href="contact.html" class="py-2">Kontakt</a>
+      </div>
     </div>
   </header>
 
@@ -76,7 +97,7 @@
             <div class="text-blue-600 group-hover:translate-x-1 transition">→</div>
           </a>
 
-          <!-- Phone / WhatsApp -->
+          <!-- WhatsApp -->
           <a href="https://wa.me/491624012037?text=Hallo%20DK%20Software%20Studio%2C%20ich%20habe%20eine%20Frage%20zu%20einem%20Projekt." 
              target="_blank" rel="noopener"
              class="group flex items-center gap-6 bg-zinc-50 hover:bg-white border border-transparent hover:border-green-200 p-8 rounded-3xl transition-all">
@@ -120,7 +141,7 @@
         <!-- Final CTA -->
         <div class="mt-16 text-center">
           <p class="text-zinc-600 mb-6">
-            Ich freue mich auf Ihre Nachricht und melde mich in der Regel innerhalb eines Tages.
+            Ich freue mich auf Ihre Nachricht und melde mich in der Regel innerhalb одного дня.
           </p>
           <a href="../index.html" 
              class="inline-flex items-center gap-2 text-zinc-500 hover:text-zinc-700 transition">
@@ -153,6 +174,34 @@
   </footer>
 
   <script>
+    // Mobile Menu
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+
+          if (mobileMenu.classList.contains('hidden')) {
+            menuButton.textContent = '☰';
+          } else {
+            menuButton.textContent = '✕';
+          }
+        });
+      }
+
+      // Close menu on link click
+      const mobileLinks = document.querySelectorAll('#mobileMenu a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          if (menuButton) menuButton.textContent = '☰';
+        });
+      });
+    });
+
+    // Tailwind config
     tailwind.config = {
       content: [],
       theme: {
@@ -164,7 +213,7 @@
           }
         }
       }
-    }
+    };
   </script>
 </body>
 </html>
