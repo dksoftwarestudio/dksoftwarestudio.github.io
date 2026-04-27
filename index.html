@@ -34,36 +34,58 @@
 </head>
 <body class="bg-zinc-50 text-zinc-700 font-sans">
 
-  <!-- Header -->
-  <header class="bg-white border-b sticky top-0 z-50">
-    <div class="tail-container px-6 py-5 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="dk-icon.png" alt="DK" class="w-10 h-10">
-        <div>
-          <span class="font-semibold text-2xl tracking-tight text-zinc-900">DK Software Studio</span>
-          <p class="text-xs text-zinc-500 -mt-1">Hof (Saale)</p>
-        </div>
+ <header class="bg-white border-b sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="dk-icon.png" alt="DK" class="w-10 h-10">
+      <div>
+        <span class="font-semibold text-xl md:text-2xl tracking-tight text-zinc-900">DK Software Studio</span>
+        <p class="text-xs text-zinc-500 -mt-1">Hof (Saale)</p>
+      </div>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="de/about.html" class="hover:text-blue-600 transition">Über uns</a>
+      <a href="de/projects.html" class="hover:text-blue-600 transition">Projekte</a>
+      <a href="#apps" class="hover:text-blue-600 transition">Apps</a>
+      <a href="#web" class="hover:text-blue-600 transition">Web-Projekte</a>
+    </nav>
+
+    <!-- Right side -->
+    <div class="flex items-center gap-3">
+
+      <!-- CTA -->
+      <a href="de/contact.html" 
+         class="px-4 md:px-6 py-2 md:py-3 bg-blue-600 text-white text-sm font-semibold rounded-2xl hover:bg-blue-700 transition">
+        Kontakt
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="de/about.html" class="hover:text-blue-600 transition">Über uns</a>
-        <a href="de/projects.html" class="hover:text-blue-600 transition">Projekte</a>
-        <a href="#apps" class="hover:text-blue-600 transition">Apps</a>
-        <a href="#web" class="hover:text-blue-600 transition">Web-Projekte</a>
-      </nav>
+      <!-- WhatsApp -->
+      <a href="https://wa.me/491624012037" target="_blank"
+         class="text-green-600 text-xl">
+        <i class="fab fa-whatsapp"></i>
+      </a>
 
-      <div class="flex items-center gap-4">
-        <a href="de/contact.html" 
-           class="px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-2xl hover:bg-blue-700 transition">
-          Kontakt aufnehmen
-        </a>
-        <a href="https://wa.me/491624012037" target="_blank"
-           class="flex items-center gap-2 text-green-600 hover:text-green-700">
-          <i class="fab fa-whatsapp text-2xl"></i>
-        </a>
-      </div>
+      <!-- Burger -->
+      <button onclick="toggleMenu()" class="md:hidden text-2xl text-zinc-700">
+        ☰
+      </button>
     </div>
-  </header>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden md:hidden px-6 pb-6">
+    <div class="flex flex-col gap-4 text-sm font-medium">
+      <a href="de/about.html" class="py-2 border-b">Über uns</a>
+      <a href="de/projects.html" class="py-2 border-b">Projekte</a>
+      <a href="#apps" class="py-2 border-b">Apps</a>
+      <a href="#web" class="py-2">Web-Projekte</a>
+    </div>
+  </div>
+</header>
 
   <!-- Hero -->
   <section class="hero-bg h-screen flex items-center text-white">
