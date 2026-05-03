@@ -4,43 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Über uns — DK Software Studio</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
   <style>
     .hero-bg {
-  background-image: linear-gradient(rgba(26, 83, 173, 0.75), rgba(26, 83, 173, 0.85)), 
-                    url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80');
-  background-size: cover;
-  background-position: center;
-}
+      background-image: linear-gradient(rgba(26, 83, 173, 0.75), rgba(26, 83, 173, 0.85)), 
+                        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .soft-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .soft-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+      border-color: rgba(26, 83, 173, 0.18);
+    }
+
+    .app-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon:hover {
+      transform: scale(1.08) rotate(2deg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .soft-card,
+      .app-icon {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
   </style>
 </head>
+
 <body class="bg-zinc-50 text-zinc-700 font-sans">
 
   <!-- Header -->
-  <header class="bg-white border-b sticky top-0 z-50">
+  <header class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
-      <!-- Logo -->
       <a href="../index.html" class="flex items-center gap-3">
-        <img src="../dk-icon.png" alt="DK" class="w-14 h-14">
+        <img src="../dk-icon.png" alt="DK" class="w-14 h-14 app-icon">
         <div>
           <span class="font-semibold text-xl md:text-2xl tracking-tight text-zinc-900">DK Software Studio</span>
           <p class="text-xs text-zinc-500 -mt-1">Hof (Saale)</p>
         </div>
       </a>
 
-      <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="../index.html" class="hover:text-blue-600 transition">Startseite</a>
         <a href="projects.html" class="hover:text-blue-600 transition">Projekte</a>
         <a href="contact.html" class="hover:text-blue-600 transition">Kontakt</a>
       </nav>
 
-      <!-- Right side -->
       <div class="flex items-center gap-4">
         <a href="../index.html" 
-           class="hidden md:block px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-2xl hover:bg-blue-700 transition">
+           class="hidden md:block px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-2xl hover:bg-blue-700 hover:-translate-y-0.5 hover:shadow-lg transition">
           Zur Startseite
         </a>
 
@@ -51,19 +90,18 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
       <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
-        <a href="../index.html" class="py-2">Startseite</a>
-        <a href="projects.html" class="py-2">Projekte</a>
-        <a href="contact.html" class="py-2">Kontakt</a>
+        <a href="../index.html" class="py-2 hover:text-blue-600 transition">Startseite</a>
+        <a href="projects.html" class="py-2 hover:text-blue-600 transition">Projekte</a>
+        <a href="contact.html" class="py-2 hover:text-blue-600 transition">Kontakt</a>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero-bg h-[460px] flex items-center text-white">
-    <div class="max-w-4xl mx-auto px-6 text-center">
+    <div class="max-w-4xl mx-auto px-6 text-center reveal">
       <h1 class="text-5xl md:text-6xl font-bold tracking-tighter mb-4">Über uns</h1>
       <p class="text-xl text-blue-100 max-w-2xl mx-auto">
         Ein unabhängiges Entwicklerstudio aus Hof (Saale) mit Fokus auf Einfachheit und Funktionalität.
@@ -74,11 +112,11 @@
   <!-- Main Content -->
   <section class="py-20">
     <div class="max-w-4xl mx-auto px-6">
-      <div class="bg-white rounded-3xl shadow-sm p-12 md:p-16">
+      <div class="reveal bg-white rounded-3xl shadow-sm p-12 md:p-16 border border-zinc-100 soft-card">
 
         <div class="flex justify-center mb-10">
           <img src="../dk-icon1.png" alt="DK Software Studio" 
-               class="w-40 h-40 object-contain bg-white p-4 rounded-3xl shadow">
+               class="w-40 h-40 object-contain bg-white p-4 rounded-3xl shadow-lg app-icon">
         </div>
 
         <h2 class="text-4xl font-semibold text-center text-zinc-900 mb-10">
@@ -96,7 +134,7 @@
             reduziert auf das, was wirklich zählt.
           </p>
 
-          <div class="my-12 bg-zinc-50 border border-zinc-100 rounded-2xl p-8">
+          <div class="reveal my-12 bg-zinc-50 border border-zinc-100 rounded-2xl p-8 soft-card">
             <p class="text-center font-medium text-zinc-700">
               <strong>Entwicklung aus Hof (Saale).</strong><br>
               Klare Software, echte Projekte, kein Agentur-Overhead.
@@ -109,20 +147,24 @@
           </p>
 
           <h3 class="text-2xl font-semibold text-zinc-900 mt-16 mb-6">Unsere Prinzipien</h3>
-          <ul class="grid md:grid-cols-2 gap-x-12 gap-y-4 text-zinc-600">
-            <li class="flex items-start gap-3">
+
+          <ul class="grid md:grid-cols-2 gap-4 text-zinc-600 list-none p-0">
+            <li class="reveal soft-card flex items-start gap-3 bg-zinc-50 border border-zinc-100 rounded-2xl p-5">
               <span class="text-blue-600 mt-1 text-xl">•</span>
               Minimalistische Apps ohne unnötige Funktionen
             </li>
-            <li class="flex items-start gap-3">
+
+            <li class="reveal soft-card flex items-start gap-3 bg-zinc-50 border border-zinc-100 rounded-2xl p-5">
               <span class="text-blue-600 mt-1 text-xl">•</span>
               Schlanke Web-Projekte mit klarer Nutzerführung
             </li>
-            <li class="flex items-start gap-3">
+
+            <li class="reveal soft-card flex items-start gap-3 bg-zinc-50 border border-zinc-100 rounded-2xl p-5">
               <span class="text-blue-600 mt-1 text-xl">•</span>
               Einfache und zuverlässige Produkte für den Alltag
             </li>
-            <li class="flex items-start gap-3">
+
+            <li class="reveal soft-card flex items-start gap-3 bg-zinc-50 border border-zinc-100 rounded-2xl p-5">
               <span class="text-blue-600 mt-1 text-xl">•</span>
               Keine Werbung — unterstützt von Nutzern
             </li>
@@ -135,14 +177,14 @@
           </p>
         </div>
 
-        <!-- CTA -->
         <div class="mt-16 flex flex-col sm:flex-row gap-4 justify-center">
           <a href="projects.html" 
-             class="px-10 py-5 bg-blue-600 text-white font-semibold rounded-3xl text-center hover:bg-blue-700 transition">
+             class="px-10 py-5 bg-blue-600 text-white font-semibold rounded-3xl text-center hover:bg-blue-700 hover:-translate-y-1 hover:shadow-2xl transition">
             Projekte ansehen
           </a>
+
           <a href="contact.html" 
-             class="px-10 py-5 border border-zinc-300 font-semibold rounded-3xl text-center hover:bg-zinc-50 transition">
+             class="px-10 py-5 border border-zinc-300 font-semibold rounded-3xl text-center hover:bg-zinc-50 hover:-translate-y-1 hover:shadow-xl transition">
             Kontakt aufnehmen
           </a>
         </div>
@@ -159,9 +201,11 @@
           <img src="../dk-icon.png" alt="DK" class="w-8 h-8">
           <span class="text-white font-semibold">DK Software Studio</span>
         </div>
+
         <div class="text-sm">
           © 2026 DK Software Studio • Hof (Saale)
         </div>
+
         <div class="flex gap-6 text-sm">
           <a href="impressum.html" class="hover:text-white">Impressum</a>
           <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
@@ -172,7 +216,6 @@
   </footer>
 
   <script>
-    // Mobile Menu
     document.addEventListener('DOMContentLoaded', () => {
       const menuButton = document.getElementById('menuButton');
       const mobileMenu = document.getElementById('mobileMenu');
@@ -180,16 +223,10 @@
       if (menuButton && mobileMenu) {
         menuButton.addEventListener('click', () => {
           mobileMenu.classList.toggle('hidden');
-
-          if (mobileMenu.classList.contains('hidden')) {
-            menuButton.textContent = '☰';
-          } else {
-            menuButton.textContent = '✕';
-          }
+          menuButton.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
         });
       }
 
-      // Close menu when clicking links
       const mobileLinks = document.querySelectorAll('#mobileMenu a');
       mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -197,9 +234,23 @@
           if (menuButton) menuButton.textContent = '☰';
         });
       });
+
+      const items = document.querySelectorAll('.reveal');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12
+      });
+
+      items.forEach(item => observer.observe(item));
     });
 
-    // Tailwind config
     tailwind.config = {
       content: [],
       theme: {
