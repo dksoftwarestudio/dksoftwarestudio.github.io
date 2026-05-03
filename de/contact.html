@@ -4,36 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontakt — DK Software Studio</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .soft-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .soft-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+      border-color: rgba(26, 83, 173, 0.18);
+    }
+
+    .app-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon:hover {
+      transform: scale(1.08) rotate(2deg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .soft-card,
+      .app-icon {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
 </head>
+
 <body class="bg-zinc-50 text-zinc-700 font-sans">
 
   <!-- Header -->
-  <header class="bg-white border-b sticky top-0 z-50">
+  <header class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
-      <!-- Logo -->
       <a href="../index.html" class="flex items-center gap-3">
-        <img src="../dk-icon.png" alt="DK" class="w-14 h-14">
+        <img src="../dk-icon.png" alt="DK" class="w-14 h-14 app-icon">
         <div>
           <span class="font-semibold text-2xl tracking-tight text-zinc-900">DK Software Studio</span>
           <p class="text-xs text-zinc-500 -mt-1">Hof (Saale)</p>
         </div>
       </a>
 
-      <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="../index.html" class="hover:text-blue-600 transition">Startseite</a>
-        <a href="about.html" class="hover:text-blue-600 transition">Über uns</a>
-        <a href="projects.html" class="hover:text-blue-600 transition">Projekte</a>
-        <a href="contact.html" class="text-blue-600 font-semibold">Kontakt</a>
+        <a href="../index.html" class="hover:text-[#1A53AD] transition">Startseite</a>
+        <a href="about.html" class="hover:text-[#1A53AD] transition">Über uns</a>
+        <a href="projects.html" class="hover:text-[#1A53AD] transition">Projekte</a>
+        <a href="contact.html" class="text-[#1A53AD] font-semibold">Kontakt</a>
       </nav>
 
-      <!-- Right side -->
       <div class="flex items-center gap-4">
         <a href="../index.html" 
-           class="hidden md:block px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-2xl hover:bg-blue-700 transition">
+           class="hidden md:block px-6 py-3 bg-[#1A53AD] text-white text-sm font-semibold rounded-2xl hover:bg-[#163E82] hover:-translate-y-0.5 hover:shadow-lg transition">
           Zur Startseite
         </a>
 
@@ -44,22 +84,22 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
       <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
-        <a href="../index.html" class="py-2">Startseite</a>
-        <a href="about.html" class="py-2">Über uns</a>
-        <a href="projects.html" class="py-2">Projekte</a>
+        <a href="../index.html" class="py-2 hover:text-[#1A53AD] transition">Startseite</a>
+        <a href="about.html" class="py-2 hover:text-[#1A53AD] transition">Über uns</a>
+        <a href="projects.html" class="py-2 hover:text-[#1A53AD] transition">Projekte</a>
+        <a href="contact.html" class="py-2 text-[#1A53AD] font-semibold">Kontakt</a>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-blue-700 to-blue-800 text-white py-24">
-    <div class="max-w-4xl mx-auto px-6 text-center">
+  <section class="bg-gradient-to-br from-[#1A53AD] to-[#163E82] text-white py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center reveal">
       <h1 class="text-5xl md:text-6xl font-bold tracking-tighter mb-6">Kontakt</h1>
       <p class="text-xl text-blue-100 max-w-xl mx-auto">
-        Direkter Kontakt ohne Umwege. 
+        Direkter Kontakt ohne Umwege.
         Lassen Sie uns über Ihr Projekt oder Ihre Idee sprechen.
       </p>
     </div>
@@ -68,10 +108,10 @@
   <!-- Contact Content -->
   <section class="py-20">
     <div class="max-w-3xl mx-auto px-6">
-      <div class="bg-white rounded-3xl shadow-sm p-12 md:p-16">
+      <div class="reveal bg-white rounded-3xl shadow-sm p-12 md:p-16 border border-zinc-100">
 
         <div class="text-center mb-12">
-          <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-600 rounded-3xl mb-6 text-4xl">
+          <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 text-[#1A53AD] rounded-3xl mb-6 text-4xl shadow-sm">
             ✉️
           </div>
           <h2 class="text-3xl font-semibold text-zinc-900 mb-3">Schreiben Sie mir</h2>
@@ -80,26 +120,23 @@
           </p>
         </div>
 
-        <!-- Contact Methods -->
         <div class="space-y-6">
-          
-          <!-- Email -->
+
           <a href="mailto:dksoftware.studio@gmail.com" 
-             class="group flex items-center gap-6 bg-zinc-50 hover:bg-white border border-transparent hover:border-blue-200 p-8 rounded-3xl transition-all">
+             class="soft-card group flex items-center gap-6 bg-zinc-50 hover:bg-white border border-transparent hover:border-blue-200 p-8 rounded-3xl">
             <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm">
               📧
             </div>
             <div class="flex-1">
-              <div class="font-semibold text-lg text-zinc-900 group-hover:text-blue-600 transition">E-Mail</div>
+              <div class="font-semibold text-lg text-zinc-900 group-hover:text-[#1A53AD] transition">E-Mail</div>
               <div class="text-zinc-600">dksoftware.studio@gmail.com</div>
             </div>
-            <div class="text-blue-600 group-hover:translate-x-1 transition">→</div>
+            <div class="text-[#1A53AD] group-hover:translate-x-1 transition">→</div>
           </a>
 
-          <!-- WhatsApp -->
           <a href="https://wa.me/491624012037?text=Hallo%20DK%20Software%20Studio%2C%20ich%20habe%20eine%20Frage%20zu%20einem%20Projekt." 
-             target="_blank" rel="noopener"
-             class="group flex items-center gap-6 bg-zinc-50 hover:bg-white border border-transparent hover:border-green-200 p-8 rounded-3xl transition-all">
+             target="_blank" rel="noopener noreferrer"
+             class="soft-card group flex items-center gap-6 bg-zinc-50 hover:bg-white border border-transparent hover:border-green-200 p-8 rounded-3xl">
             <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm">
               💬
             </div>
@@ -111,9 +148,8 @@
             <div class="text-green-600 group-hover:translate-x-1 transition">→</div>
           </a>
 
-          <!-- Phone -->
           <a href="tel:+491624012037" 
-             class="group flex items-center gap-6 bg-zinc-50 hover:bg-white border border-transparent hover:border-zinc-200 p-8 rounded-3xl transition-all">
+             class="soft-card group flex items-center gap-6 bg-zinc-50 hover:bg-white border border-transparent hover:border-zinc-200 p-8 rounded-3xl">
             <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm">
               📞
             </div>
@@ -126,18 +162,16 @@
 
         </div>
 
-        <!-- LinkedIn -->
         <div class="mt-12 pt-10 border-t border-zinc-100">
           <p class="text-center text-zinc-500 mb-4">Oder finden Sie mich auf</p>
           <a href="https://www.linkedin.com/in/dimitri-klevzov/" 
-             target="_blank" rel="noopener"
-             class="mx-auto flex items-center justify-center gap-3 bg-white border border-zinc-200 hover:border-blue-300 px-8 py-4 rounded-3xl w-fit text-blue-600 font-medium transition">
+             target="_blank" rel="noopener noreferrer"
+             class="mx-auto flex items-center justify-center gap-3 bg-white border border-zinc-200 hover:border-blue-300 px-8 py-4 rounded-3xl w-fit text-[#1A53AD] font-medium hover:-translate-y-1 hover:shadow-xl transition">
             <i class="fab fa-linkedin text-2xl"></i>
             <span>LinkedIn Profil ansehen</span>
           </a>
         </div>
 
-        <!-- Final CTA -->
         <div class="mt-16 text-center">
           <p class="text-zinc-600 mb-6">
             Ich freue mich auf Ihre Nachricht und melde mich in der Regel innerhalb eines Tages bei Ihnen.
@@ -173,7 +207,6 @@
   </footer>
 
   <script>
-    // Mobile Menu
     document.addEventListener('DOMContentLoaded', () => {
       const menuButton = document.getElementById('menuButton');
       const mobileMenu = document.getElementById('mobileMenu');
@@ -181,16 +214,10 @@
       if (menuButton && mobileMenu) {
         menuButton.addEventListener('click', () => {
           mobileMenu.classList.toggle('hidden');
-
-          if (mobileMenu.classList.contains('hidden')) {
-            menuButton.textContent = '☰';
-          } else {
-            menuButton.textContent = '✕';
-          }
+          menuButton.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
         });
       }
 
-      // Close menu on link click
       const mobileLinks = document.querySelectorAll('#mobileMenu a');
       mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -198,21 +225,23 @@
           if (menuButton) menuButton.textContent = '☰';
         });
       });
-    });
 
-    // Tailwind config
-    tailwind.config = {
-      content: [],
-      theme: {
-        extend: {
-          colors: {
-            blue: {
-              600: '#1A53AD',
-            }
+      const items = document.querySelectorAll('.reveal');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
           }
-        }
-      }
-    };
+        });
+      }, {
+        threshold: 0.12
+      });
+
+      items.forEach(item => observer.observe(item));
+    });
   </script>
+
 </body>
 </html>
