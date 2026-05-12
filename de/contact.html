@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Kontakt — DK Software Studio</title>
+  <meta name="description" content="Kontakt zu DK Software Studio aus Hof (Saale). Direkte Anfrage per WhatsApp, E-Mail oder Telefon.">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -11,8 +13,8 @@
   <style>
     .reveal {
       opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .reveal.visible {
@@ -25,8 +27,8 @@
     }
 
     .soft-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
       border-color: rgba(26, 83, 173, 0.18);
     }
 
@@ -35,7 +37,7 @@
     }
 
     .app-icon:hover {
-      transform: scale(1.08) rotate(2deg);
+      transform: scale(1.05);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -50,198 +52,337 @@
   </style>
 </head>
 
-<body class="bg-zinc-50 text-zinc-700 font-sans">
+<body class="bg-[#F5F5F5] text-zinc-800 font-sans">
 
-  <!-- Header -->
-  <header class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+<header class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
-      <a href="../index.html" class="flex items-center gap-3">
-        <img src="../dk-icon.png" alt="DK" class="w-14 h-14 app-icon">
-        <div>
-          <span class="font-semibold text-2xl tracking-tight text-zinc-900">DK Software Studio</span>
-          <p class="text-xs text-zinc-500 -mt-1">Hof (Saale)</p>
+    <a href="../index.html" class="flex items-center gap-3">
+      <img src="../dk-icon.png" alt="DK Software Studio" class="w-12 h-12 app-icon">
+      <div>
+        <span class="font-semibold text-xl md:text-2xl tracking-tight text-zinc-900">
+          DK Software Studio
+        </span>
+        <p class="text-xs text-zinc-500 -mt-1">
+          Hof (Saale)
+        </p>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="../index.html" class="hover:text-[#1A53AD] transition">Startseite</a>
+      <a href="about.html" class="hover:text-[#1A53AD] transition">Über mich</a>
+      <a href="projects.html" class="hover:text-[#1A53AD] transition">Projekte</a>
+      <a href="contact.html" class="text-[#1A53AD] font-semibold">Kontakt</a>
+    </nav>
+
+    <button id="menuButton"
+            class="md:hidden text-4xl leading-none text-zinc-700 hover:text-zinc-900 transition-colors"
+            aria-label="Menü öffnen">
+      ☰
+    </button>
+
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
+    <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+      <a href="../index.html" class="py-2 hover:text-[#1A53AD] transition">Startseite</a>
+      <a href="about.html" class="py-2 hover:text-[#1A53AD] transition">Über mich</a>
+      <a href="projects.html" class="py-2 hover:text-[#1A53AD] transition">Projekte</a>
+      <a href="contact.html" class="py-2 text-[#1A53AD] font-semibold">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<section class="bg-[#1A53AD] text-white py-24">
+  <div class="max-w-4xl mx-auto px-6 text-center reveal">
+
+    <div class="inline-flex items-center gap-2 bg-white/18 backdrop-blur-md px-5 py-2 rounded-3xl text-sm mb-6 shadow-lg">
+      <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+      Direkter Kontakt
+    </div>
+
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">
+      Kontakt
+    </h1>
+
+    <p class="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
+      Schreiben Sie kurz, worum es geht. Ich antworte persönlich und ohne komplizierten Prozess.
+    </p>
+
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <div class="text-center mb-12 reveal">
+      <span class="inline-block bg-blue-100 text-[#1A53AD] text-sm font-semibold px-4 py-2 rounded-2xl mb-3">
+        KONTAKT
+      </span>
+
+      <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+        So erreichen Sie mich
+      </h2>
+
+      <p class="text-zinc-600 max-w-xl mx-auto leading-7">
+        Für Fragen, Projektideen oder eine mögliche Zusammenarbeit.
+      </p>
+    </div>
+
+    <div class="space-y-5">
+
+      <a href="https://wa.me/491624012037?text=Hallo%20DK%20Software%20Studio%2C%20ich%20habe%20eine%20Frage%20zu%20einem%20Projekt."
+         target="_blank"
+         rel="noopener noreferrer"
+         class="reveal soft-card group flex items-center gap-5 bg-[#F8FAFC] hover:bg-white border border-zinc-100 p-6 rounded-3xl">
+
+        <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-wrap items-center gap-2 mb-1">
+            <p class="font-semibold text-lg text-zinc-900 group-hover:text-green-600 transition">
+              WhatsApp
+            </p>
+            <span class="text-xs font-semibold bg-green-100 text-green-700 px-2 py-1 rounded-full">
+              Schnell
+            </span>
+          </div>
+          <p class="text-zinc-600 text-sm">
+            +49 162 4012037
+          </p>
+        </div>
+
+        <div class="text-green-600 group-hover:translate-x-1 transition">
+          →
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="../index.html" class="hover:text-[#1A53AD] transition">Startseite</a>
-        <a href="about.html" class="hover:text-[#1A53AD] transition">Über uns</a>
-        <a href="projects.html" class="hover:text-[#1A53AD] transition">Projekte</a>
-        <a href="contact.html" class="text-[#1A53AD] font-semibold">Kontakt</a>
-      </nav>
+      <a href="mailto:dksoftware.studio@gmail.com"
+         class="reveal soft-card group flex items-center gap-5 bg-[#F8FAFC] hover:bg-white border border-zinc-100 p-6 rounded-3xl">
 
-      <div class="flex items-center gap-4">
-        <a href="../index.html" 
-           class="hidden md:block px-6 py-3 bg-[#1A53AD] text-white text-sm font-semibold rounded-2xl hover:bg-[#163E82] hover:-translate-y-0.5 hover:shadow-lg transition">
-          Zur Startseite
-        </a>
+        <div class="w-14 h-14 bg-blue-100 text-[#1A53AD] rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
 
-        <button id="menuButton" 
-                class="md:hidden text-4xl leading-none text-zinc-700 hover:text-zinc-900 transition-colors">
-          ☰
-        </button>
-      </div>
+        <div class="flex-1 min-w-0">
+          <p class="font-semibold text-lg text-zinc-900 group-hover:text-[#1A53AD] transition mb-1">
+            E-Mail
+          </p>
+          <p class="text-zinc-600 text-sm truncate">
+            dksoftware.studio@gmail.com
+          </p>
+        </div>
+
+        <div class="text-[#1A53AD] group-hover:translate-x-1 transition">
+          →
+        </div>
+      </a>
+
+      <a href="tel:+491624012037"
+         class="reveal soft-card group flex items-center gap-5 bg-[#F8FAFC] hover:bg-white border border-zinc-100 p-6 rounded-3xl">
+
+        <div class="w-14 h-14 bg-zinc-100 text-zinc-600 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+
+        <div class="flex-1 min-w-0">
+          <p class="font-semibold text-lg text-zinc-900 mb-1">
+            Telefon
+          </p>
+          <p class="text-zinc-600 text-sm">
+            +49 162 4012037
+          </p>
+        </div>
+
+        <div class="text-zinc-500 group-hover:translate-x-1 transition">
+          →
+        </div>
+      </a>
+
     </div>
 
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
-      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
-        <a href="../index.html" class="py-2 hover:text-[#1A53AD] transition">Startseite</a>
-        <a href="about.html" class="py-2 hover:text-[#1A53AD] transition">Über uns</a>
-        <a href="projects.html" class="py-2 hover:text-[#1A53AD] transition">Projekte</a>
-        <a href="contact.html" class="py-2 text-[#1A53AD] font-semibold">Kontakt</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-[#1A53AD] to-[#163E82] text-white py-24">
-    <div class="max-w-4xl mx-auto px-6 text-center reveal">
-      <h1 class="text-5xl md:text-6xl font-bold tracking-tighter mb-6">Kontakt</h1>
-      <p class="text-xl text-blue-100 max-w-xl mx-auto">
-        Direkter Kontakt ohne Umwege.
-        Lassen Sie uns über Ihr Projekt oder Ihre Idee sprechen.
+    <div class="mt-10 reveal">
+      <p class="text-center text-zinc-500 text-sm mb-4">
+        Oder über LinkedIn
       </p>
+
+      <a href="https://www.linkedin.com/in/dimitri-klevzov/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="soft-card mx-auto flex items-center justify-center gap-3 bg-[#F8FAFC] hover:bg-white border border-zinc-100 px-6 py-4 rounded-3xl text-[#1A53AD] font-medium max-w-md">
+
+        <i class="fa-brands fa-linkedin text-2xl"></i>
+        <span>LinkedIn Profil ansehen</span>
+        <span>→</span>
+      </a>
     </div>
-  </section>
 
-  <!-- Contact Content -->
-  <section class="py-20">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="reveal bg-white rounded-3xl shadow-sm p-12 md:p-16 border border-zinc-100">
+  </div>
+</section>
 
-        <div class="text-center mb-12">
-          <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 text-[#1A53AD] rounded-3xl mb-6 text-4xl shadow-sm">
-            ✉️
-          </div>
-          <h2 class="text-3xl font-semibold text-zinc-900 mb-3">Schreiben Sie mir</h2>
-          <p class="text-zinc-600">
-            Für Fragen, Projektideen oder eine mögliche Zusammenarbeit — ich antworte persönlich und direkt.
+<section class="py-20 bg-[#F5F5F5]">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <div class="text-center mb-10 reveal">
+      <span class="inline-block bg-white text-[#1A53AD] text-sm font-semibold px-4 py-2 rounded-2xl mb-3 shadow-sm">
+        WOFÜR?
+      </span>
+
+      <h2 class="text-3xl md:text-4xl font-bold text-zinc-900">
+        Wobei ich helfen kann
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5">
+
+      <div class="reveal soft-card bg-white border border-zinc-100 rounded-3xl p-6 flex items-start gap-4 shadow-sm">
+        <div class="w-12 h-12 bg-blue-100 text-[#1A53AD] rounded-2xl flex items-center justify-center flex-shrink-0">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+
+        <div>
+          <p class="font-semibold text-lg mb-1">
+            Website
+          </p>
+          <p class="text-sm text-zinc-600">
+            Neue Website, kleine Landingpage oder Überarbeitung einer bestehenden Seite.
           </p>
         </div>
+      </div>
 
-        <div class="space-y-6">
-
-          <a href="mailto:dksoftware.studio@gmail.com" 
-             class="soft-card group flex items-center gap-6 bg-zinc-50 hover:bg-white border border-transparent hover:border-blue-200 p-8 rounded-3xl">
-            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm">
-              📧
-            </div>
-            <div class="flex-1">
-              <div class="font-semibold text-lg text-zinc-900 group-hover:text-[#1A53AD] transition">E-Mail</div>
-              <div class="text-zinc-600">dksoftware.studio@gmail.com</div>
-            </div>
-            <div class="text-[#1A53AD] group-hover:translate-x-1 transition">→</div>
-          </a>
-
-          <a href="https://wa.me/491624012037?text=Hallo%20DK%20Software%20Studio%2C%20ich%20habe%20eine%20Frage%20zu%20einem%20Projekt." 
-             target="_blank" rel="noopener noreferrer"
-             class="soft-card group flex items-center gap-6 bg-zinc-50 hover:bg-white border border-transparent hover:border-green-200 p-8 rounded-3xl">
-            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm">
-              💬
-            </div>
-            <div class="flex-1">
-              <div class="font-semibold text-lg text-zinc-900 group-hover:text-green-600 transition">WhatsApp</div>
-              <div class="text-zinc-600">+49 162 4012037</div>
-              <div class="text-sm text-green-600">Schnellste Antwort</div>
-            </div>
-            <div class="text-green-600 group-hover:translate-x-1 transition">→</div>
-          </a>
-
-          <a href="tel:+491624012037" 
-             class="soft-card group flex items-center gap-6 bg-zinc-50 hover:bg-white border border-transparent hover:border-zinc-200 p-8 rounded-3xl">
-            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm">
-              📞
-            </div>
-            <div class="flex-1">
-              <div class="font-semibold text-lg text-zinc-900">Telefon</div>
-              <div class="text-zinc-600">+49 162 4012037</div>
-            </div>
-            <div class="text-zinc-500 group-hover:translate-x-1 transition">→</div>
-          </a>
-
+      <div class="reveal soft-card bg-white border border-zinc-100 rounded-3xl p-6 flex items-start gap-4 shadow-sm">
+        <div class="w-12 h-12 bg-blue-100 text-[#1A53AD] rounded-2xl flex items-center justify-center flex-shrink-0">
+          <i class="fa-brands fa-android"></i>
         </div>
 
-        <div class="mt-12 pt-10 border-t border-zinc-100">
-          <p class="text-center text-zinc-500 mb-4">Oder finden Sie mich auf</p>
-          <a href="https://www.linkedin.com/in/dimitri-klevzov/" 
-             target="_blank" rel="noopener noreferrer"
-             class="mx-auto flex items-center justify-center gap-3 bg-white border border-zinc-200 hover:border-blue-300 px-8 py-4 rounded-3xl w-fit text-[#1A53AD] font-medium hover:-translate-y-1 hover:shadow-xl transition">
-            <i class="fab fa-linkedin text-2xl"></i>
-            <span>LinkedIn Profil ansehen</span>
-          </a>
-        </div>
-
-        <div class="mt-16 text-center">
-          <p class="text-zinc-600 mb-6">
-            Ich freue mich auf Ihre Nachricht und melde mich in der Regel innerhalb eines Tages bei Ihnen.
+        <div>
+          <p class="font-semibold text-lg mb-1">
+            Android App
           </p>
-          <a href="../index.html" 
-             class="inline-flex items-center gap-2 text-zinc-500 hover:text-zinc-700 transition">
-            ← Zurück zur Startseite
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-zinc-900 text-zinc-400 py-16">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="flex items-center gap-3">
-          <img src="../dk-icon.png" alt="DK" class="w-8 h-8">
-          <span class="text-white font-semibold">DK Software Studio</span>
-        </div>
-        <div class="text-sm">
-          © 2026 DK Software Studio • Hof (Saale)
-        </div>
-        <div class="flex gap-6 text-sm">
-          <a href="impressum.html" class="hover:text-white">Impressum</a>
-          <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
-          <a href="../index.html" class="hover:text-white">Startseite</a>
+          <p class="text-sm text-zinc-600">
+            Kleine, funktionale App-Idee mit klarem Nutzen.
+          </p>
         </div>
       </div>
+
+      <div class="reveal soft-card bg-white border border-zinc-100 rounded-3xl p-6 flex items-start gap-4 shadow-sm">
+        <div class="w-12 h-12 bg-blue-100 text-[#1A53AD] rounded-2xl flex items-center justify-center flex-shrink-0">
+          <i class="fa-solid fa-lightbulb"></i>
+        </div>
+
+        <div>
+          <p class="font-semibold text-lg mb-1">
+            Einschätzung
+          </p>
+          <p class="text-sm text-zinc-600">
+            Kurze ehrliche Rückmeldung, ob und wie ein Projekt sinnvoll umsetzbar ist.
+          </p>
+        </div>
+      </div>
+
+      <div class="reveal soft-card bg-white border border-zinc-100 rounded-3xl p-6 flex items-start gap-4 shadow-sm">
+        <div class="w-12 h-12 bg-blue-100 text-[#1A53AD] rounded-2xl flex items-center justify-center flex-shrink-0">
+          <i class="fa-solid fa-message"></i>
+        </div>
+
+        <div>
+          <p class="font-semibold text-lg mb-1">
+            Sonstiges
+          </p>
+          <p class="text-sm text-zinc-600">
+            Schreiben Sie einfach kurz, worum es geht.
+          </p>
+        </div>
+      </div>
+
     </div>
-  </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const menuButton = document.getElementById('menuButton');
-      const mobileMenu = document.getElementById('mobileMenu');
+  </div>
+</section>
 
-      if (menuButton && mobileMenu) {
-        menuButton.addEventListener('click', () => {
-          mobileMenu.classList.toggle('hidden');
-          menuButton.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
-        });
-      }
+<section class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-6 text-center reveal">
 
-      const mobileLinks = document.querySelectorAll('#mobileMenu a');
-      mobileLinks.forEach(link => {
+    <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 mb-5">
+      Kurze Nachricht reicht
+    </h2>
+
+    <p class="text-zinc-600 leading-7 mb-8">
+      Eine grobe Beschreibung genügt: Was wird gebraucht, für wen ist es gedacht
+      und ob es eine Website, App oder einfache Beratung sein soll.
+    </p>
+
+    <a href="https://wa.me/491624012037?text=Hallo%20DK%20Software%20Studio%2C%20ich%20habe%20eine%20Frage%20zu%20einem%20Projekt."
+       target="_blank"
+       rel="noopener noreferrer"
+       class="inline-block bg-[#1A53AD] text-white px-10 py-5 rounded-3xl font-semibold text-lg hover:bg-[#163E82] hover:-translate-y-1 hover:shadow-2xl transition">
+      Per WhatsApp schreiben
+    </a>
+
+  </div>
+</section>
+
+<footer class="bg-zinc-900 text-zinc-400 py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+
+      <div class="flex items-center gap-3">
+        <img src="../dk-icon.png" alt="DK Software Studio" class="w-8 h-8">
+        <span class="text-white font-semibold">DK Software Studio</span>
+      </div>
+
+      <div class="text-sm">
+        © 2026 DK Software Studio • Hof (Saale)
+      </div>
+
+      <div class="flex gap-6 text-sm">
+        <a href="impressum.html" class="hover:text-white transition">Impressum</a>
+        <a href="datenschutz.html" class="hover:text-white transition">Datenschutz</a>
+        <a href="../index.html" class="hover:text-white transition">Startseite</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuButton.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+      });
+
+      document.querySelectorAll('#mobileMenu a').forEach(link => {
         link.addEventListener('click', () => {
           mobileMenu.classList.add('hidden');
-          if (menuButton) menuButton.textContent = '☰';
+          menuButton.textContent = '☰';
         });
       });
+    }
 
-      const items = document.querySelectorAll('.reveal');
+    const items = document.querySelectorAll('.reveal');
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.12
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
       });
-
-      items.forEach(item => observer.observe(item));
+    }, {
+      threshold: 0.08
     });
-  </script>
+
+    items.forEach(item => observer.observe(item));
+  });
+</script>
 
 </body>
 </html>
