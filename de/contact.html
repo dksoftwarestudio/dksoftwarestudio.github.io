@@ -10,46 +10,119 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-  <style>
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+ <style>
+  .contact-hero {
+    background:
+      linear-gradient(rgba(26, 83, 173, 0.90), rgba(22, 62, 130, 0.96)),
+      radial-gradient(circle at 85% 15%, rgba(255,255,255,0.10), transparent 35%),
+      #1A53AD;
+  }
+
+  .contact-orb {
+    position: absolute;
+    border-radius: 999px;
+    pointer-events: none;
+    opacity: 0.45;
+  }
+
+  .contact-orb-1 {
+    width: 300px;
+    height: 300px;
+    top: -70px;
+    right: 10%;
+    background:
+      radial-gradient(
+        circle,
+        rgba(255,255,255,0.18),
+        rgba(147,197,253,0.08),
+        transparent 72%
+      );
+
+    animation: contactOrb1 16s ease-in-out infinite alternate;
+  }
+
+  .contact-orb-2 {
+    width: 180px;
+    height: 180px;
+    bottom: 10%;
+    left: 10%;
+    background:
+      radial-gradient(
+        circle,
+        rgba(255,255,255,0.12),
+        rgba(147,197,253,0.06),
+        transparent 72%
+      );
+
+    animation: contactOrb2 18s ease-in-out infinite alternate;
+  }
+
+  @keyframes contactOrb1 {
+    0% {
+      transform: translate(0, 0) scale(1);
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    100% {
+      transform: translate(-20px, 16px) scale(1.04);
+    }
+  }
+
+  @keyframes contactOrb2 {
+    0% {
+      transform: translate(0, 0) scale(1);
     }
 
-    .soft-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    100% {
+      transform: translate(18px, -12px) scale(1.06);
     }
+  }
 
-    .soft-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
-      border-color: rgba(26, 83, 173, 0.18);
-    }
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
 
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .soft-card {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .soft-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
+    border-color: rgba(26, 83, 173, 0.18);
+  }
+
+  .app-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .app-icon:hover {
+    transform: scale(1.05);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .soft-card,
     .app-icon {
-      transition: transform 0.3s ease;
+      opacity: 1;
+      transform: none;
+      transition: none;
     }
 
-    .app-icon:hover {
-      transform: scale(1.05);
+    .contact-orb {
+      animation: none;
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal,
-      .soft-card,
-      .app-icon {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body class="bg-[#F5F5F5] text-zinc-800 font-sans">
@@ -94,21 +167,26 @@
   </div>
 </header>
 
-<section class="bg-[#1A53AD] text-white py-24">
-  <div class="max-w-4xl mx-auto px-6 text-center reveal">
+<section class="contact-hero text-white py-24 relative overflow-hidden">
+
+  <div class="contact-orb contact-orb-1"></div>
+  <div class="contact-orb contact-orb-2"></div>
+
+  <div class="max-w-4xl mx-auto px-6 text-center reveal relative z-10">
 
     <div class="inline-flex items-center gap-2 bg-white/12 border border-white/20 backdrop-blur-xl px-5 py-2 rounded-3xl text-sm mb-6 shadow-2xl"
-     style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 30px rgba(0,0,0,0.18);">
-  <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
-  Direkter Kontakt
-</div>
+         style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 30px rgba(0,0,0,0.18);">
+      <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+      Direkter Kontakt
+    </div>
 
     <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">
       Kontakt
     </h1>
 
     <p class="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
-      Schreiben Sie kurz, worum es geht. Ich antworte persönlich und ohne komplizierten Prozess.
+      Schreiben Sie kurz, worum es geht.
+      Ich antworte persönlich und ohne komplizierten Prozess.
     </p>
 
   </div>
