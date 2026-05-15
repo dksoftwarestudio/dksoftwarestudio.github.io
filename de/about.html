@@ -11,53 +11,94 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <style>
-    .hero-bg {
-      background-image:
-        linear-gradient(rgba(26, 83, 173, 0.82), rgba(26, 83, 173, 0.90)),
-        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80');
-      background-size: cover;
-      background-position: center;
+  .hero-bg {
+    position: relative;
+    overflow: hidden;
+
+    background-image:
+      linear-gradient(rgba(26, 83, 173, 0.84), rgba(26, 83, 173, 0.92)),
+      url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80');
+
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Лёгкий diagonal light streak */
+  .about-streak {
+    position: absolute;
+    inset: -20%;
+    background:
+      linear-gradient(
+        115deg,
+        transparent 35%,
+        rgba(255,255,255,0.05) 46%,
+        rgba(255,255,255,0.16) 50%,
+        rgba(255,255,255,0.05) 54%,
+        transparent 65%
+      );
+
+    animation: streakMove 14s ease-in-out infinite alternate;
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+
+  @keyframes streakMove {
+    0% {
+      transform: translateX(-3%) translateY(0%);
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+    100% {
+      transform: translateX(3%) translateY(-2%);
     }
+  }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
 
-    .soft-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-    .soft-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
-      border-color: rgba(26, 83, 173, 0.18);
-    }
+  .soft-card {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
 
+  .soft-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
+    border-color: rgba(26, 83, 173, 0.18);
+  }
+
+  .app-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .app-icon:hover {
+    transform: scale(1.05);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .soft-card,
     .app-icon {
-      transition: transform 0.3s ease;
+      opacity: 1;
+      transform: none;
+      transition: none;
     }
 
-    .app-icon:hover {
-      transform: scale(1.05);
+    .about-streak {
+      animation: none;
+      opacity: 0.08;
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal,
-      .soft-card,
-      .app-icon {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body class="bg-[#F5F5F5] text-zinc-800 font-sans">
@@ -109,8 +150,11 @@
       </a>
     </div>
   </div>
-<section class="hero-bg py-28 flex items-center text-white">
-  <div class="max-w-4xl mx-auto px-6 text-center reveal">
+<section class="hero-bg relative overflow-hidden py-24 flex items-center text-white">
+
+  <div class="about-streak"></div>
+
+  <div class="max-w-4xl mx-auto px-6 text-center reveal relative z-10">
 
     <!-- Badge -->
     <div class="inline-flex items-center gap-2 bg-white/12 border border-white/20 backdrop-blur-xl px-5 py-2 rounded-3xl text-sm mb-6 shadow-2xl"
