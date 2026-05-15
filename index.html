@@ -29,29 +29,36 @@
   background-position: center;
 }
 
-.hero-animated {
+.hero-lens {
   position: absolute;
-  inset: -20%;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.14), transparent 32%),
-    radial-gradient(circle at 75% 65%, rgba(147,197,253,0.16), transparent 38%),
-    radial-gradient(circle at 60% 20%, rgba(255,255,255,0.10), transparent 30%);
-  animation: heroFlow 14s ease-in-out infinite alternate;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  top: 18%;
+  right: 12%;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.18) 0%,
+    rgba(255,255,255,0.08) 35%,
+    rgba(255,255,255,0.02) 55%,
+    transparent 72%
+  );
+  filter: blur(18px);
+  animation: lensFloat 16s ease-in-out infinite alternate;
   pointer-events: none;
-  mix-blend-mode: screen;
 }
 
-@keyframes heroFlow {
+@keyframes lensFloat {
   0% {
-    transform: translate3d(0,0,0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 
   50% {
-    transform: translate3d(-2%, 1.5%, 0) scale(1.04);
+    transform: translate3d(-55px, 35px, 0) scale(1.08);
   }
 
   100% {
-    transform: translate3d(2%, -1%, 0) scale(1.07);
+    transform: translate3d(35px, -25px, 0) scale(0.96);
   }
 }
 
@@ -154,10 +161,9 @@
 
 <section class="hero-bg min-h-screen flex items-center text-white relative overflow-hidden">
 
-  <div class="hero-animated"></div>
+  <div class="hero-lens"></div>
 
   <div class="max-w-7xl mx-auto px-6 w-full py-20 relative z-10">
-    <div class="max-w-3xl reveal">
 
       <div class="inline-flex items-center gap-2 bg-white/12 border border-white/20 backdrop-blur-xl px-5 py-2 rounded-3xl text-sm mb-6 shadow-2xl"
            style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 30px rgba(0,0,0,0.18);">
