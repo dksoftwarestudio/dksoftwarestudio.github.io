@@ -91,16 +91,19 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .reveal,
-    .soft-card,
-    .app-icon,
-    .hero-glow {
-      opacity: 1;
-      transform: none;
-      transition: none;
-      animation: none;
-    }
+  .reveal,
+  .soft-card,
+  .app-icon {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
+
+  .hero-glow {
+    animation: none;
+    opacity: 0.12;
+  }
+}
 </style>
 </head>
 
