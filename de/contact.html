@@ -128,9 +128,9 @@
 <body class="bg-[#F5F5F5] text-zinc-800 font-sans">
 
 <header class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
-  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-6 py-5 grid grid-cols-[1fr_auto_1fr] items-center">
 
-    <a href="../index.html" class="flex items-center gap-3">
+    <a href="../index.html" class="flex items-center gap-3 justify-self-start">
       <img src="../dk-icon.png" alt="DK Software Studio" class="w-12 h-12 app-icon">
       <div>
         <span class="font-semibold text-xl md:text-2xl tracking-tight text-zinc-900">
@@ -142,18 +142,20 @@
       </div>
     </a>
 
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium justify-self-center">
       <a href="../index.html" class="hover:text-[#1A53AD] transition">Startseite</a>
       <a href="about.html" class="hover:text-[#1A53AD] transition">Über mich</a>
       <a href="projects.html" class="hover:text-[#1A53AD] transition">Projekte</a>
       <a href="contact.html" class="text-[#1A53AD] font-semibold">Kontakt</a>
     </nav>
 
-    <button id="menuButton"
-            class="md:hidden text-4xl leading-none text-zinc-700 hover:text-zinc-900 transition-colors"
-            aria-label="Menü öffnen">
-      ☰
-    </button>
+    <div class="justify-self-end">
+      <button id="menuButton"
+              class="md:hidden text-4xl leading-none text-zinc-700 hover:text-zinc-900 transition-colors"
+              aria-label="Menü öffnen">
+        ☰
+      </button>
+    </div>
 
   </div>
 
@@ -180,7 +182,7 @@
       Direkter Kontakt
     </div>
 
-    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">
+    <h1 class="text-5xl md:text-6xl font-semibold tracking-tight mb-6">
       Kontakt
     </h1>
 
@@ -200,7 +202,7 @@
         KONTAKT
       </span>
 
-      <h2 class="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+      <h2 class="text-3xl md:text-4xl font-semibold text-zinc-900 mb-4">
         So erreichen Sie mich
       </h2>
 
@@ -310,7 +312,7 @@
         WOFÜR?
       </span>
 
-      <h2 class="text-3xl md:text-4xl font-bold text-zinc-900">
+      <h2 class="text-3xl md:text-4xl font-semibold text-zinc-900 mb-5">
         Wobei ich helfen kann
       </h2>
     </div>
