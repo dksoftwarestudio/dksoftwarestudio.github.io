@@ -43,6 +43,11 @@
       animation: projectOrb2 15s ease-in-out infinite alternate;
     }
 
+    .reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.18s; }
+.reveal-delay-3 { transition-delay: 0.28s; }
+.reveal-delay-4 { transition-delay: 0.38s; }
+
     @keyframes projectOrb1 {
       0% { transform: translate(0, 0) scale(1); }
       100% { transform: translate(-30px, 22px) scale(1.05); }
@@ -383,7 +388,7 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-      <div class="reveal project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
+      <div class="reveal reveal-delay-1 project-card ...">
         <div class="h-48 overflow-hidden">
           <img src="../img/hof-reinigung-preview.jpg"
                alt="hof-reinigung.de"
@@ -412,7 +417,7 @@
         </div>
       </div>
 
-      <div class="reveal project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
+      <div class="reveal reveal-delay-2 project-card ...">
         <div class="h-48 overflow-hidden">
           <img src="../img/hof-gartenservice-preview.jpg"
                alt="hof-gartenservice.de"
@@ -441,7 +446,7 @@
         </div>
       </div>
 
-      <div class="reveal project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
+      <div class="reveal reveal-delay-3 project-card ...">
         <div class="h-48 overflow-hidden">
           <img src="../img/hof-handwerker-preview.jpg"
                alt="hof-handwerker.de"
@@ -470,7 +475,7 @@
         </div>
       </div>
 
-    <div class="reveal project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
+    <div class="reveal reveal-delay-4 project-card ...">
 
   <div class="h-48 overflow-hidden">
     <img src="../img/hahn-logo1.jpg"
