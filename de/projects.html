@@ -44,9 +44,9 @@
     }
 
     .reveal-delay-1 { transition-delay: 0.08s; }
-.reveal-delay-2 { transition-delay: 0.18s; }
-.reveal-delay-3 { transition-delay: 0.28s; }
-.reveal-delay-4 { transition-delay: 0.38s; }
+    .reveal-delay-2 { transition-delay: 0.18s; }
+    .reveal-delay-3 { transition-delay: 0.28s; }
+    .reveal-delay-4 { transition-delay: 0.38s; }
 
     @keyframes projectOrb1 {
       0% { transform: translate(0, 0) scale(1); }
@@ -388,7 +388,7 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-      <div class="reveal reveal-delay-1 project-card ...">
+      <div class="reveal reveal-delay-1 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
         <div class="h-48 overflow-hidden">
           <img src="../img/hof-reinigung-preview.jpg"
                alt="hof-reinigung.de"
@@ -396,13 +396,9 @@
         </div>
 
         <div class="p-7 flex flex-col flex-1">
-          <p class="text-sm text-[#1A53AD] font-semibold mb-2">
-            Lokale Plattform
-          </p>
+          <p class="text-sm text-[#1A53AD] font-semibold mb-2">Lokale Plattform</p>
 
-          <h3 class="font-bold text-xl mb-3">
-            hof-reinigung.de
-          </h3>
+          <h3 class="font-bold text-xl mb-3">hof-reinigung.de</h3>
 
           <p class="text-zinc-600 text-sm leading-7">
             Regionale Plattform für Reinigungsdienste in Hof — direkte Anfragen und lokale Anbieter.
@@ -417,7 +413,7 @@
         </div>
       </div>
 
-      <div class="reveal reveal-delay-2 project-card ...">
+      <div class="reveal reveal-delay-2 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
         <div class="h-48 overflow-hidden">
           <img src="../img/hof-gartenservice-preview.jpg"
                alt="hof-gartenservice.de"
@@ -425,13 +421,9 @@
         </div>
 
         <div class="p-7 flex flex-col flex-1">
-          <p class="text-sm text-green-600 font-semibold mb-2">
-            Lokale Plattform
-          </p>
+          <p class="text-sm text-green-600 font-semibold mb-2">Lokale Plattform</p>
 
-          <h3 class="font-bold text-xl mb-3">
-            hof-gartenservice.de
-          </h3>
+          <h3 class="font-bold text-xl mb-3">hof-gartenservice.de</h3>
 
           <p class="text-zinc-600 text-sm leading-7">
             Übersicht für Gartenpflege, Objektpflege und Außenbereiche in Hof und Umgebung.
@@ -446,7 +438,7 @@
         </div>
       </div>
 
-      <div class="reveal reveal-delay-3 project-card ...">
+      <div class="reveal reveal-delay-3 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
         <div class="h-48 overflow-hidden">
           <img src="../img/hof-handwerker-preview.jpg"
                alt="hof-handwerker.de"
@@ -454,13 +446,9 @@
         </div>
 
         <div class="p-7 flex flex-col flex-1">
-          <p class="text-sm text-orange-500 font-semibold mb-2">
-            Lokale Plattform
-          </p>
+          <p class="text-sm text-orange-500 font-semibold mb-2">Lokale Plattform</p>
 
-          <h3 class="font-bold text-xl mb-3">
-            hof-handwerker.de
-          </h3>
+          <h3 class="font-bold text-xl mb-3">hof-handwerker.de</h3>
 
           <p class="text-zinc-600 text-sm leading-7">
             Plattform für lokale Handwerker, Servicebetriebe und direkte Anfragen.
@@ -475,38 +463,30 @@
         </div>
       </div>
 
-    <div class="reveal reveal-delay-4 project-card ...">
+      <div class="reveal reveal-delay-4 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
+        <div class="h-48 overflow-hidden">
+          <img src="../img/hahn-logo1.jpg"
+               alt="hahn-wasserfilter.de"
+               class="w-full h-full object-cover transition duration-700 hover:scale-105">
+        </div>
 
-  <div class="h-48 overflow-hidden">
-    <img src="../img/hahn-logo1.jpg"
-         alt="hahn-wasserfilter.de"
-         class="w-full h-full object-cover transition duration-700 hover:scale-105">
-  </div>
+        <div class="p-7 flex flex-col flex-1">
+          <p class="text-sm text-cyan-600 font-semibold mb-2">Landingpage</p>
 
-  <div class="p-7 flex flex-col flex-1">
+          <h3 class="font-bold text-xl mb-3">hahn-wasserfilter.de</h3>
 
-    <p class="text-sm text-cyan-600 font-semibold mb-2">
-      Landingpage
-    </p>
+          <p class="text-zinc-600 text-sm leading-7">
+            Landingpage für Wasserfiltersysteme mit Beratung und Anfragefunktion.
+          </p>
 
-    <h3 class="font-bold text-xl mb-3">
-      hahn-wasserfilter.de
-    </h3>
-
-    <p class="text-zinc-600 text-sm leading-7">
-      Landingpage für Wasserfiltersysteme mit Beratung und Anfragefunktion.
-    </p>
-
-    <a href="https://hahn-wasserfilter.de"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="mt-auto pt-6 text-[#1A53AD] font-medium inline-flex items-center gap-2 hover:gap-3 transition-all">
-      Website öffnen →
-    </a>
-
-  </div>
-
-</div>
+          <a href="https://hahn-wasserfilter.de"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="mt-auto pt-6 text-[#1A53AD] font-medium inline-flex items-center gap-2 hover:gap-3 transition-all">
+            Website öffnen →
+          </a>
+        </div>
+      </div>
 
     </div>
 
