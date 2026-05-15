@@ -25,41 +25,41 @@
     background-position: center;
   }
 
-  .hero-glow {
-    position: absolute;
-    border-radius: 999px;
-    filter: blur(70px);
-    opacity: 0.22;
-    animation: floatGlow 14s ease-in-out infinite;
-    pointer-events: none;
+ .hero-glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(55px);
+  opacity: 0.38;
+  animation: floatGlow 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero-glow-1 {
+  width: 360px;
+  height: 360px;
+  background: rgba(147, 197, 253, 0.85);
+  top: 8%;
+  right: 6%;
+}
+
+.hero-glow-2 {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.28);
+  bottom: 8%;
+  left: 6%;
+  animation-delay: 2s;
+}
+
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
   }
 
-  .hero-glow-1 {
-    width: 280px;
-    height: 280px;
-    background: #60A5FA;
-    top: 12%;
-    right: 10%;
+  50% {
+    transform: translateY(-28px) translateX(18px) scale(1.08);
   }
-
-  .hero-glow-2 {
-    width: 220px;
-    height: 220px;
-    background: #93C5FD;
-    bottom: 10%;
-    left: 8%;
-    animation-delay: 3s;
-  }
-
-  @keyframes floatGlow {
-    0%, 100% {
-      transform: translateY(0) translateX(0);
-    }
-
-    50% {
-      transform: translateY(-18px) translateX(10px);
-    }
-  }
+}
 
   .reveal {
     opacity: 0;
