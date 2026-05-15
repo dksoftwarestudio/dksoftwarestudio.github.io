@@ -11,59 +11,97 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <style>
-    :root {
-      --blue: #1A53AD;
-      --blue-dark: #163E82;
-      --bg: #F5F5F5;
+  :root {
+    --blue: #1A53AD;
+    --blue-dark: #163E82;
+    --bg: #F5F5F5;
+  }
+
+  .hero-bg {
+    background:
+      linear-gradient(rgba(26, 83, 173, 0.86), rgba(26, 83, 173, 0.92)),
+      url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-glow {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(70px);
+    opacity: 0.22;
+    animation: floatGlow 14s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .hero-glow-1 {
+    width: 280px;
+    height: 280px;
+    background: #60A5FA;
+    top: 12%;
+    right: 10%;
+  }
+
+  .hero-glow-2 {
+    width: 220px;
+    height: 220px;
+    background: #93C5FD;
+    bottom: 10%;
+    left: 8%;
+    animation-delay: 3s;
+  }
+
+  @keyframes floatGlow {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
     }
 
-    .hero-bg {
-      background:
-        linear-gradient(rgba(26, 83, 173, 0.86), rgba(26, 83, 173, 0.92)),
-        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80');
-      background-size: cover;
-      background-position: center;
+    50% {
+      transform: translateY(-18px) translateX(10px);
     }
+  }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
 
-    .reveal.visible {
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .soft-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .soft-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
+    border-color: rgba(26, 83, 173, 0.18);
+  }
+
+  .app-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .app-icon:hover {
+    transform: scale(1.05);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .soft-card,
+    .app-icon,
+    .hero-glow {
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
+      transition: none;
+      animation: none;
     }
-
-    .soft-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-
-    .soft-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
-      border-color: rgba(26, 83, 173, 0.18);
-    }
-
-    .app-icon {
-      transition: transform 0.3s ease;
-    }
-
-    .app-icon:hover {
-      transform: scale(1.05);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal,
-      .soft-card,
-      .app-icon {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body class="bg-[#F5F5F5] text-zinc-800 font-sans">
@@ -117,8 +155,12 @@
   </div>
 </header>
 
-<section class="hero-bg min-h-screen flex items-center text-white">
-  <div class="max-w-7xl mx-auto px-6 w-full py-20">
+<section class="hero-bg min-h-screen flex items-center text-white relative overflow-hidden">
+
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+
+  <div class="max-w-7xl mx-auto px-6 w-full py-20 relative z-10">
     <div class="max-w-3xl reveal">
 
       <div class="inline-flex items-center gap-2 bg-white/18 backdrop-blur-md px-5 py-2 rounded-3xl text-sm mb-6 shadow-lg">
