@@ -11,94 +11,167 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <style>
-  .hero-bg {
-    position: relative;
-    overflow: hidden;
+    .hero-bg {
+      position: relative;
+      isolation: isolate;
+      background-image:
+        linear-gradient(rgba(26, 83, 173, 0.82), rgba(26, 83, 173, 0.90)),
+        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
 
-    background-image:
-      linear-gradient(rgba(26, 83, 173, 0.84), rgba(26, 83, 173, 0.92)),
-      url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80');
+    /* ── Diagonal light streaks ── */
 
-    background-size: cover;
-    background-position: center;
-  }
+    /* Общий стиль полос */
+    .streak {
+      position: absolute;
+      pointer-events: none;
+      border-radius: 999px;
+      transform-origin: center;
+    }
 
-  /* Лёгкий diagonal light streak */
-  .about-streak {
-    position: absolute;
-    inset: -20%;
-    background:
-      linear-gradient(
-        115deg,
-        transparent 35%,
-        rgba(255,255,255,0.05) 46%,
-        rgba(255,255,255,0.16) 50%,
-        rgba(255,255,255,0.05) 54%,
-        transparent 65%
+    /* Полоса 1 — широкая, слева вниз направо */
+    .streak-1 {
+      width: 160%;
+      height: 1px;
+      top: 28%;
+      left: -30%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.0) 15%,
+        rgba(255, 255, 255, 0.18) 40%,
+        rgba(255, 255, 255, 0.26) 55%,
+        rgba(255, 255, 255, 0.18) 70%,
+        transparent 100%
       );
-
-    animation: streakMove 14s ease-in-out infinite alternate;
-    pointer-events: none;
-    mix-blend-mode: screen;
-  }
-
-  @keyframes streakMove {
-    0% {
-      transform: translateX(-3%) translateY(0%);
+      transform: rotate(-22deg);
+      animation: streakSlide1 10s ease-in-out infinite alternate;
     }
 
-    100% {
-      transform: translateX(3%) translateY(-2%);
+    /* Полоса 2 — тоньше, ниже, чуть другой угол */
+    .streak-2 {
+      width: 120%;
+      height: 1px;
+      top: 52%;
+      left: -10%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.0) 20%,
+        rgba(255, 255, 255, 0.12) 45%,
+        rgba(255, 255, 255, 0.18) 60%,
+        rgba(255, 255, 255, 0.10) 75%,
+        transparent 100%
+      );
+      transform: rotate(-20deg);
+      animation: streakSlide2 14s ease-in-out infinite alternate;
     }
-  }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
+    /* Полоса 3 — самая тонкая, почти незаметная, верх */
+    .streak-3 {
+      width: 100%;
+      height: 1px;
+      top: 14%;
+      left: 5%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.0) 30%,
+        rgba(255, 255, 255, 0.09) 55%,
+        rgba(255, 255, 255, 0.13) 65%,
+        transparent 100%
+      );
+      transform: rotate(-21deg);
+      animation: streakSlide3 18s ease-in-out infinite alternate;
+    }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    /* Световое пятно — мягкий отблеск справа вверху */
+    .streak-glow {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      top: -100px;
+      right: -60px;
+      border-radius: 999px;
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.03) 45%,
+        transparent 70%
+      );
+      pointer-events: none;
+      animation: glowPulse 12s ease-in-out infinite alternate;
+    }
 
-  .soft-card {
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease,
-      border-color 0.3s ease;
-  }
+    @keyframes streakSlide1 {
+      0%   { opacity: 0.6; transform: rotate(-22deg) translateX(0); }
+      50%  { opacity: 1;   transform: rotate(-22deg) translateX(18px); }
+      100% { opacity: 0.7; transform: rotate(-22deg) translateX(-12px); }
+    }
 
-  .soft-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
-    border-color: rgba(26, 83, 173, 0.18);
-  }
+    @keyframes streakSlide2 {
+      0%   { opacity: 0.5; transform: rotate(-20deg) translateX(0); }
+      60%  { opacity: 0.9; transform: rotate(-20deg) translateX(-22px); }
+      100% { opacity: 0.6; transform: rotate(-20deg) translateX(14px); }
+    }
 
-  .app-icon {
-    transition: transform 0.3s ease;
-  }
+    @keyframes streakSlide3 {
+      0%   { opacity: 0.4; transform: rotate(-21deg) translateX(0); }
+      40%  { opacity: 0.8; transform: rotate(-21deg) translateX(10px); }
+      100% { opacity: 0.5; transform: rotate(-21deg) translateX(-8px); }
+    }
 
-  .app-icon:hover {
-    transform: scale(1.05);
-  }
+    @keyframes glowPulse {
+      0%   { opacity: 0.6; transform: scale(1); }
+      50%  { opacity: 1;   transform: scale(1.08); }
+      100% { opacity: 0.7; transform: scale(0.96); }
+    }
 
-  @media (prefers-reduced-motion: reduce) {
-    .reveal,
-    .soft-card,
-    .app-icon {
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
       opacity: 1;
-      transform: none;
-      transition: none;
+      transform: translateY(0);
     }
 
-    .about-streak {
-      animation: none;
-      opacity: 0.08;
+    .soft-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
-  }
-</style>
+
+    .soft-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
+      border-color: rgba(26, 83, 173, 0.18);
+    }
+
+    .app-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon:hover {
+      transform: scale(1.05);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .soft-card,
+      .app-icon {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .streak, .streak-glow {
+        animation: none;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-[#F5F5F5] text-zinc-800 font-sans">
@@ -150,25 +223,28 @@
       </a>
     </div>
   </div>
-<section class="hero-bg relative overflow-hidden py-24 flex items-center text-white">
+</header>
 
-  <div class="about-streak"></div>
+<section class="hero-bg py-28 flex items-center text-white">
+
+  <!-- Diagonal streaks -->
+  <div class="streak streak-1"></div>
+  <div class="streak streak-2"></div>
+  <div class="streak streak-3"></div>
+  <div class="streak-glow"></div>
 
   <div class="max-w-4xl mx-auto px-6 text-center reveal relative z-10">
 
-    <!-- Badge -->
     <div class="inline-flex items-center gap-2 bg-white/12 border border-white/20 backdrop-blur-xl px-5 py-2 rounded-3xl text-sm mb-6 shadow-2xl"
-     style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 30px rgba(0,0,0,0.18);">
-  <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
-  Entwickler aus Hof (Saale)
-</div>
+         style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 30px rgba(0,0,0,0.18);">
+      <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+      Entwickler aus Hof (Saale)
+    </div>
 
-    <!-- Titel -->
     <h1 class="text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
       Über mich
     </h1>
 
-    <!-- Text -->
     <p class="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
       Ich entwickle einfache Websites und funktionale Apps für kleine Unternehmen,
       lokale Projekte und Selbstständige.
@@ -187,13 +263,11 @@
     <div class="grid md:grid-cols-[220px_1fr] gap-12 items-center">
 
       <div class="reveal flex justify-center">
-
         <div class="w-44 h-44 rounded-3xl overflow-hidden shadow-lg border border-blue-100">
           <img src="../IMG_9908.jpeg"
                alt="Dmytro – DK Software Studio"
                class="w-full h-full object-cover">
         </div>
-
       </div>
 
       <div class="reveal">
@@ -261,11 +335,9 @@
       <span class="inline-block bg-blue-100 text-[#1A53AD] text-sm font-semibold px-4 py-2 rounded-2xl mb-3">
         MEIN WEG
       </span>
-
       <h2 class="text-3xl md:text-4xl font-bold text-zinc-900">
         Wie DK Software Studio entstanden ist
       </h2>
-
       <p class="text-zinc-600 max-w-2xl mx-auto mt-4">
         Aus eigenen App-Ideen wurde Schritt für Schritt ein kleines Studio für praktische digitale Projekte.
       </p>
@@ -312,7 +384,6 @@
       <span class="inline-block bg-white text-[#1A53AD] text-sm font-semibold px-4 py-2 rounded-2xl mb-3 shadow-sm">
         PRINZIPIEN
       </span>
-
       <h2 class="text-3xl md:text-4xl font-bold text-zinc-900">
         Wie ich arbeite
       </h2>
@@ -380,19 +451,9 @@
       </p>
 
       <div class="grid sm:grid-cols-3 gap-4 text-sm text-zinc-700">
-
-        <div class="bg-white border border-zinc-100 rounded-2xl p-5">
-          🏠 Lokale Dienstleister
-        </div>
-
-        <div class="bg-white border border-zinc-100 rounded-2xl p-5">
-          💼 Kleine Unternehmen
-        </div>
-
-        <div class="bg-white border border-zinc-100 rounded-2xl p-5">
-          📱 Einfache App-Ideen
-        </div>
-
+        <div class="bg-white border border-zinc-100 rounded-2xl p-5">🏠 Lokale Dienstleister</div>
+        <div class="bg-white border border-zinc-100 rounded-2xl p-5">💼 Kleine Unternehmen</div>
+        <div class="bg-white border border-zinc-100 rounded-2xl p-5">📱 Einfache App-Ideen</div>
       </div>
 
     </div>
@@ -417,7 +478,6 @@
          class="bg-white text-[#1A53AD] px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-blue-50 hover:-translate-y-1 hover:shadow-2xl transition">
         Kontakt aufnehmen
       </a>
-
       <a href="projects.html"
          class="border-2 border-white text-white px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-white hover:text-[#1A53AD] hover:-translate-y-1 hover:shadow-2xl transition">
         Projekte ansehen
@@ -469,8 +529,14 @@
       });
     }
 
-    const items = document.querySelectorAll('.reveal');
+    // Hero reveal сразу
+    const heroReveal = document.querySelector('.hero-bg .reveal');
+    if (heroReveal) {
+      requestAnimationFrame(() => heroReveal.classList.add('visible'));
+    }
 
+    // Остальные через observer
+    const items = document.querySelectorAll('.reveal:not(.visible)');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -478,9 +544,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.08
-    });
+    }, { threshold: 0.08 });
 
     items.forEach(item => observer.observe(item));
   });
