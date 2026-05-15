@@ -18,50 +18,94 @@
   }
 
   .hero-bg {
-  position: relative;
-  isolation: isolate;
-
-  background:
-    linear-gradient(rgba(26, 83, 173, 0.86), rgba(26, 83, 173, 0.92)),
-    url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80');
-
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-lens {
-  position: absolute;
-  width: 520px;
-  height: 520px;
-  border-radius: 999px;
-  top: 10%;
-  right: 4%;
-  background: radial-gradient(
-    circle,
-    rgba(255,255,255,0.34) 0%,
-    rgba(147,197,253,0.20) 28%,
-    rgba(255,255,255,0.08) 52%,
-    transparent 72%
-  );
-  filter: blur(10px);
-  animation: lensFloat 9s ease-in-out infinite alternate;
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
-
-@keyframes lensFloat {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
+    position: relative;
+    isolation: isolate;
+    background:
+      linear-gradient(rgba(26, 83, 173, 0.88), rgba(22, 62, 130, 0.94)),
+      url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80');
+    background-size: cover;
+    background-position: center;
   }
 
-  50% {
-    transform: translate3d(-90px, 55px, 0) scale(1.12);
+  /* ── Орбы ── */
+  .orb {
+    position: absolute;
+    border-radius: 999px;
+    pointer-events: none;
+    will-change: transform;
   }
 
-  100% {
-    transform: translate3d(55px, -35px, 0) scale(0.96);
+  /* Большой орб — правый верх */
+  .orb-1 {
+    width: 480px;
+    height: 480px;
+    top: -80px;
+    right: 5%;
+    background: radial-gradient(circle at 40% 40%,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(147, 197, 253, 0.14) 35%,
+      rgba(96, 165, 250, 0.06) 60%,
+      transparent 75%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.20),
+      0 0 80px rgba(147, 197, 253, 0.12);
+    animation: orbFloat1 11s ease-in-out infinite alternate;
   }
-}
+
+  /* Средний орб — правый низ */
+  .orb-2 {
+    width: 280px;
+    height: 280px;
+    bottom: 8%;
+    right: 18%;
+    background: radial-gradient(circle at 35% 35%,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(186, 230, 253, 0.10) 40%,
+      transparent 70%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    animation: orbFloat2 14s ease-in-out infinite alternate;
+  }
+
+  /* Маленький орб — левый центр */
+  .orb-3 {
+    width: 160px;
+    height: 160px;
+    top: 38%;
+    left: 3%;
+    background: radial-gradient(circle at 40% 30%,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(147, 197, 253, 0.08) 50%,
+      transparent 72%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    animation: orbFloat3 9s ease-in-out infinite alternate;
+  }
+
+  @keyframes orbFloat1 {
+    0%   { transform: translate(0, 0) scale(1); }
+    40%  { transform: translate(-40px, 30px) scale(1.05); }
+    100% { transform: translate(25px, -20px) scale(0.97); }
+  }
+
+  @keyframes orbFloat2 {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(30px, -45px) scale(1.08); }
+    100% { transform: translate(-20px, 20px) scale(0.94); }
+  }
+
+  @keyframes orbFloat3 {
+    0%   { transform: translate(0, 0) scale(1); }
+    60%  { transform: translate(18px, -28px) scale(1.10); }
+    100% { transform: translate(-12px, 15px) scale(0.92); }
+  }
 
   .reveal {
     opacity: 0;
@@ -93,19 +137,25 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .soft-card,
-  .app-icon {
-    opacity: 1;
-    transform: none;
-    transition: none;
+    .reveal,
+    .soft-card,
+    .app-icon {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .orb {
+      animation: none;
+    }
   }
 
-  .hero-glow {
-    animation: none;
-    opacity: 0.12;
+  /* Скрыть орбы на очень маленьких экранах — не мешают тексту */
+  @media (max-width: 640px) {
+    .orb-1 { width: 280px; height: 280px; top: -40px; right: -60px; }
+    .orb-2 { display: none; }
+    .orb-3 { display: none; }
   }
-}
 </style>
 </head>
 
@@ -162,7 +212,10 @@
 
 <section class="hero-bg min-h-screen flex items-center text-white relative overflow-hidden">
 
-  <div class="hero-lens"></div>
+  <!-- Три орба вместо одной лупы -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
 
   <div class="max-w-7xl mx-auto px-6 w-full py-20 relative z-10">
     <div class="max-w-3xl reveal">
@@ -484,8 +537,14 @@
       });
     }
 
-    const items = document.querySelectorAll('.reveal');
+    // Hero reveal — сразу при загрузке, без задержки
+    const heroReveal = document.querySelector('.hero-bg .reveal');
+    if (heroReveal) {
+      requestAnimationFrame(() => heroReveal.classList.add('visible'));
+    }
 
+    // Остальные reveal — через IntersectionObserver
+    const items = document.querySelectorAll('.reveal:not(.visible)');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -493,9 +552,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.08
-    });
+    }, { threshold: 0.08 });
 
     items.forEach(item => observer.observe(item));
   });
