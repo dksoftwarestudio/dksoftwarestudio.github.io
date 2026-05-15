@@ -31,21 +31,22 @@
 
 .hero-lens {
   position: absolute;
-  width: 420px;
-  height: 420px;
+  width: 520px;
+  height: 520px;
   border-radius: 999px;
-  top: 18%;
-  right: 12%;
+  top: 10%;
+  right: 4%;
   background: radial-gradient(
     circle,
-    rgba(255,255,255,0.18) 0%,
-    rgba(255,255,255,0.08) 35%,
-    rgba(255,255,255,0.02) 55%,
+    rgba(255,255,255,0.34) 0%,
+    rgba(147,197,253,0.20) 28%,
+    rgba(255,255,255,0.08) 52%,
     transparent 72%
   );
-  filter: blur(18px);
-  animation: lensFloat 16s ease-in-out infinite alternate;
+  filter: blur(10px);
+  animation: lensFloat 9s ease-in-out infinite alternate;
   pointer-events: none;
+  mix-blend-mode: screen;
 }
 
 @keyframes lensFloat {
@@ -54,11 +55,11 @@
   }
 
   50% {
-    transform: translate3d(-55px, 35px, 0) scale(1.08);
+    transform: translate3d(-90px, 55px, 0) scale(1.12);
   }
 
   100% {
-    transform: translate3d(35px, -25px, 0) scale(0.96);
+    transform: translate3d(55px, -35px, 0) scale(0.96);
   }
 }
 
