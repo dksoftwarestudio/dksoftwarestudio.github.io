@@ -11,56 +11,108 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <style>
-  .hero-bg {
-    position: relative;
-    isolation: isolate;
-    background:
-      linear-gradient(rgba(14, 22, 38, 0.62), rgba(14, 22, 38, 0.78)),
-      url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=85');
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .app-icon {
-    transition: transform 0.3s ease;
-  }
-
-  .app-icon:hover {
-    transform: scale(1.05);
-  }
-
-  .image-hover img {
-    transition: transform 0.8s ease;
-  }
-
-  .image-hover:hover img {
-    transform: scale(1.04);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .reveal,
-    .app-icon,
-    .image-hover img {
-      opacity: 1;
-      transform: none;
-      transition: none;
+    .hero-bg {
+      position: relative;
+      isolation: isolate;
+      background:
+        linear-gradient(rgba(14, 22, 38, 0.62), rgba(14, 22, 38, 0.78)),
+        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=85');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
     }
-  }
-</style>
 
-  <section class="hero-bg min-h-[70vh] flex items-center text-white relative overflow-hidden">
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .app-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon:hover {
+      transform: scale(1.05);
+    }
+
+    .image-hover img {
+      transition: transform 0.8s ease;
+    }
+
+    .image-hover:hover img {
+      transform: scale(1.04);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .app-icon,
+      .image-hover img {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#F5F5F5] text-zinc-800 font-sans">
+
+<header class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+    <a href="../index.html" class="flex items-center gap-3">
+      <img src="../dk-icon.png" alt="DK Software Studio" class="w-12 h-12 app-icon">
+      <div>
+        <span class="font-semibold text-xl md:text-2xl tracking-tight text-zinc-900">
+          DK Software Studio
+        </span>
+        <p class="text-xs text-zinc-500 -mt-1">
+          Hof (Saale)
+        </p>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="../index.html" class="hover:text-[#1A53AD] transition">Startseite</a>
+      <a href="projects.html" class="hover:text-[#1A53AD] transition">Projekte</a>
+      <a href="contact.html" class="hover:text-[#1A53AD] transition">Kontakt</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a href="contact.html"
+         class="hidden md:block px-6 py-3 bg-[#1A53AD] text-white text-sm font-semibold rounded-2xl hover:bg-[#163E82] hover:-translate-y-0.5 hover:shadow-lg transition">
+        Projekt anfragen
+      </a>
+
+      <button id="menuButton"
+              class="md:hidden text-4xl leading-none text-zinc-700 hover:text-zinc-900 transition-colors"
+              aria-label="Menü öffnen">
+        ☰
+      </button>
+    </div>
+
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
+    <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+      <a href="../index.html" class="py-3 hover:text-[#1A53AD] transition">Startseite</a>
+      <a href="projects.html" class="py-3 hover:text-[#1A53AD] transition">Projekte</a>
+      <a href="contact.html" class="py-3 hover:text-[#1A53AD] transition">Kontakt</a>
+      <a href="contact.html"
+         class="mt-2 bg-[#1A53AD] text-white text-center py-4 rounded-2xl font-semibold">
+        Projekt anfragen
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="hero-bg min-h-[70vh] flex items-center text-white relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 w-full py-24 relative z-10">
 
     <div class="max-w-3xl reveal">
@@ -93,11 +145,11 @@
 
     <div class="grid lg:grid-cols-[0.72fr_1.28fr] gap-20 items-center">
 
-      <div class="reveal">
+      <div class="reveal image-hover">
         <div class="rounded-[2rem] overflow-hidden shadow-2xl">
           <img src="../IMG_9908.jpeg"
                alt="Dmytro – DK Software Studio"
-               <div class="w-full h-[340px] object-cover">
+               class="w-full h-[340px] object-cover">
         </div>
       </div>
 
@@ -199,7 +251,7 @@
 
     <div class="grid lg:grid-cols-2 gap-16 items-center">
 
-      <div class="reveal lg:order-2 rounded-[2rem] overflow-hidden shadow-2xl">
+      <div class="reveal lg:order-2 image-hover rounded-[2rem] overflow-hidden shadow-2xl">
         <img src="../img/dk-workspace.jpg"
              alt="Arbeitsweise bei DK Software Studio"
              class="w-full h-[420px] object-cover object-[center_80%]">
@@ -234,7 +286,6 @@
 
 <section class="py-24 bg-[#1A53AD] text-white relative overflow-hidden">
 
-  <!-- Soft glow -->
   <div class="absolute -top-24 -right-24 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
   <div class="absolute -bottom-32 -left-20 w-80 h-80 bg-blue-300/10 rounded-full blur-3xl"></div>
 
@@ -313,13 +364,11 @@
       });
     }
 
-    // Hero reveal сразу
     const heroReveal = document.querySelector('.hero-bg .reveal');
     if (heroReveal) {
       requestAnimationFrame(() => heroReveal.classList.add('visible'));
     }
 
-    // Остальные через observer
     const items = document.querySelectorAll('.reveal:not(.visible)');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
