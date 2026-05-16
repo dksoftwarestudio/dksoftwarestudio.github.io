@@ -5,158 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>DK Software Studio | Websites & Apps aus Hof</title>
-  <meta name="description" content="DK Software Studio entwickelt einfache Websites und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige. Einfach. Klar. Funktional.">
+  <meta name="description" content="DK Software Studio entwickelt einfache Websites, Landingpages und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <style>
-  :root {
-    --blue: #1A53AD;
-    --blue-dark: #163E82;
-    --bg: #F5F5F5;
-  }
+    :root {
+      --blue: #1A53AD;
+      --blue-dark: #163E82;
+      --bg: #F5F5F5;
+      --text: #2F3440;
+    }
 
-  .hero-bg {
-    position: relative;
-    isolation: isolate;
-    background:
-      linear-gradient(rgba(26, 83, 173, 0.88), rgba(22, 62, 130, 0.94)),
-      url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80');
-    background-size: cover;
-    background-position: center;
-  }
+    .hero-bg {
+      position: relative;
+      isolation: isolate;
+      background:
+        linear-gradient(rgba(14, 22, 38, 0.62), rgba(14, 22, 38, 0.78)),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=85');
+      background-size: cover;
+      background-position: center;
+    }
 
-  /* ── Орбы ── */
-  .orb {
-    position: absolute;
-    border-radius: 999px;
-    pointer-events: none;
-    will-change: transform;
-  }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
 
-  /* Большой орб — правый верх */
-  .orb-1 {
-    width: 480px;
-    height: 480px;
-    top: -80px;
-    right: 5%;
-    background: radial-gradient(circle at 40% 40%,
-      rgba(255, 255, 255, 0.22) 0%,
-      rgba(147, 197, 253, 0.14) 35%,
-      rgba(96, 165, 250, 0.06) 60%,
-      transparent 75%
-    );
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.20),
-      0 0 80px rgba(147, 197, 253, 0.12);
-    animation: orbFloat1 11s ease-in-out infinite alternate;
-  }
-
-  /* Средний орб — правый низ */
-  .orb-2 {
-    width: 280px;
-    height: 280px;
-    bottom: 8%;
-    right: 18%;
-    background: radial-gradient(circle at 35% 35%,
-      rgba(255, 255, 255, 0.18) 0%,
-      rgba(186, 230, 253, 0.10) 40%,
-      transparent 70%
-    );
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
-    animation: orbFloat2 14s ease-in-out infinite alternate;
-  }
-
-  /* Маленький орб — левый центр */
-  .orb-3 {
-    width: 160px;
-    height: 160px;
-    top: 38%;
-    left: 3%;
-    background: radial-gradient(circle at 40% 30%,
-      rgba(255, 255, 255, 0.15) 0%,
-      rgba(147, 197, 253, 0.08) 50%,
-      transparent 72%
-    );
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    animation: orbFloat3 9s ease-in-out infinite alternate;
-  }
-
-  @keyframes orbFloat1 {
-    0%   { transform: translate(0, 0) scale(1); }
-    40%  { transform: translate(-40px, 30px) scale(1.05); }
-    100% { transform: translate(25px, -20px) scale(0.97); }
-  }
-
-  @keyframes orbFloat2 {
-    0%   { transform: translate(0, 0) scale(1); }
-    50%  { transform: translate(30px, -45px) scale(1.08); }
-    100% { transform: translate(-20px, 20px) scale(0.94); }
-  }
-
-  @keyframes orbFloat3 {
-    0%   { transform: translate(0, 0) scale(1); }
-    60%  { transform: translate(18px, -28px) scale(1.10); }
-    100% { transform: translate(-12px, 15px) scale(0.92); }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .soft-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  }
-
-  .soft-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
-    border-color: rgba(26, 83, 173, 0.18);
-  }
-
-  .app-icon {
-    transition: transform 0.3s ease;
-  }
-
-  .app-icon:hover {
-    transform: scale(1.05);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .reveal,
-    .soft-card,
-    .app-icon {
+    .reveal.visible {
       opacity: 1;
-      transform: none;
-      transition: none;
+      transform: translateY(0);
     }
 
-    .orb {
-      animation: none;
+    .app-icon {
+      transition: transform 0.3s ease;
     }
-  }
 
-  /* Скрыть орбы на очень маленьких экранах — не мешают тексту */
-  @media (max-width: 640px) {
-    .orb-1 { width: 280px; height: 280px; top: -40px; right: -60px; }
-    .orb-2 { display: none; }
-    .orb-3 { display: none; }
-  }
-</style>
+    .app-icon:hover {
+      transform: scale(1.05);
+    }
+
+    .image-hover img {
+      transition: transform 0.8s ease;
+    }
+
+    .image-hover:hover img {
+      transform: scale(1.04);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .app-icon,
+      .image-hover img {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-[#F5F5F5] text-zinc-800 font-sans">
@@ -170,9 +78,7 @@
         <span class="font-semibold text-xl md:text-2xl tracking-tight text-zinc-900">
           DK Software Studio
         </span>
-        <p class="text-xs text-zinc-500 -mt-1">
-          Hof (Saale)
-        </p>
+        <p class="text-xs text-zinc-500 -mt-1">Hof (Saale)</p>
       </div>
     </a>
 
@@ -194,7 +100,6 @@
         ☰
       </button>
     </div>
-
   </div>
 
   <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
@@ -211,33 +116,21 @@
 </header>
 
 <section class="hero-bg min-h-screen flex items-center text-white relative overflow-hidden">
-
-  <!-- Три орба вместо одной лупы -->
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-
-  <div class="max-w-7xl mx-auto px-6 w-full py-20 relative z-10">
+  <div class="max-w-7xl mx-auto px-6 w-full py-24 relative z-10">
     <div class="max-w-3xl reveal">
 
-      <div class="inline-flex items-center gap-2 bg-white/12 border border-white/20 backdrop-blur-xl px-5 py-2 rounded-3xl text-sm mb-6 shadow-2xl"
-           style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 30px rgba(0,0,0,0.18);">
-        <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
-        Websites & Apps aus Hof (Saale)
-      </div>
-
-      <h1 class="text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
-        Einfache Websites<br>
-        und funktionale Apps
-      </h1>
-
-      <p class="text-xl md:text-2xl text-blue-100 mb-6 max-w-2xl leading-relaxed">
-        Für lokale Projekte, kleine Unternehmen und Selbstständige.
-        Klar aufgebaut, mobil optimiert und ohne unnötige Komplexität.
+      <p class="text-sm tracking-[0.28em] uppercase text-blue-100 mb-6">
+        Websites & Apps aus Hof
       </p>
 
-      <p class="text-blue-100 text-base mb-10 max-w-xl">
-        Persönlich entwickelt. Direkt betreut. Einfach verständlich.
+      <h1 class="text-5xl md:text-7xl font-semibold leading-tight tracking-tight mb-8">
+        Digitale Lösungen,<br>
+        die einfach bleiben.
+      </h1>
+
+      <p class="text-xl md:text-2xl text-blue-50/90 max-w-2xl leading-relaxed mb-10">
+        Klare Websites, schlanke Landingpages und funktionale Apps —
+        persönlich entwickelt, verständlich aufgebaut und mobil optimiert.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4">
@@ -247,7 +140,7 @@
         </a>
 
         <a href="de/projects.html"
-           class="border-2 border-white text-white px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-white hover:text-[#1A53AD] hover:-translate-y-1 hover:shadow-2xl transition">
+           class="border border-white/40 bg-white/10 backdrop-blur-md text-white px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-white hover:text-[#1A53AD] hover:-translate-y-1 hover:shadow-2xl transition">
           Projekte ansehen
         </a>
       </div>
@@ -256,111 +149,139 @@
   </div>
 </section>
 
-<section class="py-24 bg-[#F5F5F5]">
+<section class="py-28 bg-white">
   <div class="max-w-7xl mx-auto px-6">
 
-    <div class="text-center mb-14 reveal">
-      <span class="inline-flex items-center gap-2 bg-white text-[#1A53AD] text-sm font-semibold px-5 py-2 rounded-3xl mb-5 shadow-sm border border-zinc-100">
-        <span class="w-2 h-2 bg-[#1A53AD] rounded-full"></span>
-        PROJEKTE
-      </span>
+    <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-16 items-center">
 
-      <h2 class="text-4xl md:text-5xl font-semibold text-zinc-900">
-        Aktuelle Projekte
+      <div class="reveal">
+        <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
+          Was ich mache
+        </p>
+
+        <h2 class="text-4xl md:text-5xl font-semibold text-zinc-900 leading-tight mb-8">
+          Weniger Oberfläche.<br>
+          Mehr Nutzen.
+        </h2>
+
+        <p class="text-zinc-600 text-lg leading-9 max-w-xl">
+          Nicht jedes Projekt braucht eine große Agentur. Oft reicht eine klare,
+          stabile und gut gepflegte Lösung — sauber aufgebaut, schnell verstanden
+          und im Alltag wirklich nutzbar.
+        </p>
+      </div>
+
+      <div class="reveal image-hover rounded-[2rem] overflow-hidden shadow-2xl">
+        <img src="img/dk-workspace.jpg"
+             alt="Arbeitsplatz und digitale Projekte"
+             class="w-full h-[420px] object-cover object-[center_70%]">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="py-28 bg-[#F5F5F5]">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-16 reveal">
+      <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-5">
+        Projekte
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-semibold text-zinc-900 mb-6">
+        Aktuelle Web-Projekte
       </h2>
 
-      <p class="text-zinc-600 max-w-2xl mx-auto mt-5 text-lg leading-relaxed">
-        Reale Plattformen und Webprojekte aus dem Umfeld von DK Software Studio.
+      <p class="text-zinc-600 max-w-2xl mx-auto text-lg leading-8">
+        Reale Plattformen und Landingpages aus dem Umfeld von DK Software Studio.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="space-y-16">
 
       <a href="https://hof-reinigung.de"
          target="_blank"
          rel="noopener noreferrer"
-         class="reveal soft-card group bg-white rounded-3xl overflow-hidden border border-zinc-100 shadow-sm block">
+         class="grid lg:grid-cols-2 gap-10 items-center group reveal">
 
-        <div class="h-56 overflow-hidden relative">
+        <div class="image-hover rounded-[2rem] overflow-hidden shadow-xl">
           <img src="img/hof-reinigung-preview.jpg"
                alt="hof-reinigung.de"
-               class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent"></div>
+               class="w-full h-[360px] object-cover">
         </div>
 
-        <div class="p-7">
-          <p class="text-sm text-[#1A53AD] font-semibold mb-3">Lokale Plattform</p>
-
-          <div class="flex items-center justify-between mb-3">
-            <h3 class="text-2xl font-bold text-zinc-900">hof-reinigung.de</h3>
-            <span class="text-[#1A53AD] opacity-0 group-hover:opacity-100 transition">→</span>
-          </div>
-
-          <p class="text-zinc-600 text-sm leading-6">
+        <div>
+          <p class="text-sm text-[#1A53AD] font-semibold mb-4">Lokale Plattform</p>
+          <h3 class="text-3xl md:text-4xl font-semibold text-zinc-900 mb-5">
+            hof-reinigung.de
+          </h3>
+          <p class="text-zinc-600 text-lg leading-8 mb-6">
             Plattform für Reinigungsfirmen und Kundenanfragen in Hof und Umgebung.
           </p>
+          <span class="text-[#1A53AD] font-semibold group-hover:gap-3 inline-flex items-center gap-2 transition-all">
+            Website ansehen →
+          </span>
         </div>
       </a>
 
       <a href="https://hof-gartenservice.de"
          target="_blank"
          rel="noopener noreferrer"
-         class="reveal soft-card group bg-white rounded-3xl overflow-hidden border border-zinc-100 shadow-sm block">
+         class="grid lg:grid-cols-2 gap-10 items-center group reveal">
 
-        <div class="h-56 overflow-hidden relative">
+        <div class="lg:order-2 image-hover rounded-[2rem] overflow-hidden shadow-xl">
           <img src="img/hof-gartenservice-preview.jpg"
                alt="hof-gartenservice.de"
-               class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+               class="w-full h-[360px] object-cover">
         </div>
 
-        <div class="p-7">
-          <p class="text-sm text-green-600 font-semibold mb-3">Lokale Plattform</p>
-
-          <div class="flex items-center justify-between mb-3">
-            <h3 class="text-2xl font-bold text-zinc-900">hof-gartenservice.de</h3>
-            <span class="text-green-600 opacity-0 group-hover:opacity-100 transition">→</span>
-          </div>
-
-          <p class="text-zinc-600 text-sm leading-6">
-            Einfache Übersicht für Gartenpflege, Objektpflege und Außenanlagen in der Region.
+        <div class="lg:order-1">
+          <p class="text-sm text-green-600 font-semibold mb-4">Lokale Plattform</p>
+          <h3 class="text-3xl md:text-4xl font-semibold text-zinc-900 mb-5">
+            hof-gartenservice.de
+          </h3>
+          <p class="text-zinc-600 text-lg leading-8 mb-6">
+            Übersicht für Gartenpflege, Objektpflege und Außenanlagen in der Region.
           </p>
+          <span class="text-[#1A53AD] font-semibold group-hover:gap-3 inline-flex items-center gap-2 transition-all">
+            Website ansehen →
+          </span>
         </div>
       </a>
 
       <a href="https://hof-handwerker.de"
          target="_blank"
          rel="noopener noreferrer"
-         class="reveal soft-card group bg-white rounded-3xl overflow-hidden border border-zinc-100 shadow-sm block">
+         class="grid lg:grid-cols-2 gap-10 items-center group reveal">
 
-        <div class="h-56 overflow-hidden relative">
+        <div class="image-hover rounded-[2rem] overflow-hidden shadow-xl">
           <img src="img/hof-handwerker-preview.jpg"
                alt="hof-handwerker.de"
-               class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+               class="w-full h-[360px] object-cover">
         </div>
 
-        <div class="p-7">
-          <p class="text-sm text-orange-500 font-semibold mb-3">Lokale Plattform</p>
-
-          <div class="flex items-center justify-between mb-3">
-            <h3 class="text-2xl font-bold text-zinc-900">hof-handwerker.de</h3>
-            <span class="text-orange-500 opacity-0 group-hover:opacity-100 transition">→</span>
-          </div>
-
-          <p class="text-zinc-600 text-sm leading-6">
+        <div>
+          <p class="text-sm text-orange-500 font-semibold mb-4">Lokale Plattform</p>
+          <h3 class="text-3xl md:text-4xl font-semibold text-zinc-900 mb-5">
+            hof-handwerker.de
+          </h3>
+          <p class="text-zinc-600 text-lg leading-8 mb-6">
             Regionale Plattform für Handwerker, Servicebetriebe und direkte Anfragen.
           </p>
+          <span class="text-[#1A53AD] font-semibold group-hover:gap-3 inline-flex items-center gap-2 transition-all">
+            Website ansehen →
+          </span>
         </div>
       </a>
 
     </div>
 
-    <div class="text-center mt-12 reveal">
+    <div class="text-center mt-16 reveal">
       <a href="de/projects.html"
          class="inline-flex items-center gap-2 border border-[#1A53AD] text-[#1A53AD] px-8 py-3 rounded-2xl font-semibold hover:bg-blue-50 transition">
-        Weitere Projekte ansehen
-        <span>→</span>
+        Weitere Projekte ansehen →
       </a>
     </div>
 
@@ -372,109 +293,50 @@
 
     <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-20 items-start">
 
-      <!-- LEFT -->
       <div class="reveal">
-        <span class="inline-block text-[#1A53AD] text-sm font-semibold tracking-[0.2em] uppercase mb-6">
+        <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
           Leistungen
-        </span>
+        </p>
 
         <h2 class="text-4xl md:text-5xl font-semibold text-zinc-900 leading-tight mb-8">
-          Digitale Lösungen,<br>
-          die verständlich bleiben
+          Klar umgesetzt.<br>
+          Ohne unnötige Schichten.
         </h2>
 
         <p class="text-zinc-600 text-lg leading-9 max-w-xl">
-          Der Fokus liegt auf klaren Websites, kleinen digitalen Projekten
-          und pragmatischen Lösungen — ohne unnötige Komplexität
-          oder große Agenturstruktur.
+          Der Fokus liegt auf schlanken Websites, kleinen digitalen Projekten
+          und pragmatischer Beratung — direkt, ruhig und verständlich.
         </p>
       </div>
 
-      <!-- RIGHT -->
       <div class="reveal space-y-10">
 
         <div class="pb-8 border-b border-zinc-200">
-          <div class="flex items-start gap-5">
-
-            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#1A53AD] flex items-center justify-center text-xl shrink-0">
-              <i class="fa-solid fa-globe"></i>
-            </div>
-
-            <div>
-              <h3 class="text-2xl font-semibold text-zinc-900 mb-3">
-                Websites
-              </h3>
-
-              <p class="text-zinc-600 leading-8">
-                Schlanke, schnelle und mobilfreundliche Websites
-                für lokale Unternehmen und Projekte.
-              </p>
-            </div>
-
-          </div>
+          <h3 class="text-2xl font-semibold text-zinc-900 mb-3">Websites</h3>
+          <p class="text-zinc-600 leading-8">
+            Schnelle und mobilfreundliche Seiten für lokale Unternehmen und Selbstständige.
+          </p>
         </div>
 
         <div class="pb-8 border-b border-zinc-200">
-          <div class="flex items-start gap-5">
-
-            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#1A53AD] flex items-center justify-center text-xl shrink-0">
-              <i class="fa-solid fa-layer-group"></i>
-            </div>
-
-            <div>
-              <h3 class="text-2xl font-semibold text-zinc-900 mb-3">
-                Landingpages
-              </h3>
-
-              <p class="text-zinc-600 leading-8">
-                Klare Seiten für Angebote, Produkte,
-                lokale Services und direkte Anfragen.
-              </p>
-            </div>
-
-          </div>
+          <h3 class="text-2xl font-semibold text-zinc-900 mb-3">Landingpages</h3>
+          <p class="text-zinc-600 leading-8">
+            Klare Seiten für Angebote, Produkte, Services und direkte Anfragen.
+          </p>
         </div>
 
         <div class="pb-8 border-b border-zinc-200">
-          <div class="flex items-start gap-5">
-
-            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#1A53AD] flex items-center justify-center text-xl shrink-0">
-              <i class="fa-brands fa-android"></i>
-            </div>
-
-            <div>
-              <h3 class="text-2xl font-semibold text-zinc-900 mb-3">
-                Android Apps
-              </h3>
-
-              <p class="text-zinc-600 leading-8">
-                Kleine funktionale Apps mit sauberem Design
-                und einfacher Bedienung.
-              </p>
-            </div>
-
-          </div>
+          <h3 class="text-2xl font-semibold text-zinc-900 mb-3">Android Apps</h3>
+          <p class="text-zinc-600 leading-8">
+            Kleine funktionale Apps mit sauberem Design und einfacher Bedienung.
+          </p>
         </div>
 
         <div>
-          <div class="flex items-start gap-5">
-
-            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#1A53AD] flex items-center justify-center text-xl shrink-0">
-              <i class="fa-solid fa-comments"></i>
-            </div>
-
-            <div>
-              <h3 class="text-2xl font-semibold text-zinc-900 mb-3">
-                Ehrliche Einschätzung
-              </h3>
-
-              <p class="text-zinc-600 leading-8">
-                Direkte Rückmeldung, ob eine Idee sinnvoll,
-                machbar und langfristig verständlich bleibt.
-              </p>
-            </div>
-
-          </div>
+          <h3 class="text-2xl font-semibold text-zinc-900 mb-3">Ehrliche Einschätzung</h3>
+          <p class="text-zinc-600 leading-8">
+            Direkte Rückmeldung, ob eine Idee sinnvoll, machbar und langfristig verständlich bleibt.
+          </p>
         </div>
 
       </div>
@@ -485,58 +347,42 @@
 </section>
 
 <section class="py-28 bg-[#F5F5F5]">
-  <div class="max-w-5xl mx-auto px-6 text-center">
+  <div class="max-w-5xl mx-auto px-6 text-center reveal">
 
-    <div class="reveal">
+    <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
+      Warum DK
+    </p>
 
-      <span class="inline-block text-[#1A53AD] text-sm font-semibold tracking-[0.2em] uppercase mb-6">
-        Warum DK
-      </span>
+    <h2 class="text-4xl md:text-5xl font-semibold text-zinc-900 mb-8">
+      Einfach. Klar. Funktional.
+    </h2>
 
-      <h2 class="text-4xl md:text-5xl font-semibold text-zinc-900 mb-8">
-        Einfach. Klar. Funktional.
-      </h2>
+    <p class="text-zinc-600 max-w-3xl mx-auto leading-9 text-xl mb-16">
+      Gute digitale Lösungen müssen nicht laut sein. Sie müssen verstanden,
+      genutzt und gepflegt werden können.
+    </p>
 
-      <p class="text-zinc-600 max-w-3xl mx-auto leading-9 text-xl mb-16">
-        Gute digitale Lösungen müssen nicht kompliziert sein.
-        Sie müssen verstanden, genutzt und gepflegt werden können.
-      </p>
+    <div class="grid md:grid-cols-3 gap-10 text-left">
 
-      <div class="grid md:grid-cols-3 gap-10 text-left">
+      <div>
+        <p class="text-[#1A53AD] font-semibold mb-4 text-lg">Direkt</p>
+        <p class="text-zinc-600 leading-8">
+          Direkte Abstimmung ohne unnötige Zwischenstationen.
+        </p>
+      </div>
 
-        <div>
-          <p class="text-[#1A53AD] font-semibold mb-4 text-lg">
-            Direkt
-          </p>
+      <div>
+        <p class="text-[#1A53AD] font-semibold mb-4 text-lg">Verständlich</p>
+        <p class="text-zinc-600 leading-8">
+          Klare Sprache statt komplizierter Technik-Begriffe.
+        </p>
+      </div>
 
-          <p class="text-zinc-600 leading-8">
-            Direkte Abstimmung ohne unnötige Zwischenstationen
-            oder komplizierte Prozesse.
-          </p>
-        </div>
-
-        <div>
-          <p class="text-[#1A53AD] font-semibold mb-4 text-lg">
-            Verständlich
-          </p>
-
-          <p class="text-zinc-600 leading-8">
-            Klare Sprache statt komplizierter Technik-Begriffe
-            und unnötiger Fachwörter.
-          </p>
-        </div>
-
-        <div>
-          <p class="text-[#1A53AD] font-semibold mb-4 text-lg">
-            Pragmatisch
-          </p>
-
-          <p class="text-zinc-600 leading-8">
-            Kleine Schritte, saubere Struktur
-            und Fokus auf echten Nutzen.
-          </p>
-        </div>
-
+      <div>
+        <p class="text-[#1A53AD] font-semibold mb-4 text-lg">Pragmatisch</p>
+        <p class="text-zinc-600 leading-8">
+          Kleine Schritte, saubere Struktur und Fokus auf echten Nutzen.
+        </p>
       </div>
 
     </div>
@@ -549,7 +395,7 @@
 
     <h2 class="text-4xl md:text-5xl font-semibold mb-6">
       Sie brauchen eine einfache Website oder eine kleine App?
-   </h2>
+    </h2>
 
     <p class="text-blue-100 mb-10 max-w-xl mx-auto leading-7">
       Schreiben Sie kurz, worum es geht. Ich gebe eine ehrliche Einschätzung,
@@ -606,13 +452,11 @@
       });
     }
 
-    // Hero reveal — сразу при загрузке, без задержки
     const heroReveal = document.querySelector('.hero-bg .reveal');
     if (heroReveal) {
       requestAnimationFrame(() => heroReveal.classList.add('visible'));
     }
 
-    // Остальные reveal — через IntersectionObserver
     const items = document.querySelectorAll('.reveal:not(.visible)');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
