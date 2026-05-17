@@ -404,23 +404,43 @@
       #262D39 100%
     );
   ">
-  <div class="max-w-3xl mx-auto px-6 text-center reveal">
 
-    <h2 class="text-3xl md:text-4xl font-semibold text-zinc-900 mb-5">
-      Kurze Nachricht reicht
+  <!-- Soft glow -->
+  <div class="absolute -top-24 -right-24 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-32 -left-20 w-80 h-80 bg-slate-400/10 rounded-full blur-3xl"></div>
+
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10 reveal">
+
+    <span class="inline-flex items-center gap-2 bg-white/10 border border-white/10 backdrop-blur-xl px-5 py-2 rounded-3xl text-sm text-slate-200 mb-6">
+      <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+      Persönlicher Kontakt
+    </span>
+
+    <h2 class="text-4xl md:text-5xl font-semibold mb-6 leading-tight">
+      Schreiben Sie mir direkt
     </h2>
 
-    <p class="text-zinc-600 leading-7 mb-8">
-      Eine grobe Beschreibung genügt: Was wird gebraucht, für wen ist es gedacht
-      und ob es eine Website, App oder einfache Beratung sein soll.
+    <p class="text-slate-300 text-lg leading-8 max-w-2xl mx-auto mb-10">
+      Ob Website, Landingpage oder kleine App —
+      schreiben Sie einfach kurz, worum es geht.
+      Ich melde mich persönlich zurück.
     </p>
 
-    <a href="https://wa.me/491624012037?text=Hallo%20DK%20Software%20Studio%2C%20ich%20habe%20eine%20Frage%20zu%20einem%20Projekt."
-   target="_blank"
-   rel="noopener noreferrer"
-   class="inline-flex items-center justify-center bg-[#1A53AD] text-white px-10 py-5 rounded-3xl font-semibold text-lg hover:bg-[#163E82] hover:-translate-y-1 hover:shadow-2xl transition">
-  Per WhatsApp schreiben
-</a>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+      <a href="mailto:dksoftware.studio@gmail.com"
+         class="inline-flex items-center justify-center bg-white text-[#262D39] hover:bg-slate-100 px-8 py-4 rounded-2xl font-semibold transition">
+        E-Mail schreiben
+      </a>
+
+      <a href="https://wa.me/491624012037"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-4 rounded-2xl font-semibold transition">
+        WhatsApp schreiben
+      </a>
+
+    </div>
 
   </div>
 </section>
