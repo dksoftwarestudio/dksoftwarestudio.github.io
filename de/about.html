@@ -15,11 +15,225 @@
       position: relative;
       isolation: isolate;
       background:
-        linear-gradient(rgba(14, 22, 38, 0.62), rgba(14, 22, 38, 0.78)),
+        linear-gradient(180deg, rgba(7, 12, 27, 0.42), rgba(7, 12, 27, 0.88)),
         url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=85');
       background-size: cover;
-      background-position: center;
+      background-position: center 45%;
       overflow: hidden;
+      animation: hero-bg-pan 32s ease-in-out infinite;
+    }
+
+    .hero-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 24% 18%, rgba(255, 255, 255, 0.14), transparent 22%),
+        radial-gradient(circle at 82% 12%, rgba(94, 165, 255, 0.12), transparent 20%);
+      pointer-events: none;
+      mix-blend-mode: screen;
+      z-index: 0;
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(7, 12, 27, 0.2), rgba(7, 12, 27, 0.75)),
+        url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1b?auto=format&fit=crop&w=2200&q=85');
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: hero-bg-fade 40s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-panel {
+      position: relative;
+      background: rgba(11, 18, 37, 0.36);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(24px);
+      box-shadow: 0 48px 120px rgba(7, 15, 30, 0.28);
+      z-index: 10;
+    }
+
+    .hero-actions .hero-action {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: hero-action-fade 0.8s ease forwards;
+    }
+
+    .hero-actions .hero-action:nth-child(1) {
+      animation-delay: 0.32s;
+    }
+
+    .hero-actions .hero-action:nth-child(2) {
+      animation-delay: 0.56s;
+    }
+
+    @keyframes hero-action-fade {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .feature-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2rem;
+      box-shadow: 0 40px 120px rgba(13, 23, 39, 0.24);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 28%);
+    }
+
+    .feature-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.15), rgba(15, 23, 42, 0.55));
+      pointer-events: none;
+    }
+
+    .feature-image img {
+      transition: transform 1.1s ease;
+    }
+
+    .feature-image:hover img {
+      transform: scale(1.04);
+    }
+
+    .process-grid {
+      position: relative;
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      margin-top: 2rem;
+      z-index: 10;
+    }
+
+    .process-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 22% 20%, rgba(56, 189, 248, 0.12), transparent 28%),
+                  radial-gradient(circle at 88% 12%, rgba(168, 212, 255, 0.08), transparent 16%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .process-step {
+      padding: 2rem;
+      border-radius: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(18px);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.10), 0 24px 60px rgba(8, 14, 26, 0.12);
+      transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+    }
+
+    .process-step:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.28);
+    }
+
+    .process-step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.24);
+      color: #E0F2FE;
+      font-weight: 700;
+    }
+
+    .process-step-title {
+      margin-top: 1rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .process-step-text {
+      margin-top: 0.75rem;
+      color: rgba(226, 232, 240, 0.8);
+      line-height: 1.75;
+    }
+
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.85rem 1rem;
+      background: rgba(10, 18, 37, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      z-index: 60;
+    }
+
+    .sticky-cta .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      max-width: 78rem;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .sticky-cta a {
+      flex: 1 1 auto;
+      border-radius: 9999px;
+      padding: 0.95rem 1.15rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .sticky-primary {
+      background: #ffffff;
+      color: #334267;
+    }
+
+    .sticky-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    @media (min-width: 768px) {
+      .sticky-cta {
+        display: none;
+      }
+    }
+
+    @keyframes hero-bg-pan {
+      0% {
+        background-position: center 42%;
+      }
+      50% {
+        background-position: center 58%;
+      }
+      100% {
+        background-position: center 42%;
+      }
+    }
+
+    @keyframes hero-bg-fade {
+      0%, 22%, 100% {
+        opacity: 0;
+      }
+      30%, 68% {
+        opacity: 0.2;
+      }
     }
 
     .reveal {
@@ -117,26 +331,91 @@
 <section class="hero-bg min-h-[70vh] flex items-center text-white relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 w-full py-24 relative z-10">
 
-    <div class="max-w-3xl reveal">
+    <div class="max-w-3xl reveal hero-panel rounded-[2.5rem] p-10 lg:p-14">
 
-      <p class="text-sm tracking-[0.28em] uppercase text-blue-100 mb-6">
+      <div class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-sky-100/80 mb-6">
+        <span class="h-2.5 w-2.5 rounded-full bg-sky-300 animate-pulse"></span>
+        Im Fokus
+      </div>
+
+      <p class="text-sm tracking-[0.28em] uppercase text-sky-100/85 mb-6">
         Über DK Software Studio
       </p>
 
-      <h1 class="text-5xl md:text-7xl font-semibold leading-tight tracking-tight mb-8">
+      <h1 class="text-5xl md:text-7xl font-semibold leading-[0.92] tracking-[-0.03em] mb-8">
         Persönlich entwickelt.<br>
         Klar umgesetzt.
       </h1>
 
-      <p class="text-xl md:text-2xl text-blue-50/90 max-w-2xl leading-relaxed mb-6">
+      <p class="text-lg md:text-xl text-sky-100/85 max-w-2xl leading-relaxed mb-8">
         Ein kleines Studio aus Hof für einfache Websites, lokale Web-Projekte
         und funktionale Apps.
       </p>
 
-      <p class="text-blue-100 text-base max-w-xl">
-        Direkt betreut, verständlich aufgebaut und ohne unnötige Agentur-Komplexität.
-      </p>
+      <div class="grid sm:grid-cols-3 gap-4 mt-8 text-white">
+        <div class="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
+          <div class="text-3xl md:text-4xl font-semibold leading-none">2026</div>
+          <div class="text-xs uppercase tracking-[0.22em] text-white/70 mt-3">Erfahrung</div>
+        </div>
+        <div class="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
+          <div class="text-3xl md:text-4xl font-semibold leading-none">Lokal</div>
+          <div class="text-xs uppercase tracking-[0.22em] text-white/70 mt-3">Hof (Saale)</div>
+        </div>
+        <div class="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
+          <div class="text-3xl md:text-4xl font-semibold leading-none">Apps</div>
+          <div class="text-xs uppercase tracking-[0.22em] text-white/70 mt-3">Web & Mobile</div>
+        </div>
+      </div>
+  </div>
+</section>
 
+<section class="py-20 bg-[#12243f] text-white relative process-section">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="reveal text-center max-w-2xl mx-auto mb-12">
+      <p class="text-sm tracking-[0.28em] uppercase text-sky-100/90 mb-4">
+        Mein Ablauf
+      </p>
+      <h2 class="text-4xl md:text-5xl font-semibold leading-tight text-slate-100">
+        So entsteht Ihr digitales Projekt
+      </h2>
+      <p class="mt-5 text-sky-100/85 text-lg leading-8">
+        Klare Etappen statt unnötiger Komplexität – von der Idee bis zur fertigen Web-Lösung.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-step-number">1</div>
+        <div class="process-step-title">Briefing</div>
+        <p class="process-step-text">
+          Wir klären Ziele, Rahmen und was für Ihre Nutzer wirklich wichtig ist.
+        </p>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="process-step-number">2</div>
+        <div class="process-step-title">Konzept</div>
+        <p class="process-step-text">
+          Ich entwickle einen klaren Aufbau mit Fokus auf Nutzerführung und Einfachheit.
+        </p>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="process-step-number">3</div>
+        <div class="process-step-title">Umsetzung</div>
+        <p class="process-step-text">
+          Design, Entwicklung und Veröffentlichung mit sauberem, stabilem Code.
+        </p>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="process-step-number">4</div>
+        <div class="process-step-title">Launch</div>
+        <p class="process-step-text">
+          Onlinegang, Übergabe und klare Hinweise für Pflege und Wartung.
+        </p>
+      </div>
     </div>
 
   </div>
@@ -147,8 +426,8 @@
 
     <div class="grid lg:grid-cols-[0.72fr_1.28fr] gap-20 items-center">
 
-      <div class="reveal image-hover">
-        <div class="rounded-[2rem] overflow-hidden shadow-2xl">
+      <div class="reveal">
+        <div class="feature-image">
           <img src="../IMG_9908.jpeg"
                alt="Dmytro – DK Software Studio"
                class="w-full h-[340px] object-cover">
@@ -316,15 +595,15 @@
       ich gebe eine ehrliche Einschätzung und denke pragmatisch statt kompliziert.
     </p>
 
-    <div class="flex flex-col sm:flex-row justify-center gap-4">
+    <div class="hero-actions flex flex-col sm:flex-row justify-center gap-4">
 
       <a href="contact.html"
-         class="bg-white text-[#334267] px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-blue-50 hover:-translate-y-1 hover:shadow-2xl transition">
+         class="hero-action bg-white text-[#334267] px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-blue-50 hover:-translate-y-1 hover:shadow-2xl transition">
         Kontakt aufnehmen
       </a>
 
       <a href="projects.html"
-         class="border border-white/30 bg-white/10 backdrop-blur-md text-white px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-white hover:text-[#1A53AD] hover:-translate-y-1 hover:shadow-2xl transition">
+         class="hero-action border border-white/30 bg-white/10 backdrop-blur-md text-white px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-white hover:text-[#1A53AD] hover:-translate-y-1 hover:shadow-2xl transition">
         Projekte ansehen
       </a>
 
@@ -355,6 +634,14 @@
     </div>
   </div>
 </footer>
+
+<div class="sticky-cta">
+  <div class="cta-inner">
+    <span class="text-sm text-sky-100">Sofort Kontakt aufnehmen</span>
+    <a href="contact.html" class="sticky-primary">Jetzt anfragen</a>
+    <a href="projects.html" class="sticky-secondary">Projekte ansehen</a>
+  </div>
+</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
