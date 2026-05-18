@@ -27,15 +27,18 @@
     overflow: hidden;
   }
 
-  .reveal-delay-1 { transition-delay: 0.08s; }
-  .reveal-delay-2 { transition-delay: 0.18s; }
-  .reveal-delay-3 { transition-delay: 0.28s; }
-  .reveal-delay-4 { transition-delay: 0.38s; }
+  .reveal-delay-1 { transition-delay: 0.12s; }
+  .reveal-delay-2 { transition-delay: 0.24s; }
+  .reveal-delay-3 { transition-delay: 0.36s; }
+  .reveal-delay-4 { transition-delay: 0.48s; }
+  .reveal-delay-5 { transition-delay: 0.60s; }
+  .reveal-delay-6 { transition-delay: 0.72s; }
+  .reveal-delay-7 { transition-delay: 0.84s; }
 
   .reveal {
     opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
   }
 
   .reveal.visible {
@@ -61,6 +64,66 @@
     border-color: rgba(26, 83, 173, 0.18);
   }
 
+  .hero-pill-row {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-pill {
+    border-radius: 9999px;
+    border: 1px solid rgba(148, 163, 184, 0.26);
+    background: rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
+    padding: 0.75rem 1rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .hero-pill:hover,
+  .hero-pill.active {
+    background: linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.12));
+    border-color: rgba(255, 255, 255, 0.42);
+    transform: translateY(-1px);
+  }
+
+  .project-meta {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+  }
+
+  .web-section {
+    background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+  }
+
+  .project-card-web {
+    border-color: rgba(148, 163, 184, 0.16);
+    background: #ffffff;
+  }
+
+  .project-card-web h3 {
+    color: #0f172a;
+  }
+
+  .project-cta-block {
+    background: #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 28px 80px rgba(15, 23, 42, 0.08);
+    border-radius: 2rem;
+  }
+
+  .project-cta-block p {
+    color: #334155;
+  }
+
+  .project-cta-block a {
+    min-width: 220px;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .reveal,
     .app-icon,
@@ -70,10 +133,17 @@
       transition: none;
     }
   }
+
+  .hero-pill.active {
+    position: relative;
+    overflow: hidden;
+  }
+  /* shimmer removed */
 </style>
 </head>
 
 <body class="bg-[#F5F5F5] text-zinc-800 font-sans">
+ 
 
 <header class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
   <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -129,25 +199,31 @@
 <section class="hero-bg min-h-[68vh] flex items-center text-white relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 w-full py-24 relative z-10">
 
-    <div class="max-w-3xl reveal">
+    <div class="max-w-3xl">
 
-      <p class="text-sm tracking-[0.28em] uppercase text-slate-300 mb-6">
+      <p class="reveal reveal-delay-1 text-sm tracking-[0.28em] uppercase text-slate-300 mb-6">
         Apps & Web-Projekte
       </p>
 
-      <h1 class="text-5xl md:text-7xl font-semibold leading-tight tracking-tight mb-8">
+      <h1 class="reveal reveal-delay-2 text-5xl md:text-7xl font-semibold leading-tight tracking-tight mb-8">
         Projekte,<br>
         die verständlich bleiben.
       </h1>
 
-      <p class="text-xl md:text-2xl text-slate-200 max-w-2xl leading-relaxed mb-8">
+      <p class="reveal reveal-delay-3 text-xl md:text-2xl text-slate-200 max-w-2xl leading-relaxed mb-8">
         Eigene Android-Apps und regionale Web-Projekte —
         einfach aufgebaut, klar strukturiert und praktisch nutzbar.
       </p>
 
+      <div class="hero-pill-row reveal reveal-delay-4">
+        <span class="hero-pill active">Apps</span>
+        <span class="hero-pill">Web-Projekte</span>
+        <span class="hero-pill">In Planung</span>
+      </div>
+
       <div class="flex gap-14 mt-10 flex-wrap">
 
-  <div>
+  <div class="reveal reveal-delay-5">
     <div class="text-5xl font-semibold text-white leading-none">
       6
     </div>
@@ -156,7 +232,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="reveal reveal-delay-6">
     <div class="text-5xl font-semibold text-white leading-none">
       4
     </div>
@@ -165,7 +241,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="reveal reveal-delay-7">
     <div class="text-5xl font-semibold text-white leading-none">
       Hof
     </div>
@@ -199,7 +275,7 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <div class="reveal project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm">
+      <div class="reveal reveal-delay-1 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm">
         <div class="p-9 flex flex-col h-full">
           <img src="../jw-daily-alarm-icon.png"
                alt="Daily Text Alarm"
@@ -208,6 +284,10 @@
           <h3 class="font-bold text-2xl text-center mb-3">
             Daily Text Alarm
           </h3>
+
+          <div class="project-meta text-center">
+            Aufgabe: klare Erinnerung mit kurzer täglichen Aktion.
+          </div>
 
           <p class="text-zinc-600 text-center mb-8 leading-relaxed flex-1">
             Minimalistische Erinnerungs-App mit täglichem Link.
@@ -224,7 +304,7 @@
         </div>
       </div>
 
-      <div class="reveal project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm">
+      <div class="reveal reveal-delay-2 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm">
         <div class="p-9 flex flex-col h-full">
           <img src="../img/ministry-calendar.png"
                alt="Ministry Calendar"
@@ -233,6 +313,10 @@
           <h3 class="font-bold text-2xl text-center mb-3">
             Ministry Calendar
           </h3>
+
+          <div class="project-meta text-center">
+            Ziel: schnelle Monatsplanung mit einfachem Reporting.
+          </div>
 
           <p class="text-zinc-600 text-center mb-8 leading-relaxed flex-1">
             Monatsübersicht mit Timer und schnellem Bericht.
@@ -249,7 +333,7 @@
         </div>
       </div>
 
-      <div class="reveal project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm">
+      <div class="reveal reveal-delay-3 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm">
         <div class="p-9 flex flex-col h-full">
           <img src="../img/blocknot.png"
                alt="Blocknot"
@@ -258,6 +342,10 @@
           <h3 class="font-bold text-2xl text-center mb-3">
             Blocknot
           </h3>
+
+          <div class="project-meta text-center">
+            Fokus: schnelle Notizen und übersichtliche Wochenplanung.
+          </div>
 
           <p class="text-zinc-600 text-center mb-8 leading-relaxed flex-1">
             Minimalistischer Wochenplaner für schnelle Notizen.
@@ -274,7 +362,7 @@
         </div>
       </div>
 
-      <div class="reveal project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm">
+      <div class="reveal reveal-delay-4 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm">
         <div class="p-9 flex flex-col h-full">
           <img src="../img/my-reminder.png"
                alt="My Reminder"
@@ -284,6 +372,10 @@
             My Reminder
             <span class="text-emerald-600 text-base">• Neu</span>
           </h3>
+
+          <div class="project-meta text-center">
+            Aufgabe: Erinnerungen dauerhaft sichtbar halten.
+          </div>
 
           <p class="text-zinc-600 text-center mb-8 leading-relaxed flex-1">
             Erinnerungen bleiben aktiv, bis sie erledigt sind.
@@ -300,7 +392,7 @@
         </div>
       </div>
 
-      <div class="reveal project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm">
+      <div class="reveal reveal-delay-5 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm">
         <div class="p-9 flex flex-col h-full">
           <img src="../img/my-habits.png"
                alt="My Habits"
@@ -309,6 +401,10 @@
           <h3 class="font-bold text-2xl text-center mb-3">
             My Habits
           </h3>
+
+          <div class="project-meta text-center">
+            Konzept: tägliche Gewohnheiten übersichtlich festhalten.
+          </div>
 
           <p class="text-zinc-600 text-center mb-8 leading-relaxed flex-1">
             Einfache Gewohnheiten mit Fokus auf Kontinuität.
@@ -323,7 +419,7 @@
         </div>
       </div>
 
-      <div class="reveal project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm">
+      <div class="reveal reveal-delay-6 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm">
         <div class="p-9 flex flex-col h-full">
           <img src="../dk-icon.png"
                alt="My Countdown"
@@ -332,6 +428,10 @@
           <h3 class="font-bold text-2xl text-center mb-3">
             My Countdown
           </h3>
+
+          <div class="project-meta text-center">
+            Idee: einfache Zeitplanung für wichtige Ereignisse.
+          </div>
 
           <p class="text-zinc-600 text-center mb-8 leading-relaxed flex-1">
             Minimaler Countdown für wichtige Termine.
@@ -351,7 +451,7 @@
   </div>
 </section>
 
-<section class="py-20 bg-[#F5F5F5]">
+<section class="py-20 bg-[#F5F5F5] web-section">
   <div class="max-w-6xl mx-auto px-6">
 
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
@@ -372,8 +472,8 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-      <div class="reveal reveal-delay-1 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
-        <div class="h-48 overflow-hidden">
+      <div class="reveal reveal-delay-1 project-card project-card-web bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
+        <div class="h-48 overflow-hidden relative">
           <img src="../img/hof-reinigung-preview.jpg"
                alt="hof-reinigung.de"
                class="w-full h-full object-cover transition duration-500 hover:scale-105">
@@ -383,6 +483,10 @@
           <p class="text-sm text-[#1A53AD] font-semibold mb-2">Lokale Plattform</p>
 
           <h3 class="font-bold text-xl mb-3">hof-reinigung.de</h3>
+
+          <div class="project-meta">
+            Konzept: schnelle Kontaktaufnahme für regionale Sauberkeitsdienste.
+          </div>
 
           <p class="text-zinc-600 text-sm leading-7">
             Regionale Plattform für Reinigungsdienste in Hof — direkte Anfragen und lokale Anbieter.
@@ -397,7 +501,7 @@
         </div>
       </div>
 
-      <div class="reveal reveal-delay-2 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
+      <div class="reveal reveal-delay-2 project-card project-card-web bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
         <div class="h-48 overflow-hidden">
           <img src="../img/hof-gartenservice-preview.jpg"
                alt="hof-gartenservice.de"
@@ -408,6 +512,10 @@
           <p class="text-sm text-green-600 font-semibold mb-2">Lokale Plattform</p>
 
           <h3 class="font-bold text-xl mb-3">hof-gartenservice.de</h3>
+
+          <div class="project-meta">
+            Ziel: Übersicht und direkte Kontakte für Hofs Gartenservice-Angebote.
+          </div>
 
           <p class="text-zinc-600 text-sm leading-7">
             Übersicht für Gartenpflege, Objektpflege und Außenbereiche in Hof und Umgebung.
@@ -422,7 +530,7 @@
         </div>
       </div>
 
-      <div class="reveal reveal-delay-3 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
+      <div class="reveal reveal-delay-3 project-card project-card-web bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
         <div class="h-48 overflow-hidden">
           <img src="../img/hof-handwerker-preview.jpg"
                alt="hof-handwerker.de"
@@ -433,6 +541,10 @@
           <p class="text-sm text-orange-500 font-semibold mb-2">Lokale Plattform</p>
 
           <h3 class="font-bold text-xl mb-3">hof-handwerker.de</h3>
+
+          <div class="project-meta">
+            Fokus: einfache Verbindung von Kunden und regionalen Handwerkern.
+          </div>
 
           <p class="text-zinc-600 text-sm leading-7">
             Plattform für lokale Handwerker, Servicebetriebe und direkte Anfragen.
@@ -447,7 +559,7 @@
         </div>
       </div>
 
-      <div class="reveal reveal-delay-4 project-card bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
+      <div class="reveal reveal-delay-4 project-card project-card-web bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full">
         <div class="h-48 overflow-hidden">
           <img src="../img/hahn-logo1.jpg"
                alt="hahn-wasserfilter.de"
@@ -458,6 +570,10 @@
           <p class="text-sm text-cyan-600 font-semibold mb-2">Landingpage</p>
 
           <h3 class="font-bold text-xl mb-3">hahn-wasserfilter.de</h3>
+
+          <div class="project-meta">
+            Idee: schneller Einstieg in Beratung und Anfragen für Wasserfilter.
+          </div>
 
           <p class="text-zinc-600 text-sm leading-7">
             Landingpage für Wasserfiltersysteme mit Beratung und Anfragefunktion.
@@ -474,6 +590,29 @@
 
     </div>
 
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="project-cta-block p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="text-sm uppercase tracking-[0.28em] text-slate-500 mb-3">Nächster Schritt</p>
+        <h2 class="text-3xl md:text-4xl font-semibold text-slate-900">
+          Ihr Projekt klar und verständlich präsentieren.
+        </h2>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+        <a href="contact.html"
+           class="inline-flex items-center justify-center rounded-3xl bg-[#1A53AD] text-white px-8 py-4 font-semibold hover:bg-[#163E82] transition">
+          Projekt anfragen
+        </a>
+        <a href="about.html"
+           class="inline-flex items-center justify-center rounded-3xl border border-slate-300 text-slate-900 px-8 py-4 font-semibold hover:bg-slate-100 transition">
+          Mehr über mich
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -557,12 +696,20 @@
       });
     }
 
+    document.querySelectorAll('.project-card.reveal').forEach((card, index) => {
+      card.dataset.sequence = index + 1;
+    });
+
     const items = document.querySelectorAll('.reveal');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          const target = entry.target;
+          if (target.dataset.sequence) {
+            target.style.transitionDelay = `${0.14 * target.dataset.sequence}s`;
+          }
+          target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
