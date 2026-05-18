@@ -14,13 +14,13 @@
   .contact-hero {
   background:
     linear-gradient(
-      rgba(8, 15, 28, 0.88),
-      rgba(12, 22, 38, 0.92)
+      rgba(8, 15, 28, 0.94),
+      rgba(12, 22, 38, 0.96)
     ),
     linear-gradient(
       135deg,
-      rgba(26, 83, 173, 0.22),
-      rgba(59, 130, 246, 0.08)
+      rgba(26, 83, 173, 0.18),
+      rgba(59, 130, 246, 0.06)
     );
 
   position: relative;
@@ -119,6 +119,10 @@
     transform: scale(1.05);
   }
 
+  /* focus styles */
+  :focus { outline: none; }
+  :focus-visible { outline: 3px solid rgba(26,83,173,0.18); outline-offset: 3px; border-radius: 8px; }
+
   @media (prefers-reduced-motion: reduce) {
     .reveal,
     .soft-card,
@@ -141,7 +145,7 @@
   <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
 
     <a href="../index.html" class="flex items-center gap-3 justify-self-start">
-      <img src="../dk-icon.png" alt="DK Software Studio" class="w-10 h-10 md:w-12 md:h-12 app-icon">
+      <img src="../dk-icon.png" alt="DK Software Studio" loading="lazy" class="w-10 h-10 md:w-12 md:h-12 app-icon">
       <div>
         <span class="font-semibold text-xl md:text-2xl tracking-tight text-zinc-900 whitespace-nowrap">
   DK Software Studio
@@ -152,7 +156,7 @@
       </div>
     </a>
 
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium justify-self-center">
+    <nav role="navigation" aria-label="Hauptnavigation" class="hidden md:flex items-center gap-8 text-sm font-medium justify-self-center">
       <a href="../index.html" class="hover:text-[#334267] transition">Startseite</a>
       <a href="about.html" class="hover:text-[#334267] transition">Über mich</a>
       <a href="projects.html" class="hover:text-[#334267] transition">Projekte</a>
@@ -169,7 +173,7 @@
 
   </div>
 
-  <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
+  <div id="mobileMenu" role="navigation" aria-label="Mobiles Menü" class="hidden md:hidden bg-white border-t shadow-lg" aria-hidden="true">
     <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
       <a href="../index.html" class="py-2 hover:text-[#334267] transition">Startseite</a>
       <a href="about.html" class="py-2 hover:text-[#334267] transition">Über mich</a>
@@ -226,7 +230,7 @@
       <a href="https://wa.me/491624012037?text=Hallo%20DK%20Software%20Studio%2C%20ich%20habe%20eine%20Frage%20zu%20einem%20Projekt."
          target="_blank"
          rel="noopener noreferrer"
-         class="reveal soft-card group flex items-center gap-5 bg-[#F8FAFC] hover:bg-white border border-zinc-100 p-6 rounded-3xl">
+        class="reveal soft-card group flex items-center gap-5 bg-[#eef2f7] hover:bg-white border border-zinc-100 p-6 rounded-3xl">
 
         <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">
           <i class="fa-brands fa-whatsapp"></i>
@@ -252,7 +256,7 @@
       </a>
 
       <a href="mailto:dksoftware.studio@gmail.com"
-         class="reveal soft-card group flex items-center gap-5 bg-[#F8FAFC] hover:bg-white border border-zinc-100 p-6 rounded-3xl">
+        class="reveal soft-card group flex items-center gap-5 bg-[#eef2f7] hover:bg-white border border-zinc-100 p-6 rounded-3xl">
 
         <div class="w-14 h-14 bg-blue-100 text-[#1A53AD] rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">
           <i class="fa-solid fa-envelope"></i>
@@ -273,7 +277,7 @@
       </a>
 
       <a href="tel:+491624012037"
-         class="reveal soft-card group flex items-center gap-5 bg-[#F8FAFC] hover:bg-white border border-zinc-100 p-6 rounded-3xl">
+         class="reveal soft-card group flex items-center gap-5 bg-[#eef2f7] hover:bg-white border border-zinc-100 p-6 rounded-3xl">
 
         <div class="w-14 h-14 bg-zinc-100 text-zinc-600 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0">
           <i class="fa-solid fa-phone"></i>
@@ -303,7 +307,7 @@
       <a href="https://www.linkedin.com/in/dimitri-klevzov/"
          target="_blank"
          rel="noopener noreferrer"
-         class="soft-card mx-auto flex items-center justify-center gap-3 bg-[#F8FAFC] hover:bg-white border border-zinc-100 px-6 py-4 rounded-3xl text-[#1A53AD] font-medium max-w-md">
+        class="soft-card mx-auto flex items-center justify-center gap-3 bg-[#eef2f7] hover:bg-white border border-zinc-100 px-6 py-4 rounded-3xl text-[#1A53AD] font-medium max-w-md">
 
         <i class="fa-brands fa-linkedin text-2xl"></i>
         <span>LinkedIn Profil ansehen</span>
@@ -311,6 +315,38 @@
       </a>
     </div>
 
+  </div>
+</section>
+
+<!-- Kontaktformular (Formspree fallback). Замените action на ваш endpoint. -->
+<section class="py-12 bg-white">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="reveal">
+      <form id="contactForm" action="https://formspree.io/f/yourFormId" method="POST" class="space-y-4 bg-white p-6 rounded-2xl border border-zinc-100 shadow-sm" novalidate>
+        <div>
+          <label for="cf-name" class="text-sm font-medium text-zinc-700">Name</label>
+          <input id="cf-name" name="name" required class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1A53AD]" />
+        </div>
+
+        <div>
+          <label for="cf-email" class="text-sm font-medium text-zinc-700">E‑Mail</label>
+          <input id="cf-email" name="email" type="email" required class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1A53AD]" />
+        </div>
+
+        <div>
+          <label for="cf-message" class="text-sm font-medium text-zinc-700">Nachricht</label>
+          <textarea id="cf-message" name="message" rows="5" required class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1A53AD]"></textarea>
+        </div>
+
+        <!-- honeypot -->
+        <input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off">
+
+        <div class="flex items-center gap-4">
+          <button type="submit" class="inline-flex items-center gap-2 bg-[#1A53AD] text-white px-5 py-3 rounded-2xl font-semibold hover:bg-[#163E82] focus-visible:outline-none">Nachricht senden</button>
+          <div id="formStatus" class="text-sm text-zinc-600" aria-live="polite"></div>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -456,23 +492,62 @@
   document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('menuButton');
     const mobileMenu = document.getElementById('mobileMenu');
+    let lastFocused = null;
+
+    function openMenu() {
+      mobileMenu.classList.remove('hidden');
+      menuButton.textContent = '✕';
+      menuButton.setAttribute('aria-expanded', 'true');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      document.documentElement.classList.add('overflow-hidden');
+      lastFocused = document.activeElement;
+      const focusable = mobileMenu.querySelector('a,button');
+      if (focusable) focusable.focus();
+      document.addEventListener('keydown', trapKeys);
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.add('hidden');
+      menuButton.textContent = '☰';
+      menuButton.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.documentElement.classList.remove('overflow-hidden');
+      if (lastFocused) lastFocused.focus();
+      document.removeEventListener('keydown', trapKeys);
+    }
+
+    function trapKeys(e) {
+      if (e.key === 'Escape') closeMenu();
+      if (e.key === 'Tab') {
+        const focusable = Array.from(mobileMenu.querySelectorAll('a,button')).filter(n => n.offsetParent !== null);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+    }
 
     if (menuButton && mobileMenu) {
+      menuButton.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+
       menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        menuButton.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+        if (mobileMenu.classList.contains('hidden')) openMenu(); else closeMenu();
       });
 
       document.querySelectorAll('#mobileMenu a').forEach(link => {
         link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-          menuButton.textContent = '☰';
+          closeMenu();
         });
       });
     }
 
+    // Intersection reveal
     const items = document.querySelectorAll('.reveal');
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -480,11 +555,45 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.08
-    });
-
+    }, { threshold: 0.08 });
     items.forEach(item => observer.observe(item));
+
+    // Contact form handling (basic, Formspree fallback)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.textContent = 'Sende...';
+        const honeypot = form.querySelector('input[name="_gotcha"]').value;
+        if (honeypot) { status.textContent = 'Fehler beim Senden.'; return; }
+        const data = new FormData(form);
+        try {
+          const res = await fetch(form.action, {
+            method: form.method || 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            status.textContent = 'Danke — Ihre Nachricht wurde gesendet.';
+            form.reset();
+          } else {
+            // fallback: open mail client
+            status.textContent = 'Senden fehlgeschlagen. Öffne Mail-Client...';
+            const name = encodeURIComponent(data.get('name')||'');
+            const email = encodeURIComponent(data.get('email')||'');
+            const message = encodeURIComponent(data.get('message')||'');
+            window.location.href = `mailto:dksoftware.studio@gmail.com?subject=Kontakt%20von%20${name}&body=${message}%0A%0AVon:%20${email}`;
+          }
+        } catch (err) {
+          status.textContent = 'Netzwerkfehler — versuche Mail-Client...';
+          const name = encodeURIComponent(data.get('name')||'');
+          const email = encodeURIComponent(data.get('email')||'');
+          const message = encodeURIComponent(data.get('message')||'');
+          window.location.href = `mailto:dksoftware.studio@gmail.com?subject=Kontakt%20von%20${name}&body=${message}%0A%0AVon:%20${email}`;
+        }
+      });
+    }
   });
 </script>
 
