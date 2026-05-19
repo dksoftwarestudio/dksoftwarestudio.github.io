@@ -8,7 +8,6 @@
   <meta name="description" content="DK Software Studio entwickelt einfache Websites, Landingpages und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <style>
     :root {
@@ -40,21 +39,6 @@
       pointer-events: none;
       mix-blend-mode: screen;
       z-index: 0;
-    }
-
-    .hero-bg::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(7, 12, 27, 0.2), rgba(7, 12, 27, 0.75)),
-        url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1b?auto=format&fit=crop&w=2200&q=85');
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      animation: hero-bg-fade 40s ease-in-out infinite;
-      pointer-events: none;
-      z-index: 1;
     }
 
     .hero-panel {
@@ -103,15 +87,6 @@
       }
     }
 
-    @keyframes hero-bg-fade {
-      0%, 22%, 100% {
-        opacity: 0;
-      }
-      30%, 68% {
-        opacity: 0.2;
-      }
-    }
-
     .reveal {
       opacity: 0;
       transform: translateY(18px);
@@ -151,7 +126,7 @@
   </style>
 </head>
 
-<body class="bg-[#F5F5F5] text-zinc-800 font-sans">
+<body class="bg-[#F6F6F4] text-zinc-800 font-sans">
 
 <header class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
   <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -203,10 +178,9 @@
   <div class="max-w-7xl mx-auto px-6 w-full py-24 relative z-10">
     <div class="max-w-3xl reveal hero-panel rounded-[2.5rem] p-10 lg:p-14">
 
-      <div class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-sky-100/80 mb-6">
-        <span class="h-2.5 w-2.5 rounded-full bg-sky-300 animate-pulse"></span>
-        Aktuell im Fokus
-      </div>
+      <div class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-white/70 mb-6">
+  Independent App & Web Studio
+</div>
 
       <p class="text-sm tracking-[0.28em] uppercase text-sky-100/85 mb-6">
         Websites & Apps aus Hof
@@ -299,7 +273,7 @@
   </div>
 </section>
 
-<section class="py-28 bg-[#F5F5F5]">
+<section class="py-28 bg-[#F6F6F4]">
   <div class="max-w-7xl mx-auto px-6">
 
     <div class="text-center mb-16 reveal">
@@ -473,7 +447,7 @@
 
 </section>
 
-<section class="py-28 bg-[#F5F5F5]">
+<section class="py-28 bg-[#F6F6F4]">
   <div class="max-w-5xl mx-auto px-6 text-center reveal">
 
     <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
