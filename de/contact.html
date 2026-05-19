@@ -318,11 +318,12 @@
 <section class="py-12 bg-white">
   <div class="max-w-3xl mx-auto px-6">
     <div class="reveal">
-      <form id="contactForm" action="https://formspree.io/f/xnjrnwwr" method="POST" class="space-y-4 bg-white p-6 rounded-2xl border border-zinc-100 shadow-sm" novalidate>
-        <div>
-          <label for="cf-name" class="text-sm font-medium text-zinc-700">Name</label>
-          <input id="cf-name" name="name" required class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1A53AD]" />
-        </div>
+
+      <form id="contactForm"
+            action="https://formspree.io/f/xnjrnwwr"
+            method="POST"
+            class="space-y-4 bg-white p-6 rounded-2xl border border-zinc-100 shadow-sm"
+            novalidate>
 
         <div>
           <label for="cf-name" class="text-sm font-medium text-zinc-700">
@@ -338,27 +339,49 @@
         </div>
 
         <div>
-          <label for="cf-email" class="text-sm font-medium text-zinc-700">E-Mail</label>
-          <input id="cf-email" name="email" type="email" required placeholder="ihre@email.de"
-                 class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4A637D]" />
+          <label for="cf-email" class="text-sm font-medium text-zinc-700">
+            E-Mail
+          </label>
+
+          <input
+            id="cf-email"
+            name="email"
+            type="email"
+            required
+            placeholder="ihre@email.de"
+            class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4A637D]" />
         </div>
 
         <div>
-          <label for="cf-message" class="text-sm font-medium text-zinc-700">Nachricht</label>
-          <textarea id="cf-message" name="message" rows="5" required placeholder="Welches Projekt möchten Sie besprechen?"
-                    class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4A637D]"></textarea>
+          <label for="cf-message" class="text-sm font-medium text-zinc-700">
+            Nachricht
+          </label>
+
+          <textarea
+            id="cf-message"
+            name="message"
+            rows="5"
+            required
+            placeholder="Welches Projekt möchten Sie besprechen?"
+            class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4A637D]"></textarea>
         </div>
 
-        <input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off">
+        <input type="text"
+               name="_gotcha"
+               style="display:none!important"
+               tabindex="-1"
+               autocomplete="off">
 
         <div class="flex items-center gap-4">
-          <button type="submit"
-                  class="inline-flex items-center gap-2 bg-[#4A637D] text-white px-5 py-3 rounded-2xl font-semibold hover:bg-[#334267] focus-visible:outline-none">
+          <button
+            type="submit"
+            class="inline-flex items-center gap-2 bg-[#4A637D] text-white px-5 py-3 rounded-2xl font-semibold hover:bg-[#334267] focus-visible:outline-none">
             Nachricht senden
           </button>
         </div>
 
       </form>
+
     </div>
   </div>
 </section>
