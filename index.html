@@ -24,7 +24,6 @@
         linear-gradient(180deg, rgba(7, 12, 27, 0.42), rgba(7, 12, 27, 0.88)),
         url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=85');
       background-size: cover;
-      background-position: center 45%;
       overflow: hidden;
       animation: hero-bg-pan 32s ease-in-out infinite;
     }
@@ -260,8 +259,9 @@
 
       <div class="reveal image-hover rounded-[2rem] overflow-hidden shadow-2xl">
         <img src="img/dk-workspace.jpg"
-             alt="Arbeitsplatz und digitale Projekte"
-             class="w-full h-[420px] object-cover object-[center_70%]">
+     alt="DK Software Studio Workspace"
+     class="w-full h-full object-cover"
+     onerror="this.style.display='none'">
       </div>
 
     </div>
