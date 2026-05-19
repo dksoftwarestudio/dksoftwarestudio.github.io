@@ -318,12 +318,24 @@
 <section class="py-12 bg-white">
   <div class="max-w-3xl mx-auto px-6">
     <div class="reveal">
-      <form id="contactForm" action="https://formspree.io/f/xnjrnwvr"
+
+      <form id="contactForm"
+            action="https://formspree.io/f/xnjrnwvr"
+            method="POST"
+            class="space-y-4 bg-white p-6 rounded-2xl border border-zinc-100 shadow-sm"
+            novalidate>
 
         <div>
-          <label for="cf-name" class="text-sm font-medium text-zinc-700">Name</label>
-          <input id="cf-name" name="name" required placeholder="Ihr Name"
-                 class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4A637D]" />
+          <label for="cf-name" class="text-sm font-medium text-zinc-700">
+            Name
+          </label>
+
+          <input
+            id="cf-name"
+            name="name"
+            required
+            placeholder="Ihr Name"
+            class="w-full mt-2 px-4 py-3 border rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4A637D]" />
         </div>
 
         <div>
