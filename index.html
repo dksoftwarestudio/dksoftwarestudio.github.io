@@ -4,56 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>DK Software Studio | Websites & Apps aus Hof</title>
-<link rel="canonical" href="https://dksoftwarestudio.com/">
+  <title>DK Software Studio | Websites &amp; Apps aus Hof</title>
+  <link rel="canonical" href="https://dksoftwarestudio.com/">
+  <link rel="icon" type="image/png" href="dk-icon.png">
+  <link rel="apple-touch-icon" href="dk-icon.png">
   <meta name="description" content="DK Software Studio entwickelt einfache Websites, Landingpages und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="DK Software Studio | Websites &amp; Apps aus Hof">
-<meta property="og:description" content="DK Software Studio entwickelt einfache Websites, Landingpages und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.">
-<meta property="og:url" content="https://dksoftwarestudio.com/">
-<meta property="og:image" content="https://dksoftwarestudio.com/dk-icon.png">
-<meta property="og:site_name" content="DK Software Studio">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DK Software Studio | Websites &amp; Apps aus Hof">
-<meta name="twitter:description" content="DK Software Studio entwickelt einfache Websites, Landingpages und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.">
-<meta name="twitter:image" content="https://dksoftwarestudio.com/dk-icon.png">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "DK Software Studio",
-  "url": "https://dksoftwarestudio.com/",
-  "logo": "https://dksoftwarestudio.com/dk-icon.png",
-  "image": "https://dksoftwarestudio.com/dk-icon.png",
-  "description": "DK Software Studio entwickelt einfache Websites, Landingpages und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Hof",
-    "addressRegion": "Bayern",
-    "addressCountry": "DE"
-  },
-  "areaServed": {
-    "@type": "Place",
-    "name": "Hof (Saale) und Umgebung"
-  },
-  "email": "dksoftware.studio@gmail.com",
-  "telephone": "+491624012037",
-  "sameAs": [
-    "https://www.linkedin.com/in/dimitri-klevzov/"
-  ]
-}
-</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DK Software Studio | Websites &amp; Apps aus Hof">
+  <meta property="og:description" content="DK Software Studio entwickelt einfache Websites, Landingpages und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.">
+  <meta property="og:url" content="https://dksoftwarestudio.com/">
+  <meta property="og:image" content="https://dksoftwarestudio.com/og-image.png">
+  <meta property="og:site_name" content="DK Software Studio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DK Software Studio | Websites &amp; Apps aus Hof">
+  <meta name="twitter:description" content="DK Software Studio entwickelt einfache Websites, Landingpages und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.">
+  <meta name="twitter:image" content="https://dksoftwarestudio.com/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "DK Software Studio",
+    "url": "https://dksoftwarestudio.com/",
+    "logo": "https://dksoftwarestudio.com/dk-icon.png",
+    "image": "https://dksoftwarestudio.com/og-image.png",
+    "description": "DK Software Studio entwickelt einfache Websites, Landingpages und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hof",
+      "addressRegion": "Bayern",
+      "addressCountry": "DE"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Hof (Saale) und Umgebung"
+    },
+    "email": "dksoftware.studio@gmail.com",
+    "telephone": "+491624012037",
+    "sameAs": [
+      "https://www.linkedin.com/in/dimitri-klevzov/"
+    ]
+  }
+  </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     :root {
-  --web-primary: #4A637D;
-  --web-primary-dark: #334267;
-  --web-bg: #F6F6F4;
-  --text: #2F3440;
-}
+      --blue: #1A53AD;
+      --blue-dark: #163E82;
+      --bg: #F5F5F5;
+      --text: #2F3440;
+    }
 
     .hero-bg {
       position: relative;
@@ -62,8 +64,8 @@
         linear-gradient(180deg, rgba(7, 12, 27, 0.42), rgba(7, 12, 27, 0.88)),
         url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=85');
       background-size: cover;
+      background-position: center 45%;
       overflow: hidden;
-      animation: hero-bg-pan 32s ease-in-out infinite;
     }
 
     .hero-bg::before {
@@ -71,11 +73,21 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 26% 18%, rgba(255, 255, 255, 0.14), transparent 22%),
-        radial-gradient(circle at 82% 12%, rgba(94, 165, 255, 0.12), transparent 20%);
+        radial-gradient(circle at 26% 18%, rgba(255, 255, 255, 0.08), transparent 20%),
+        radial-gradient(circle at 82% 12%, rgba(214, 163, 76, 0.05), transparent 14%);
       pointer-events: none;
       mix-blend-mode: screen;
       z-index: 0;
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7, 12, 27, 0.18), rgba(7, 12, 27, 0.82));
+      opacity: 0.22;
+      pointer-events: none;
+      z-index: 1;
     }
 
     .hero-panel {
@@ -109,18 +121,6 @@
       to {
         opacity: 1;
         transform: translateY(0);
-      }
-    }
-
-    @keyframes hero-bg-pan {
-      0% {
-        background-position: center 42%;
-      }
-      50% {
-        background-position: center 58%;
-      }
-      100% {
-        background-position: center 42%;
       }
     }
 
@@ -163,7 +163,7 @@
   </style>
 </head>
 
-<body class="bg-[#F6F6F4] text-zinc-800 font-sans">
+<body class="bg-[#F5F5F5] text-zinc-800 font-sans">
 
 <header class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
   <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -215,9 +215,14 @@
   <div class="max-w-7xl mx-auto px-6 w-full py-24 relative z-10">
     <div class="max-w-3xl reveal hero-panel rounded-[2.5rem] p-10 lg:p-14">
 
-      <div class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-white/70 mb-6">
-  Independent App & Web Studio
-</div>
+      <div class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-sky-100/80 mb-6">
+        <span class="h-2.5 w-2.5 rounded-full bg-[#d9b86c]"></span>
+        Aktuell im Fokus
+      </div>
+
+      <p class="text-sm tracking-[0.28em] uppercase text-sky-100/85 mb-6">
+        Websites &amp; Apps aus Hof
+      </p>
 
       <h1 class="text-5xl md:text-7xl font-semibold leading-[0.92] tracking-[-0.03em] mb-8">
         Digitale Lösungen,<br>
@@ -231,7 +236,7 @@
 
       <div class="hero-actions flex flex-col sm:flex-row gap-4">
         <a href="de/contact.html"
-           class="hero-action bg-white text-[#334267] px-10 py-5 rounded-3xl font-semibold text-lg text-center shadow-xl hover:bg-blue-50 hover:-translate-y-1 hover:shadow-2xl transition">
+           class="hero-action bg-white text-[#334267] px-10 py-5 rounded-3xl font-semibold text-lg text-center shadow-xl hover:bg-slate-100 hover:-translate-y-1 hover:shadow-2xl transition">
           Unverbindlich anfragen
         </a>
 
@@ -279,56 +284,38 @@
     <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-16 items-center">
 
       <div class="reveal">
-        <p class="text-sm tracking-[0.24em] uppercase text-[#4A637D] font-semibold mb-6">
-          Digitale Präsenz
+        <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
+          Was ich mache
         </p>
 
         <h2 class="text-4xl md:text-5xl font-semibold text-zinc-900 leading-tight mb-8">
-          Heute kann fast jeder<br>
-          eine Website erstellen.
+          Weniger Oberfläche.<br>
+          Mehr Nutzen.
         </h2>
 
-        <div class="space-y-6 text-zinc-600 text-lg leading-9 max-w-xl">
-
-          <p>
-            KI-Tools machen Websites schneller und einfacher als je zuvor.
-            Das ist eine gute Entwicklung.
-          </p>
-
-          <p>
-            Aber eine gute Online-Präsenz besteht nicht nur aus schönen Bildern
-            oder modernem Design.
-          </p>
-
-          <p>
-            Es geht darum, verständlich aufzutreten, Vertrauen aufzubauen,
-            mobil gut zu funktionieren und langfristig gepflegt werden zu können.
-          </p>
-
-          <p>
-            Genau darauf liegt mein Fokus:
-            kleine Unternehmen online klar, modern und ruhig wirken zu lassen.
-          </p>
-
-        </div>
+        <p class="text-zinc-600 text-lg leading-9 max-w-xl">
+          Nicht jedes Projekt braucht eine große Agentur. Oft reicht eine klare,
+          stabile und gut gepflegte Lösung — sauber aufgebaut, schnell verstanden
+          und im Alltag wirklich nutzbar.
+        </p>
       </div>
 
       <div class="reveal image-hover rounded-[2rem] overflow-hidden shadow-2xl">
         <img src="img/dk-workspace.jpg"
-             alt="DK Software Studio Workspace"
-             class="w-full h-full object-cover"
-             onerror="this.style.display='none'">
+             alt="Arbeitsplatz und digitale Projekte"
+             class="w-full h-[420px] object-cover object-[center_70%]">
       </div>
 
     </div>
 
   </div>
 </section>
-<section class="py-28 bg-[#F6F6F4]">
+
+<section class="py-28 bg-[#F5F5F5]">
   <div class="max-w-7xl mx-auto px-6">
 
     <div class="text-center mb-16 reveal">
-      <p class="text-sm tracking-[0.24em] uppercase text-[#4A637D] font-semibold mb-5">
+      <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-5">
         Projekte
       </p>
 
@@ -355,14 +342,14 @@
         </div>
 
         <div>
-          <p class="text-sm text-[#1A53AD] font-semibold mb-4">Lokale Plattform</p>
+          <p class="text-sm text-[#334267] font-semibold mb-4">Lokale Plattform</p>
           <h3 class="text-3xl md:text-4xl font-semibold text-zinc-900 mb-5">
             hof-reinigung.de
           </h3>
           <p class="text-zinc-600 text-lg leading-8 mb-6">
             Plattform für Reinigungsfirmen und Kundenanfragen in Hof und Umgebung.
           </p>
-          <span class="text-[#4A637D] font-semibold group-hover:gap-3 inline-flex items-center gap-2 transition-all">
+          <span class="text-[#334267] font-semibold group-hover:gap-3 inline-flex items-center gap-2 transition-all">
             Website ansehen →
           </span>
         </div>
@@ -380,14 +367,14 @@
         </div>
 
         <div class="lg:order-1">
-          <p class="text-sm text-green-600 font-semibold mb-4">Lokale Plattform</p>
+          <p class="text-sm text-[#334267] font-semibold mb-4">Lokale Plattform</p>
           <h3 class="text-3xl md:text-4xl font-semibold text-zinc-900 mb-5">
             hof-gartenservice.de
           </h3>
           <p class="text-zinc-600 text-lg leading-8 mb-6">
             Übersicht für Gartenpflege, Objektpflege und Außenanlagen in der Region.
           </p>
-          <span class="text-[#4A637D] font-semibold group-hover:gap-3 inline-flex items-center gap-2 transition-all">
+          <span class="text-[#334267] font-semibold group-hover:gap-3 inline-flex items-center gap-2 transition-all">
             Website ansehen →
           </span>
         </div>
@@ -405,14 +392,14 @@
         </div>
 
         <div>
-          <p class="text-sm text-orange-500 font-semibold mb-4">Lokale Plattform</p>
+          <p class="text-sm text-[#334267] font-semibold mb-4">Lokale Plattform</p>
           <h3 class="text-3xl md:text-4xl font-semibold text-zinc-900 mb-5">
             hof-handwerker.de
           </h3>
           <p class="text-zinc-600 text-lg leading-8 mb-6">
             Regionale Plattform für Handwerker, Servicebetriebe und direkte Anfragen.
           </p>
-          <span class="text-[#4A637D] font-semibold group-hover:gap-3 inline-flex items-center gap-2 transition-all">
+          <span class="text-[#334267] font-semibold group-hover:gap-3 inline-flex items-center gap-2 transition-all">
             Website ansehen →
           </span>
         </div>
@@ -421,10 +408,10 @@
     </div>
 
     <div class="text-center mt-16 reveal">
-     <a href="de/projects.html"
-   class="inline-flex items-center gap-2 border border-[#4A637D] text-[#4A637D] px-8 py-3 rounded-2xl font-semibold hover:bg-[#F1F3F4] transition">
-  Weitere Projekte ansehen →
-</a>
+      <a href="de/projects.html"
+         class="inline-flex items-center gap-2 border border-[#1A53AD] text-[#1A53AD] px-8 py-3 rounded-2xl font-semibold hover:bg-blue-50 transition">
+        Weitere Projekte ansehen →
+      </a>
     </div>
 
   </div>
@@ -436,7 +423,7 @@
     <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-20 items-start">
 
       <div class="reveal">
-        <p class="text-sm tracking-[0.24em] uppercase text-[#4A637D] font-semibold mb-6">
+        <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
           Leistungen
         </p>
 
@@ -498,10 +485,10 @@
 
 </section>
 
-<section class="py-28 bg-[#F6F6F4]">
+<section class="py-28 bg-[#F5F5F5]">
   <div class="max-w-5xl mx-auto px-6 text-center reveal">
 
-    <p class="text-sm tracking-[0.24em] uppercase text-[#4A637D] font-semibold mb-6">
+    <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
       Warum DK
     </p>
 
@@ -517,21 +504,21 @@
     <div class="grid md:grid-cols-3 gap-10 text-left">
 
       <div>
-        <p class="text-[#4A637D] font-semibold mb-4 text-lg">Direkt</p>
+        <p class="text-[#1A53AD] font-semibold mb-4 text-lg">Direkt</p>
         <p class="text-zinc-600 leading-8">
           Direkte Abstimmung ohne unnötige Zwischenstationen.
         </p>
       </div>
 
       <div>
-        <p class="text-[#4A637D] font-semibold mb-4 text-lg">Verständlich</p>
+        <p class="text-[#1A53AD] font-semibold mb-4 text-lg">Verständlich</p>
         <p class="text-zinc-600 leading-8">
           Klare Sprache statt komplizierter Technik-Begriffe.
         </p>
       </div>
 
       <div>
-        <p class="text-[#4A637D] font-semibold mb-4 text-lg">Pragmatisch</p>
+        <p class="text-[#1A53AD] font-semibold mb-4 text-lg">Pragmatisch</p>
         <p class="text-zinc-600 leading-8">
           Kleine Schritte, saubere Struktur und Fokus auf echten Nutzen.
         </p>
@@ -558,15 +545,15 @@ linear-gradient(
       Sie brauchen eine einfache Website oder eine kleine App?
     </h2>
 
-    <p class="text-white/75 mb-10 max-w-xl mx-auto leading-7">
-  Schreiben Sie kurz, worum es geht. Ich gebe eine ehrliche Einschätzung,
-  ob und wie ich helfen kann.
-</p>
+    <p class="text-blue-100 mb-10 max-w-xl mx-auto leading-7">
+      Schreiben Sie kurz, worum es geht. Ich gebe eine ehrliche Einschätzung,
+      ob und wie ich helfen kann.
+    </p>
 
     <a href="de/contact.html"
-   class="inline-block bg-white text-[#334267] px-12 py-5 rounded-3xl font-semibold text-lg hover:bg-[#F1F3F4] hover:-translate-y-1 hover:shadow-2xl transition">
-  Kontakt aufnehmen
-</a>
+       class="inline-block bg-white text-[#334267] px-12 py-5 rounded-3xl font-semibold text-lg hover:bg-blue-50 hover:-translate-y-1 hover:shadow-2xl transition">
+      Kontakt aufnehmen
+    </a>
 
   </div>
 </section>

@@ -5,21 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Über mich — DK Software Studio</title>
-<link rel="canonical" href="https://dksoftwarestudio.com/de/about.html">
+  <link rel="canonical" href="https://dksoftwarestudio.com/de/about.html">
+  <link rel="icon" type="image/png" href="../dk-icon.png">
+  <link rel="apple-touch-icon" href="../dk-icon.png">
   <meta name="description" content="DK Software Studio aus Hof (Saale): einfache Websites und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Über mich — DK Software Studio">
-<meta property="og:description" content="DK Software Studio aus Hof (Saale): einfache Websites und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.">
-<meta property="og:url" content="https://dksoftwarestudio.com/de/about.html">
-<meta property="og:image" content="https://dksoftwarestudio.com/dk-icon.png">
-<meta property="og:site_name" content="DK Software Studio">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Über mich — DK Software Studio">
-<meta name="twitter:description" content="DK Software Studio aus Hof (Saale): einfache Websites und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.">
-<meta name="twitter:image" content="https://dksoftwarestudio.com/dk-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Über mich — DK Software Studio">
+  <meta property="og:description" content="DK Software Studio aus Hof (Saale): einfache Websites und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.">
+  <meta property="og:url" content="https://dksoftwarestudio.com/de/about.html">
+  <meta property="og:image" content="https://dksoftwarestudio.com/og-image.png">
+  <meta property="og:site_name" content="DK Software Studio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Über mich — DK Software Studio">
+  <meta name="twitter:description" content="DK Software Studio aus Hof (Saale): einfache Websites und funktionale Apps für lokale Projekte, kleine Unternehmen und Selbstständige.">
+  <meta name="twitter:image" content="https://dksoftwarestudio.com/og-image.png">
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <style>
     .hero-bg {
@@ -179,6 +182,53 @@
       line-height: 1.75;
     }
 
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.85rem 1rem;
+      background: rgba(10, 18, 37, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      z-index: 60;
+    }
+
+    .sticky-cta .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      max-width: 78rem;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .sticky-cta a {
+      flex: 1 1 auto;
+      border-radius: 9999px;
+      padding: 0.95rem 1.15rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .sticky-primary {
+      background: #ffffff;
+      color: #334267;
+    }
+
+    .sticky-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    @media (min-width: 768px) {
+      .sticky-cta {
+        display: none;
+      }
+    }
+
     @keyframes hero-bg-pan {
       0% {
         background-position: center 42%;
@@ -239,7 +289,7 @@
   </style>
 </head>
 
-<body class="bg-[#F6F6F4] text-zinc-800 font-sans">
+<body class="bg-[#F5F5F5] text-zinc-800 font-sans">
 
 <header class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
   <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -256,16 +306,16 @@
       </div>
     </a>
 
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-      <a href="../index.html" class="hover:text-[#334267] transition">Startseite</a>
-      <a href="about.html" class="text-[#334267] font-semibold">Über mich</a>
-      <a href="projects.html" class="hover:text-[#334267] transition">Projekte</a>
-      <a href="contact.html" class="hover:text-[#334267] transition">Kontakt</a>
-    </nav>
+   <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+  <a href="../index.html" class="hover:text-[#334267] transition">Startseite</a>
+  <a href="about.html" class="text-[#334267] font-semibold">Über mich</a>
+  <a href="projects.html" class="hover:text-[#334267] transition">Projekte</a>
+  <a href="contact.html" class="hover:text-[#334267] transition">Kontakt</a>
+</nav>
 
     <div class="flex items-center gap-4">
       <a href="contact.html"
-         class="hidden md:block px-6 py-3 bg-[#334267] text-white text-sm font-semibold rounded-2xl hover:bg-[#263452] hover:-translate-y-0.5 hover:shadow-lg transition">
+         class="hidden md:block px-6 py-3 bg-[#334267] text-white text-sm font-semibold rounded-2xl hover:bg-[#163E82] hover:-translate-y-0.5 hover:shadow-lg transition">
         Projekt anfragen
       </a>
 
@@ -279,17 +329,17 @@
   </div>
 
   <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
-    <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
-      <a href="../index.html" class="py-3 hover:text-[#334267] transition">Startseite</a>
-      <a href="about.html" class="py-3 text-[#334267] font-semibold">Über mich</a>
-      <a href="projects.html" class="py-3 hover:text-[#334267] transition">Projekte</a>
-      <a href="contact.html" class="py-3 hover:text-[#334267] transition">Kontakt</a>
-      <a href="contact.html"
-         class="mt-2 bg-[#334267] text-white text-center py-4 rounded-2xl font-semibold">
-        Projekt anfragen
-      </a>
-    </div>
+  <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+    <a href="../index.html" class="py-3 hover:text-[#334267] transition">Startseite</a>
+    <a href="about.html" class="py-3 text-[#334267] font-semibold">Über mich</a>
+    <a href="projects.html" class="py-3 hover:text-[#334267] transition">Projekte</a>
+    <a href="contact.html" class="py-3 hover:text-[#334267] transition">Kontakt</a>
+    <a href="contact.html"
+       class="mt-2 bg-[#334267] text-white text-center py-4 rounded-2xl font-semibold">
+      Projekt anfragen
+    </a>
   </div>
+</div>
 </header>
 
 <section class="hero-bg min-h-[70vh] flex items-center text-white relative overflow-hidden">
@@ -297,7 +347,12 @@
 
     <div class="max-w-3xl reveal hero-panel rounded-[2.5rem] p-10 lg:p-14">
 
-      <p class="text-sm tracking-[0.28em] uppercase text-white/75 mb-6">
+      <div class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-sky-100/80 mb-6">
+        <span class="h-2.5 w-2.5 rounded-full bg-sky-300 animate-pulse"></span>
+        Im Fokus
+      </div>
+
+      <p class="text-sm tracking-[0.28em] uppercase text-sky-100/85 mb-6">
         Über DK Software Studio
       </p>
 
@@ -306,7 +361,7 @@
         Klar umgesetzt.
       </h1>
 
-      <p class="text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed mb-8">
+      <p class="text-lg md:text-xl text-sky-100/85 max-w-2xl leading-relaxed mb-8">
         Ein kleines Studio aus Hof für einfache Websites, lokale Web-Projekte
         und funktionale Apps.
       </p>
@@ -314,22 +369,17 @@
       <div class="grid sm:grid-cols-3 gap-4 mt-8 text-white">
         <div class="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
           <div class="text-3xl md:text-4xl font-semibold leading-none">2026</div>
-          <div class="text-xs uppercase tracking-[0.22em] text-white/70 mt-3">Seit</div>
+          <div class="text-xs uppercase tracking-[0.22em] text-white/70 mt-3">Erfahrung</div>
         </div>
-
         <div class="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
           <div class="text-3xl md:text-4xl font-semibold leading-none">Lokal</div>
           <div class="text-xs uppercase tracking-[0.22em] text-white/70 mt-3">Hof (Saale)</div>
         </div>
-
         <div class="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
           <div class="text-3xl md:text-4xl font-semibold leading-none">Apps</div>
-          <div class="text-xs uppercase tracking-[0.22em] text-white/70 mt-3">Web & Mobile</div>
+          <div class="text-xs uppercase tracking-[0.22em] text-white/70 mt-3">Web &amp; Mobile</div>
         </div>
       </div>
-
-    </div>
-
   </div>
 </section>
 
@@ -337,13 +387,13 @@
   <div class="max-w-7xl mx-auto px-6">
 
     <div class="reveal text-center max-w-2xl mx-auto mb-12">
-      <p class="text-sm tracking-[0.28em] uppercase text-white/75 mb-4">
+      <p class="text-sm tracking-[0.28em] uppercase text-sky-100/90 mb-4">
         Mein Ablauf
       </p>
       <h2 class="text-4xl md:text-5xl font-semibold leading-tight text-slate-100">
         So entsteht Ihr digitales Projekt
       </h2>
-      <p class="mt-5 text-white/75 text-lg leading-8">
+      <p class="mt-5 text-sky-100/85 text-lg leading-8">
         Klare Etappen statt unnötiger Komplexität – von der Idee bis zur fertigen Web-Lösung.
       </p>
     </div>
@@ -384,7 +434,7 @@
 
   </div>
 </section>
-  
+
 <section class="py-28 bg-white">
   <div class="max-w-6xl mx-auto px-6">
 
@@ -392,15 +442,14 @@
 
       <div class="reveal">
         <div class="feature-image">
-          <img src="../img_9908.jpeg"
+          <img src="../IMG_9908.jpeg"
                alt="Dmytro – DK Software Studio"
-               onerror="this.style.display='none'"
                class="w-full h-[340px] object-cover">
         </div>
       </div>
 
       <div class="reveal">
-        <p class="text-sm tracking-[0.24em] uppercase text-[#4A637D] font-semibold mb-6">
+        <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
           DK Software Studio
         </p>
 
@@ -409,29 +458,21 @@
         </h2>
 
         <div class="space-y-6 text-zinc-600 leading-9 text-lg">
-
           <p>
-            Ich lebe in Hof (Saale) und helfe kleinen Unternehmen,
-            online modern, verständlich und vertrauenswürdig aufzutreten.
+            Ich lebe in Hof (Saale) und entwickle digitale Lösungen mit klarem Fokus:
+            einfach, verständlich und im Alltag nutzbar.
           </p>
 
           <p>
-           Heute kann fast jeder mit KI eine Website erstellen.
-Damit ein Unternehmen online aber wirklich professionell wirkt,
-braucht es oft mehr als nur schönes Design.
+            Mein Ansatz ist bewusst schlank. Keine große Agentur, keine unnötigen Prozesse,
+            keine komplizierten Begriffe. Sie sprechen direkt mit mir — von der ersten Idee
+            bis zur fertigen Lösung.
           </p>
 
           <p>
-            Deshalb liegt mein Fokus nicht nur auf Websites,
-            sondern auf klaren und praktischen digitalen Lösungen —
-            klar aufgebaut, mobil optimiert und langfristig pflegbar.
+            Neben eigenen Android-Apps entstehen bei DK Software Studio auch lokale Web-Projekte,
+            zum Beispiel regionale Plattformen für Reinigung, Gartenservice und Handwerker in Hof.
           </p>
-
-          <p>
-            Sie sprechen direkt mit mir — ohne große Agentur,
-            ohne komplizierte Prozesse und ohne unnötige Technik-Begriffe.
-          </p>
-
         </div>
       </div>
 
@@ -440,13 +481,13 @@ braucht es oft mehr als nur schönes Design.
   </div>
 </section>
 
-<section class="py-28 bg-[#F6F6F4]">
+<section class="py-28 bg-[#F5F5F5]">
   <div class="max-w-6xl mx-auto px-6">
 
     <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-20 items-start">
 
       <div class="reveal">
-        <p class="text-sm tracking-[0.24em] uppercase text-[#4A637D] font-semibold mb-6">
+        <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
           Mein Weg
         </p>
 
@@ -463,7 +504,7 @@ braucht es oft mehr als nur schönes Design.
       <div class="reveal space-y-10">
 
         <div class="pb-8 border-b border-zinc-200">
-          <p class="text-[#4A637D] font-semibold mb-3">01 · Eigene Apps</p>
+          <p class="text-[#1A53AD] font-semibold mb-3">01 · Eigene Apps</p>
           <h3 class="text-2xl font-semibold text-zinc-900 mb-3">
             Der Anfang waren einfache Android-Apps.
           </h3>
@@ -473,7 +514,7 @@ braucht es oft mehr als nur schönes Design.
         </div>
 
         <div class="pb-8 border-b border-zinc-200">
-          <p class="text-[#4A637D] font-semibold mb-3">02 · Lokale Projekte</p>
+          <p class="text-[#1A53AD] font-semibold mb-3">02 · Lokale Projekte</p>
           <h3 class="text-2xl font-semibold text-zinc-900 mb-3">
             Danach kamen regionale Websites.
           </h3>
@@ -483,7 +524,7 @@ braucht es oft mehr als nur schönes Design.
         </div>
 
         <div>
-          <p class="text-[#4A637D] font-semibold mb-3">03 · Heute</p>
+          <p class="text-[#1A53AD] font-semibold mb-3">03 · Heute</p>
           <h3 class="text-2xl font-semibold text-zinc-900 mb-3">
             Heute steht Klarheit im Mittelpunkt.
           </h3>
@@ -505,20 +546,14 @@ braucht es oft mehr als nur schönes Design.
 
     <div class="grid lg:grid-cols-2 gap-16 items-center">
 
-      <!-- IMAGE -->
-      <div class="reveal lg:order-2">
-        <img
-          src="../img/dk-workspace1.jpg"
-          alt="Arbeitsweise bei DK Software Studio"
-          onerror="this.style.display='none'"
-          class="w-full h-[420px] object-cover object-center rounded-3xl shadow-xl"
-        >
+      <div class="reveal lg:order-2 image-hover rounded-[2rem] overflow-hidden shadow-2xl">
+        <img src="../img/dk-workspace1.jpg"
+             alt="Arbeitsweise bei DK Software Studio"
+             class="w-full h-[420px] object-cover object-[center_80%]">
       </div>
 
-      <!-- TEXT -->
       <div class="reveal lg:order-1">
-
-        <p class="text-sm tracking-[0.24em] uppercase text-[#4A637D] font-semibold mb-6">
+        <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
           Arbeitsweise
         </p>
 
@@ -527,21 +562,16 @@ braucht es oft mehr als nur schönes Design.
         </h2>
 
         <div class="space-y-6 text-zinc-600 leading-9 text-lg">
-
           <p>
-            Ich arbeite bewusst ohne große Agenturstruktur.
-            Das bedeutet: kurze Wege, direkte Abstimmung
-            und klare Entscheidungen.
+            Ich arbeite bewusst ohne große Agenturstruktur. Das bedeutet:
+            kurze Wege, direkte Abstimmung und klare Entscheidungen.
           </p>
 
           <p>
-            Mir ist wichtig, dass eine Website oder App
-            nicht nur modern aussieht, sondern im Alltag
-            wirklich verstanden und genutzt wird.
+            Mir ist wichtig, dass eine Website oder App nicht nur modern aussieht,
+            sondern im Alltag wirklich verstanden und genutzt wird.
           </p>
-
         </div>
-
       </div>
 
     </div>
@@ -561,11 +591,12 @@ braucht es oft mehr als nur schönes Design.
   ">
 
   <div class="absolute -top-24 -right-24 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-  <div class="absolute -bottom-32 -left-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-32 -left-20 w-80 h-80 bg-blue-300/10 rounded-full blur-3xl"></div>
 
   <div class="max-w-3xl mx-auto px-6 text-center reveal relative z-10">
 
     <span class="inline-flex items-center gap-2 bg-white/12 border border-white/20 backdrop-blur-xl px-5 py-2 rounded-3xl text-sm mb-6">
+      <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
       Persönlicher Kontakt
     </span>
 
@@ -573,7 +604,7 @@ braucht es oft mehr als nur schönes Design.
       Lassen Sie uns über Ihr Projekt sprechen
     </h2>
 
-    <p class="text-white/75 text-lg mb-10 max-w-2xl mx-auto leading-8">
+    <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto leading-8">
       Egal ob kleine Website, lokale Plattform oder einfache App-Idee —
       ich gebe eine ehrliche Einschätzung und denke pragmatisch statt kompliziert.
     </p>
@@ -581,12 +612,12 @@ braucht es oft mehr als nur schönes Design.
     <div class="hero-actions flex flex-col sm:flex-row justify-center gap-4">
 
       <a href="contact.html"
-         class="hero-action bg-white text-[#334267] px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-[#F1F3F4] hover:-translate-y-1 hover:shadow-2xl transition">
+         class="hero-action bg-white text-[#334267] px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-blue-50 hover:-translate-y-1 hover:shadow-2xl transition">
         Kontakt aufnehmen
       </a>
 
       <a href="projects.html"
-         class="hero-action border border-white/30 bg-white/10 backdrop-blur-md text-white px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-white hover:text-[#334267] hover:-translate-y-1 hover:shadow-2xl transition">
+         class="hero-action border border-white/30 bg-white/10 backdrop-blur-md text-white px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-white hover:text-[#1A53AD] hover:-translate-y-1 hover:shadow-2xl transition">
         Projekte ansehen
       </a>
 
@@ -617,6 +648,14 @@ braucht es oft mehr als nur schönes Design.
     </div>
   </div>
 </footer>
+
+<div class="sticky-cta">
+  <div class="cta-inner">
+    <span class="text-sm text-sky-100">Sofort Kontakt aufnehmen</span>
+    <a href="contact.html" class="sticky-primary">Jetzt anfragen</a>
+    <a href="projects.html" class="sticky-secondary">Projekte ansehen</a>
+  </div>
+</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
