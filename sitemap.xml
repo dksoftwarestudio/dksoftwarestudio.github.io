@@ -1,20 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://dksoftwarestudio.com/</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
-
   <url>
     <loc>https://dksoftwarestudio.com/de/about.html</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
-
   <url>
     <loc>https://dksoftwarestudio.com/de/projects.html</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
-
   <url>
     <loc>https://dksoftwarestudio.com/de/contact.html</loc>
+    <lastmod>2026-05-29</lastmod>
   </url>
-
+  <url>
+    <loc>https://dksoftwarestudio.com/de/impressum.html</loc>
+    <lastmod>2026-05-29</lastmod>
+  </url>
+  <url>
+    <loc>https://dksoftwarestudio.com/de/datenschutz.html</loc>
+    <lastmod>2026-05-29</lastmod>
+  </url>
+  <url>
+    <loc>https://dksoftwarestudio.com/privacy.html</loc>
+    <lastmod>2026-05-29</lastmod>
+  </url>
+  <url>
+    <loc>https://dksoftwarestudio.com/privacy-blocknot.html</loc>
+    <lastmod>2026-05-29</lastmod>
+  </url>
+  <url>
+    <loc>https://dksoftwarestudio.com/privacy-ministry-calendar.html</loc>
+    <lastmod>2026-05-29</lastmod>
+  </url>
+  <url>
+    <loc>https://dksoftwarestudio.com/privacy-reminder.html</loc>
+    <lastmod>2026-05-29</lastmod>
+  </url>
 </urlset>
