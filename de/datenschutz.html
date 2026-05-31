@@ -1,233 +1,409 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Datenschutzerklärung – DK Software Studio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Datenschutzerklärung - DK Software Studio</title>
   <meta name="description" content="Datenschutzerklärung von DK Software Studio mit Informationen zu Hosting, Kontaktaufnahme, Cookies und Google Analytics.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Datenschutzerklärung – DK Software Studio">
+  <meta property="og:title" content="Datenschutzerklärung - DK Software Studio">
   <meta property="og:description" content="Datenschutzerklärung von DK Software Studio mit Informationen zu Hosting, Kontaktaufnahme, Cookies und Google Analytics.">
   <meta property="og:url" content="https://dksoftwarestudio.com/de/datenschutz.html">
   <meta property="og:image" content="https://dksoftwarestudio.com/og-image.png">
   <meta property="og:site_name" content="DK Software Studio">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Datenschutzerklärung – DK Software Studio">
+  <meta name="twitter:title" content="Datenschutzerklärung - DK Software Studio">
   <meta name="twitter:description" content="Datenschutzerklärung von DK Software Studio mit Informationen zu Hosting, Kontaktaufnahme, Cookies und Google Analytics.">
   <meta name="twitter:image" content="https://dksoftwarestudio.com/og-image.png">
   <link rel="canonical" href="https://dksoftwarestudio.com/de/datenschutz.html">
   <link rel="icon" type="image/png" href="../dk-icon.png">
   <link rel="apple-touch-icon" href="../dk-icon.png">
 
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
-    :root{
-      --blue:#1A53AD;
-      --bg:#F5F5F5;
-      --text:#555555;
-      --textDark:#2F2F2F;
-      --card:#ffffff;
-      --border:rgba(0,0,0,0.06);
-      --shadow:0 18px 45px rgba(0,0,0,0.07);
+    :root {
+      --blue: #1A53AD;
+      --blue-dark: #163E82;
+      --bg: #F5F5F5;
+      --text: #2F3440;
     }
 
-    *{ box-sizing:border-box; }
-
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
+    .legal-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(7, 12, 27, 0.62), rgba(7, 12, 27, 0.9)),
+        url('../img/developer-workspace.jpg');
+      background-size: cover;
+      background-position: center 44%;
     }
 
-    .wrap{
-      max-width:900px;
-      margin:0 auto;
-      padding:32px 20px 70px;
+    .legal-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 22% 20%, rgba(255, 255, 255, 0.12), transparent 22%),
+        radial-gradient(circle at 82% 14%, rgba(94, 165, 255, 0.12), transparent 20%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      box-shadow:var(--shadow);
-      padding:34px 28px;
+    .hero-panel {
+      position: relative;
+      background: rgba(11, 18, 37, 0.36);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(24px);
+      box-shadow: 0 48px 120px rgba(7, 15, 30, 0.28);
+      z-index: 10;
     }
 
-    h1{
-      margin:0 0 18px;
-      font-size:30px;
-      color:var(--textDark);
+    .legal-card {
+      border: 1px solid rgba(24, 36, 58, 0.08);
+      box-shadow: 0 28px 80px rgba(18, 30, 54, 0.08);
     }
 
-    h2{
-      margin:28px 0 10px;
-      font-size:22px;
-      color:var(--textDark);
+    .legal-content h2 {
+      margin-top: 2.25rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+      line-height: 1.25;
+      font-weight: 700;
+      color: #18181b;
     }
 
-    p{
-      margin:0 0 14px;
-      line-height:1.75;
+    .legal-content h2:first-child {
+      margin-top: 0;
     }
 
-    a{
-      color:var(--blue);
-      text-decoration:none;
+    .legal-content p {
+      margin-bottom: 1rem;
+      color: #52525b;
+      line-height: 1.85;
     }
 
-    a:hover{
-      text-decoration:underline;
+    .legal-content a {
+      color: var(--blue);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    .back{
-      display:inline-block;
-      margin-bottom:18px;
-      font-weight:700;
+    .summary-card {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(18px);
     }
 
-    @media (max-width:700px){
-      .card{
-        padding:26px 20px;
-      }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
 
-      h1{
-        font-size:26px;
-      }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-      h2{
-        font-size:20px;
+    .app-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon:hover {
+      transform: scale(1.05);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .app-icon {
+        opacity: 1;
+        transform: none;
+        transition: none;
       }
     }
   </style>
 </head>
-<body>
 
-  <div class="wrap">
-    <a class="back" href="../index.html">← Zurück zur Startseite</a>
+<body class="bg-[#F5F5F5] text-zinc-800 font-sans">
 
-    <div class="card">
-      <h1>Datenschutzerklärung</h1>
+<header class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
-      <p>
-        Der Schutz Ihrer persönlichen Daten ist uns wichtig. In dieser Datenschutzerklärung informieren wir Sie darüber,
-        welche personenbezogenen Daten beim Besuch dieser Website verarbeitet werden und zu welchem Zweck dies geschieht.
-      </p>
+    <a href="../index.html" class="flex items-center gap-3">
+      <img src="../dk-icon.png" alt="DK Software Studio" class="w-12 h-12 app-icon">
+      <div>
+        <span class="font-semibold text-xl md:text-2xl tracking-tight text-zinc-900">
+          DK Software Studio
+        </span>
+        <p class="text-xs text-zinc-500 -mt-1">Hof (Saale)</p>
+      </div>
+    </a>
 
-      <h2>1. Verantwortliche Stelle</h2>
-      <p>
-        Verantwortlich für die Datenverarbeitung auf dieser Website ist:
-      </p>
-      <p>
-        DK Software Studio<br>
-        Dmytro Klevzov<br>
-        Rabensteiner Str. 6<br>
-        95032 Hof<br>
-        Deutschland<br>
-        E-Mail: dksoftware.studio@gmail.com
-      </p>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="about.html" class="hover:text-[#334267] transition">Über mich</a>
+      <a href="projects.html" class="hover:text-[#334267] transition">Projekte</a>
+      <a href="contact.html" class="hover:text-[#334267] transition">Kontakt</a>
+    </nav>
 
-      <h2>2. Allgemeine Hinweise zur Datenverarbeitung</h2>
-      <p>
-        Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
-        Die Verarbeitung erfolgt ausschließlich im Rahmen der geltenden datenschutzrechtlichen Vorschriften.
-      </p>
+    <div class="flex items-center gap-4">
+      <a href="contact.html"
+         class="hidden md:block px-6 py-3 bg-[#334267] text-white text-sm font-semibold rounded-2xl hover:bg-[#163E82] hover:-translate-y-0.5 hover:shadow-lg transition">
+        Projekt anfragen
+      </a>
 
-      <h2>3. Hosting</h2>
-      <p>
-        Diese Website wird über GitHub Pages bereitgestellt. Beim Aufruf der Website können durch den Hosting-Anbieter
-        technisch erforderliche Daten verarbeitet werden, insbesondere Server-Logdaten wie IP-Adresse,
-        Datum und Uhrzeit des Zugriffs, Browsertyp, Betriebssystem und aufgerufene Seiten.
-      </p>
-      <p>
-        Weitere Informationen zur Datenverarbeitung durch GitHub finden Sie in der Datenschutzerklärung von GitHub:
-        <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">
-          GitHub Privacy Statement
-        </a>
-      </p>
-
-      <h2>4. Cookies und Einwilligungsverwaltung</h2>
-      <p>
-        Diese Website verwendet ein Cookie-Consent-Banner, um Ihre Entscheidung über optionale Analyse-Cookies zu speichern.
-        Dabei wird lokal im Browser gespeichert, ob Sie der Nutzung von Analyse-Cookies zugestimmt oder diese abgelehnt haben.
-      </p>
-      <p>
-        Diese Speicherung erfolgt, um Ihre Auswahl bei weiteren Besuchen der Website zu berücksichtigen.
-      </p>
-
-      <h2>5. Google Analytics</h2>
-      <p>
-        Diese Website nutzt Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House,
-        Barrow Street, Dublin 4, Irland.
-      </p>
-      <p>
-        Google Analytics wird auf dieser Website ausschließlich nach Ihrer ausdrücklichen Einwilligung über das Cookie-Banner aktiviert.
-      </p>
-      <p>
-        Mit Hilfe von Google Analytics können wir die Nutzung unserer Website statistisch auswerten und unser Angebot verbessern.
-      </p>
-      <p>
-        Nach der Aktivierung können unter anderem Informationen über Seitenaufrufe, Verweildauer, verwendete Geräte,
-        Browserinformationen und ungefähre Standortdaten verarbeitet werden.
-      </p>
-      <p>
-        Die IP-Anonymisierung ist aktiviert.
-      </p>
-      <p>
-        Rechtsgrundlage für die Verarbeitung ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO
-        sowie § 25 Abs. 1 TDDDG.
-      </p>
-      <p>
-        Sie können eine bereits erteilte Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen,
-        indem Sie die Cookie-Einstellungen in Ihrem Browser löschen und die Website erneut aufrufen.
-      </p>
-      <p>
-        Weitere Informationen zur Datenverarbeitung durch Google finden Sie hier:
-        <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener">
-          Datenschutzerklärung von Google
-        </a>
-      </p>
-
-      <h2>6. Externe Links</h2>
-      <p>
-        Diese Website enthält Links zu externen Seiten, insbesondere zu Google Play.
-        Beim Anklicken eines solchen Links verlassen Sie diese Website.
-        Für die Inhalte und die Datenverarbeitung auf externen Websites sind ausschließlich deren jeweilige Betreiber verantwortlich.
-      </p>
-
-      <h2>7. Kontaktaufnahme</h2>
-      <p>
-        Wenn Sie uns per E-Mail kontaktieren, werden die von Ihnen übermittelten Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.
-      </p>
-      <p>
-        Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO,
-        sofern Ihre Anfrage mit vorvertraglichen Maßnahmen oder einem Vertrag zusammenhängt,
-        oder Art. 6 Abs. 1 lit. f DSGVO bei allgemeinen Anfragen.
-      </p>
-
-      <h2>8. Speicherdauer</h2>
-      <p>
-        Personenbezogene Daten werden nur so lange gespeichert, wie dies für den jeweiligen Zweck erforderlich ist
-        oder gesetzliche Aufbewahrungspflichten bestehen.
-      </p>
-
-      <h2>9. Ihre Rechte</h2>
-      <p>
-        Sie haben im Rahmen der gesetzlichen Vorschriften das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten,
-        auf Berichtigung unrichtiger Daten, auf Löschung, auf Einschränkung der Verarbeitung sowie auf Widerspruch gegen die Verarbeitung.
-      </p>
-      <p>
-        Sofern die Verarbeitung auf Ihrer Einwilligung beruht, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.
-      </p>
-      <p>
-        Außerdem haben Sie das Recht, sich bei einer zuständigen Datenschutzaufsichtsbehörde zu beschweren.
-      </p>
-
-      <h2>10. Stand</h2>
-      <p>
-        Stand dieser Datenschutzerklärung: April 2026
-      </p>
+      <button id="menuButton"
+              class="md:hidden text-4xl leading-none text-zinc-700 hover:text-zinc-900 transition-colors"
+              aria-label="Menü öffnen">
+        ☰
+      </button>
     </div>
   </div>
+
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
+    <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+      <a href="about.html" class="py-3 hover:text-[#334267] transition">Über mich</a>
+      <a href="projects.html" class="py-3 hover:text-[#334267] transition">Projekte</a>
+      <a href="contact.html" class="py-3 hover:text-[#334267] transition">Kontakt</a>
+      <a href="contact.html"
+         class="mt-2 bg-[#334267] text-white text-center py-4 rounded-2xl font-semibold">
+        Projekt anfragen
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="legal-hero text-white">
+    <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 relative z-10">
+      <div class="max-w-3xl hero-panel rounded-[2rem] p-8 md:p-12 reveal">
+        <div class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-sky-100/80 mb-6">
+          <span class="h-2.5 w-2.5 rounded-full bg-[#d9b86c]"></span>
+          Datenschutz
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-semibold leading-tight mb-6">
+          Datenschutzerklärung
+        </h1>
+
+        <p class="text-lg md:text-xl text-blue-100 leading-8 max-w-2xl">
+          Informationen dazu, welche Daten beim Besuch dieser Website verarbeitet werden und zu welchem Zweck.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4 mt-10 max-w-4xl reveal">
+        <div class="summary-card rounded-3xl p-5">
+          <p class="text-sm text-sky-100/80 mb-2">Hosting</p>
+          <p class="text-white font-semibold">GitHub Pages</p>
+        </div>
+        <div class="summary-card rounded-3xl p-5">
+          <p class="text-sm text-sky-100/80 mb-2">Analyse</p>
+          <p class="text-white font-semibold">Nur mit Einwilligung</p>
+        </div>
+        <div class="summary-card rounded-3xl p-5">
+          <p class="text-sm text-sky-100/80 mb-2">Stand</p>
+          <p class="text-white font-semibold">April 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 reveal">
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-[#1A53AD] hover:text-[#163E82] transition">
+          <span aria-hidden="true">←</span>
+          Zurück zur Startseite
+        </a>
+
+        <a href="impressum.html" class="inline-flex items-center gap-2 text-sm font-semibold text-zinc-600 hover:text-[#1A53AD] transition">
+          Impressum
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <article class="legal-card legal-content bg-white rounded-3xl p-7 md:p-12 reveal">
+        <h2>1. Verantwortliche Stelle</h2>
+        <p>
+          Der Schutz Ihrer persönlichen Daten ist uns wichtig. In dieser Datenschutzerklärung informieren wir Sie darüber,
+          welche personenbezogenen Daten beim Besuch dieser Website verarbeitet werden und zu welchem Zweck dies geschieht.
+        </p>
+        <p>
+          Verantwortlich für die Datenverarbeitung auf dieser Website ist:
+        </p>
+        <p>
+          DK Software Studio<br>
+          Dmytro Klevzov<br>
+          Rabensteiner Str. 6<br>
+          95032 Hof<br>
+          Deutschland<br>
+          E-Mail: <a href="mailto:dksoftware.studio@gmail.com">dksoftware.studio@gmail.com</a>
+        </p>
+
+        <h2>2. Allgemeine Hinweise zur Datenverarbeitung</h2>
+        <p>
+          Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
+          Die Verarbeitung erfolgt ausschließlich im Rahmen der geltenden datenschutzrechtlichen Vorschriften.
+        </p>
+
+        <h2>3. Hosting</h2>
+        <p>
+          Diese Website wird über GitHub Pages bereitgestellt. Beim Aufruf der Website können durch den Hosting-Anbieter
+          technisch erforderliche Daten verarbeitet werden, insbesondere Server-Logdaten wie IP-Adresse,
+          Datum und Uhrzeit des Zugriffs, Browsertyp, Betriebssystem und aufgerufene Seiten.
+        </p>
+        <p>
+          Weitere Informationen zur Datenverarbeitung durch GitHub finden Sie in der Datenschutzerklärung von GitHub:
+          <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">
+            GitHub Privacy Statement
+          </a>
+        </p>
+
+        <h2>4. Cookies und Einwilligungsverwaltung</h2>
+        <p>
+          Diese Website verwendet ein Cookie-Consent-Banner, um Ihre Entscheidung über optionale Analyse-Cookies zu speichern.
+          Dabei wird lokal im Browser gespeichert, ob Sie der Nutzung von Analyse-Cookies zugestimmt oder diese abgelehnt haben.
+        </p>
+        <p>
+          Diese Speicherung erfolgt, um Ihre Auswahl bei weiteren Besuchen der Website zu berücksichtigen.
+        </p>
+
+        <h2>5. Google Analytics</h2>
+        <p>
+          Diese Website nutzt Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House,
+          Barrow Street, Dublin 4, Irland.
+        </p>
+        <p>
+          Google Analytics wird auf dieser Website ausschließlich nach Ihrer ausdrücklichen Einwilligung über das Cookie-Banner aktiviert.
+        </p>
+        <p>
+          Mit Hilfe von Google Analytics können wir die Nutzung unserer Website statistisch auswerten und unser Angebot verbessern.
+        </p>
+        <p>
+          Nach der Aktivierung können unter anderem Informationen über Seitenaufrufe, Verweildauer, verwendete Geräte,
+          Browserinformationen und ungefähre Standortdaten verarbeitet werden.
+        </p>
+        <p>
+          Die IP-Anonymisierung ist aktiviert.
+        </p>
+        <p>
+          Rechtsgrundlage für die Verarbeitung ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO
+          sowie § 25 Abs. 1 TDDDG.
+        </p>
+        <p>
+          Sie können eine bereits erteilte Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen,
+          indem Sie die Cookie-Einstellungen in Ihrem Browser löschen und die Website erneut aufrufen.
+        </p>
+        <p>
+          Weitere Informationen zur Datenverarbeitung durch Google finden Sie hier:
+          <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener">
+            Datenschutzerklärung von Google
+          </a>
+        </p>
+
+        <h2>6. Externe Links</h2>
+        <p>
+          Diese Website enthält Links zu externen Seiten, insbesondere zu Google Play.
+          Beim Anklicken eines solchen Links verlassen Sie diese Website.
+          Für die Inhalte und die Datenverarbeitung auf externen Websites sind ausschließlich deren jeweilige Betreiber verantwortlich.
+        </p>
+
+        <h2>7. Kontaktaufnahme</h2>
+        <p>
+          Wenn Sie uns per E-Mail kontaktieren, werden die von Ihnen übermittelten Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.
+        </p>
+        <p>
+          Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO,
+          sofern Ihre Anfrage mit vorvertraglichen Maßnahmen oder einem Vertrag zusammenhängt,
+          oder Art. 6 Abs. 1 lit. f DSGVO bei allgemeinen Anfragen.
+        </p>
+
+        <h2>8. Speicherdauer</h2>
+        <p>
+          Personenbezogene Daten werden nur so lange gespeichert, wie dies für den jeweiligen Zweck erforderlich ist
+          oder gesetzliche Aufbewahrungspflichten bestehen.
+        </p>
+
+        <h2>9. Ihre Rechte</h2>
+        <p>
+          Sie haben im Rahmen der gesetzlichen Vorschriften das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten,
+          auf Berichtigung unrichtiger Daten, auf Löschung, auf Einschränkung der Verarbeitung sowie auf Widerspruch gegen die Verarbeitung.
+        </p>
+        <p>
+          Sofern die Verarbeitung auf Ihrer Einwilligung beruht, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.
+        </p>
+        <p>
+          Außerdem haben Sie das Recht, sich bei einer zuständigen Datenschutzaufsichtsbehörde zu beschweren.
+        </p>
+
+        <h2>10. Stand</h2>
+        <p>
+          Stand dieser Datenschutzerklärung: April 2026
+        </p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-zinc-900 text-zinc-400 py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+
+      <div class="flex items-center gap-3">
+        <img src="../dk-icon.png" alt="DK Software Studio" class="w-8 h-8">
+        <span class="text-white font-semibold">DK Software Studio</span>
+      </div>
+
+      <div class="text-sm">
+        © 2026 DK Software Studio • Hof (Saale)
+      </div>
+
+      <div class="flex gap-6 text-sm">
+        <a href="impressum.html" class="hover:text-white transition">Impressum</a>
+        <a href="datenschutz.html" class="hover:text-white transition">Datenschutz</a>
+        <a href="contact.html" class="hover:text-white transition">Kontakt</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuButton.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+      });
+
+      document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuButton.textContent = '☰';
+        });
+      });
+    }
+
+    const items = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    items.forEach(item => observer.observe(item));
+  });
+</script>
 
 </body>
 </html>

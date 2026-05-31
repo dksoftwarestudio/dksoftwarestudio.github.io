@@ -1,153 +1,317 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impressum – DK Software Studio</title>
-<meta name="description" content="Impressum von DK Software Studio aus Hof (Saale) mit Anbieterkennzeichnung und Kontaktangaben.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Impressum – DK Software Studio">
-<meta property="og:description" content="Impressum von DK Software Studio aus Hof (Saale) mit Anbieterkennzeichnung und Kontaktangaben.">
-<meta property="og:url" content="https://dksoftwarestudio.com/de/impressum.html">
-<meta property="og:image" content="https://dksoftwarestudio.com/og-image.png">
-<meta property="og:site_name" content="DK Software Studio">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Impressum – DK Software Studio">
-<meta name="twitter:description" content="Impressum von DK Software Studio aus Hof (Saale) mit Anbieterkennzeichnung und Kontaktangaben.">
-<meta name="twitter:image" content="https://dksoftwarestudio.com/og-image.png">
-<link rel="canonical" href="https://dksoftwarestudio.com/de/impressum.html">
-<link rel="icon" type="image/png" href="../dk-icon.png">
-<link rel="apple-touch-icon" href="../dk-icon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root{
-  --blue:#1A53AD;
-  --bg:#F5F5F5;
-  --text:#555555;
-  --textDark:#2F2F2F;
-  --card:#ffffff;
-  --border:rgba(0,0,0,0.06);
-}
+  <title>Impressum - DK Software Studio</title>
+  <meta name="description" content="Impressum von DK Software Studio aus Hof (Saale) mit Anbieterkennzeichnung und Kontaktangaben.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Impressum - DK Software Studio">
+  <meta property="og:description" content="Impressum von DK Software Studio aus Hof (Saale) mit Anbieterkennzeichnung und Kontaktangaben.">
+  <meta property="og:url" content="https://dksoftwarestudio.com/de/impressum.html">
+  <meta property="og:image" content="https://dksoftwarestudio.com/og-image.png">
+  <meta property="og:site_name" content="DK Software Studio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Impressum - DK Software Studio">
+  <meta name="twitter:description" content="Impressum von DK Software Studio aus Hof (Saale) mit Anbieterkennzeichnung und Kontaktangaben.">
+  <meta name="twitter:image" content="https://dksoftwarestudio.com/og-image.png">
+  <link rel="canonical" href="https://dksoftwarestudio.com/de/impressum.html">
+  <link rel="icon" type="image/png" href="../dk-icon.png">
+  <link rel="apple-touch-icon" href="../dk-icon.png">
 
-*{ box-sizing:border-box; }
+  <script src="https://cdn.tailwindcss.com"></script>
 
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+  <style>
+    :root {
+      --blue: #1A53AD;
+      --blue-dark: #163E82;
+      --bg: #F5F5F5;
+      --text: #2F3440;
+    }
 
-.wrap{
-  max-width:860px;
-  margin:0 auto;
-  padding:40px 20px;
-}
+    .legal-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(7, 12, 27, 0.62), rgba(7, 12, 27, 0.9)),
+        url('../img/dk-workspace.jpg');
+      background-size: cover;
+      background-position: center 44%;
+    }
 
-.card{
-  background:var(--card);
-  border-radius:18px;
-  padding:32px;
-  border:1px solid var(--border);
-}
+    .legal-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 22% 20%, rgba(255, 255, 255, 0.12), transparent 22%),
+        radial-gradient(circle at 82% 14%, rgba(94, 165, 255, 0.12), transparent 20%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-.back{
-  display:inline-block;
-  margin-bottom:18px;
-  font-weight:700;
-}
+    .hero-panel {
+      position: relative;
+      background: rgba(11, 18, 37, 0.36);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(24px);
+      box-shadow: 0 48px 120px rgba(7, 15, 30, 0.28);
+      z-index: 10;
+    }
 
-h1{
-  margin-top:0;
-  color:var(--textDark);
-}
+    .legal-card {
+      border: 1px solid rgba(24, 36, 58, 0.08);
+      box-shadow: 0 28px 80px rgba(18, 30, 54, 0.08);
+    }
 
-h2{
-  margin-top:28px;
-  color:var(--textDark);
-}
+    .legal-content h2 {
+      margin-top: 2.25rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+      line-height: 1.25;
+      font-weight: 700;
+      color: #18181b;
+    }
 
-p{
-  line-height:1.7;
-  margin:0 0 12px;
-}
+    .legal-content h2:first-child {
+      margin-top: 0;
+    }
 
-a{
-  color:var(--blue);
-  text-decoration:none;
-}
+    .legal-content p {
+      margin-bottom: 1rem;
+      color: #52525b;
+      line-height: 1.85;
+    }
 
-a:hover{
-  text-decoration:underline;
-}
+    .legal-content a {
+      color: var(--blue);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
-@media (max-width:700px){
-  .card{
-    padding:26px 20px;
-  }
-}
-</style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .app-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon:hover {
+      transform: scale(1.05);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .app-icon {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="bg-[#F5F5F5] text-zinc-800 font-sans">
 
-<div class="wrap">
+<header class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
-  <a class="back" href="../index.html">← Zurück zur Startseite</a>
+    <a href="../index.html" class="flex items-center gap-3">
+      <img src="../dk-icon.png" alt="DK Software Studio" class="w-12 h-12 app-icon">
+      <div>
+        <span class="font-semibold text-xl md:text-2xl tracking-tight text-zinc-900">
+          DK Software Studio
+        </span>
+        <p class="text-xs text-zinc-500 -mt-1">Hof (Saale)</p>
+      </div>
+    </a>
 
-  <div class="card">
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="about.html" class="hover:text-[#334267] transition">Über mich</a>
+      <a href="projects.html" class="hover:text-[#334267] transition">Projekte</a>
+      <a href="contact.html" class="hover:text-[#334267] transition">Kontakt</a>
+    </nav>
 
-    <h1>Impressum</h1>
+    <div class="flex items-center gap-4">
+      <a href="contact.html"
+         class="hidden md:block px-6 py-3 bg-[#334267] text-white text-sm font-semibold rounded-2xl hover:bg-[#163E82] hover:-translate-y-0.5 hover:shadow-lg transition">
+        Projekt anfragen
+      </a>
 
-    <h2>Angaben gemäß § 5 TMG</h2>
-
-    <p>
-      DK Software Studio<br>
-      Inhaber: Dmytro Klevzov<br>
-      Rabensteiner Str. 6<br>
-      95032 Hof<br>
-      Deutschland
-    </p>
-
-    <h2>Kontakt</h2>
-    <p>
-      E-Mail: dksoftware.studio@gmail.com
-    </p>
-
-    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-<p>
-  Dmytro Klevzov<br>
-  Anschrift: siehe oben
-</p>
-
-    <h2>Haftung für Inhalte</h2>
-    <p>
-      Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
-      Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen
-      zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-    </p>
-
-    <p>
-      Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
-      Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich.
-    </p>
-
-    <h2>Haftung für Links</h2>
-    <p>
-      Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.
-      Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
-      Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
-    </p>
-
-    <h2>Urheberrecht</h2>
-    <p>
-      Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
-      Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes
-      bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
-    </p>
-
+      <button id="menuButton"
+              class="md:hidden text-4xl leading-none text-zinc-700 hover:text-zinc-900 transition-colors"
+              aria-label="Menü öffnen">
+        ☰
+      </button>
+    </div>
   </div>
-</div>
+
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
+    <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+      <a href="about.html" class="py-3 hover:text-[#334267] transition">Über mich</a>
+      <a href="projects.html" class="py-3 hover:text-[#334267] transition">Projekte</a>
+      <a href="contact.html" class="py-3 hover:text-[#334267] transition">Kontakt</a>
+      <a href="contact.html"
+         class="mt-2 bg-[#334267] text-white text-center py-4 rounded-2xl font-semibold">
+        Projekt anfragen
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="legal-hero text-white">
+    <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 relative z-10">
+      <div class="max-w-3xl hero-panel rounded-[2rem] p-8 md:p-12 reveal">
+        <div class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-sky-100/80 mb-6">
+          <span class="h-2.5 w-2.5 rounded-full bg-[#d9b86c]"></span>
+          Rechtliches
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-semibold leading-tight mb-6">
+          Impressum
+        </h1>
+
+        <p class="text-lg md:text-xl text-blue-100 leading-8 max-w-2xl">
+          Anbieterkennzeichnung, Kontaktangaben und rechtliche Hinweise zu DK Software Studio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 reveal">
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-[#1A53AD] hover:text-[#163E82] transition">
+          <span aria-hidden="true">←</span>
+          Zurück zur Startseite
+        </a>
+
+        <a href="datenschutz.html" class="inline-flex items-center gap-2 text-sm font-semibold text-zinc-600 hover:text-[#1A53AD] transition">
+          Datenschutzerklärung
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <article class="legal-card legal-content bg-white rounded-3xl p-7 md:p-12 reveal">
+        <h2>Angaben gemäß § 5 TMG</h2>
+
+        <p>
+          DK Software Studio<br>
+          Inhaber: Dmytro Klevzov<br>
+          Rabensteiner Str. 6<br>
+          95032 Hof<br>
+          Deutschland
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>
+          E-Mail: <a href="mailto:dksoftware.studio@gmail.com">dksoftware.studio@gmail.com</a>
+        </p>
+
+        <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+        <p>
+          Dmytro Klevzov<br>
+          Anschrift: siehe oben
+        </p>
+
+        <h2>Haftung für Inhalte</h2>
+        <p>
+          Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+          Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen
+          zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+        </p>
+
+        <p>
+          Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
+          Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich.
+        </p>
+
+        <h2>Haftung für Links</h2>
+        <p>
+          Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.
+          Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+          Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+        </p>
+
+        <h2>Urheberrecht</h2>
+        <p>
+          Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+          Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes
+          bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+        </p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-zinc-900 text-zinc-400 py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+
+      <div class="flex items-center gap-3">
+        <img src="../dk-icon.png" alt="DK Software Studio" class="w-8 h-8">
+        <span class="text-white font-semibold">DK Software Studio</span>
+      </div>
+
+      <div class="text-sm">
+        © 2026 DK Software Studio • Hof (Saale)
+      </div>
+
+      <div class="flex gap-6 text-sm">
+        <a href="impressum.html" class="hover:text-white transition">Impressum</a>
+        <a href="datenschutz.html" class="hover:text-white transition">Datenschutz</a>
+        <a href="contact.html" class="hover:text-white transition">Kontakt</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuButton.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+      });
+
+      document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuButton.textContent = '☰';
+        });
+      });
+    }
+
+    const items = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    items.forEach(item => observer.observe(item));
+  });
+</script>
 
 </body>
 </html>
