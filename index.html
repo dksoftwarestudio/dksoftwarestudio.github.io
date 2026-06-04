@@ -604,8 +604,7 @@ linear-gradient(
 </footer>
 
 <div id="cookie-banner"
-     class="cookie-banner bg-white text-zinc-800 rounded-3xl border border-zinc-200 shadow-2xl p-5"
-     style="display:none"
+     class="cookie-banner hidden bg-white text-zinc-800 rounded-3xl border border-zinc-200 shadow-2xl p-5"
      role="dialog"
      aria-live="polite"
      aria-labelledby="cookie-banner-title">
@@ -617,12 +616,12 @@ linear-gradient(
   </p>
   <div class="flex flex-col sm:flex-row gap-3">
     <button type="button"
-            onclick="acceptCookies()"
+            id="cookie-consent-accept"
             class="flex-1 bg-[#1A53AD] text-white px-4 py-3 rounded-2xl font-semibold hover:bg-[#163E82] transition">
       Analytics akzeptieren
     </button>
     <button type="button"
-            onclick="declineCookies()"
+            id="cookie-consent-reject"
             class="flex-1 border border-zinc-300 px-4 py-3 rounded-2xl font-semibold text-zinc-700 hover:bg-zinc-100 transition">
       Nur notwendige Cookies
     </button>
@@ -669,7 +668,76 @@ linear-gradient(
     items.forEach(item => observer.observe(item));
   });
 </script>
-<script src="analytics.js" defer></script>
+<script>
+  const GA_MEASUREMENT_ID = 'G-T3DB7K2NSS';
+  const ANALYTICS_CONSENT_KEY = 'dkSoftwareStudioAnalyticsConsent';
+
+  const loadGoogleAnalytics = () => {
+    if (window.__dkSoftwareStudioAnalyticsLoaded) {
+      return;
+    }
+
+    window.__dkSoftwareStudioAnalyticsLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments);
+    };
+
+    const googleAnalyticsScript = document.createElement('script');
+    googleAnalyticsScript.async = true;
+    googleAnalyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(googleAnalyticsScript);
+
+    window.gtag('js', new Date());
+    window.gtag('config', GA_MEASUREMENT_ID);
+  };
+
+  const deleteAnalyticsCookie = (name, domain) => {
+    document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax${domain ? `; domain=${domain}` : ''}`;
+  };
+
+  const clearGoogleAnalyticsCookies = () => {
+    const host = window.location.hostname;
+    const rootDomain = host.startsWith('www.') ? host.slice(4) : host;
+
+    ['_ga', `_ga_${GA_MEASUREMENT_ID.replace('G-', '')}`].forEach((cookieName) => {
+      deleteAnalyticsCookie(cookieName);
+      deleteAnalyticsCookie(cookieName, host);
+      deleteAnalyticsCookie(cookieName, `.${rootDomain}`);
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptAnalyticsButton = document.getElementById('cookie-consent-accept');
+    const rejectAnalyticsButton = document.getElementById('cookie-consent-reject');
+    const analyticsConsent = localStorage.getItem(ANALYTICS_CONSENT_KEY);
+
+    if (analyticsConsent === 'accepted') {
+      loadGoogleAnalytics();
+    } else if (analyticsConsent === 'rejected') {
+      clearGoogleAnalyticsCookies();
+    } else if (cookieBanner) {
+      cookieBanner.classList.remove('hidden');
+    }
+
+    if (acceptAnalyticsButton && cookieBanner) {
+      acceptAnalyticsButton.addEventListener('click', () => {
+        localStorage.setItem(ANALYTICS_CONSENT_KEY, 'accepted');
+        cookieBanner.classList.add('hidden');
+        loadGoogleAnalytics();
+      });
+    }
+
+    if (rejectAnalyticsButton && cookieBanner) {
+      rejectAnalyticsButton.addEventListener('click', () => {
+        localStorage.setItem(ANALYTICS_CONSENT_KEY, 'rejected');
+        cookieBanner.classList.add('hidden');
+        clearGoogleAnalyticsCookies();
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
