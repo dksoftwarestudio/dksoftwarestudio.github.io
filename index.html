@@ -164,16 +164,67 @@
       position: fixed;
       left: 16px;
       right: 16px;
-      bottom: 16px;
+      bottom: calc(16px + env(safe-area-inset-bottom, 0px));
       z-index: 60;
+      max-width: min(100% - 32px, 400px);
+      background: rgba(11, 18, 37, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 48px 120px rgba(7, 15, 30, 0.28);
+      color: #fff;
+    }
+
+    .cookie-banner__title {
+      color: #fff;
+    }
+
+    .cookie-banner__text {
+      color: rgba(226, 232, 240, 0.82);
+    }
+
+    .cookie-banner__link {
+      color: rgba(147, 197, 253, 0.95);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .cookie-banner__link:hover {
+      color: #fff;
+    }
+
+    .cookie-banner__accept {
+      background: #334267;
+      color: #fff;
+    }
+
+    .cookie-banner__accept:hover {
+      background: #163E82;
+    }
+
+    .cookie-banner__reject {
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .cookie-banner__reject:hover {
+      background: #fff;
+      color: #334267;
     }
 
     @media (min-width: 768px) {
       .cookie-banner {
         left: auto;
         right: 24px;
-        bottom: 24px;
-        max-width: 440px;
+        bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+        border-radius: 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cookie-banner {
+        border-radius: 2.5rem;
       }
     }
 
@@ -604,30 +655,30 @@ linear-gradient(
 </footer>
 
 <div id="cookie-banner"
-     class="cookie-banner hidden bg-white text-zinc-800 rounded-3xl border border-zinc-200 shadow-2xl p-5"
+     class="cookie-banner hidden rounded-[2rem] md:rounded-[2.5rem] p-5 md:p-6"
      role="dialog"
      aria-live="polite"
      aria-labelledby="cookie-banner-title">
-  <h2 id="cookie-banner-title" class="text-lg font-semibold mb-2">
+  <h2 id="cookie-banner-title" class="cookie-banner__title text-base font-semibold mb-2">
     Cookies &amp; Statistik
   </h2>
-  <p class="text-sm leading-6 text-zinc-600 mb-4">
-    Wir verwenden Google Analytics nur, wenn Sie ausdrücklich zustimmen. Ohne Zustimmung werden keine Analytics-Cookies gesetzt.
+  <p class="cookie-banner__text text-sm leading-6 mb-4">
+    Google Analytics nur nach Ihrer Einwilligung. Ohne Zustimmung keine Analytics-Cookies.
   </p>
   <div class="flex flex-col sm:flex-row gap-3">
     <button type="button"
             id="cookie-consent-accept"
-            class="flex-1 bg-[#1A53AD] text-white px-4 py-3 rounded-2xl font-semibold hover:bg-[#163E82] transition">
-      Analytics akzeptieren
+            class="cookie-banner__accept flex-1 px-4 py-3 rounded-2xl font-semibold transition">
+      Akzeptieren
     </button>
     <button type="button"
             id="cookie-consent-reject"
-            class="flex-1 border border-zinc-300 px-4 py-3 rounded-2xl font-semibold text-zinc-700 hover:bg-zinc-100 transition">
-      Nur notwendige Cookies
+            class="cookie-banner__reject flex-1 px-4 py-3 rounded-2xl font-semibold transition">
+      Nur notwendig
     </button>
   </div>
-  <p class="text-xs text-zinc-500 mt-3">
-    Details finden Sie in der <a href="de/datenschutz.html" class="text-[#1A53AD] underline">Datenschutzerklärung</a>.
+  <p class="text-xs mt-3">
+    <a href="de/datenschutz.html" class="cookie-banner__link">Datenschutzerklärung</a>
   </p>
 </div>
 
