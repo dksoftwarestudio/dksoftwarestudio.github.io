@@ -1,6 +1,9 @@
 // analytics.js — DK Software Studio
 
 function loadAnalytics() {
+  if (window.__dkSoftwareStudioAnalyticsLoaded) return;
+  window.__dkSoftwareStudioAnalyticsLoaded = true;
+
   var script = document.createElement('script');
   script.async = true;
   script.src = "https://www.googletagmanager.com/gtag/js?id=G-T3DB7K2NSS";
