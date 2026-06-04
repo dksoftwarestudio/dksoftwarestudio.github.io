@@ -162,33 +162,17 @@
 
     .cookie-banner {
       position: fixed;
-      left: calc(16px + env(safe-area-inset-left, 0px));
-      right: calc(16px + env(safe-area-inset-right, 0px));
-      bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-      z-index: 9999;
-      width: auto;
-      max-height: calc(100vh - 32px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
-      overflow-y: auto;
-      box-sizing: border-box;
-      transform: translateZ(0);
-      -webkit-transform: translateZ(0);
-      pointer-events: auto;
-    }
-
-    .cookie-banner button {
-      min-height: 48px;
-      touch-action: manipulation;
-    }
-
-    .cookie-banner a {
-      overflow-wrap: anywhere;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 60;
     }
 
     @media (min-width: 768px) {
       .cookie-banner {
         left: auto;
-        right: calc(24px + env(safe-area-inset-right, 0px));
-        bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+        right: 24px;
+        bottom: 24px;
         max-width: 440px;
       }
     }
