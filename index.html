@@ -98,31 +98,6 @@
       z-index: 10;
     }
 
-    .hero-actions .hero-action {
-      opacity: 0;
-      transform: translateY(10px);
-      animation: hero-action-fade 0.42s ease-out forwards;
-    }
-
-    .hero-actions .hero-action:nth-child(1) {
-      animation-delay: 0.14s;
-    }
-
-    .hero-actions .hero-action:nth-child(2) {
-      animation-delay: 0.24s;
-    }
-
-    @keyframes hero-action-fade {
-      from {
-        opacity: 0.2;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .reveal {
       opacity: 0.18;
       transform: translateY(12px);
@@ -153,7 +128,6 @@
     @media (prefers-reduced-motion: reduce) {
       .reveal,
       .app-icon,
-      .hero-action,
       .image-hover img {
         opacity: 1;
         transform: none;
@@ -308,46 +282,6 @@
         damit Besucher schnell verstehen, was Sie anbieten — und einfacher Kontakt aufnehmen.
       </p>
 
-      <div class="hero-actions hidden md:flex flex-row gap-3 md:gap-4">
-        <a href="de/contact.html"
-           class="hero-action bg-white text-[#334267] px-6 md:px-10 py-3.5 md:py-5 rounded-2xl md:rounded-3xl font-semibold text-base md:text-lg text-center shadow-xl hover:bg-slate-100 hover:-translate-y-1 hover:shadow-2xl transition">
-          Idee kurz besprechen
-        </a>
-
-        <a href="de/projects.html"
-           class="hero-action border border-white/25 bg-white/10 backdrop-blur-xl text-white px-6 md:px-10 py-3.5 md:py-5 rounded-2xl md:rounded-3xl font-semibold text-base md:text-lg text-center hover:bg-white hover:text-[#334267] hover:-translate-y-1 hover:shadow-2xl transition">
-          Projekte ansehen
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-7 md:mt-10 text-white">
-        <div class="rounded-2xl md:rounded-3xl border border-white/15 bg-white/10 p-4 md:p-5 text-left backdrop-blur-xl">
-          <div class="text-sm md:text-base font-semibold">
-            Direkt
-          </div>
-          <div class="text-xs md:text-sm leading-5 text-white/72 mt-2">
-            Persönliche Abstimmung statt langer Agenturwege.
-          </div>
-        </div>
-
-        <div class="rounded-2xl md:rounded-3xl border border-white/15 bg-white/10 p-4 md:p-5 text-left backdrop-blur-xl">
-          <div class="text-sm md:text-base font-semibold">
-            Für kleine Screens
-          </div>
-          <div class="text-xs md:text-sm leading-5 text-white/72 mt-2">
-            Texte, Struktur und Kontaktwege zuerst mobil gedacht.
-          </div>
-        </div>
-
-        <div class="rounded-2xl md:rounded-3xl border border-white/15 bg-white/10 p-4 md:p-5 text-left backdrop-blur-xl">
-          <div class="text-sm md:text-base font-semibold">
-            Anfragebereit
-          </div>
-          <div class="text-xs md:text-sm leading-5 text-white/72 mt-2">
-            Seiten, die Vertrauen schaffen und den nächsten Schritt erleichtern.
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
