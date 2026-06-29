@@ -50,81 +50,46 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
  <style>
-    .contact-hero {
+  .hero-bg {
+    position: relative;
+    isolation: isolate;
     background:
-      linear-gradient(
-        180deg,
-        #3A4252 0%,
-        #262D39 100%
-      ),
-      linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.05),
-        rgba(148, 163, 184, 0.10)
-      );
+      linear-gradient(180deg, rgba(7, 12, 27, 0.42), rgba(7, 12, 27, 0.88)),
+      url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=85');
+    background-size: cover;
+    background-position: center 45%;
+    overflow: hidden;
+  }
 
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-
-  .contact-orb {
+  .hero-bg::before {
+    content: "";
     position: absolute;
-    border-radius: 999px;
+    inset: 0;
+    background:
+      radial-gradient(circle at 26% 18%, rgba(255, 255, 255, 0.08), transparent 20%),
+      radial-gradient(circle at 82% 12%, rgba(214, 163, 76, 0.05), transparent 14%);
     pointer-events: none;
-    opacity: 0.45;
+    mix-blend-mode: screen;
+    z-index: 0;
   }
 
-  .contact-orb-1 {
-    width: 300px;
-    height: 300px;
-    top: -70px;
-    right: 10%;
-    background:
-      radial-gradient(
-        circle,
-        rgba(255,255,255,0.18),
-        rgba(147,197,253,0.08),
-        transparent 72%
-      );
-
-    animation: contactOrb1 16s ease-in-out infinite alternate;
+  .hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 12, 27, 0.18), rgba(7, 12, 27, 0.82));
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 1;
   }
 
-  .contact-orb-2 {
-    width: 180px;
-    height: 180px;
-    bottom: 10%;
-    left: 10%;
-    background:
-      radial-gradient(
-        circle,
-        rgba(255,255,255,0.12),
-        rgba(147,197,253,0.06),
-        transparent 72%
-      );
-
-    animation: contactOrb2 18s ease-in-out infinite alternate;
-  }
-
-  @keyframes contactOrb1 {
-    0% {
-      transform: translate(0, 0) scale(1);
-    }
-
-    100% {
-      transform: translate(-20px, 16px) scale(1.04);
-    }
-  }
-
-  @keyframes contactOrb2 {
-    0% {
-      transform: translate(0, 0) scale(1);
-    }
-
-    100% {
-      transform: translate(18px, -12px) scale(1.06);
-    }
+  .hero-panel {
+    position: relative;
+    background: rgba(11, 18, 37, 0.36);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(24px);
+    box-shadow: 0 48px 120px rgba(7, 15, 30, 0.28);
+    z-index: 10;
   }
 
   .reveal {
@@ -170,10 +135,6 @@
       opacity: 1;
       transform: none;
       transition: none;
-    }
-
-    .contact-orb {
-      animation: none;
     }
   }
 </style>
@@ -232,27 +193,29 @@
   </div>
 </header>
 
-<section class="contact-hero text-white py-14 md:py-16 relative overflow-hidden">
+<section class="hero-bg md:min-h-[70vh] flex items-center text-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full py-8 md:py-20 relative z-10">
 
-  <div class="contact-orb contact-orb-1"></div>
-  <div class="contact-orb contact-orb-2"></div>
+    <div class="max-w-3xl reveal hero-panel rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 lg:p-14">
 
-  <div class="max-w-4xl mx-auto px-6 text-center reveal relative z-10">
+      <div class="inline-flex items-center gap-2 md:gap-3 text-[0.65rem] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-sky-100/80 mb-3 md:mb-6">
+        <span class="h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-[#d9b86c]"></span>
+        Direkter Kontakt
+      </div>
 
-    <div class="inline-flex items-center gap-2 bg-white/12 border border-white/20 backdrop-blur-xl px-5 py-2 rounded-3xl text-sm mb-6 shadow-2xl"
-         style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 30px rgba(0,0,0,0.18);">
-      <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
-      Direkter Kontakt
+      <p class="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.28em] uppercase text-sky-100/85 mb-3 md:mb-6">
+        Kontakt
+      </p>
+
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-semibold leading-[0.95] md:leading-[0.92] tracking-[-0.03em] mb-5 md:mb-8">
+        Kontakt aufnehmen
+      </h1>
+
+      <p class="text-base md:text-xl text-sky-100/85 max-w-2xl leading-7 md:leading-relaxed">
+        Kurz schreiben reicht — ich melde mich persönlich zurück.
+      </p>
+
     </div>
-
-    <h1 class="text-5xl md:text-6xl font-semibold tracking-tight mb-6">
-      Kontakt aufnehmen
-    </h1>
-
-    <p class="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
-      Kurz schreiben reicht — ich melde mich persönlich zurück.
-    </p>
-
   </div>
 </section>
 
@@ -553,7 +516,12 @@
     }
 
     // Intersection reveal
-    const items = document.querySelectorAll('.reveal');
+    const heroReveal = document.querySelector('.hero-bg .reveal');
+    if (heroReveal) {
+      requestAnimationFrame(() => heroReveal.classList.add('visible'));
+    }
+
+    const items = document.querySelectorAll('.reveal:not(.visible)');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

@@ -30,11 +30,10 @@
       isolation: isolate;
       background:
         linear-gradient(180deg, rgba(7, 12, 27, 0.42), rgba(7, 12, 27, 0.88)),
-        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=85');
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=85');
       background-size: cover;
       background-position: center 45%;
       overflow: hidden;
-      animation: hero-bg-pan 32s ease-in-out infinite;
     }
 
     .hero-bg::before {
@@ -42,8 +41,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 24% 18%, rgba(255, 255, 255, 0.14), transparent 22%),
-        radial-gradient(circle at 82% 12%, rgba(94, 165, 255, 0.12), transparent 20%);
+        radial-gradient(circle at 26% 18%, rgba(255, 255, 255, 0.08), transparent 20%),
+        radial-gradient(circle at 82% 12%, rgba(214, 163, 76, 0.05), transparent 14%);
       pointer-events: none;
       mix-blend-mode: screen;
       z-index: 0;
@@ -53,13 +52,8 @@
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(180deg, rgba(7, 12, 27, 0.2), rgba(7, 12, 27, 0.75)),
-        url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1b?auto=format&fit=crop&w=2200&q=85');
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      animation: hero-bg-fade 40s ease-in-out infinite;
+      background: linear-gradient(180deg, rgba(7, 12, 27, 0.18), rgba(7, 12, 27, 0.82));
+      opacity: 0.22;
       pointer-events: none;
       z-index: 1;
     }
@@ -157,27 +151,6 @@
       line-height: 1.75;
     }
 
-    @keyframes hero-bg-pan {
-      0% {
-        background-position: center 42%;
-      }
-      50% {
-        background-position: center 58%;
-      }
-      100% {
-        background-position: center 42%;
-      }
-    }
-
-    @keyframes hero-bg-fade {
-      0%, 22%, 100% {
-        opacity: 0;
-      }
-      30%, 68% {
-        opacity: 0.2;
-      }
-    }
-
     .reveal {
       opacity: 0;
       transform: translateY(18px);
@@ -271,12 +244,12 @@
 </header>
 
 <section class="hero-bg md:min-h-[70vh] flex items-center text-white relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full py-10 md:py-24 relative z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full py-8 md:py-20 relative z-10">
 
     <div class="max-w-3xl reveal hero-panel rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 lg:p-14">
 
       <div class="inline-flex items-center gap-2 md:gap-3 text-[0.65rem] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-sky-100/80 mb-3 md:mb-6">
-        <span class="h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-sky-300 animate-pulse"></span>
+        <span class="h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-[#d9b86c]"></span>
         Websites &amp; Apps
       </div>
 
