@@ -100,22 +100,22 @@
 
     .hero-actions .hero-action {
       opacity: 0;
-      transform: translateY(16px);
-      animation: hero-action-fade 0.8s ease forwards;
+      transform: translateY(10px);
+      animation: hero-action-fade 0.42s ease-out forwards;
     }
 
     .hero-actions .hero-action:nth-child(1) {
-      animation-delay: 0.32s;
+      animation-delay: 0.14s;
     }
 
     .hero-actions .hero-action:nth-child(2) {
-      animation-delay: 0.56s;
+      animation-delay: 0.24s;
     }
 
     @keyframes hero-action-fade {
       from {
-        opacity: 0;
-        transform: translateY(16px);
+        opacity: 0.2;
+        transform: translateY(10px);
       }
       to {
         opacity: 1;
@@ -124,9 +124,9 @@
     }
 
     .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      opacity: 0.18;
+      transform: translateY(12px);
+      transition: opacity 0.36s ease-out, transform 0.36s ease-out;
     }
 
     .reveal.visible {
@@ -153,6 +153,7 @@
     @media (prefers-reduced-motion: reduce) {
       .reveal,
       .app-icon,
+      .hero-action,
       .image-hover img {
         opacity: 1;
         transform: none;
@@ -164,33 +165,33 @@
       position: fixed;
       left: 16px;
       right: 16px;
-      bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+      bottom: calc(14px + env(safe-area-inset-bottom, 0px));
       z-index: 60;
-      max-width: min(100% - 32px, 400px);
-      background: rgba(11, 18, 37, 0.92);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      box-shadow: 0 48px 120px rgba(7, 15, 30, 0.28);
-      color: #fff;
+      max-width: min(100% - 32px, 360px);
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(51, 66, 103, 0.12);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 18px 50px rgba(7, 15, 30, 0.16);
+      color: #334267;
     }
 
     .cookie-banner__title {
-      color: #fff;
+      color: #1f2937;
     }
 
     .cookie-banner__text {
-      color: rgba(226, 232, 240, 0.82);
+      color: rgba(63, 75, 99, 0.82);
     }
 
     .cookie-banner__link {
-      color: rgba(147, 197, 253, 0.95);
+      color: #1A53AD;
       text-decoration: underline;
       text-underline-offset: 3px;
     }
 
     .cookie-banner__link:hover {
-      color: #fff;
+      color: #163E82;
     }
 
     .cookie-banner__accept {
@@ -203,9 +204,9 @@
     }
 
     .cookie-banner__reject {
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
+      border: 1px solid rgba(51, 66, 103, 0.16);
+      background: rgba(51, 66, 103, 0.06);
+      color: #334267;
     }
 
     .cookie-banner__reject:hover {
@@ -217,7 +218,7 @@
       .cookie-banner {
         left: auto;
         right: 24px;
-        bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px));
         border-radius: 2rem;
       }
     }
@@ -284,8 +285,8 @@
 </div>
 </header>
 
-<section class="hero-bg md:min-h-screen flex items-center text-white relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full py-10 md:py-24 relative z-10">
+<section class="hero-bg md:min-h-[calc(100vh-88px)] flex items-center text-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full py-8 md:py-20 relative z-10">
     <div class="max-w-3xl reveal hero-panel rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 lg:p-14">
 
       <div class="inline-flex items-center gap-2 md:gap-3 text-[0.65rem] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-sky-100/80 mb-3 md:mb-6">
@@ -319,22 +320,31 @@
         </a>
       </div>
 
-      <div class="grid grid-cols-3 gap-2 sm:gap-4 mt-7 md:mt-12 text-white">
-        <div class="rounded-2xl md:rounded-3xl border border-white/15 bg-white/10 p-3 sm:p-4 md:p-6 text-center sm:text-left backdrop-blur-xl">
-          <div class="text-2xl sm:text-3xl md:text-5xl font-semibold leading-none">
-            6
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-7 md:mt-10 text-white">
+        <div class="rounded-2xl md:rounded-3xl border border-white/15 bg-white/10 p-4 md:p-5 text-left backdrop-blur-xl">
+          <div class="text-sm md:text-base font-semibold">
+            Persönlich
           </div>
-          <div class="text-[0.62rem] sm:text-xs md:text-sm uppercase tracking-[0.12em] sm:tracking-[0.16em] md:tracking-[0.22em] text-white/70 mt-2 md:mt-3">
-            Android-Apps
+          <div class="text-xs md:text-sm leading-5 text-white/72 mt-2">
+            Direkte Abstimmung ohne lange Agenturwege.
           </div>
         </div>
 
-        <div class="rounded-2xl md:rounded-3xl border border-white/15 bg-white/10 p-3 sm:p-4 md:p-6 text-center sm:text-left backdrop-blur-xl">
-          <div class="text-2xl sm:text-3xl md:text-5xl font-semibold leading-none">
-            Hof
+        <div class="rounded-2xl md:rounded-3xl border border-white/15 bg-white/10 p-4 md:p-5 text-left backdrop-blur-xl">
+          <div class="text-sm md:text-base font-semibold">
+            Mobil klar
           </div>
-          <div class="text-[0.62rem] sm:text-xs md:text-sm uppercase tracking-[0.12em] sm:tracking-[0.16em] md:tracking-[0.22em] text-white/70 mt-2 md:mt-3">
-            Saale
+          <div class="text-xs md:text-sm leading-5 text-white/72 mt-2">
+            Layouts, die zuerst auf kleinen Screens funktionieren.
+          </div>
+        </div>
+
+        <div class="rounded-2xl md:rounded-3xl border border-white/15 bg-white/10 p-4 md:p-5 text-left backdrop-blur-xl">
+          <div class="text-sm md:text-base font-semibold">
+            Nutzbar
+          </div>
+          <div class="text-xs md:text-sm leading-5 text-white/72 mt-2">
+            Schlanke Lösungen mit Fokus auf echte Anfragen.
           </div>
         </div>
       </div>
@@ -342,10 +352,10 @@
   </div>
 </section>
 
-<section class="py-28 bg-white">
+<section class="py-20 md:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-6">
 
-    <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-16 items-center">
+    <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 md:gap-14 items-center">
 
       <div class="reveal">
         <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
@@ -375,10 +385,10 @@
   </div>
 </section>
 
-<section class="py-28 bg-white">
+<section class="py-20 md:py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
 
-    <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-20 items-start">
+    <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 md:gap-16 items-start">
 
       <div class="reveal">
         <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
@@ -396,23 +406,23 @@
         </p>
       </div>
 
-      <div class="reveal space-y-10">
+      <div class="reveal space-y-8">
 
-        <div class="pb-8 border-b border-zinc-200">
+        <div class="pb-7 border-b border-zinc-200">
           <h3 class="text-2xl font-semibold text-zinc-900 mb-3">Websites</h3>
           <p class="text-zinc-600 leading-8">
             Schnelle und mobilfreundliche Seiten für lokale Unternehmen und Selbstständige.
           </p>
         </div>
 
-        <div class="pb-8 border-b border-zinc-200">
+        <div class="pb-7 border-b border-zinc-200">
           <h3 class="text-2xl font-semibold text-zinc-900 mb-3">Landingpages</h3>
           <p class="text-zinc-600 leading-8">
             Klare Seiten für Angebote, Produkte, Services und direkte Anfragen.
           </p>
         </div>
 
-        <div class="pb-8 border-b border-zinc-200">
+        <div class="pb-7 border-b border-zinc-200">
           <h3 class="text-2xl font-semibold text-zinc-900 mb-3">Android Apps</h3>
           <p class="text-zinc-600 leading-8">
             Kleine funktionale Apps mit sauberem Design und einfacher Bedienung.
@@ -443,7 +453,7 @@
 
 </section>
 
-<section class="py-28 bg-[#F5F5F5]">
+<section class="py-20 md:py-24 bg-[#F5F5F5]">
   <div class="max-w-5xl mx-auto px-6 text-center reveal">
 
     <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-6">
@@ -454,12 +464,12 @@
       Einfach. Klar. Funktional.
     </h2>
 
-    <p class="text-zinc-600 max-w-3xl mx-auto leading-9 text-xl mb-16">
+    <p class="text-zinc-600 max-w-3xl mx-auto leading-9 text-xl mb-12">
       Gute digitale Lösungen müssen nicht laut sein. Sie müssen verstanden,
       genutzt und gepflegt werden können.
     </p>
 
-    <div class="grid md:grid-cols-3 gap-10 text-left">
+    <div class="grid md:grid-cols-3 gap-6 md:gap-8 text-left">
 
       <div>
         <p class="text-[#1A53AD] font-semibold mb-4 text-lg">Direkt</p>
@@ -488,7 +498,7 @@
 </section>
 
 <section
-  class="py-24 text-white"
+  class="py-20 md:py-24 text-white"
   style="
    background:
 linear-gradient(
@@ -540,29 +550,29 @@ linear-gradient(
 </footer>
 
 <div id="cookie-banner"
-     class="cookie-banner hidden rounded-[2rem] md:rounded-[2.5rem] p-5 md:p-6"
+     class="cookie-banner hidden rounded-2xl md:rounded-[1.75rem] p-4"
      role="dialog"
      aria-live="polite"
      aria-labelledby="cookie-banner-title">
-  <h2 id="cookie-banner-title" class="cookie-banner__title text-base font-semibold mb-2">
+  <h2 id="cookie-banner-title" class="cookie-banner__title text-sm font-semibold mb-1.5">
     Cookies &amp; Statistik
   </h2>
-  <p class="cookie-banner__text text-sm leading-6 mb-4">
+  <p class="cookie-banner__text text-xs leading-5 mb-3">
     Google Analytics nur nach Ihrer Einwilligung. Ohne Zustimmung keine Analytics-Cookies.
   </p>
-  <div class="flex flex-col sm:flex-row gap-3">
+  <div class="flex gap-2">
     <button type="button"
             id="cookie-consent-accept"
-            class="cookie-banner__accept flex-1 px-4 py-3 rounded-2xl font-semibold transition">
+            class="cookie-banner__accept flex-1 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold transition">
       Akzeptieren
     </button>
     <button type="button"
             id="cookie-consent-reject"
-            class="cookie-banner__reject flex-1 px-4 py-3 rounded-2xl font-semibold transition">
+            class="cookie-banner__reject flex-1 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold transition">
       Nur notwendig
     </button>
   </div>
-  <p class="text-xs mt-3">
+  <p class="text-xs mt-2">
     <a href="de/datenschutz.html" class="cookie-banner__link">Datenschutzerklärung</a>
   </p>
 </div>
