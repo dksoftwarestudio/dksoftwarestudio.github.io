@@ -116,6 +116,76 @@
     border-color: rgba(26, 83, 173, 0.18);
   }
 
+  .anliegen-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 18% 22%, rgba(56, 189, 248, 0.14), transparent 28%),
+      radial-gradient(circle at 88% 10%, rgba(168, 212, 255, 0.08), transparent 18%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .anliegen-grid {
+    position: relative;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    z-index: 10;
+  }
+
+  @media (min-width: 768px) {
+    .anliegen-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  .anliegen-step {
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.10),
+      0 24px 60px rgba(8, 14, 26, 0.14);
+    transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+  }
+
+  .anliegen-step:hover {
+    transform: translateY(-4px);
+    border-color: rgba(56, 189, 248, 0.28);
+    background: rgba(255, 255, 255, 0.11);
+  }
+
+  .anliegen-step-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background: rgba(56, 189, 248, 0.22);
+    color: #E0F2FE;
+    font-size: 1.15rem;
+  }
+
+  .anliegen-step-title {
+    margin-top: 1.25rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .anliegen-step-text {
+    margin-top: 0.75rem;
+    color: rgba(226, 232, 240, 0.82);
+    line-height: 1.75;
+    font-size: 0.98rem;
+  }
+
   .app-icon {
     transition: transform 0.3s ease;
   }
@@ -131,6 +201,7 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal,
     .soft-card,
+    .anliegen-step,
     .app-icon {
       opacity: 1;
       transform: none;
@@ -313,44 +384,56 @@
   </div>
 </section>
 
-<section class="py-16 md:py-20 bg-[#F5F5F5]">
-  <div class="max-w-3xl mx-auto px-6">
+<section class="py-20 bg-[#12243f] text-white relative anliegen-section overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
 
-    <div class="reveal mb-8 md:mb-10">
-      <p class="text-sm tracking-[0.24em] uppercase text-[#1A53AD] font-semibold mb-4">
+    <div class="reveal text-center max-w-2xl mx-auto mb-12">
+      <p class="text-sm tracking-[0.28em] uppercase text-sky-100/90 mb-4">
         Anliegen
       </p>
 
-      <h2 class="text-3xl md:text-4xl font-semibold text-zinc-900 leading-tight mb-4">
+      <h2 class="text-3xl md:text-4xl font-semibold leading-tight text-slate-100">
         Wobei ich helfen kann
       </h2>
 
-      <p class="text-zinc-600 leading-7">
+      <p class="mt-5 text-sky-100/85 text-lg leading-8">
         Kurz beschreiben reicht — so weiß ich, womit ich starten kann.
       </p>
     </div>
 
-    <div class="reveal bg-white rounded-3xl border border-zinc-100 shadow-sm overflow-hidden divide-y divide-zinc-100">
-      <div class="p-6 md:p-8">
-        <h3 class="text-xl font-semibold text-zinc-900 mb-2">Website oder Landingpage</h3>
-        <p class="text-zinc-600 leading-7">
+    <div class="anliegen-grid">
+      <a href="#contactForm"
+         class="anliegen-step reveal block no-underline text-inherit focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300/60">
+        <div class="anliegen-step-icon" aria-hidden="true">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <div class="anliegen-step-title">Website oder Landingpage</div>
+        <p class="anliegen-step-text">
           Neue Seite, Überarbeitung oder eine kompakte Landingpage für ein klares Angebot.
         </p>
-      </div>
+      </a>
 
-      <div class="p-6 md:p-8">
-        <h3 class="text-xl font-semibold text-zinc-900 mb-2">Android App</h3>
-        <p class="text-zinc-600 leading-7">
+      <a href="#contactForm"
+         class="anliegen-step reveal block no-underline text-inherit focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300/60">
+        <div class="anliegen-step-icon" aria-hidden="true">
+          <i class="fa-brands fa-android"></i>
+        </div>
+        <div class="anliegen-step-title">Android App</div>
+        <p class="anliegen-step-text">
           App-Idee mit klarem Nutzen — von der ersten Skizze bis zur Veröffentlichung im Store.
         </p>
-      </div>
+      </a>
 
-      <div class="p-6 md:p-8">
-        <h3 class="text-xl font-semibold text-zinc-900 mb-2">Erste Einschätzung</h3>
-        <p class="text-zinc-600 leading-7">
-          Sie sind unsicher, ob und wie ein Projekt sinnvoll ist? Ich gebe Ihnen eine ehrliche, kurze Rückmeldung.
+      <a href="#contactForm"
+         class="anliegen-step reveal block no-underline text-inherit focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300/60">
+        <div class="anliegen-step-icon" aria-hidden="true">
+          <i class="fa-solid fa-lightbulb"></i>
+        </div>
+        <div class="anliegen-step-title">Erste Einschätzung</div>
+        <p class="anliegen-step-text">
+          Unsicher, ob ein Projekt sinnvoll ist? Ich gebe Ihnen eine ehrliche, kurze Rückmeldung.
         </p>
-      </div>
+      </a>
     </div>
 
   </div>
