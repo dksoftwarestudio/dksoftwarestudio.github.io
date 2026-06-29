@@ -160,6 +160,60 @@
     margin-bottom: 1rem;
   }
 
+  .play-store-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 178px;
+    padding: 0.65rem 1rem;
+    border-radius: 1rem;
+    background: #111827;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  }
+
+  .play-store-badge:hover {
+    background: #020617;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px rgba(15, 23, 42, 0.24);
+  }
+
+  .play-store-badge__icon {
+    position: relative;
+    width: 1.45rem;
+    height: 1.65rem;
+    flex: 0 0 auto;
+    overflow: hidden;
+    border-radius: 0.28rem;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    background:
+      linear-gradient(145deg, #34d399 0 33%, transparent 33%),
+      linear-gradient(35deg, #60a5fa 0 48%, #facc15 48% 67%, #fb7185 67%);
+  }
+
+  .play-store-badge__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+  }
+
+  .play-store-badge__eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .play-store-badge__label {
+    margin-top: 0.18rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
   .web-section {
     background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
   }
@@ -351,8 +405,13 @@
             <a href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwdailyalarm"
                target="_blank"
                rel="noopener noreferrer"
-               class="bg-[#1A53AD] text-white px-8 py-3 rounded-2xl text-sm font-semibold hover:bg-[#163E82] transition">
-              Google Play
+               class="play-store-badge"
+               aria-label="Daily Text Alarm bei Google Play öffnen">
+              <span class="play-store-badge__icon" aria-hidden="true"></span>
+              <span class="play-store-badge__text">
+                <span class="play-store-badge__eyebrow">Jetzt bei</span>
+                <span class="play-store-badge__label">Google Play</span>
+              </span>
             </a>
           </div>
         </div>
@@ -380,8 +439,13 @@
             <a href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.jwcalendar"
                target="_blank"
                rel="noopener noreferrer"
-               class="bg-[#1A53AD] text-white px-8 py-3 rounded-2xl text-sm font-semibold hover:bg-[#163E82] transition">
-              Google Play
+               class="play-store-badge"
+               aria-label="Ministry Calendar bei Google Play öffnen">
+              <span class="play-store-badge__icon" aria-hidden="true"></span>
+              <span class="play-store-badge__text">
+                <span class="play-store-badge__eyebrow">Jetzt bei</span>
+                <span class="play-store-badge__label">Google Play</span>
+              </span>
             </a>
           </div>
         </div>
@@ -409,8 +473,13 @@
             <a href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.blocknot"
                target="_blank"
                rel="noopener noreferrer"
-               class="bg-[#1A53AD] text-white px-8 py-3 rounded-2xl text-sm font-semibold hover:bg-[#163E82] transition">
-              Google Play
+               class="play-store-badge"
+               aria-label="Blocknot bei Google Play öffnen">
+              <span class="play-store-badge__icon" aria-hidden="true"></span>
+              <span class="play-store-badge__text">
+                <span class="play-store-badge__eyebrow">Jetzt bei</span>
+                <span class="play-store-badge__label">Google Play</span>
+              </span>
             </a>
           </div>
         </div>
@@ -439,8 +508,13 @@
             <a href="https://play.google.com/store/apps/details?id=com.dksoftwarestudio.myreminder"
                target="_blank"
                rel="noopener noreferrer"
-               class="bg-[#1A53AD] text-white px-8 py-3 rounded-2xl text-sm font-semibold hover:bg-[#163E82] transition">
-              Google Play
+               class="play-store-badge"
+               aria-label="My Reminder bei Google Play öffnen">
+              <span class="play-store-badge__icon" aria-hidden="true"></span>
+              <span class="play-store-badge__text">
+                <span class="play-store-badge__eyebrow">Jetzt bei</span>
+                <span class="play-store-badge__label">Google Play</span>
+              </span>
             </a>
           </div>
         </div>
