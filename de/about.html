@@ -73,31 +73,6 @@
       z-index: 10;
     }
 
-    .hero-actions .hero-action {
-      opacity: 0;
-      transform: translateY(16px);
-      animation: hero-action-fade 0.8s ease forwards;
-    }
-
-    .hero-actions .hero-action:nth-child(1) {
-      animation-delay: 0.32s;
-    }
-
-    .hero-actions .hero-action:nth-child(2) {
-      animation-delay: 0.56s;
-    }
-
-    @keyframes hero-action-fade {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .feature-image {
       position: relative;
       overflow: hidden;
@@ -180,53 +155,6 @@
       margin-top: 0.75rem;
       color: rgba(226, 232, 240, 0.8);
       line-height: 1.75;
-    }
-
-    .sticky-cta {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 0.85rem 1rem;
-      background: rgba(10, 18, 37, 0.95);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(14px);
-      z-index: 60;
-    }
-
-    .sticky-cta .cta-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      max-width: 78rem;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
-
-    .sticky-cta a {
-      flex: 1 1 auto;
-      border-radius: 9999px;
-      padding: 0.95rem 1.15rem;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    .sticky-primary {
-      background: #ffffff;
-      color: #334267;
-    }
-
-    .sticky-secondary {
-      background: rgba(255, 255, 255, 0.08);
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    @media (min-width: 768px) {
-      .sticky-cta {
-        display: none;
-      }
     }
 
     @keyframes hero-bg-pan {
@@ -578,53 +506,6 @@
   </div>
 </section>
 
-<section
-  class="py-24 text-white relative overflow-hidden"
-  style="
-    background:
-    linear-gradient(
-      180deg,
-      #3A4252 0%,
-      #262D39 100%
-    );
-  ">
-
-  <div class="absolute -top-24 -right-24 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-  <div class="absolute -bottom-32 -left-20 w-80 h-80 bg-blue-300/10 rounded-full blur-3xl"></div>
-
-  <div class="max-w-3xl mx-auto px-6 text-center reveal relative z-10">
-
-    <span class="inline-flex items-center gap-2 bg-white/12 border border-white/20 backdrop-blur-xl px-5 py-2 rounded-3xl text-sm mb-6">
-      <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
-      Persönlicher Kontakt
-    </span>
-
-    <h2 class="text-4xl md:text-5xl font-semibold leading-tight mb-6">
-      Lassen Sie uns über Ihr Projekt sprechen
-    </h2>
-
-    <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto leading-8">
-      Egal ob kleine Website, lokale Plattform oder einfache App-Idee —
-      ich gebe eine ehrliche Einschätzung und denke pragmatisch statt kompliziert.
-    </p>
-
-    <div class="hero-actions flex flex-col sm:flex-row justify-center gap-4">
-
-      <a href="contact.html"
-         class="hero-action bg-white text-[#334267] px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-blue-50 hover:-translate-y-1 hover:shadow-2xl transition">
-        Kontakt aufnehmen
-      </a>
-
-      <a href="projects.html"
-         class="hero-action border border-white/30 bg-white/10 backdrop-blur-md text-white px-10 py-5 rounded-3xl font-semibold text-lg text-center hover:bg-white hover:text-[#1A53AD] hover:-translate-y-1 hover:shadow-2xl transition">
-        Projekte ansehen
-      </a>
-
-    </div>
-
-  </div>
-</section>
-
 <footer class="bg-zinc-900 text-zinc-400 py-16">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex flex-col md:flex-row justify-between items-center gap-8">
@@ -647,14 +528,6 @@
     </div>
   </div>
 </footer>
-
-<div class="sticky-cta hidden md:hidden">
-  <div class="cta-inner">
-    <span class="text-sm text-sky-100">Sofort Kontakt aufnehmen</span>
-    <a href="contact.html" class="sticky-primary">Jetzt anfragen</a>
-    <a href="projects.html" class="sticky-secondary">Projekte ansehen</a>
-  </div>
-</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
