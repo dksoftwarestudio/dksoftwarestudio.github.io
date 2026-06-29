@@ -128,32 +128,6 @@
     border-color: rgba(26, 83, 173, 0.18);
   }
 
-  .hero-pill-row {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-pill {
-    border-radius: 9999px;
-    border: 1px solid rgba(148, 163, 184, 0.26);
-    background: rgba(255, 255, 255, 0.08);
-    color: #e2e8f0;
-    padding: 0.75rem 1rem;
-    font-size: 0.82rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: transform 0.25s ease, background 0.25s ease;
-  }
-
-  .hero-pill:hover,
-  .hero-pill.active {
-    background: linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.12));
-    border-color: rgba(255, 255, 255, 0.42);
-    transform: translateY(-1px);
-  }
-
   .project-meta {
     font-size: 0.95rem;
     color: #64748b;
@@ -252,11 +226,6 @@
     }
   }
 
-  .hero-pill.active {
-    position: relative;
-    overflow: hidden;
-  }
-  /* shimmer removed */
 </style>
 </head>
 
@@ -332,11 +301,6 @@
         Eigene Android-Apps und Web-Projekte —
         einfach aufgebaut, klar strukturiert und praktisch nutzbar.
       </p>
-
-      <div class="hero-pill-row reveal reveal-delay-4">
-        <span class="hero-pill active">Apps</span>
-        <span class="hero-pill">In Planung</span>
-      </div>
 
       <div class="flex gap-14 mt-10 flex-wrap">
 
